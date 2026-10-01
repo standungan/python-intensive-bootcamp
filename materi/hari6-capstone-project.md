@@ -8,7 +8,7 @@ Python Intensive Bootcamp  •  Durasi 6 Jam  •  Level Menengah hingga Lanjut
 
 Setelah menyelesaikan Hari 6, peserta diharapkan mampu:
 
-- Mengintegrasikan skill Python dari Hari 1–5 ke dalam satu project analisis data yang utuh.
+- Mengintegrasikan skill Python dari Modul 1–5 ke dalam satu project analisis data yang utuh.
 - Merancang alur kerja: pengambilan data → cleaning → analisis → visualisasi → insight.
 - Menulis kode yang terstruktur, modular, dan mengikuti kaidah PEP 8.
 - Menyajikan hasil analisis melalui visualisasi dan dokumentasi yang jelas.
@@ -46,16 +46,16 @@ Setelah menyelesaikan Hari 6, peserta diharapkan mampu:
 
 # 3. Overview Capstone Project
 
-Capstone adalah puncak bootcamp. Anda membangun project analisis data utuh dengan memanfaatkan skill dari Hari 1 sampai Hari 5. Project bersifat individual. Pilih salah satu dari tiga opsi di bawah, atau ajukan ide sendiri (dengan persetujuan instruktur).
+Capstone adalah puncak bootcamp. Anda membangun project analisis data utuh dengan memanfaatkan skill dari Modul 1 sampai Modul 5. Project bersifat individual. Pilih salah satu dari tiga opsi di bawah, atau ajukan ide sendiri (dengan persetujuan instruktur).
 
 ## 3.1 Skill yang Harus Terintegrasi
 
-| Hari | Skill yang Digunakan |
+| Modul | Skill yang Digunakan |
 |---|---|
-| Hari 1–2 | Variabel, control flow, function, error handling, file I/O |
-| Hari 3 | Class / OOP (opsional tapi dianjurkan) |
-| Hari 4 | NumPy & Pandas (wajib: cleaning, filtering, groupby, merge/pivot) |
-| Hari 5 | Matplotlib/Seaborn + API atau Scraping (wajib ada visualisasi) |
+| Modul 1–2 | Variabel, control flow, function, error handling, file I/O |
+| Modul 3 | Class / OOP (opsional tapi dianjurkan) |
+| Modul 4 | NumPy & Pandas (wajib: cleaning, filtering, groupby, merge/pivot) |
+| Modul 5 | Matplotlib/Seaborn + API atau Scraping (wajib ada visualisasi) |
 
 ## 3.2 Ekspektasi Kualitas Kode
 

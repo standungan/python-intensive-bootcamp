@@ -1,12 +1,21 @@
 # python-intensive-bootcamp
 
-Materi Python Intensive Bootcamp (3 hari, 6 jam per hari).
+Materi Python Intensive Bootcamp. Modul 1–5 adalah versi lengkap (pembahasan dalam + kasus beragam + pseudocode latihan), dengan seluruh kode sudah dijalankan dan outputnya ditampilkan; Hari 6 adalah Capstone.
 
-| Hari | Topik | Markdown | Dokumen asli |
+| Modul | Topik | Markdown | Dokumen asli |
 |---|---|---|---|
-| 1 | Python Fundamentals & Environment Setup | [materi/hari1-python-fundamentals.md](materi/hari1-python-fundamentals.md) | [docx](materi/docx/Materi_Hari1_Python_Fundamentals.docx) |
-| 2 | Functions, Modules & File Handling | [materi/hari2-functions-modules-file-handling.md](materi/hari2-functions-modules-file-handling.md) | [docx](materi/docx/Materi_Hari2_Functions_Modules_FileHandling.docx) |
-| 3 | Object-Oriented Programming | [materi/hari3-oop.md](materi/hari3-oop.md) | [docx](materi/docx/Materi_Hari3_Object_Oriented_Programming.docx) |
-| 4 | Data Analysis dengan NumPy & Pandas | [materi/hari4-numpy-pandas.md](materi/hari4-numpy-pandas.md) | [docx](materi/docx/Materi_Hari4_NumPy_Pandas.docx) |
-| 5 | Visualisasi Data, API & Web Scraping | [materi/hari5-visualisasi-api-scraping.md](materi/hari5-visualisasi-api-scraping.md) | [docx](materi/docx/Materi_Hari5_Visualisasi_API_Scraping.docx) |
+| 1 | Python Fundamentals | [materi/modul01-python-fundamentals.md](materi/modul01-python-fundamentals.md) | [docx](materi/docx/Modul_01_Python_Fundamentals.docx) |
+| 2 | Functions, Modules & File Handling | [materi/modul02-functions-modules-file-handling.md](materi/modul02-functions-modules-file-handling.md) | [docx](materi/docx/Modul_02_Functions_Modules_FileHandling.docx) |
+| 3 | Object-Oriented Programming | [materi/modul03-oop.md](materi/modul03-oop.md) | [docx](materi/docx/Modul_03_Object_Oriented_Programming.docx) |
+| 4 | NumPy & Pandas | [materi/modul04-numpy-pandas.md](materi/modul04-numpy-pandas.md) | [docx](materi/docx/Modul_04_NumPy_Pandas.docx) |
+| 5 | Visualisasi, API & Scraping | [materi/modul05-visualisasi-api-scraping.md](materi/modul05-visualisasi-api-scraping.md) | [docx](materi/docx/Modul_05_Visualisasi_API_Scraping.docx) |
 | 6 | Capstone Project | [materi/hari6-capstone-project.md](materi/hari6-capstone-project.md) | [docx](materi/docx/Materi_Hari6_Capstone_Project.docx) |
+
+Contoh pengerjaan lengkap Capstone (kode, data, output, dokumentasi) ada di [finished_capstone/](finished_capstone/).
+
+## Tentang output pada modul
+- Bagian **Output** pada tiap blok kode adalah hasil eksekusi nyata (Python 3.11; pandas 3.0.6, numpy 2.4.6, matplotlib 3.11.2, seaborn 0.13.2).
+- Blok yang memakai `input()` dijalankan dengan input simulasi (ditulis di samping label output).
+- Grafik Modul 5 disimpan di `materi/images/modul05/`.
+- Bagian "Demonstrasi error" pada Troubleshooting menjalankan kasus error nyata.
+- Blok yang memanggil API yang tidak dapat diakses dari lingkungan pengujian dijalankan dengan respons tiruan dan diberi catatan.
