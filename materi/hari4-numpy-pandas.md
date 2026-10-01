@@ -1001,12 +1001,12 @@ df["nama"] = df["nama"].fillna("Unknown")
 df["ipk"] = df["ipk"].fillna(df["ipk"].median())
 df["prodi"] = df["prodi"].fillna("Unknown")
 
-# 3. Hapus data duplikat
-df = df.drop_duplicates()
-
-# 4. Bersihkan spasi dan perbaiki tipe data
+# 3. Bersihkan spasi dan perbaiki tipe data (lakukan SEBELUM menghapus duplikat)
 df["nama"] = df["nama"].str.strip()
 df["umur"] = pd.to_numeric(df["umur"], errors="coerce")
+
+# 4. Hapus data duplikat
+df = df.drop_duplicates()
 
 print("Shape setelah cleaning:", df.shape)
 print(df)
@@ -1030,7 +1030,7 @@ ipk      28.571429
 prodi    14.285714
 umur      0.000000
 dtype: float64
-Shape setelah cleaning: (7, 4)
+Shape setelah cleaning: (6, 4)
       nama  ipk    prodi  umur
 0      Ani  3.7       IF    20
 1     Budi  3.7       SI    21
@@ -1038,9 +1038,10 @@ Shape setelah cleaning: (7, 4)
 3     Dedi  2.8  Unknown    22
 4      Eka  3.7       IF    19
 5     Budi  3.2       SI    21
-6      Ani  3.7       IF    20
 File berhasil disimpan.
 ```
+
+_Catatan: urutan langkah 3 dan 4 pada materi asli terbalik (hapus duplikat dulu, baru `strip()`), sehingga baris `" Ani "` tidak terdeteksi sebagai duplikat dan `shape` tetap `(7, 4)`. Setelah diurutkan ulang, duplikat terhapus dan `shape` menjadi `(6, 4)`._
 
 ## Mini Project 3 — Analisis Multi-Tabel dengan Merge (Level Menengah)
 

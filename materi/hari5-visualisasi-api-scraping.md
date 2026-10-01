@@ -2,6 +2,8 @@
 
 Python Intensive Bootcamp  •  Durasi 6 Jam  •  Level Menengah
 
+> **Catatan pengujian:** kode diuji dengan Python 3.11, matplotlib 3.11.2, seaborn 0.13.2, pandas 3.0.6, requests, beautifulsoup4 4.15, feedparser 6.0.14. Grafik hasil eksekusi disimpan sebagai gambar di `materi/images/hari5/` dan ditampilkan di bawah tiap blok kode. Peringatan `MatplotlibDeprecationWarning: vert ...` pada boxplot/violinplot muncul dari kombinasi seaborn 0.13.2 dengan matplotlib 3.11 dan tidak memengaruhi hasil. Host API selain `api.github.com` diblokir di lingkungan pengujian; bagian yang memakai API/scraping/arXiv dijalankan dengan respons tiruan dan diberi catatan.
+
 # 1. Tujuan Pembelajaran
 
 Setelah menyelesaikan Hari 5, peserta diharapkan mampu:
@@ -11,6 +13,7 @@ Setelah menyelesaikan Hari 5, peserta diharapkan mampu:
 - Mengambil data dari API publik menggunakan requests dan mengolah JSON menjadi DataFrame.
 - Melakukan web scraping sederhana secara etis dan menggunakan arXiv API.
 - Menyelesaikan soal latihan di setiap bagian serta minimal tiga Mini Project.
+
 # 2. Agenda dan Alokasi Waktu
 
 | Waktu | Sesi | Durasi | Fokus |
@@ -36,6 +39,12 @@ import pandas as pd
 plt.style.use("seaborn-v0_8-whitegrid")
 ```
 
+**Output:**
+
+```text
+(tidak ada output)
+```
+
 ## 3.2 Line Plot
 
 ```python
@@ -54,6 +63,12 @@ plt.plot(bulan, budi, marker="s", label="Budi")
 plt.title("Perkembangan Nilai"); plt.legend(); plt.ylim(60,100)
 plt.tight_layout(); plt.show()
 ```
+
+**Output:**
+
+![Grafik hasil blok kode — 1_0.png](images/hari5/1_0.png)
+
+![Grafik hasil blok kode — 1_1.png](images/hari5/1_1.png)
 
 ## 3.3 Bar Chart
 
@@ -74,6 +89,12 @@ ax.bar(x+width/2, uas, width, label="UAS")
 ax.set_xticks(x); ax.set_xticklabels(labels)
 ax.set_title("UTS vs UAS"); ax.legend(); plt.tight_layout(); plt.show()
 ```
+
+**Output:**
+
+![Grafik hasil blok kode — 2_0.png](images/hari5/2_0.png)
+
+![Grafik hasil blok kode — 2_1.png](images/hari5/2_1.png)
 
 ## 3.4 Scatter, Histogram, Pie
 
@@ -97,6 +118,14 @@ plt.pie(sizes,labels=labels,autopct="%1.1f%%",startangle=90,explode=(0.05,0,0,0,
 plt.title("Proporsi Mahasiswa"); plt.tight_layout(); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 3_0.png](images/hari5/3_0.png)
+
+![Grafik hasil blok kode — 3_1.png](images/hari5/3_1.png)
+
+![Grafik hasil blok kode — 3_2.png](images/hari5/3_2.png)
+
 ## 3.5 Subplot dan Menyimpan Gambar
 
 ```python
@@ -112,6 +141,12 @@ plt.savefig("grafik.png",dpi=150,bbox_inches="tight")
 plt.savefig("grafik.pdf",bbox_inches="tight"); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 4_0.png](images/hari5/4_0.png)
+
+![Grafik hasil blok kode — 4_1.png](images/hari5/4_1.png)
+
 ## 3.6 Latihan Matplotlib
 
 1. Buat line plot penjualan produk A dan B selama 6 bulan (marker, legend, judul, grid).
@@ -119,6 +154,7 @@ plt.savefig("grafik.pdf",bbox_inches="tight"); plt.show()
 3. Buat histogram 300 bilangan normal (mean=70, std=8), tampilkan garis mean dan median.
 4. Buat subplot 1x3 histogram nilai tiga kelas (sharey=True).
 5. Buat pie chart lima kategori pengeluaran, simpan sebagai PNG.
+
 # 4. Visualisasi Statistik dengan Seaborn
 
 ## 4.1 Pengenalan
@@ -131,6 +167,19 @@ iris = sns.load_dataset("iris")
 titanic = sns.load_dataset("titanic")
 print(tips.head())
 ```
+
+**Output:**
+
+```text
+   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+3       23.68  3.31    Male     No  Sun  Dinner     2
+4       24.59  3.61  Female     No  Sun  Dinner     4
+```
+
+_Catatan: `load_dataset` mengunduh dataset dari repositori seaborn-data di GitHub (memerlukan internet)._
 
 ## 4.2 Distribusi
 
@@ -152,6 +201,16 @@ sns.violinplot(data=tips, x="day", y="total_bill", hue="sex", split=True)
 plt.title("Violin Plot"); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 6_0.png](images/hari5/6_0.png)
+
+![Grafik hasil blok kode — 6_1.png](images/hari5/6_1.png)
+
+![Grafik hasil blok kode — 6_2.png](images/hari5/6_2.png)
+
+![Grafik hasil blok kode — 6_3.png](images/hari5/6_3.png)
+
 ## 4.3 Relasi
 
 ```python
@@ -170,6 +229,16 @@ plt.figure(figsize=(6,5))
 sns.heatmap(corr, annot=True, cmap="coolwarm", center=0, fmt=".2f")
 plt.title("Heatmap Korelasi"); plt.tight_layout(); plt.show()
 ```
+
+**Output:**
+
+![Grafik hasil blok kode — 7_0.png](images/hari5/7_0.png)
+
+![Grafik hasil blok kode — 7_1.png](images/hari5/7_1.png)
+
+![Grafik hasil blok kode — 7_2.png](images/hari5/7_2.png)
+
+![Grafik hasil blok kode — 7_3.png](images/hari5/7_3.png)
 
 ## 4.4 Categorical Plot
 
@@ -191,6 +260,14 @@ sns.stripplot(data=tips, x="day", y="tip", color="darkblue", alpha=0.4, size=3,
 plt.title("Box + Strip: Tip per Hari"); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 8_0.png](images/hari5/8_0.png)
+
+![Grafik hasil blok kode — 8_1.png](images/hari5/8_1.png)
+
+![Grafik hasil blok kode — 8_2.png](images/hari5/8_2.png)
+
 ## 4.5 Latihan Seaborn
 
 1. Histogram total_bill dataset tips dengan hue="smoker".
@@ -198,6 +275,7 @@ plt.title("Box + Strip: Tip per Hari"); plt.show()
 3. Heatmap korelasi dataset iris (kolom numerik).
 4. Pairplot dataset iris dengan hue="species".
 5. Countplot class pada dataset titanic, hue="sex".
+
 # 5. Bekerja dengan API (requests)
 
 ## 5.1 Dasar requests
@@ -213,6 +291,17 @@ params = {"q": "python", "sort": "stars"}
 r = requests.get("https://api.github.com/search/repositories", params=params)
 print(r.url, r.status_code)
 ```
+
+**Output:**
+
+```text
+200
+application/json; charset=utf-8
+[]
+https://api.github.com/search/repositories?q=python&sort=stars 403
+```
+
+_Catatan: dijalankan langsung ke `api.github.com` dari lingkungan pengujian. Respons permintaan kedua (`/search/repositories`) adalah 403 karena pembatasan akses/rate limit tanpa token; di komputer peserta biasanya 200. Isi `list(data.keys())` kosong pada respons yang diterima di lingkungan ini._
 
 ## 5.2 API Publik
 
@@ -238,6 +327,24 @@ for i, t in enumerate(daily["time"]):
     print(f"{t}: max {daily['temperature_2m_max'][i]}°C / min {daily['temperature_2m_min'][i]}°C")
 ```
 
+**Output:**
+
+```text
+Leanne Graham - Sincere@april.biz - Gwenborough
+Ervin Howell - Shanna@melissa.tv - Wisokyburgh
+Clementine Bauch - Nathan@yesenia.net - McKenziehaven
+Suhu Jakarta: 31.2°C, Angin: 9.4 km/h
+2026-10-01: max 32.1°C / min 24.5°C
+2026-10-02: max 31.8°C / min 24.8°C
+2026-10-03: max 33.0°C / min 25.0°C
+2026-10-04: max 32.5°C / min 24.7°C
+2026-10-05: max 31.2°C / min 24.1°C
+```
+
+_Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
+_Catatan: host api.open-meteo.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
 ## 5.3 Error Handling dan DataFrame
 
 ```python
@@ -259,12 +366,27 @@ print(df[["id","name","address.city","company.name"]].head())
 df.to_csv("users_api.csv", index=False)
 ```
 
+**Output:**
+
+```text
+Berhasil: 10 user
+   id              name   address.city        company.name
+0   1     Leanne Graham    Gwenborough     Romaguera-Crona
+1   2      Ervin Howell    Wisokyburgh        Deckow-Crist
+2   3  Clementine Bauch  McKenziehaven  Romaguera-Jacobson
+3   4  Patricia Lebsack    South Elvis       Robel-Corkery
+4   5  Chelsey Dietrich     Roscoeview         Keebler LLC
+```
+
+_Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
 ## 5.4 Latihan API
 
 1. Ambil posts dari JSONPlaceholder, tampilkan 5 judul pertama, hitung jumlah post per userId.
 2. Ambil cuaca terkini Bandung (koordinat -6.9175, 107.6191).
 3. Buat fungsi ambil_json yang aman, uji dengan URL benar dan salah.
 4. Ambil users → DataFrame (json_normalize) → bar chart jumlah user per kota.
+
 # 6. Web Scraping dan arXiv API
 
 ## 6.1 Etika
@@ -282,6 +404,16 @@ for q in soup.find_all("div", class_="quote")[:3]:
     penulis = q.find("small", class_="author").get_text()
     print(f"{penulis}: {teks[:55]}...")
 ```
+
+**Output:**
+
+```text
+Albert Einstein: “The world as we have created it is a process of our th...
+J.K. Rowling: “It is our choices, Harry, that show what we truly are....
+Albert Einstein: “There are only two ways to live your life.”...
+```
+
+_Catatan: host quotes.toscrape.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
 
 ## 6.3 arXiv API
 
@@ -309,6 +441,19 @@ print(df[["judul","penulis","published"]])
 df.to_csv("arxiv_hasil.csv", index=False)
 ```
 
+**Output:**
+
+```text
+                              judul                 penulis   published
+0  Contoh Paper 1  on Deep Learning  Penulis 1A, Penulis 1B  2025-12-15
+1  Contoh Paper 2  on Deep Learning  Penulis 2A, Penulis 2B  2025-10-15
+2  Contoh Paper 3  on Deep Learning  Penulis 3A, Penulis 3B  2025-08-15
+3  Contoh Paper 4  on Deep Learning  Penulis 4A, Penulis 4B  2025-06-15
+4  Contoh Paper 5  on Deep Learning  Penulis 5A, Penulis 5B  2024-12-15
+```
+
+_Catatan: host export.arxiv.org tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
 > Rate Limit arXiv Maksimal 1 request per 3 detik. Dokumentasi: https://info.arxiv.org/help/api/user-manual.html
 
 ## 6.4 Latihan Scraping & arXiv
@@ -316,6 +461,7 @@ df.to_csv("arxiv_hasil.csv", index=False)
 1. Scrape quotes.toscrape.com, tampilkan 5 quote + penulis.
 2. Cari 8 paper arXiv kata kunci "python programming education", simpan CSV.
 3. Dari hasil arXiv, buat bar chart jumlah paper per tahun.
+
 # 7. Empat Mini Project
 
 ## Mini Project 1 — Dashboard Visualisasi Nilai Mahasiswa (Level Dasar)
@@ -331,6 +477,7 @@ Gunakan data nilai mahasiswa (bisa data dari Hari 4 atau buat data baru). Buat b
 3. Pie chart proporsi grade (A/B/C/D/E).
 4. Box plot perbandingan nilai antar prodi.
 5. Simpan semua grafik sebagai file PNG.
+
 ### Skeleton Code
 
 ```python
@@ -364,6 +511,8 @@ plt.show()
 # ...
 ```
 
+> **Output:** _tidak dijalankan_ — skeleton; berisi placeholder `[...]` dan `# ...` yang harus diisi peserta
+
 > Tips Project 1 Gunakan subplot 2x2 agar semua grafik berada dalam satu figure. Pastikan setiap grafik memiliki judul dan label yang jelas.
 
 ## Mini Project 2 — Ambil Data API dan Visualisasikan (Level Menengah)
@@ -379,6 +528,7 @@ Ambil data dari API publik (JSONPlaceholder, Open-Meteo, atau API lain yang tida
 3. Lakukan inspeksi data sederhana.
 4. Buat minimal 2 visualisasi yang bermakna.
 5. Simpan DataFrame ke CSV dan grafik ke PNG.
+
 ### Skeleton Code
 
 ```python
@@ -409,6 +559,27 @@ print(df.columns.tolist())
 df.to_csv("hasil_api.csv", index=False)
 ```
 
+**Output:**
+
+```text
+   id              name   username                      email phone address.street   address.city  \
+0   1     Leanne Graham       Bret          Sincere@april.biz     -              -    Gwenborough   
+1   2      Ervin Howell  Antonette          Shanna@melissa.tv     -              -    Wisokyburgh   
+2   3  Clementine Bauch   Samantha         Nathan@yesenia.net     -              -  McKenziehaven   
+3   4  Patricia Lebsack   Karianne  Julianne.OConner@kory.org     -              -    South Elvis   
+4   5  Chelsey Dietrich     Kamren   Lucio_Hettinger@annie.ca     -              -     Roscoeview   
+
+  address.zipcode        company.name  
+0               -     Romaguera-Crona  
+1               -        Deckow-Crist  
+2               -  Romaguera-Jacobson  
+3               -       Robel-Corkery  
+4               -         Keebler LLC  
+['id', 'name', 'username', 'email', 'phone', 'address.street', 'address.city', 'address.zipcode', 'company.name']
+```
+
+_Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
 > Tips Project 2 Gunakan pd.json_normalize() untuk data JSON yang nested. Pilih kolom yang relevan sebelum membuat visualisasi.
 
 ## Mini Project 3 — Pencarian Paper dengan arXiv API (Level Menengah-Tinggi)
@@ -424,6 +595,7 @@ Buat program yang menerima kata kunci pencarian, mengambil data paper dari arXiv
 3. Simpan hasil pencarian ke file CSV.
 4. Buat visualisasi jumlah paper berdasarkan tahun publikasi.
 5. Hormati rate limit arXiv (maksimal 1 request per 3 detik).
+
 ### Skeleton Code
 
 ```python
@@ -472,6 +644,34 @@ plt.savefig("arxiv_per_tahun.png", dpi=150)
 plt.show()
 ```
 
+**Output:**
+
+```text
+Masukkan kata kunci: deep learning
+                                judul                   penulis   published
+0    Contoh Paper 1  on Deep Learning    Penulis 1A, Penulis 1B  2025-12-15
+1    Contoh Paper 2  on Deep Learning    Penulis 2A, Penulis 2B  2025-10-15
+2    Contoh Paper 3  on Deep Learning    Penulis 3A, Penulis 3B  2025-08-15
+3    Contoh Paper 4  on Deep Learning    Penulis 4A, Penulis 4B  2025-06-15
+4    Contoh Paper 5  on Deep Learning    Penulis 5A, Penulis 5B  2024-12-15
+5    Contoh Paper 6  on Deep Learning    Penulis 6A, Penulis 6B  2024-10-15
+6    Contoh Paper 7  on Deep Learning    Penulis 7A, Penulis 7B  2024-08-15
+7    Contoh Paper 8  on Deep Learning    Penulis 8A, Penulis 8B  2024-06-15
+8    Contoh Paper 9  on Deep Learning    Penulis 9A, Penulis 9B  2023-12-15
+9   Contoh Paper 10  on Deep Learning  Penulis 10A, Penulis 10B  2023-10-15
+10  Contoh Paper 11  on Deep Learning  Penulis 11A, Penulis 11B  2023-08-15
+11  Contoh Paper 12  on Deep Learning  Penulis 12A, Penulis 12B  2023-06-15
+12  Contoh Paper 13  on Deep Learning  Penulis 13A, Penulis 13B  2022-12-15
+13  Contoh Paper 14  on Deep Learning  Penulis 14A, Penulis 14B  2022-10-15
+14  Contoh Paper 15  on Deep Learning  Penulis 15A, Penulis 15B  2022-08-15
+```
+
+![Grafik hasil blok kode — 16_0.png](images/hari5/16_0.png)
+
+_Catatan: input simulasi: `deep learning`._
+
+_Catatan: host export.arxiv.org tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
 > Tips Project 3 Sangat cocok untuk mahasiswa S2/S3 yang membutuhkan literatur. Jangan lupa time.sleep(3) jika melakukan banyak request.
 
 ## Mini Project 4 — Mini EDA + Visualisasi Lengkap (Level Tinggi)
@@ -488,6 +688,7 @@ Pilih sebuah dataset (hasil API, arXiv, atau dataset publik). Lakukan EDA singka
 4. Tambahkan judul, label, dan legenda yang jelas pada setiap grafik.
 5. Simpan figure ke file PNG berkualitas tinggi (dpi >= 150).
 6. Tuliskan minimal 3 insight dari visualisasi.
+
 ### Skeleton Code
 
 ```python
@@ -527,6 +728,12 @@ plt.show()
 # 3. ...
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 17_0.png](images/hari5/17_0.png)
+
+_Catatan: dijalankan dengan `data_anda.csv` contoh (40 baris, kolom `kolom1`, `kategori`, `nilai`, `kolom_x`, `kolom_y`) karena file aslinya milik peserta._
+
 > Tips Project 4 Pilih visualisasi yang benar-benar menceritakan sesuatu dari data. Insight harus didukung oleh apa yang terlihat di grafik.
 
 > Panduan Pengerjaan Mini Project Project 1 dan 2 bersifat wajib. Project 3 (arXiv) sangat direkomendasikan bagi mahasiswa S2/S3. Project 4 adalah challenge integrasi skill visualisasi. Gunakan Jupyter Notebook agar grafik langsung terlihat.
@@ -545,6 +752,10 @@ plt.plot(bulan,a,marker="o",label="Produk A"); plt.plot(bulan,b,marker="s",label
 plt.title("Penjualan A vs B"); plt.legend(); plt.grid(True,alpha=0.3); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 18_0.png](images/hari5/18_0.png)
+
 ### Soal 2
 
 ```python
@@ -555,6 +766,10 @@ for bar,val in zip(bars,jumlah):
     plt.text(bar.get_x()+bar.get_width()/2, bar.get_height()+3, str(val), ha="center")
 plt.title("Mahasiswa per Angkatan"); plt.show()
 ```
+
+**Output:**
+
+![Grafik hasil blok kode — 19_0.png](images/hari5/19_0.png)
 
 ### Soal 3
 
@@ -567,6 +782,10 @@ plt.axvline(np.median(data),color="orange",linestyle=":",label=f"Median={np.medi
 plt.legend(); plt.title("Distribusi Nilai"); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 20_0.png](images/hari5/20_0.png)
+
 ### Soal 4
 
 ```python
@@ -576,6 +795,10 @@ for ax,d,n in zip(axes,[np.random.normal(78,7,100),np.random.normal(72,9,100),np
 plt.suptitle("Distribusi Nilai per Kelas"); plt.tight_layout(); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 21_0.png](images/hari5/21_0.png)
+
 ### Soal 5
 
 ```python
@@ -584,6 +807,10 @@ plt.pie([40,25,15,10,10],labels=["Sewa","Makan","Transport","Hiburan","Lainnya"]
         autopct="%1.1f%%",startangle=90,explode=(0.05,0,0,0,0))
 plt.title("Pengeluaran Bulanan"); plt.savefig("pengeluaran.png",dpi=150,bbox_inches="tight"); plt.show()
 ```
+
+**Output:**
+
+![Grafik hasil blok kode — 22_0.png](images/hari5/22_0.png)
 
 ## 8.2 Solusi Seaborn
 
@@ -605,6 +832,18 @@ sns.pairplot(iris, hue="species", corner=True); plt.show()
 sns.countplot(data=titanic, x="class", hue="sex"); plt.show()
 ```
 
+**Output:**
+
+![Grafik hasil blok kode — 23_0.png](images/hari5/23_0.png)
+
+![Grafik hasil blok kode — 23_1.png](images/hari5/23_1.png)
+
+![Grafik hasil blok kode — 23_2.png](images/hari5/23_2.png)
+
+![Grafik hasil blok kode — 23_3.png](images/hari5/23_3.png)
+
+![Grafik hasil blok kode — 23_4.png](images/hari5/23_4.png)
+
 ## 8.3 Solusi API
 
 ```python
@@ -620,6 +859,33 @@ print(f"Suhu Bandung: {cw['temperature']}°C, Angin: {cw['windspeed']} km/h")
 
 # Soal 3 & 4 — gunakan fungsi ambil_json + json_normalize + value_counts().plot(kind="bar")
 ```
+
+**Output:**
+
+```text
+judul post contoh 1
+judul post contoh 2
+judul post contoh 3
+judul post contoh 4
+judul post contoh 5
+userId
+1     10
+2     10
+3     10
+4     10
+5     10
+6     10
+7     10
+8     10
+9     10
+10    10
+dtype: int64
+Suhu Bandung: 31.2°C, Angin: 9.4 km/h
+```
+
+_Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
+_Catatan: host api.open-meteo.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
 
 ## 8.4 Solusi Scraping & arXiv
 
@@ -637,13 +903,27 @@ df["tahun"].value_counts().sort_index().plot(kind="bar")
 plt.title("Paper per Tahun"); plt.tight_layout(); plt.savefig("arxiv_tahun.png", dpi=150); plt.show()
 ```
 
-> Materi Hari 5 Selesai Format Mini Project sudah konsisten  •  Latihan + Solusi lengkap  •  Siap ke Hari 6
+**Output:**
 
-9. Troubleshooting
+```text
+Albert Einstein : “The world as we have created it is a process of our thinking.”
+J.K. Rowling : “It is our choices, Harry, that show what we truly are.”
+Albert Einstein : “There are only two ways to live your life.”
+Jane Austen : “The person, be it gentleman or lady, who has not pleasure in a good novel.”
+Marilyn Monroe : “Imperfection is beauty, madness is genius.”
+```
+
+![Grafik hasil blok kode — 25_0.png](images/hari5/25_0.png)
+
+_Catatan: host export.arxiv.org tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
+_Catatan: host quotes.toscrape.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
+# 9. Troubleshooting
 
 Masalah yang sering muncul saat visualisasi, API, dan scraping:
 
-Visualisasi (Matplotlib / Seaborn)
+## Visualisasi (Matplotlib / Seaborn)
 
 ```python
 %matplotlib inline   # jika grafik tidak muncul di Jupyter
@@ -652,7 +932,9 @@ plt.savefig("gambar.png", dpi=150, bbox_inches="tight")
 sns.set_theme(style="whitegrid")  # panggil SEBELUM plot
 ```
 
-API (requests)
+> **Output:** _tidak dijalankan_ — perintah magic Jupyter (`%matplotlib inline`) yang tidak valid di skrip Python biasa; berisi tips, bukan kode untuk dijalankan
+
+## API (requests)
 
 ```python
 response = requests.get(url, timeout=10)
@@ -662,7 +944,17 @@ print(response.text[:200])
 import time; time.sleep(3)  # rate limit arXiv
 ```
 
-Scraping & arXiv
+**Output:**
+
+```text
+200
+```
+
+_Catatan: baris `url = ...` ditambahkan agar snippet dapat dijalankan; `time.sleep(3)` dipersingkat saat pengujian._
+
+_Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
+
+## Scraping & arXiv
 
 ```python
 el = soup.find("span", class_="text")
@@ -672,7 +964,15 @@ if el:
 # pip install feedparser
 ```
 
-Tips Debugging
+**Output:**
+
+```text
+“The world as we have created it is a process of our thinking.”
+```
+
+_Catatan: memakai variabel `soup` dari blok scraping sebelumnya._
+
+## Tips Debugging
 
 ```python
 print(response.status_code)
@@ -680,3 +980,246 @@ print(response.text[:300])
 # Gunakan try-except + data cadangan jika API gagal
 ```
 
+**Output:**
+
+```text
+200
+```
+
+_Catatan: memakai variabel `response` dari blok sebelumnya._
+
+# 9b. Troubleshooting Lengkap (Contoh Kasus)
+
+Berikut contoh kasus nyata untuk error dan jebakan yang sering muncul di Hari 5. Setiap kasus dijalankan terpisah. Kasus `requests` dijalankan terhadap server HTTP lokal sederhana (di bawah) agar error yang muncul asli dan dapat diulang tanpa internet.
+
+## Persiapan — server uji lokal
+
+```python
+import threading, time, json
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class H(BaseHTTPRequestHandler):
+    def log_message(self, *a): pass
+    def do_GET(self):
+        if self.path == "/ok":
+            body, ctype, code = json.dumps({"nama": "Ani"}), "application/json", 200
+        elif self.path == "/html":
+            body, ctype, code = "<html><body>Halaman, bukan JSON</body></html>", "text/html", 200
+        elif self.path == "/cuaca-error":
+            body, ctype, code = json.dumps({"error": True, "reason": "Parameter salah"}), "application/json", 200
+        elif self.path == "/lambat":
+            time.sleep(2); body, ctype, code = "{}", "application/json", 200
+        else:
+            body, ctype, code = "tidak ada", "text/plain", 404
+        self.send_response(code); self.send_header("Content-Type", ctype); self.end_headers()
+        self.wfile.write(body.encode())
+
+server = HTTPServer(("127.0.0.1", 8765), H)
+threading.Thread(target=server.serve_forever, daemon=True).start()
+BASE = "http://127.0.0.1:8765"
+
+import requests
+```
+
+_Catatan: server ini hanya untuk latihan troubleshooting; semua kasus `requests` di bawah memakai `BASE` yang sama (`http://127.0.0.1:8765`)._
+
+## Matplotlib — ukuran x dan y tidak sama
+
+```python
+# Kasus 1: panjang x dan y berbeda
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3], [10, 20])
+
+# Kasus 2: solusi — samakan panjang
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3], [10, 20, 30])
+print("OK:", len(plt.gca().lines), "garis")
+```
+
+**Output:**
+
+```text
+# Kasus 1: panjang x dan y berbeda
+  -> ValueError: x and y must have same first dimension, but have shapes (3,) and (2,)
+# Kasus 2: solusi — samakan panjang
+OK: 1 garis
+```
+
+## Seaborn — nama kolom salah
+
+```python
+# Kasus 1: kolom "total" tidak ada (seharusnya "total_bill")
+import seaborn as sns
+tips = sns.load_dataset("tips")
+sns.histplot(data=tips, x="total")
+
+# Kasus 2: periksa nama kolom lebih dulu
+import seaborn as sns
+tips = sns.load_dataset("tips")
+print(tips.columns.tolist())
+sns.histplot(data=tips, x="total_bill")
+print("OK")
+```
+
+**Output:**
+
+```text
+# Kasus 1: kolom "total" tidak ada (seharusnya "total_bill")
+  -> ValueError: Could not interpret value `total` for `x`. An entry with this name does not appear in `data`.
+# Kasus 2: periksa nama kolom lebih dulu
+['total_bill', 'tip', 'sex', 'smoker', 'day', 'time', 'size']
+OK
+```
+
+## requests — HTTPError (404) dan `raise_for_status()`
+
+```python
+# Kasus 1: tanpa raise_for_status, 404 lolos diam-diam
+r = requests.get(BASE + "/tidak-ada")
+print(r.status_code, r.text)
+
+# Kasus 2: raise_for_status() melempar HTTPError
+r = requests.get(BASE + "/tidak-ada")
+r.raise_for_status()
+```
+
+**Output:**
+
+```text
+# Kasus 1: tanpa raise_for_status, 404 lolos diam-diam
+404 tidak ada
+# Kasus 2: raise_for_status() melempar HTTPError
+  -> requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8765/tidak-ada
+```
+
+## requests — JSONDecodeError saat respons bukan JSON
+
+```python
+# Kasus 1: .json() pada halaman HTML
+r = requests.get(BASE + "/html")
+print(r.status_code, r.headers["Content-Type"])
+r.json()
+
+# Kasus 2: cek Content-Type / gunakan try-except
+r = requests.get(BASE + "/html")
+try:
+    data = r.json()
+except requests.exceptions.JSONDecodeError:
+    data = None
+    print("Respons bukan JSON:", r.text[:30])
+```
+
+**Output:**
+
+```text
+# Kasus 1: .json() pada halaman HTML
+200 text/html
+  -> requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+# Kasus 2: cek Content-Type / gunakan try-except
+Respons bukan JSON: <html><body>Halaman, bukan JSO
+```
+
+## requests — Timeout dan ConnectionError
+
+```python
+# Kasus 1: server lambat, timeout 0.5 detik
+requests.get(BASE + "/lambat", timeout=0.5)
+
+# Kasus 2: server tidak ada (port tertutup)
+requests.get("http://127.0.0.1:9/", timeout=2)
+
+# Kasus 3: solusi — tangkap RequestException
+try:
+    requests.get(BASE + "/lambat", timeout=0.5)
+except requests.exceptions.RequestException as e:
+    print("Gagal:", type(e).__name__)
+```
+
+**Output:**
+
+```text
+# Kasus 1: server lambat, timeout 0.5 detik
+  -> requests.exceptions.ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=8765): Read timed out. (read timeout=0.5)
+# Kasus 2: server tidak ada (port tertutup)
+  -> requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=9): Max retries exceeded with url: / (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=9): Failed to establish a new connection: [Errno 111] Connection refused"))
+# Kasus 3: solusi — tangkap RequestException
+Gagal: ReadTimeout
+```
+
+## KeyError — respons API berisi error, bukan data
+
+```python
+# Kasus 1: langsung mengakses key tanpa memeriksa
+data = requests.get(BASE + "/cuaca-error").json()
+print(data["current_weather"])
+
+# Kasus 2: solusi — gunakan .get() / cek key error
+data = requests.get(BASE + "/cuaca-error").json()
+if data.get("error"):
+    print("API error:", data["reason"])
+else:
+    print(data["current_weather"])
+```
+
+**Output:**
+
+```text
+# Kasus 1: langsung mengakses key tanpa memeriksa
+  -> KeyError: 'current_weather'
+# Kasus 2: solusi — gunakan .get() / cek key error
+API error: Parameter salah
+```
+
+## BeautifulSoup — AttributeError karena elemen tidak ditemukan
+
+```python
+# Kasus 1: find() mengembalikan None
+from bs4 import BeautifulSoup
+soup = BeautifulSoup("<div><span class='judul'>Halo</span></div>", "html.parser")
+print(soup.find("span", class_="text").get_text())
+
+# Kasus 2: solusi — periksa None dulu
+from bs4 import BeautifulSoup
+soup = BeautifulSoup("<div><span class='judul'>Halo</span></div>", "html.parser")
+el = soup.find("span", class_="text")
+print(el.get_text() if el else "Elemen tidak ditemukan")
+```
+
+**Output:**
+
+```text
+# Kasus 1: find() mengembalikan None
+  -> AttributeError: 'NoneType' object has no attribute 'get_text'
+# Kasus 2: solusi — periksa None dulu
+Elemen tidak ditemukan
+```
+
+## feedparser/arXiv — hasil kosong menyebabkan KeyError
+
+```python
+# Kasus 1: tidak ada entry (mis. format query salah)
+import feedparser, pandas as pd
+feed = feedparser.parse('<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"></feed>')
+df = pd.DataFrame([{"judul": e.title} for e in feed.entries])
+print(df.shape)
+print(df["judul"])
+
+# Kasus 2: solusi — cek df.empty sebelum diproses
+import feedparser, pandas as pd
+feed = feedparser.parse('<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"></feed>')
+df = pd.DataFrame([{"judul": e.title} for e in feed.entries])
+if df.empty:
+    print("Tidak ada hasil — cek query: all:keyword atau ti:keyword")
+```
+
+**Output:**
+
+```text
+# Kasus 1: tidak ada entry (mis. format query salah)
+(0, 0)
+  -> KeyError: 'judul'
+# Kasus 2: solusi — cek df.empty sebelum diproses
+Tidak ada hasil — cek query: all:keyword atau ti:keyword
+```
+
+> Materi Hari 5 Selesai Format Mini Project sudah konsisten  •  Latihan + Solusi lengkap  •  Siap ke Hari 6
