@@ -57,6 +57,13 @@ m2.update_ipk(3.40)
 print(m2.info())
 ```
 
+**Output**:
+
+```text
+Ani (2201) — Informatika, IPK 3.75
+Budi (2202) — Sistem Informasi, IPK 3.4
+```
+
 ## 3.3 Class Attribute vs Instance Attribute
 
 ```python
@@ -71,6 +78,12 @@ class Mahasiswa:
 a = Mahasiswa("Ani", "2201")
 b = Mahasiswa("Budi", "2202")
 print(Mahasiswa.jumlah)  # 2
+```
+
+**Output**:
+
+```text
+2
 ```
 
 ## 3.4 Latihan Class Dasar
@@ -114,6 +127,15 @@ print(isinstance(d, Pegawai))   # True
 print(issubclass(Dosen, Pegawai))  # True
 ```
 
+**Output**:
+
+```text
+Dr. Sari (D001) — Gaji: 12000000 | Bidang: Machine Learning
+Rina (S010) — Gaji: 7000000
+True
+True
+```
+
 ## 4.2 Latihan Inheritance
 
 4. Buat class Kendaraan (merek, tahun). Turunkan class Mobil dan Motor.
@@ -141,6 +163,27 @@ class Rekening:
             self.__saldo -= jumlah
         else:
             print("Transaksi gagal")
+```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya definisi class; uji cepat ada di bawah
+
+**Uji cepat** (kode tambahan untuk memverifikasi class di atas):
+
+```python
+r = Rekening("Ani", 100000)
+r.setor(50000)
+r.tarik(30000)
+print(r.get_saldo())      # 120000
+r.tarik(500000)           # gagal
+print(r.__saldo)          # akses langsung
+```
+
+**Output:**
+
+```text
+120000
+Transaksi gagal
+[ERROR] AttributeError: 'Rekening' object has no attribute '__saldo'. Did you mean: 'get_saldo'?
 ```
 
 ## 5.2 Special Methods
@@ -171,6 +214,14 @@ print(len(b1))     # 250
 print(b1 == b2)    # True
 ```
 
+**Output**:
+
+```text
+'Python Dasar' oleh Ani
+250
+True
+```
+
 ## 5.3 Context Manager
 
 ```python
@@ -191,6 +242,14 @@ class FileManager:
 with FileManager("catatan.txt", "w") as f:
     f.write("Belajar OOP di Hari 3\n")
 ```
+
+**Output**:
+
+```text
+Belajar OOP di Hari 3
+```
+
+_Catatan: baris `print(open("catatan.txt"...))` ditambahkan hanya untuk membuktikan isi file; file dibuat di folder sementara._
 
 # 6. Mini Project
 
@@ -249,6 +308,8 @@ while True:
     pilih = input("Pilih: ")
     # implementasi menu ...
 ```
+
+> **Output:** _tidak dijalankan/tanpa output_ — skeleton; method berisi `pass` dan loop menu `while True` memerlukan input interaktif — peserta wajib mengisinya
 
 > Tips Project 1 Gunakan enumerate() saat menampilkan daftar agar user bisa memilih index. Validasi index saat menandai selesai agar tidak IndexError.
 
@@ -334,34 +395,240 @@ perpustakaan = Perpustakaan()
 # tambah beberapa item sample, lalu loop menu
 ```
 
+> **Output:** _tidak dijalankan/tanpa output_ — skeleton; method `pinjam`, `kembalikan`, `cari` masih `pass` dan belum ada loop menu
+
 > Tips Project 2 Manfaatkan polymorphism: tampilkan() cukup memanggil print(item) karena tiap subclass punya __str__ sendiri. Method pinjam/kembalikan bisa memakai loop + break saat item ditemukan.
 
 # 7. Troubleshooting
 
 ```python
-
 # TypeError: __init__() missing arguments
-
 # → Pastikan saat membuat object, semua parameter wajib diisi
-
 # AttributeError: 'X' object has no attribute 'y'
-
 # → Cek apakah attribute di-set di __init__ atau method lain sudah dipanggil
-
 # super() tidak bekerja seperti yang diharapkan
-
 # → Pastikan class child memanggil super().__init__(...) dengan argumen yang benar
-
 # Semua object berbagi list yang sama
-
 # → Jangan pakai mutable default (list/dict) sebagai default argument
-
 #   Salah: def __init__(self, items=[]):
-
 #   Benar: def __init__(self, items=None):
-
 #            self.items = items if items is not None else []
 ```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya komentar; contoh kasus nyata dijalankan di bagian 7b
+
+# 7b. Troubleshooting Lengkap (Contoh Kasus)
+
+Berikut contoh kasus nyata untuk error dan jebakan yang sering muncul di Hari 3. Setiap kasus dijalankan terpisah agar semua hasilnya terlihat.
+
+## TypeError — argument `__init__` kurang
+
+```python
+class Mahasiswa:
+    def __init__(self, nama, nim, prodi):
+        self.nama = nama
+
+# Kasus 1: argument wajib tidak lengkap
+m = Mahasiswa("Ani", "2201")
+
+class Mahasiswa:
+    def sapa():                # lupa self
+        print("Halo")
+
+# Kasus 2: lupa `self` pada method
+Mahasiswa().sapa()
+
+# Solusi: lengkapi argument saat membuat object, dan selalu tulis self sebagai parameter pertama method
+```
+
+**Output:**
+
+```text
+# Kasus 1: argument wajib tidak lengkap
+  -> TypeError: Mahasiswa.__init__() missing 1 required positional argument: 'prodi'
+# Kasus 2: lupa `self` pada method
+  -> TypeError: Mahasiswa.sapa() takes 0 positional arguments but 1 was given
+```
+
+## AttributeError — attribute belum di-set
+
+```python
+class Mahasiswa:
+    def __init__(self, nama):
+        self.nama = nama
+
+# Kasus 1: attribute tidak ada
+m = Mahasiswa("Ani")
+print(m.nim)
+
+class Keranjang:
+    def isi(self):
+        self.item = ["buku"]
+
+# Kasus 2: attribute baru dibuat di method lain, method belum dipanggil
+k = Keranjang()
+print(k.item)
+
+# Solusi: set semua attribute di __init__ (atau panggil method yang membuatnya lebih dulu)
+```
+
+**Output:**
+
+```text
+# Kasus 1: attribute tidak ada
+  -> AttributeError: 'Mahasiswa' object has no attribute 'nim'
+# Kasus 2: attribute baru dibuat di method lain, method belum dipanggil
+  -> AttributeError: 'Keranjang' object has no attribute 'item'
+```
+
+## `super().__init__()` tidak dipanggil
+
+```python
+# Kasus 1: lupa memanggil super().__init__
+class Pegawai:
+    def __init__(self, nama, gaji):
+        self.nama = nama
+        self.gaji = gaji
+
+class Dosen(Pegawai):
+    def __init__(self, nama, gaji, bidang):
+        self.bidang = bidang       # super().__init__ tidak dipanggil
+
+d = Dosen("Dr. Sari", 12000000, "ML")
+print(d.bidang)
+print(d.nama)
+
+# Kasus 2: perbaikan
+class Pegawai:
+    def __init__(self, nama, gaji):
+        self.nama = nama
+        self.gaji = gaji
+
+class Dosen(Pegawai):
+    def __init__(self, nama, gaji, bidang):
+        super().__init__(nama, gaji)
+        self.bidang = bidang
+
+d = Dosen("Dr. Sari", 12000000, "ML")
+print(d.bidang)
+print(d.nama)
+```
+
+**Output:**
+
+```text
+# Kasus 1: lupa memanggil super().__init__
+ML
+  -> AttributeError: 'Dosen' object has no attribute 'nama'
+# Kasus 2: perbaikan
+ML
+Dr. Sari
+```
+
+## Mutable default argument — semua object berbagi list yang sama
+
+```python
+# Salah: default list dibuat sekali dan dipakai bersama
+class Kelas:
+    def __init__(self, nama, mahasiswa=[]):
+        self.nama = nama
+        self.mahasiswa = mahasiswa
+
+a = Kelas("A")
+b = Kelas("B")
+a.mahasiswa.append("Ani")
+print(a.mahasiswa)
+print(b.mahasiswa)          # ikut berubah!
+print(a.mahasiswa is b.mahasiswa)
+
+# Benar: gunakan None lalu buat list baru
+class Kelas:
+    def __init__(self, nama, mahasiswa=None):
+        self.nama = nama
+        self.mahasiswa = mahasiswa if mahasiswa is not None else []
+
+a = Kelas("A")
+b = Kelas("B")
+a.mahasiswa.append("Ani")
+print(a.mahasiswa)
+print(b.mahasiswa)
+print(a.mahasiswa is b.mahasiswa)
+```
+
+**Output:**
+
+```text
+# Salah: default list dibuat sekali dan dipakai bersama
+['Ani']
+['Ani']
+True
+# Benar: gunakan None lalu buat list baru
+['Ani']
+[]
+False
+```
+
+## Atribut private `__saldo` — name mangling
+
+```python
+# Kasus 1: akses langsung ke self.__saldo dari luar class
+class Rekening:
+    def __init__(self, saldo=0):
+        self.__saldo = saldo
+
+r = Rekening(100)
+print(r.__saldo)
+
+# Kasus 2: nama sebenarnya setelah name mangling
+class Rekening:
+    def __init__(self, saldo=0):
+        self.__saldo = saldo
+
+r = Rekening(100)
+print([a for a in vars(r)])
+print(r._Rekening__saldo)
+```
+
+**Output:**
+
+```text
+# Kasus 1: akses langsung ke self.__saldo dari luar class
+  -> AttributeError: 'Rekening' object has no attribute '__saldo'
+# Kasus 2: nama sebenarnya setelah name mangling
+['_Rekening__saldo']
+100
+```
+
+## Lupa `__str__` / membandingkan object tanpa `__eq__`
+
+```python
+# Kasus 1: print object tanpa __str__
+class Buku:
+    def __init__(self, judul):
+        self.judul = judul
+
+print(Buku("Python"))
+
+# Kasus 2: == tanpa __eq__ membandingkan identitas object
+class Buku:
+    def __init__(self, judul):
+        self.judul = judul
+
+print(Buku("Python") == Buku("Python"))
+```
+
+**Output:**
+
+```text
+# Kasus 1: print object tanpa __str__
+<__main__.Buku object at 0x7fcbb6e21350>
+# Kasus 2: == tanpa __eq__ membandingkan identitas object
+False
+```
+
+_Catatan: alamat memori pada `<__main__.Buku object at 0x...>` berbeda di setiap eksekusi._
+
+> **Catatan tentang private:** di Python `__nama` bukan benar-benar private, melainkan di-"mangle" menjadi `_NamaClass__nama`. Karena itu komentar `# private-by-convention` pada contoh `Rekening` di bagian 5.1 sebenarnya kurang tepat — konvensi yang sebenarnya adalah awalan satu underscore (`_saldo`); awalan dua underscore hanya mencegah bentrok nama pada inheritance dan tidak menghalangi akses.
 
 # 8. Solusi Latihan
 
@@ -400,6 +667,16 @@ print(r1.info())
 print(r2.info())
 ```
 
+**Output**:
+
+```text
+Setor 200000. Saldo: 700000
+Tarik 100000. Saldo: 600000
+Saldo tidak cukup atau jumlah tidak valid
+Ani (001) — Saldo: Rp600,000
+Budi (002) — Saldo: Rp1,000,000
+```
+
 ## 8.2 Solusi Inheritance — Kendaraan
 
 ```python
@@ -433,5 +710,11 @@ print(m.info())
 print(n.info())
 ```
 
-> Hari 3 Selesai Kerjakan Mini Project 1 (wajib) dan Project 2 (challenge). Pastikan menggunakan class, inheritance, dan __str__ dengan benar. Lanjut ke Hari 4: NumPy & Pandas.
+**Output**:
 
+```text
+[Mobil] Toyota (2022) — 4 pintu
+[Motor] Honda (2023) — Matic
+```
+
+> Hari 3 Selesai Kerjakan Mini Project 1 (wajib) dan Project 2 (challenge). Pastikan menggunakan class, inheritance, dan __str__ dengan benar. Lanjut ke Hari 4: NumPy & Pandas.

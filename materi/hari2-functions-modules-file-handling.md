@@ -46,10 +46,16 @@ sapa()          # memanggil function
 sapa()          # bisa dipanggil berkali-kali
 ```
 
+**Output**:
+
+```text
+Halo, selamat belajar Python!
+Halo, selamat belajar Python!
+```
+
 ## 3.3 Parameter dan Argument
 
 ```python
-
 # Parameter tunggal
 def sapa_nama(nama):
     print(f"Halo, {nama}!")
@@ -65,6 +71,15 @@ perkenalan("Ani", "Informatika", 3)
 
 # Keyword argument (urutan bebas)
 perkenalan(semester=5, nama="Citra", prodi="SI")
+```
+
+**Output**:
+
+```text
+Halo, Rina!
+Halo, Budi!
+Saya Ani, prodi Informatika, semester 3.
+Saya Citra, prodi SI, semester 5.
 ```
 
 ## 3.4 Default Argument
@@ -83,6 +98,16 @@ def hitung(a, b=10, c=5):
 print(hitung(1))              # 16
 print(hitung(1, 2))           # 8
 print(hitung(1, 2, 3))        # 6
+```
+
+**Output**:
+
+```text
+Halo, Rina!
+Selamat pagi, Rina!
+16
+8
+6
 ```
 
 ## 3.5 Return Value
@@ -117,10 +142,20 @@ print(cek_lulus(60))
 print(cek_lulus(105))
 ```
 
+**Output**:
+
+```text
+25
+59
+Luas: 25, Keliling: 20
+Lulus
+Tidak Lulus
+Nilai tidak valid
+```
+
 ## 3.6 *args dan **kwargs
 
 ```python
-
 # *args → menerima banyak positional argument sebagai tuple
 def jumlahkan(*angka):
     total = 0
@@ -147,6 +182,19 @@ def fungsi_lengkap(wajib, *args, **kwargs):
 fungsi_lengkap("utama", 1, 2, 3, nama="Budi", umur=20)
 ```
 
+**Output**:
+
+```text
+6
+100
+nama: Ani
+prodi: IF
+ipk: 3.8
+Wajib: utama
+Args: (1, 2, 3)
+Kwargs: {'nama': 'Budi', 'umur': 20}
+```
+
 ## 3.7 Scope (Local vs Global)
 
 ```python
@@ -167,6 +215,14 @@ def tambah_counter():
 
 tambah_counter()
 print(counter)            # 1
+```
+
+**Output**:
+
+```text
+Dalam fungsi: 20
+Luar fungsi: 10
+1
 ```
 
 > Best Practice Scope Hindari penggunaan 'global' sebisa mungkin. Lebih baik menggunakan return value. Function yang baik bersifat pure: menerima input → memproses → mengembalikan output, tanpa side effect tersembunyi.
@@ -191,6 +247,25 @@ def hitung_ipk(nilai1, nilai2, nilai3):
 help(hitung_ipk)          # menampilkan docstring
 ```
 
+**Output**:
+
+```text
+Help on function hitung_ipk in module __main__:
+
+hitung_ipk(nilai1, nilai2, nilai3)
+    Menghitung rata-rata dari tiga nilai.
+    
+    Parameters:
+        nilai1 (float): Nilai pertama
+        nilai2 (float): Nilai kedua
+        nilai3 (float): Nilai ketiga
+    
+    Returns:
+        float: Rata-rata ketiga nilai
+```
+
+_Catatan: `help()` menampilkan docstring lewat pager; di sini output apa adanya saat tidak interaktif._
+
 ## 3.9 Latihan Modul 1 — Functions
 
 1. Buat function hitung_luas_segitiga(alas, tinggi) yang mengembalikan luas.
@@ -206,7 +281,6 @@ help(hitung_ipk)          # menampilkan docstring
 Lambda adalah function anonim (tanpa nama) yang biasanya digunakan untuk operasi sederhana dalam satu baris.
 
 ```python
-
 # Function biasa
 def kuadrat(x):
     return x ** 2
@@ -230,6 +304,15 @@ mahasiswa = [
 ]
 urut = sorted(mahasiswa, key=lambda m: m["ipk"], reverse=True)
 print(urut)
+```
+
+**Output**:
+
+```text
+25
+10
+20
+[{'nama': 'Budi', 'ipk': 3.9}, {'nama': 'Ani', 'ipk': 3.5}, {'nama': 'Citra', 'ipk': 3.2}]
 ```
 
 ## 4.2 map()
@@ -261,6 +344,15 @@ angka_int = list(map(int, teks_angka))
 print(angka_int)
 ```
 
+**Output**:
+
+```text
+[2, 4, 6, 8, 10]
+[2, 4, 6, 8, 10]
+[11, 22, 33]
+[10, 20, 30]
+```
+
 ## 4.3 filter()
 
 filter() menyaring elemen iterable berdasarkan kondisi (function yang return True/False).
@@ -289,6 +381,15 @@ mhs = [
 ]
 lulus = list(filter(lambda m: m["ipk"] >= 3.0, mhs))
 print(lulus)
+```
+
+**Output**:
+
+```text
+[2, 4, 6, 8, 10]
+[6, 7, 8, 9, 10]
+['Ani', 'Eka']
+[{'nama': 'Ani', 'ipk': 3.5}, {'nama': 'Citra', 'ipk': 3.9}]
 ```
 
 ## 4.4 List Comprehension
@@ -326,6 +427,18 @@ print(kuadrat_dict)             # {1:1, 2:4, 3:9, 4:16, 5:25}
 # Set comprehension
 unik = {x % 3 for x in range(10)}
 print(unik)                     # {0, 1, 2}
+```
+
+**Output**:
+
+```text
+[1, 4, 9, 16, 25]
+[2, 4]
+['ganjil', 'genap', 'ganjil', 'genap', 'ganjil']
+[1, 2, 3, 4, 5, 6]
+['P', 'Y', 'T', 'H', 'N']
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+{0, 1, 2}
 ```
 
 > Kapan pakai apa? List comprehension → pilihan utama untuk membuat list baru (paling readable). map/filter → berguna jika sudah punya function yang siap pakai. Lambda → cocok untuk operasi sangat sederhana, terutama sebagai key di sorted().
@@ -371,12 +484,30 @@ besok = sekarang + timedelta(days=1)
 print(besok.date())
 ```
 
+**Output**:
+
+```text
+4.0
+3.141592653589793
+4
+3
+5.0
+3.141592653589793
+6.0
+7
+B
+[30, 48, 35, 4, 49, 16]
+2026-10-01 08:05
+2026-10-02
+```
+
+_Catatan: random.randint/choice/sample dan datetime.now() berubah di setiap eksekusi; nilai di atas hanya contoh satu kali jalan._
+
 ## 5.3 Membuat Module Sendiri
 
 Buat file matematika_utils.py:
 
 ```python
-
 # File: matematika_utils.py
 """Kumpulan function matematika sederhana."""
 
@@ -400,6 +531,8 @@ def cek_prima(n):
     return True
 ```
 
+> **Output:** _tidak dijalankan/tanpa output_ — definisi module `matematika_utils.py` saja (dipakai oleh blok berikutnya)
+
 Lalu di file utama (main.py):
 
 ```python
@@ -414,24 +547,37 @@ from matematika_utils import luas_lingkaran, cek_prima
 print(luas_lingkaran(5))
 ```
 
+**Output**:
+
+```text
+153.93791
+True
+3.14159
+78.53975
+```
+
+_Catatan: dijalankan dengan file `matematika_utils.py` dari blok sebelumnya di folder yang sama._
+
 ## 5.4 Struktur Package Sederhana
 
 ```python
-
 # Struktur folder:
-
 # mypackage/
-
 # ├── __init__.py          (boleh kosong)
-
 # ├── matematika.py
-
 # └── string_utils.py
-
 # Cara import:
 from mypackage import matematika
 from mypackage.string_utils import slugify
 ```
+
+**Output**:
+
+```text
+import berhasil
+```
+
+_Catatan: materi tidak mendefinisikan `slugify`; untuk pengujian dibuat `mypackage/` dengan `matematika.py` dan `string_utils.py` (berisi `slugify`). Baris `print("import berhasil")` ditambahkan hanya untuk bukti import sukses._
 
 ## 5.5 Latihan Modul 3
 
@@ -470,6 +616,24 @@ except Exception as e:
     print(f"Terjadi error: {e}")
 ```
 
+**Output**:
+
+```text
+# skenario 1 — input: 7, 0
+Masukkan angka: 7
+Hasil: 14
+Pembagi: 0
+Tidak bisa dibagi nol!
+
+# skenario 2 — input: abc, 5
+Masukkan angka: abc
+Input harus berupa angka!
+Pembagi: 5
+2.0
+```
+
+_Catatan: dua skenario dijalankan terpisah; di skenario 2 input `abc` memicu ValueError pada `int()` pertama sehingga blok `try` kedua tetap menerima `5`._
+
 ## 6.3 else dan finally
 
 ```python
@@ -488,6 +652,25 @@ finally:
     print("Proses selesai.")
 ```
 
+**Output**:
+
+```text
+# skenario 1 — input: 4
+Angka: 4
+Hasil: 25.0
+Proses selesai.
+
+# skenario 2 — input: 0
+Angka: 0
+Jangan masukkan 0!
+Proses selesai.
+
+# skenario 3 — input: abc
+Angka: abc
+Bukan angka!
+Proses selesai.
+```
+
 ## 6.4 raise — Memunculkan Error Sendiri
 
 ```python
@@ -504,6 +687,12 @@ except (TypeError, ValueError) as e:
     print(f"Error: {e}")
 ```
 
+**Output**:
+
+```text
+Error: Umur tidak masuk akal
+```
+
 ## 6.5 Latihan Modul 4
 
 12. Buat program pembagian yang menangani ValueError dan ZeroDivisionError dengan baik.
@@ -514,7 +703,6 @@ except (TypeError, ValueError) as e:
 ## 7.1 Membaca & Menulis File Teks
 
 ```python
-
 # Menulis file (mode 'w' = write, menimpa; 'a' = append)
 with open("catatan.txt", "w", encoding="utf-8") as f:
     f.write("Halo, ini baris pertama.\n")
@@ -534,6 +722,18 @@ with open("catatan.txt", "r", encoding="utf-8") as f:
 with open("catatan.txt", "r", encoding="utf-8") as f:
     baris_list = f.readlines()
 ```
+
+**Output**:
+
+```text
+Halo, ini baris pertama.
+Ini baris kedua.
+
+Halo, ini baris pertama.
+Ini baris kedua.
+```
+
+_Catatan: dijalankan di folder sementara; `catatan.txt` dibuat otomatis. Baris kosong ekstra setelah "baris kedua" berasal dari `print(isi)` (isi berakhir `\n`)._
 
 > Penting: with statement Selalu gunakan 'with open(...) as f' agar file otomatis ditutup, bahkan jika terjadi error. Ini adalah praktik terbaik (context manager).
 
@@ -565,6 +765,21 @@ print(isi)
 for f in Path(".").glob("*.py"):
     print(f.name)
 ```
+
+**Output**:
+
+```text
+False
+False
+False
+Ani,2201,3.75
+Budi,2202,3.50
+
+main.py
+_run.py
+```
+
+_Catatan: di folder sementara hanya ada `main.py` dan `_run.py` (skrip penguji), jadi hanya itu yang terdaftar oleh `glob("*.py")`. Pada percobaan pertama `exists()` bernilai False karena folder `data` belum dibuat._
 
 ## 7.3 Membaca & Menulis CSV
 
@@ -608,6 +823,17 @@ with open("mahasiswa2.csv", "w", newline="", encoding="utf-8") as f:
     writer.writerows(data_dict)
 ```
 
+**Output**:
+
+```text
+['Ani', '2201', '3.75']
+['Budi', '2202', '3.50']
+['Citra', '2203', '3.90']
+Ani - IPK: 3.75
+Budi - IPK: 3.50
+Citra - IPK: 3.90
+```
+
 ## 7.4 Latihan Modul 5
 
 14. Tulis daftar 5 mata kuliah ke file mk.txt (satu per baris), lalu baca dan tampilkan.
@@ -632,7 +858,6 @@ Buat program untuk mencatat kegiatan akademik harian mahasiswa (kuliah, mengerja
 ## 8.3 Struktur Data yang Disarankan
 
 ```python
-
 # List of Dictionary
 kegiatan = [
     {
@@ -644,6 +869,8 @@ kegiatan = [
     # ...
 ]
 ```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya definisi struktur data, tidak mencetak apa pun
 
 ## 8.4 Ketentuan Teknis
 
@@ -689,6 +916,8 @@ while True:
     # menu + if-elif
 ```
 
+> **Output:** _tidak dijalankan/tanpa output_ — skeleton; `while True:` hanya berisi komentar sehingga belum valid dijalankan (IndentationError) — peserta wajib mengisinya
+
 > Tips Mini Project 1 Kerjakan dulu fitur muat_data dan simpan_data — ini fondasinya. Gunakan date.today().isoformat() untuk tanggal otomatis jika ingin. Uji dengan menambah data, tutup program, buka lagi — data harus tetap ada.
 
 # 9. Mini Project 2 — Sistem Perpustakaan Mini (Level Lebih Tinggi)
@@ -709,17 +938,14 @@ Buat sistem sederhana untuk mengelola koleksi buku dan peminjaman. Data buku dan
 ## 9.3 Struktur Data yang Disarankan
 
 ```python
-
 # buku.csv
-
 # id,judul,penulis,tahun,stok
-
 # peminjaman.csv
-
 # id,id_buku,nama_peminjam,tanggal_pinjam,status
-
 # status: "aktif" atau "selesai"
 ```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya komentar (contoh format CSV)
 
 ## 9.4 Ketentuan Teknis
 
@@ -750,6 +976,8 @@ def tampilkan_peminjaman_aktif(peminjaman, buku): ...
 # Program utama dengan menu
 ```
 
+> **Output:** _tidak dijalankan/tanpa output_ — skeleton (function berisi `...`, tanpa logika menu)
+
 > Tips Mini Project 2 Mulai dari CRUD buku dulu sampai lancar. Baru kerjakan fitur pinjam dan kembalikan. Gunakan ID unik agar relasi antara buku dan peminjaman mudah. Banyak gunakan function agar kode tidak berantakan.
 
 # 10. Troubleshooting Hari 2
@@ -757,49 +985,240 @@ def tampilkan_peminjaman_aktif(peminjaman, buku): ...
 ## 10.1 Function terkait
 
 ```python
-
 # TypeError: function missing required argument
-
 # → Anda memanggil function tanpa memberi argument yang wajib
-
 # UnboundLocalError
-
 # → Anda mengubah variabel yang sama dengan nama global di dalam function
-
 #   tanpa menulis 'global'. Solusi: gunakan return, hindari global.
 ```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya komentar; contoh kasus nyata ada di bagian 10b
 
 ## 10.2 File Handling
 
 ```python
-
 # FileNotFoundError
-
 # → File yang ingin dibaca belum ada. Cek path atau buat file dulu.
-
 # PermissionError
-
 # → Tidak punya izin menulis di folder tersebut.
-
 # csv.Error atau data berantakan
-
 # → Selalu gunakan newline="" saat open untuk menulis CSV di Windows.
-
 # UnicodeEncodeError / DecodeError
-
 # → Selalu tentukan encoding="utf-8".
 ```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya komentar; contoh kasus nyata ada di bagian 10b
 
 ## 10.3 Module
 
 ```python
-
 # ModuleNotFoundError
-
 # → File module tidak berada di folder yang sama / sys.path tidak mengandung folder tersebut.
-
 # → Atau virtual environment belum diaktifkan.
 ```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya komentar; contoh kasus nyata ada di bagian 10b
+
+# 10b. Troubleshooting Lengkap (Contoh Kasus)
+
+Berikut contoh kasus nyata untuk error yang sering muncul di Hari 2. Setiap kasus dijalankan terpisah di folder sementara agar semua error terlihat.
+
+## TypeError — argument kurang / berlebih
+
+```python
+def perkenalan(nama, prodi):
+    print(f"Saya {nama} dari {prodi}")
+
+# Kasus 1: argument wajib tidak diberikan
+perkenalan("Ani")
+
+# Kasus 2: argument berlebih
+perkenalan("Ani", "IF", 3)
+
+# Solusi: sesuaikan jumlah argument, atau beri default → def perkenalan(nama, prodi="-")
+```
+
+**Output:**
+
+```text
+# Kasus 1: argument wajib tidak diberikan
+  -> TypeError: perkenalan() missing 1 required positional argument: 'prodi'
+# Kasus 2: argument berlebih
+  -> TypeError: perkenalan() takes 2 positional arguments but 3 were given
+```
+
+## UnboundLocalError — mengubah variabel global tanpa `global`
+
+```python
+counter = 0
+
+def tambah():
+    counter += 1      # UnboundLocalError
+    return counter
+
+tambah()
+
+# Solusi 1: return nilai baru → counter = tambah(counter)
+# Solusi 2: gunakan `global counter` (hindari jika memungkinkan)
+```
+
+**Output:**
+
+```text
+UnboundLocalError: cannot access local variable 'counter' where it is not associated with a value
+```
+
+## FileNotFoundError — file belum ada
+
+```python
+# Kasus 1: baca file yang belum dibuat
+with open("tidak_ada.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+# Solusi: cek dulu dengan pathlib atau tangani dengan try-except
+```
+
+**Output:**
+
+```text
+FileNotFoundError: [Errno 2] No such file or directory: 'tidak_ada.txt'
+```
+
+## Menangani FileNotFoundError dengan try-except / pathlib
+
+```python
+from pathlib import Path
+
+try:
+    with open("tidak_ada.txt", "r", encoding="utf-8") as f:
+        isi = f.read()
+except FileNotFoundError:
+    print("File belum ada, membuat file kosong...")
+    Path("tidak_ada.txt").write_text("", encoding="utf-8")
+
+print(Path("tidak_ada.txt").exists())
+```
+
+**Output:**
+
+```text
+File belum ada, membuat file kosong...
+True
+```
+
+## UnicodeEncodeError — lupa/salah `encoding`
+
+```python
+# Menulis karakter non-ASCII dengan encoding ascii
+with open("uji.txt", "w", encoding="ascii") as f:
+    f.write("Café — Ünicode")
+
+# Solusi: selalu pakai encoding="utf-8"
+```
+
+**Output:**
+
+```text
+UnicodeEncodeError: 'ascii' codec can't encode character '\xe9' in position 3: ordinal not in range(128)
+```
+
+## UnicodeDecodeError — membaca dengan encoding yang berbeda
+
+```python
+with open("uji.txt", "w", encoding="utf-8") as f:
+    f.write("Café — Ünicode")
+
+# File ditulis UTF-8 tetapi dibaca sebagai ascii
+with open("uji.txt", "r", encoding="ascii") as f:
+    print(f.read())
+
+# Solusi: baca dengan encoding yang sama dengan saat menulis → encoding="utf-8"
+```
+
+**Output:**
+
+```text
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 3: ordinal not in range(128)
+```
+
+## CSV — efek `newline=""`
+
+```python
+import csv
+
+with open("a.csv", "w", newline="", encoding="utf-8") as f:
+    csv.writer(f).writerows([["nama", "ipk"], ["Ani", "3.75"]])
+
+with open("a.csv", "rb") as f:
+    print(f.read())
+
+# Dengan newline="" Python tidak menambah konversi baris sendiri.
+# Tanpa newline="" di Windows, \r\n bisa berubah menjadi \r\r\n sehingga muncul baris kosong ekstra.
+```
+
+**Output:**
+
+```text
+b'nama,ipk\r\nAni,3.75\r\n'
+```
+
+_Catatan: Efek baris kosong ganda hanya muncul di Windows; di Linux (lingkungan pengujian) kedua cara menghasilkan byte yang sama, jadi yang ditampilkan adalah isi byte file dengan `newline=""`._
+
+## ModuleNotFoundError — module tidak ditemukan
+
+```python
+# Kasus 1: nama module salah / belum ada
+import matematika_utils
+
+# Solusi: pastikan file matematika_utils.py ada di folder yang sama,
+# atau aktifkan virtual environment bila itu library pihak ketiga (pip install ...).
+```
+
+**Output:**
+
+```text
+ModuleNotFoundError: No module named 'matematika_utils'
+```
+
+## ModuleNotFoundError teratasi setelah file module ada
+
+```python
+import sys
+print("matematika_utils" in sys.modules)
+
+import matematika_utils as mu
+print(mu.cek_prima(17))
+```
+
+**Output:**
+
+```text
+False
+True
+```
+
+_Catatan: Folder pengujian berisi `matematika_utils.py` dari bagian 5.3._
+
+## PermissionError — tidak punya izin menulis
+
+```python
+from pathlib import Path
+
+try:
+    Path("/folder/terlindungi/data.txt").write_text("x", encoding="utf-8")
+except PermissionError:
+    print("Tidak punya izin menulis di folder tersebut.")
+except FileNotFoundError:
+    print("Folder tujuan tidak ada.")
+```
+
+**Output:**
+
+```text
+Folder tujuan tidak ada.
+```
+
+_Catatan: `PermissionError` bergantung pada hak akses sistem file sehingga tidak dapat direproduksi andal di lingkungan pengujian ini (berjalan sebagai root). Kode di atas menunjukkan cara menanganinya; solusinya: tulis ke folder yang boleh ditulis (mis. folder project) atau ubah izin folder._
 
 # 11. Solusi Latihan Hari 2
 
@@ -829,6 +1248,31 @@ def konversi_nilai(angka):
     else: return "E"
 ```
 
+> **Output:** _tidak dijalankan/tanpa output_ — hanya definisi function; uji cepat ada di bawah
+
+**Uji cepat** (kode tambahan untuk memverifikasi function di atas):
+
+```python
+from math import isclose
+print(hitung_luas_segitiga(10, 4))
+print(cek_genap(8), cek_genap(7))
+print(rata_rata(80, 90, 70), rata_rata())
+info_mahasiswa(nama="Ani", prodi="IF", ipk=3.8)
+print([konversi_nilai(n) for n in (95, 75, 60, 45, 10)])
+```
+
+**Output:**
+
+```text
+20.0
+True False
+80.0 0
+nama: Ani
+prodi: IF
+ipk: 3.8
+['A', 'B', 'C', 'D', 'E']
+```
+
 ## 11.2 Solusi Lambda / List Comp
 
 ```python
@@ -841,6 +1285,26 @@ nama = ["Ani", "Budi", "Citra", "Eko", "Fajar"]
 panjang = list(filter(lambda n: len(n) > 4, nama))
 
 paritas = {x: ("genap" if x % 2 == 0 else "ganjil") for x in range(1, 11)}
+```
+
+> **Output:** _tidak dijalankan/tanpa output_ — hanya ekspresi tanpa print; uji cepat ada di bawah
+
+**Uji cepat** (kode tambahan untuk memverifikasi function di atas):
+
+```python
+print(kuadrat)
+print(bonus)
+print(panjang)
+print(paritas)
+```
+
+**Output:**
+
+```text
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]
+[82.5, 99.00000000000001, 88.0]
+['Citra', 'Fajar']
+{1: 'ganjil', 2: 'genap', 3: 'ganjil', 4: 'genap', 5: 'ganjil', 6: 'genap', 7: 'ganjil', 8: 'genap', 9: 'ganjil', 10: 'genap'}
 ```
 
 ## 11.3 Solusi File Handling (contoh)
@@ -856,12 +1320,21 @@ Path("mk.txt").write_text("\n".join(mk), encoding="utf-8")
 print(Path("mk.txt").read_text(encoding="utf-8"))
 ```
 
+**Output**:
+
+```text
+Kalkulus
+Fisika
+Pemrograman
+Basis Data
+AI
+```
+
 > ✓ Materi Hari 2 Selesai Kerjakan kedua Mini Project  •  Siapkan diri untuk Hari 3 (OOP)
 
 11.4 Solusi Modul 3 — Modules & Packages
 
 ```python
-
 # File: matematika.py
 def tambah(a, b):
     return a + b
@@ -880,10 +1353,19 @@ print(kali(5, 6))              # 30
 print(PI)
 ```
 
+**Output**:
+
+```text
+7
+30
+3.14159
+```
+
+_Catatan: dijalankan sebagai dua file (`matematika.py` dan `main.py`) di folder yang sama._
+
 11.5 Solusi Modul 4 — Error Handling
 
 ```python
-
 # Soal: fungsi bagi yang aman
 def bagi(a, b):
     try:
@@ -912,6 +1394,21 @@ def input_angka(prompt):
             print("Masukkan angka yang valid!")
 ```
 
+**Output**:
+
+```text
+Operasi selesai
+5.0
+Error: tidak bisa dibagi nol
+Operasi selesai
+None
+Error: input harus angka
+Operasi selesai
+None
+```
+
+_Catatan: urutan: "Operasi selesai" tercetak lebih dulu karena `finally` berjalan sebelum hasil `print()` luar._
+
 Tips Mini Project Hari 2
 
 • Pecah logika menjadi function kecil (satu function = satu tugas).
@@ -921,4 +1418,3 @@ Tips Mini Project Hari 2
 • Simpan data ke CSV agar mudah dibaca ulang.
 
 • Uji setiap menu satu per satu sebelum menggabungkan.
-
