@@ -2,6 +2,8 @@
 
 Python Intensive Bootcamp  •  Durasi 6 Jam  •  Level Menengah  •  5 Mini Project
 
+> **Catatan pengujian:** seluruh kode diuji dengan Python 3.11, numpy 2.4.6, pandas 3.0.6, openpyxl 3.1.5. Output pada bagian "Output" adalah hasil eksekusi nyata; blok yang saling bergantung (mis. `df`) dijalankan berurutan dalam satu sesi.
+
 # 1. Tujuan Pembelajaran
 
 Setelah menyelesaikan Hari 4, peserta diharapkan mampu:
@@ -12,6 +14,7 @@ Setelah menyelesaikan Hari 4, peserta diharapkan mampu:
 - Melakukan grouping, aggregation, merging, joining, serta membuat pivot table.
 - Membaca data dari file CSV dan Excel, serta menyimpan hasil analisis kembali ke file.
 - Menyelesaikan minimal tiga dari lima Mini Project yang disediakan pada materi ini.
+
 # 2. Agenda dan Alokasi Waktu
 
 | Waktu | Sesi | Durasi | Fokus |
@@ -64,6 +67,56 @@ np.random.randn(3, 3)           # distribusi normal standar (mean=0, std=1)
 np.random.randint(1, 100, size=(2, 5))  # bilangan bulat acak
 ```
 
+**Output:**
+
+```text
+(5,)
+(2, 3)
+1
+2
+int64
+float64
+```
+
+**Uji cepat** (baris ekspresi tanpa `print` pada kode di atas tidak menampilkan apa pun; ini versi dengan `print`):
+
+```python
+np.random.seed(42)
+print(np.zeros(5))
+print(np.ones((2, 3)))
+print(np.full((2, 2), 7))
+print(np.eye(4))
+print(np.arange(0, 12, 2))
+print(np.linspace(0, 1, 6))
+print(np.random.rand(3, 3))
+print(np.random.randn(3, 3))
+print(np.random.randint(1, 100, size=(2, 5)))
+```
+
+**Output:**
+
+```text
+[0. 0. 0. 0. 0.]
+[[1. 1. 1.]
+ [1. 1. 1.]]
+[[7 7]
+ [7 7]]
+[[1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]]
+[ 0  2  4  6  8 10]
+[0.  0.2 0.4 0.6 0.8 1. ]
+[[0.37454012 0.95071431 0.73199394]
+ [0.59865848 0.15601864 0.15599452]
+ [0.05808361 0.86617615 0.60111501]]
+[[-0.58087813 -0.52516981 -0.57138017]
+ [-0.92408284 -2.61254901  0.95036968]
+ [ 0.81644508 -1.523876   -0.42804606]]
+[[80 15 62 62 47]
+ [62 51 55 64  3]]
+```
+
 ## 3.3 Indexing, Slicing, dan Boolean Masking
 
 Kemampuan untuk memilih dan memfilter elemen array merupakan salah satu kekuatan utama NumPy. Perhatikan contoh-contoh berikut:
@@ -93,6 +146,25 @@ print(arr[mask])
 
 # np.where : mengganti nilai berdasarkan kondisi
 print(np.where(arr > 70, arr, -1))   # yang <= 70 diganti menjadi -1
+```
+
+**Output:**
+
+```text
+30
+120
+[50 60 70 80]
+[[20 30]
+ [60 70]]
+[ 30  70 110]
+[[ 10  30]
+ [ 90 110]]
+[ 70  80  90 100 110 120]
+[ 20  40  60  80 100 120]
+[50 60 70 80 90]
+[[ -1  -1  -1  -1]
+ [ -1  -1  -1  80]
+ [ 90 100 110 120]]
 ```
 
 ## 3.4 Operasi Aritmatika, Aggregasi, dan Broadcasting
@@ -130,6 +202,24 @@ nilai_akhir = (nilai * bobot).sum(axis=1)
 print(nilai_akhir)
 ```
 
+**Output:**
+
+```text
+[11 22 33 44]
+[ 3  6  9 12]
+[ 1  4  9 16]
+[1.         1.41421356 1.73205081 2.        ]
+[ 2.71828183  7.3890561  20.08553692 54.59815003]
+10 2.5 1.118033988749895
+1 4
+0 3
+2.5
+3.25
+[12 15 18 21]
+[ 6 22 38]
+[81.  73.5 91.4]
+```
+
 ## 3.5 Manipulasi Shape
 
 ```python
@@ -141,12 +231,27 @@ print(np.vstack([a, a]))          # menumpuk secara vertikal
 print(np.hstack([a, a]))          # menumpuk secara horizontal
 ```
 
+**Output:**
+
+```text
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+[[ 0  1  2  3  4  5]
+ [ 6  7  8  9 10 11]]
+[ 0  1  2  3  4  5  6  7  8  9 10 11]
+[[ 0  1  2  3  4  5  6  7  8  9 10 11]
+ [ 0  1  2  3  4  5  6  7  8  9 10 11]]
+[ 0  1  2  3  4  5  6  7  8  9 10 11  0  1  2  3  4  5  6  7  8  9 10 11]
+```
+
 ## 3.6 Latihan NumPy
 
 1. Buat array berukuran 6x6 yang berisi angka 1 sampai 36. Ambil bagian tengahnya (sub-array 4x4), kemudian hitung nilai mean dan standar deviasinya.
 2. Buat dua buah array random yang masing-masing berisi 100 elemen. Hitung korelasi Pearson antara kedua array tersebut.
 3. Lakukan normalisasi min-max terhadap sebuah array random sehingga seluruh nilainya berada pada rentang 0 sampai 1.
 4. Buat matriks identitas berukuran 5x5, kemudian ganti seluruh elemen pada diagonal utamanya menjadi [10, 20, 30, 40, 50].
+
 # 4. Pandas — Series dan DataFrame
 
 ## 4.1 Series
@@ -164,6 +269,31 @@ print(s[s >= 90])
 print(s.mean())
 print(s.std())
 print(s.describe())
+```
+
+**Output:**
+
+```text
+Ani      85
+Budi     90
+Citra    78
+Dedi     92
+dtype: int64
+90
+Budi    90
+Dedi    92
+dtype: int64
+86.25
+6.238322424070967
+count     4.000000
+mean     86.250000
+std       6.238322
+min      78.000000
+25%      83.250000
+50%      87.500000
+75%      90.500000
+max      92.000000
+dtype: float64
 ```
 
 ## 4.2 DataFrame
@@ -196,6 +326,85 @@ print(df["prodi"].unique())
 print(df.nunique())
 ```
 
+**Output:**
+
+```text
+    nama   nim prodi   ipk  semester      kota
+0    Ani  2201    IF  3.75         3   Jakarta
+1   Budi  2202    SI  3.20         5   Bandung
+2  Citra  2203    IF  3.90         3   Jakarta
+3   Dedi  2204    SI  2.85         7  Surabaya
+4    Eka  2205    IF  3.55         5   Bandung
+    nama   nim prodi   ipk  semester      kota
+3   Dedi  2204    SI  2.85         7  Surabaya
+4    Eka  2205    IF  3.55         5   Bandung
+5  Fajar  2206    SI  3.10         3   Jakarta
+   nama   nim prodi   ipk  semester      kota
+1  Budi  2202    SI  3.20         5   Bandung
+3  Dedi  2204    SI  2.85         7  Surabaya
+0   Ani  2201    IF  3.75         3   Jakarta
+(6, 6)
+['nama', 'nim', 'prodi', 'ipk', 'semester', 'kota']
+nama            str
+nim             str
+prodi           str
+ipk         float64
+semester      int64
+kota            str
+dtype: object
+<class 'pandas.DataFrame'>
+RangeIndex: 6 entries, 0 to 5
+Data columns (total 6 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   nama      6 non-null      str    
+ 1   nim       6 non-null      str    
+ 2   prodi     6 non-null      str    
+ 3   ipk       6 non-null      float64
+ 4   semester  6 non-null      int64  
+ 5   kota      6 non-null      str    
+dtypes: float64(1), int64(1), str(4)
+memory usage: 420.0 bytes
+None
+            ipk  semester
+count  6.000000  6.000000
+mean   3.391667  4.333333
+std    0.406714  1.632993
+min    2.850000  3.000000
+25%    3.125000  3.000000
+50%    3.375000  4.000000
+75%    3.700000  5.000000
+max    3.900000  7.000000
+       nama   nim prodi       ipk  semester     kota
+count     6     6     6  6.000000  6.000000        6
+unique    6     6     2       NaN       NaN        3
+top     Ani  2201    IF       NaN       NaN  Jakarta
+freq      1     1     3       NaN       NaN        3
+mean    NaN   NaN   NaN  3.391667  4.333333      NaN
+std     NaN   NaN   NaN  0.406714  1.632993      NaN
+min     NaN   NaN   NaN  2.850000  3.000000      NaN
+25%     NaN   NaN   NaN  3.125000  3.000000      NaN
+50%     NaN   NaN   NaN  3.375000  4.000000      NaN
+75%     NaN   NaN   NaN  3.700000  5.000000      NaN
+max     NaN   NaN   NaN  3.900000  7.000000      NaN
+prodi
+IF    3
+SI    3
+Name: count, dtype: int64
+<StringArray>
+['IF', 'SI']
+Length: 2, dtype: str
+nama        6
+nim         6
+prodi       2
+ipk         6
+semester    3
+kota        3
+dtype: int64
+```
+
+_Catatan: `df.sample(3)` memilih baris acak sehingga baris yang tampil berbeda di setiap eksekusi. Di pandas 3.x kolom teks bertipe `str` (di pandas 2.x tampil sebagai `object`)._
+
 ## 4.3 Selection dengan loc dan iloc
 
 Gunakan loc apabila Anda memilih data berdasarkan label (nama index atau nama kolom). Gunakan iloc apabila Anda memilih data berdasarkan posisi integer.
@@ -217,6 +426,57 @@ print(df.iloc[0:3, 0:2])
 print(df.iloc[[0, 2, 4], [0, 3]])
 ```
 
+**Output:**
+
+```text
+0      Ani
+1     Budi
+2    Citra
+3     Dedi
+4      Eka
+5    Fajar
+Name: nama, dtype: str
+    nama   ipk
+0    Ani  3.75
+1   Budi  3.20
+2  Citra  3.90
+3   Dedi  2.85
+4    Eka  3.55
+5  Fajar  3.10
+nama            Ani
+nim            2201
+prodi            IF
+ipk            3.75
+semester          3
+kota        Jakarta
+Name: 0, dtype: object
+Ani
+    nama   ipk
+0    Ani  3.75
+1   Budi  3.20
+2  Citra  3.90
+3   Dedi  2.85
+    nama   ipk
+0    Ani  3.75
+2  Citra  3.90
+4    Eka  3.55
+nama            Ani
+nim            2201
+prodi            IF
+ipk            3.75
+semester          3
+kota        Jakarta
+Name: 0, dtype: object
+    nama   nim
+0    Ani  2201
+1   Budi  2202
+2  Citra  2203
+    nama   ipk
+0    Ani  3.75
+2  Citra  3.90
+4    Eka  3.55
+```
+
 ## 4.4 Filtering Data
 
 ```python
@@ -230,6 +490,47 @@ print(df[df["kota"].str.startswith("J")])
 # Metode query — lebih mudah dibaca untuk kondisi yang kompleks
 print(df.query("ipk >= 3.5 and prodi == 'IF'"))
 print(df.query("kota in ['Jakarta', 'Bandung']"))
+```
+
+**Output:**
+
+```text
+    nama   nim prodi   ipk  semester     kota
+0    Ani  2201    IF  3.75         3  Jakarta
+2  Citra  2203    IF  3.90         3  Jakarta
+4    Eka  2205    IF  3.55         5  Bandung
+    nama   nim prodi   ipk  semester     kota
+0    Ani  2201    IF  3.75         3  Jakarta
+2  Citra  2203    IF  3.90         3  Jakarta
+4    Eka  2205    IF  3.55         5  Bandung
+   nama   nim prodi   ipk  semester      kota
+3  Dedi  2204    SI  2.85         7  Surabaya
+    nama   nim prodi   ipk  semester      kota
+0    Ani  2201    IF  3.75         3   Jakarta
+1   Budi  2202    SI  3.20         5   Bandung
+2  Citra  2203    IF  3.90         3   Jakarta
+3   Dedi  2204    SI  2.85         7  Surabaya
+4    Eka  2205    IF  3.55         5   Bandung
+5  Fajar  2206    SI  3.10         3   Jakarta
+    nama   nim prodi   ipk  semester     kota
+0    Ani  2201    IF  3.75         3  Jakarta
+2  Citra  2203    IF  3.90         3  Jakarta
+4    Eka  2205    IF  3.55         5  Bandung
+5  Fajar  2206    SI  3.10         3  Jakarta
+    nama   nim prodi   ipk  semester     kota
+0    Ani  2201    IF  3.75         3  Jakarta
+2  Citra  2203    IF  3.90         3  Jakarta
+5  Fajar  2206    SI  3.10         3  Jakarta
+    nama   nim prodi   ipk  semester     kota
+0    Ani  2201    IF  3.75         3  Jakarta
+2  Citra  2203    IF  3.90         3  Jakarta
+4    Eka  2205    IF  3.55         5  Bandung
+    nama   nim prodi   ipk  semester     kota
+0    Ani  2201    IF  3.75         3  Jakarta
+1   Budi  2202    SI  3.20         5  Bandung
+2  Citra  2203    IF  3.90         3  Jakarta
+4    Eka  2205    IF  3.55         5  Bandung
+5  Fajar  2206    SI  3.10         3  Jakarta
 ```
 
 ## 4.5 Menambah, Mengubah, dan Menghapus Kolom atau Baris
@@ -269,6 +570,12 @@ df.drop(index=[5], inplace=True)
 df.rename(columns={"ipk": "IPK", "nim": "NIM"}, inplace=True)
 ```
 
+**Output:**
+
+```text
+(tidak ada output)
+```
+
 ## 4.6 Sorting
 
 ```python
@@ -276,6 +583,31 @@ print(df.sort_values("IPK", ascending=False))
 print(df.sort_values(["prodi", "IPK"], ascending=[True, False]))
 print(df.nlargest(3, "IPK"))          # 3 baris dengan IPK tertinggi
 print(df.nsmallest(3, "IPK"))         # 3 baris dengan IPK terendah
+```
+
+**Output:**
+
+```text
+    nama   NIM prodi   IPK  semester      kota    status grade     prodi_lengkap
+2  Citra  2203    IF  3.90         3   Jakarta  Cumlaude     A       Informatika
+0    Ani  2201    IF  3.75         3   Jakarta  Cumlaude     A       Informatika
+4    Eka  2205    IF  3.55         5   Bandung  Cumlaude     A       Informatika
+1   Budi  2202    SI  3.35         5   Bandung   Reguler     B  Sistem Informasi
+3   Dedi  2204    SI  2.85         7  Surabaya   Reguler     C  Sistem Informasi
+    nama   NIM prodi   IPK  semester      kota    status grade     prodi_lengkap
+2  Citra  2203    IF  3.90         3   Jakarta  Cumlaude     A       Informatika
+0    Ani  2201    IF  3.75         3   Jakarta  Cumlaude     A       Informatika
+4    Eka  2205    IF  3.55         5   Bandung  Cumlaude     A       Informatika
+1   Budi  2202    SI  3.35         5   Bandung   Reguler     B  Sistem Informasi
+3   Dedi  2204    SI  2.85         7  Surabaya   Reguler     C  Sistem Informasi
+    nama   NIM prodi   IPK  semester     kota    status grade prodi_lengkap
+2  Citra  2203    IF  3.90         3  Jakarta  Cumlaude     A   Informatika
+0    Ani  2201    IF  3.75         3  Jakarta  Cumlaude     A   Informatika
+4    Eka  2205    IF  3.55         5  Bandung  Cumlaude     A   Informatika
+   nama   NIM prodi   IPK  semester      kota    status grade     prodi_lengkap
+3  Dedi  2204    SI  2.85         7  Surabaya   Reguler     C  Sistem Informasi
+1  Budi  2202    SI  3.35         5   Bandung   Reguler     B  Sistem Informasi
+4   Eka  2205    IF  3.55         5   Bandung  Cumlaude     A       Informatika
 ```
 
 # 5. Data Cleaning dan Operasi Lanjutan
@@ -304,9 +636,70 @@ print(df_kotor.dropna(subset=["nama"]))   # hapus hanya jika kolom nama NaN
 print(df_kotor["ipk"].fillna(df_kotor["ipk"].mean()))
 print(df_kotor["ipk"].fillna(df_kotor["ipk"].median()))
 print(df_kotor["prodi"].fillna("Unknown"))
-print(df_kotor.fillna(method="ffill"))    # forward fill
-print(df_kotor.fillna(method="bfill"))    # backward fill
+print(df_kotor.ffill())                  # forward fill
+print(df_kotor.bfill())                  # backward fill
 ```
+
+**Output:**
+
+```text
+nama     1
+ipk      2
+prodi    1
+umur     0
+dtype: int64
+nama     16.666667
+ipk      33.333333
+prodi    16.666667
+umur      0.000000
+dtype: float64
+   nama  ipk prodi  umur
+0   Ani  3.7    IF    20
+5  Budi  3.2    SI    21
+   nama  ipk prodi  umur
+0   Ani  3.7    IF    20
+1  Budi  NaN    SI    21
+3  Dedi  2.8   NaN    22
+4   Eka  NaN    IF    19
+5  Budi  3.2    SI    21
+0    3.7
+1    3.4
+2    3.9
+3    2.8
+4    3.4
+5    3.2
+Name: ipk, dtype: float64
+0    3.70
+1    3.45
+2    3.90
+3    2.80
+4    3.45
+5    3.20
+Name: ipk, dtype: float64
+0         IF
+1         SI
+2         IF
+3    Unknown
+4         IF
+5         SI
+Name: prodi, dtype: str
+   nama  ipk prodi  umur
+0   Ani  3.7    IF    20
+1  Budi  3.7    SI    21
+2  Budi  3.9    IF    20
+3  Dedi  2.8    IF    22
+4   Eka  2.8    IF    19
+5  Budi  3.2    SI    21
+   nama  ipk prodi  umur
+0   Ani  3.7    IF    20
+1  Budi  3.9    SI    21
+2  Dedi  3.9    IF    20
+3  Dedi  2.8    IF    22
+4   Eka  3.2    IF    19
+5  Budi  3.2    SI    21
+```
+
+_Catatan: `fillna(method="ffill"/"bfill")` sudah dihapus di pandas 3.x (deprecated sejak 2.1). Kode pada materi diganti dengan `ffill()` / `bfill()` yang berlaku di semua versi._
 
 ## 5.2 Menangani Data Duplikat dan Konversi Tipe Data
 
@@ -316,10 +709,38 @@ print(df_kotor.drop_duplicates())
 print(df_kotor.drop_duplicates(subset=["nama"], keep="first"))
 
 # Konversi tipe data
+df["tanggal"] = ["2026-09-01", "2026-09-05", "bukan tanggal", "2026-09-10", "2026-09-12"]
 df["semester"] = df["semester"].astype("int32")
 df["IPK"] = pd.to_numeric(df["IPK"], errors="coerce")
 df["tanggal"] = pd.to_datetime(df["tanggal"], errors="coerce")
 ```
+
+**Output:**
+
+```text
+0    False
+1    False
+2    False
+3    False
+4    False
+5    False
+dtype: bool
+   nama  ipk prodi  umur
+0   Ani  3.7    IF    20
+1  Budi  NaN    SI    21
+2   NaN  3.9    IF    20
+3  Dedi  2.8   NaN    22
+4   Eka  NaN    IF    19
+5  Budi  3.2    SI    21
+   nama  ipk prodi  umur
+0   Ani  3.7    IF    20
+1  Budi  NaN    SI    21
+2   NaN  3.9    IF    20
+3  Dedi  2.8   NaN    22
+4   Eka  NaN    IF    19
+```
+
+_Catatan: baris `df["tanggal"] = [...]` ditambahkan karena kolom `tanggal` belum ada pada DataFrame contoh (sebelumnya menyebabkan KeyError). Nilai "bukan tanggal" menjadi `NaT` berkat `errors="coerce"`._
 
 ## 5.3 GroupBy dan Aggregation
 
@@ -338,6 +759,36 @@ df["ipk_rank"] = df.groupby("prodi")["IPK"].rank(ascending=False)
 
 # filter: menyaring kelompok berdasarkan kondisi
 print(df.groupby("prodi").filter(lambda x: x["IPK"].mean() > 3.3))
+```
+
+**Output:**
+
+```text
+prodi
+IF    3.733333
+SI    3.100000
+Name: IPK, dtype: float64
+           mean  median       std  count   min   max
+prodi                                               
+IF     3.733333    3.75  0.175594      3  3.55  3.90
+SI     3.100000    3.10  0.353553      2  2.85  3.35
+prodi  status  
+IF     Cumlaude    3
+SI     Reguler     2
+dtype: int64
+prodi  status  
+IF     Cumlaude    3.733333
+SI     Reguler     3.100000
+Name: IPK, dtype: float64
+    nama   NIM prodi   IPK  semester     kota    status grade prodi_lengkap    tanggal  \
+0    Ani  2201    IF  3.75         3  Jakarta  Cumlaude     A   Informatika 2026-09-01   
+2  Citra  2203    IF  3.90         3  Jakarta  Cumlaude     A   Informatika        NaT   
+4    Eka  2205    IF  3.55         5  Bandung  Cumlaude     A   Informatika 2026-09-12   
+
+   ipk_mean_prodi  ipk_rank  
+0        3.733333       2.0  
+2        3.733333       1.0  
+4        3.733333       3.0  
 ```
 
 ## 5.4 Merge, Join, dan Concat
@@ -367,6 +818,34 @@ print(pd.merge(mahasiswa, absensi, on="nim"))
 print(pd.concat([mahasiswa, mahasiswa], ignore_index=True))
 ```
 
+**Output:**
+
+```text
+    nim  nama  matkul  skor
+0  2201   Ani  Python    85
+1  2202  Budi      BD    90
+    nim   nama  matkul  skor
+0  2201    Ani  Python  85.0
+1  2202   Budi      BD  90.0
+2  2203  Citra     NaN   NaN
+    nim   nama  matkul  skor
+0  2201    Ani  Python  85.0
+1  2202   Budi      BD  90.0
+2  2203  Citra     NaN   NaN
+3  2204    NaN  Python  78.0
+    nim   nama  hadir
+0  2201    Ani     90
+1  2202   Budi     75
+2  2203  Citra     95
+    nim   nama
+0  2201    Ani
+1  2202   Budi
+2  2203  Citra
+3  2201    Ani
+4  2202   Budi
+5  2203  Citra
+```
+
 ## 5.5 Pivot Table
 
 ```python
@@ -380,6 +859,27 @@ data = pd.DataFrame({
 print(data.pivot_table(values="nilai", index="nama", columns="matkul", aggfunc="mean"))
 print(data.pivot_table(values="nilai", index="nama", columns="semester", aggfunc="mean", margins=True))
 print(pd.crosstab(data["nama"], data["matkul"]))
+```
+
+**Output:**
+
+```text
+matkul    BD  Python
+nama                
+Ani     90.0    85.0
+Budi    88.0    78.0
+Citra   85.0    92.0
+semester     1          2        All
+nama                                
+Ani       85.0  90.000000  87.500000
+Budi      78.0  88.000000  83.000000
+Citra     92.0  85.000000  88.500000
+All       85.0  87.666667  86.333333
+matkul  BD  Python
+nama              
+Ani      1       1
+Budi     1       1
+Citra    1       1
 ```
 
 ## 5.6 Membaca dan Menyimpan File
@@ -398,6 +898,14 @@ df.to_csv("hasil.csv", index=False)
 df.to_excel("hasil.xlsx", index=False, sheet_name="Analisis")
 ```
 
+**Output:**
+
+```text
+(1, 2)
+```
+
+_Catatan: dijalankan dengan file contoh `data.csv` dan `data.xlsx`; baris `print(df.shape)` ditambahkan untuk menunjukkan hasil baca._
+
 # 6. Lima Mini Project
 
 ## Mini Project 1 — Kalkulator Nilai Akhir Mahasiswa (Level Dasar)
@@ -413,6 +921,7 @@ Buat sebuah DataFrame yang berisi data nilai mahasiswa (minimal 12 baris) dengan
 3. Tampilkan 5 mahasiswa dengan nilai akhir tertinggi.
 4. Hitung rata-rata nilai akhir untuk setiap program studi.
 5. Hitung jumlah mahasiswa pada setiap grade.
+
 ### Skeleton Code
 
 ```python
@@ -451,6 +960,8 @@ print(df.groupby("prodi")["nilai_akhir"].mean())
 print(df["grade"].value_counts())
 ```
 
+> **Output:** _tidak dijalankan_ — skeleton; berisi placeholder `[...]` dan `...` yang harus diisi peserta, sehingga belum bisa dijalankan
+
 > Tips Pengerjaan Project 1 Gunakan metode nlargest() untuk mengambil baris dengan nilai tertinggi agar kode lebih ringkas. Fungsi penentuan grade dapat juga dibuat dengan np.where yang bersarang, namun if-elif biasanya lebih mudah dibaca.
 
 ## Mini Project 2 — Cleaning Dataset Kotor (Level Menengah)
@@ -466,6 +977,7 @@ Buat sebuah dataset yang sengaja dibuat kotor (mengandung missing values, data d
 3. Hapus data yang duplikat.
 4. Perbaiki tipe data dan bersihkan spasi yang tidak perlu pada kolom teks.
 5. Simpan hasil cleaning ke dalam file CSV baru.
+
 ### Skeleton Code
 
 ```python
@@ -504,6 +1016,32 @@ df.to_csv("data_bersih.csv", index=False)
 print("File berhasil disimpan.")
 ```
 
+**Output:**
+
+```text
+Shape sebelum cleaning: (7, 4)
+nama     1
+ipk      2
+prodi    1
+umur     0
+dtype: int64
+nama     14.285714
+ipk      28.571429
+prodi    14.285714
+umur      0.000000
+dtype: float64
+Shape setelah cleaning: (7, 4)
+      nama  ipk    prodi  umur
+0      Ani  3.7       IF    20
+1     Budi  3.7       SI    21
+2  Unknown  3.9       IF    20
+3     Dedi  2.8  Unknown    22
+4      Eka  3.7       IF    19
+5     Budi  3.2       SI    21
+6      Ani  3.7       IF    20
+File berhasil disimpan.
+```
+
 ## Mini Project 3 — Analisis Multi-Tabel dengan Merge (Level Menengah)
 
 ### Deskripsi
@@ -517,6 +1055,7 @@ Buat tiga buah DataFrame terpisah yang merepresentasikan data mahasiswa, data ni
 3. Analisis hubungan antara tingkat kehadiran dan nilai (menggunakan korelasi atau groupby).
 4. Filter kasus yang menarik, misalnya mahasiswa dengan kehadiran rendah namun nilai tinggi.
 5. Buat ringkasan statistik per program studi menggunakan groupby dan agg.
+
 ### Skeleton Code
 
 ```python
@@ -560,6 +1099,34 @@ print(df.groupby("prodi").agg({
 }))
 ```
 
+**Output:**
+
+```text
+    nim   nama prodi  nilai_akhir  persen_hadir
+0  2201    Ani    IF           85            95
+1  2202   Budi    SI           78            70
+2  2203  Citra    IF           92            90
+3  2204   Dedi    SI           70            60
+4  2205    Eka    IF           88            85
+    nim   nama prodi  nilai_akhir  persen_hadir  rank
+2  2203  Citra    IF           92            90     1
+4  2205    Eka    IF           88            85     2
+0  2201    Ani    IF           85            95     3
+1  2202   Budi    SI           78            70     4
+3  2204   Dedi    SI           70            60     5
+              persen_hadir  nilai_akhir
+persen_hadir      1.000000     0.896267
+nilai_akhir       0.896267     1.000000
+Empty DataFrame
+Columns: [nim, nama, prodi, nilai_akhir, persen_hadir, rank]
+Index: []
+      nilai_akhir         persen_hadir
+             mean min max         mean
+prodi                                 
+IF      88.333333  85  92         90.0
+SI      74.000000  70  78         65.0
+```
+
 ## Mini Project 4 — Pivot Table dan Reporting (Level Menengah-Tinggi)
 
 ### Deskripsi
@@ -573,6 +1140,7 @@ Gunakan data nilai yang mencakup beberapa mata kuliah. Buat laporan dalam bentuk
 3. Tambahkan kolom rata-rata keseluruhan dan status kelulusan pada pivot table.
 4. Export hasil analisis ke file Excel.
 5. Tuliskan minimal tiga insight yang diperoleh dari hasil analisis.
+
 ### Skeleton Code
 
 ```python
@@ -616,6 +1184,31 @@ print("Laporan berhasil disimpan.")
 # Insight 3: ...
 ```
 
+**Output:**
+
+```text
+matkul    BD  Jaringan  Python
+nama                          
+Ani     90.0      78.0    85.0
+Budi    88.0      75.0    70.0
+Citra   85.0      80.0    92.0
+matkul
+BD          87.666667
+Jaringan    77.666667
+Python      82.333333
+Name: nilai, dtype: float64
+prodi
+IF    85.000000
+SI    77.666667
+Name: nilai, dtype: float64
+matkul    BD  Jaringan  Python  rata_rata status
+nama                                            
+Ani     90.0      78.0    85.0  84.333333  Lulus
+Budi    88.0      75.0    70.0  77.666667  Lulus
+Citra   85.0      80.0    92.0  85.666667  Lulus
+Laporan berhasil disimpan.
+```
+
 ## Mini Project 5 — Exploratory Data Analysis pada Dataset Publik (Level Tinggi)
 
 ### Deskripsi
@@ -630,6 +1223,7 @@ Pilih salah satu dataset publik yang tersedia (contoh: Student Performance, Tita
 4. Lakukan analisis bivariat (menggunakan groupby, pivot table, atau korelasi).
 5. Tuliskan minimal empat insight atau temuan menarik yang didukung oleh data.
 6. Simpan tabel ringkasan penting ke dalam file CSV atau Excel.
+
 ### Skeleton Code
 
 ```python
@@ -674,6 +1268,46 @@ print(df.head())
 # ringkasan.to_csv("ringkasan_eda.csv")
 ```
 
+**Output:**
+
+```text
+Shape: (4, 4)
+nama             str
+gender           str
+nilai          int64
+jam_belajar    int64
+dtype: object
+           nilai  jam_belajar
+count   4.000000     4.000000
+mean   79.250000     8.000000
+std    11.056672     3.559026
+min    70.000000     5.000000
+25%    70.000000     5.000000
+50%    77.500000     7.500000
+75%    86.750000    10.500000
+max    92.000000    12.000000
+        nama gender
+count      4      4
+unique     3      2
+top     Budi      P
+freq       2      2
+Missing values:
+nama           0
+gender         0
+nilai          0
+jam_belajar    0
+dtype: int64
+Jumlah duplikat: 1
+    nama gender  nilai  jam_belajar
+0    Ani      P     85           10
+1   Budi      L     70            5
+2  Citra      P     92           12
+3   Budi      L     70            5
+[WARNING] Pandas4Warning: For backward compatibility, 'str' dtypes are included by select_dtypes when 'object' dtype is specified. This behavior is deprecated and will be removed in a future version. Explicitly pass 'str' to `include` to select them, or to `exclude` to remove them and silence this warning.
+```
+
+_Catatan: dijalankan dengan dataset contoh kecil (`nama_dataset.csv`, 4 baris) karena file aslinya milik peserta. Pada pandas 3.x `describe(include="object")` mengeluarkan peringatan; gunakan `include=["object", "str"]` untuk mengikuti perilaku baru._
+
 > Panduan Pengerjaan Mini Project Mini Project 1 dan Mini Project 2 bersifat wajib untuk dikerjakan oleh seluruh peserta. Mini Project 3, 4, dan 5 bersifat challenge. Kerjakan sesuai dengan sisa waktu dan kemampuan masing-masing. Sangat disarankan menggunakan Jupyter Notebook agar seluruh proses analisis terdokumentasi dengan rapi. Dataset publik yang direkomendasikan antara lain: Student Performance (UCI atau Kaggle), Titanic, Iris, dan Gapminder.
 
 # 7. Troubleshooting dan Best Practice
@@ -697,15 +1331,275 @@ pd.read_csv("data_besar.csv", usecols=["kolom1", "kolom2"])
 df["kategori"] = df["kategori"].astype("category")
 ```
 
+**Output:**
+
+```text
+   IPK kategori  flag
+1  3.8        b     1
+2  3.6        a     1
+category
+```
+
+_Catatan: snippet dijalankan dengan DataFrame contoh kecil dan `data_besar.csv` buatan; baris komentar menjelaskan kesalahan umum, bukan kode yang dijalankan._
+
 > Best Practice dalam Menggunakan Pandas Gunakan .loc dan .iloc secara eksplisit agar kode lebih jelas dan terhindar dari ambiguitas. Setelah melakukan operasi penting, selalu periksa hasilnya dengan .head() atau .shape. Apabila terdapat rangkaian langkah cleaning yang berulang, bungkus langkah-langkah tersebut ke dalam sebuah function agar mudah digunakan kembali.
 
-> Materi Hari 4 Selesai Kerjakan Mini Project 1 dan 2 (wajib)   •   Challenge Project 3 sampai 5   •   Lanjut ke Hari 5
+# 7b. Troubleshooting Lengkap (Contoh Kasus)
 
-8. Solusi Latihan NumPy
+Berikut contoh kasus nyata untuk error dan jebakan yang sering muncul di Hari 4. Setiap kasus dijalankan terpisah (pandas 3.0.6, numpy 2.4.6).
+
+## KeyError — nama kolom salah / ada spasi tersembunyi
+
+```python
+import pandas as pd
+import numpy as np
+
+# Kasus 1: nama kolom ada spasi di belakang
+df = pd.DataFrame({"nama ": ["Ani"], "ipk": [3.7]})
+print(df.columns.tolist())
+print(df["nama"])
+
+# Kasus 2: solusi — bersihkan nama kolom
+df = pd.DataFrame({"nama ": ["Ani"], "ipk": [3.7]})
+df.columns = df.columns.str.strip()
+print(df["nama"])
+```
+
+**Output:**
+
+```text
+# Kasus 1: nama kolom ada spasi di belakang
+['nama ', 'ipk']
+  -> KeyError: 'nama'
+# Kasus 2: solusi — bersihkan nama kolom
+0    Ani
+Name: nama, dtype: str
+```
+
+## Chained assignment — ubah nilai tidak berpengaruh
+
+```python
+import pandas as pd
+import numpy as np
+
+# Salah: df[df["a"] > 1]["b"] = 0
+df = pd.DataFrame({"a": [1, 2, 3], "b": [10, 20, 30]})
+df[df["a"] > 1]["b"] = 0
+print(df)
+
+# Benar: df.loc[df["a"] > 1, "b"] = 0
+df = pd.DataFrame({"a": [1, 2, 3], "b": [10, 20, 30]})
+df.loc[df["a"] > 1, "b"] = 0
+print(df)
+```
+
+**Output:**
+
+```text
+# Salah: df[df["a"] > 1]["b"] = 0
+   a   b
+0  1  10
+1  2  20
+2  3  30
+[WARNING] ChainedAssignmentError: A value is being set on a copy of a DataFrame or Series through chained assignment.
+# Benar: df.loc[df["a"] > 1, "b"] = 0
+   a   b
+0  1  10
+1  2   0
+2  3   0
+```
+
+_Catatan: pada pandas 3.x (Copy-on-Write) chained assignment tidak mengubah `df` dan memunculkan `ChainedAssignmentError`; pada pandas 2.x hasilnya bisa tidak konsisten (`SettingWithCopyWarning`). Selalu gunakan `.loc`._
+
+## SettingWithCopyWarning — selalu `.copy()` pada subset yang diubah
+
+```python
+import pandas as pd
+import numpy as np
+
+# Subset dengan .copy() aman diubah
+df = pd.DataFrame({"IPK": [3.2, 3.8, 3.6]})
+subset = df[df["IPK"] > 3.5].copy()
+subset["flag"] = 1
+print(subset)
+print(df.columns.tolist())
+```
+
+**Output:**
+
+```text
+# Subset dengan .copy() aman diubah
+   IPK  flag
+1  3.8     1
+2  3.6     1
+['IPK']
+```
+
+## TypeError — `fillna(method=...)` sudah dihapus di pandas 3
+
+```python
+import pandas as pd
+import numpy as np
+
+# Cara lama (pandas 2.x deprecated, pandas 3.x error)
+s = pd.Series([1.0, np.nan, 3.0])
+print(s.fillna(method="ffill"))
+
+# Cara baru: ffill() / bfill()
+s = pd.Series([1.0, np.nan, 3.0])
+print(s.ffill().tolist())
+print(s.bfill().tolist())
+```
+
+**Output:**
+
+```text
+# Cara lama (pandas 2.x deprecated, pandas 3.x error)
+  -> TypeError: NDFrame.fillna() got an unexpected keyword argument 'method'
+# Cara baru: ffill() / bfill()
+[1.0, 1.0, 3.0]
+[1.0, 3.0, 3.0]
+```
+
+## ValueError — panjang kolom baru tidak sama dengan jumlah baris
+
+```python
+import pandas as pd
+import numpy as np
+
+# Kasus 1: list terlalu pendek
+df = pd.DataFrame({"nama": ["Ani", "Budi", "Citra"]})
+df["sks"] = [20, 18]
+
+# Kasus 2: solusi — samakan panjang, atau pakai Series dengan index
+df = pd.DataFrame({"nama": ["Ani", "Budi", "Citra"]})
+df["sks"] = pd.Series([20, 18])
+print(df)
+```
+
+**Output:**
+
+```text
+# Kasus 1: list terlalu pendek
+  -> ValueError: Length of values (2) does not match length of index (3)
+# Kasus 2: solusi — samakan panjang, atau pakai Series dengan index
+    nama   sks
+0    Ani  20.0
+1   Budi  18.0
+2  Citra   NaN
+```
+
+## ValueError — `and` / `or` pada filter DataFrame
+
+```python
+import pandas as pd
+import numpy as np
+
+# Salah: pakai and
+df = pd.DataFrame({"ipk": [3.7, 2.8], "prodi": ["IF", "SI"]})
+print(df[(df["ipk"] > 3) and (df["prodi"] == "IF")])
+
+# Benar: pakai & dan beri kurung pada tiap kondisi
+df = pd.DataFrame({"ipk": [3.7, 2.8], "prodi": ["IF", "SI"]})
+print(df[(df["ipk"] > 3) & (df["prodi"] == "IF")])
+```
+
+**Output:**
+
+```text
+# Salah: pakai and
+  -> ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+# Benar: pakai & dan beri kurung pada tiap kondisi
+   ipk prodi
+0  3.7    IF
+```
+
+## ValueError — merge pada kolom dengan tipe berbeda
+
+```python
+import pandas as pd
+import numpy as np
+
+# Kasus 1: nim int vs str
+a = pd.DataFrame({"nim": [2201, 2202], "nama": ["Ani", "Budi"]})
+b = pd.DataFrame({"nim": ["2201", "2202"], "skor": [85, 90]})
+print(a.merge(b, on="nim"))
+
+# Kasus 2: solusi — samakan tipe
+a = pd.DataFrame({"nim": [2201, 2202], "nama": ["Ani", "Budi"]})
+b = pd.DataFrame({"nim": ["2201", "2202"], "skor": [85, 90]})
+a["nim"] = a["nim"].astype(str)
+print(a.merge(b, on="nim"))
+```
+
+**Output:**
+
+```text
+# Kasus 1: nim int vs str
+  -> ValueError: You are trying to merge on int64 and str columns for key 'nim'. If you wish to proceed you should use pd.concat
+# Kasus 2: solusi — samakan tipe
+    nim  nama  skor
+0  2201   Ani    85
+1  2202  Budi    90
+```
+
+## NumPy — shape tidak cocok saat operasi
+
+```python
+import pandas as pd
+import numpy as np
+
+# Kasus 1: broadcasting gagal
+a = np.ones((3, 4))
+b = np.array([1, 2, 3])
+print(a + b)
+
+# Kasus 2: solusi — ubah bentuk b menjadi kolom
+a = np.ones((3, 4))
+b = np.array([1, 2, 3]).reshape(3, 1)
+print(a + b)
+```
+
+**Output:**
+
+```text
+# Kasus 1: broadcasting gagal
+  -> ValueError: operands could not be broadcast together with shapes (3,4) (3,)
+# Kasus 2: solusi — ubah bentuk b menjadi kolom
+[[2. 2. 2. 2.]
+ [3. 3. 3. 3.]
+ [4. 4. 4. 4.]]
+```
+
+## Salah tipe: `to_numeric` untuk data kotor
+
+```python
+import pandas as pd
+import numpy as np
+
+# Kasus 1: astype gagal pada data bukan angka
+s = pd.Series(["80", "90", "n/a"])
+print(s.astype(int))
+
+# Kasus 2: solusi — to_numeric dengan errors="coerce"
+s = pd.Series(["80", "90", "n/a"])
+print(pd.to_numeric(s, errors="coerce").tolist())
+```
+
+**Output:**
+
+```text
+# Kasus 1: astype gagal pada data bukan angka
+  -> ValueError: invalid literal for int() with base 10: 'n/a'
+# Kasus 2: solusi — to_numeric dengan errors="coerce"
+[80.0, 90.0, nan]
+```
+
+# 8. Solusi Latihan NumPy
 
 Berikut solusi untuk latihan pada bagian 3.6 Latihan NumPy.
 
-Soal 1 — Array 6x6 dan statistik bagian tengah
+## Soal 1 — Array 6x6 dan statistik bagian tengah
 
 ```python
 import numpy as np
@@ -716,7 +1610,18 @@ print("Mean:", tengah.mean())
 print("Std:", tengah.std())
 ```
 
-Soal 2 — Korelasi Pearson
+**Output:**
+
+```text
+[[ 8  9 10 11]
+ [14 15 16 17]
+ [20 21 22 23]
+ [26 27 28 29]]
+Mean: 18.5
+Std: 6.800735254367722
+```
+
+## Soal 2 — Korelasi Pearson
 
 ```python
 np.random.seed(42)
@@ -725,7 +1630,13 @@ b = np.random.randn(100)
 print("Korelasi:", np.corrcoef(a, b)[0, 1])
 ```
 
-Soal 3 — Normalisasi min-max
+**Output:**
+
+```text
+Korelasi: -0.1364222121700025
+```
+
+## Soal 3 — Normalisasi min-max
 
 ```python
 np.random.seed(42)
@@ -734,7 +1645,16 @@ x_norm = (x - x.min()) / (x.max() - x.min())
 print(x_norm)
 ```
 
-Soal 4 — Diagonal matriks identitas
+**Output:**
+
+```text
+[0.37284965 0.9797798  0.74938422 0.60893137 0.14266357 0.14263816
+ 0.03950081 0.89072903 0.61151903 0.72418595 0.         1.
+ 0.85519484 0.20199041 0.16984743 0.17151129 0.2987993  0.53108445
+ 0.4333188  0.28509156]
+```
+
+## Soal 4 — Diagonal matriks identitas
 
 ```python
 m = np.eye(5)
@@ -742,17 +1662,26 @@ np.fill_diagonal(m, [10, 20, 30, 40, 50])
 print(m)
 ```
 
+**Output:**
+
+```text
+[[10.  0.  0.  0.  0.]
+ [ 0. 20.  0.  0.  0.]
+ [ 0.  0. 30.  0.  0.]
+ [ 0.  0.  0. 40.  0.]
+ [ 0.  0.  0.  0. 50.]]
+```
+
 Untuk latihan Pandas, praktikkan ulang contoh groupby, merge, dan pivot_table. Gunakan dataset Mini Project sebagai latihan tambahan.
 
-Tips Umum Mini Project Hari 4
+## Tips Umum Mini Project Hari 4
 
-• Project 1 & 2 wajib; Project 3–5 challenge sesuai kemampuan.
+- Project 1 & 2 wajib; Project 3–5 challenge sesuai kemampuan.
+- Selalu cek df.head(), df.info(), df.isna().sum() sebelum analisis.
 
-• Selalu cek df.head(), df.info(), df.isna().sum() sebelum analisis.
+- Gunakan .copy() saat membuat subset yang akan dimodifikasi.
+- Simpan hasil akhir ke CSV/Excel agar mudah dilaporkan.
 
-• Gunakan .copy() saat membuat subset yang akan dimodifikasi.
+- Beri judul dan label yang jelas pada setiap ringkasan/groupby.
 
-• Simpan hasil akhir ke CSV/Excel agar mudah dilaporkan.
-
-• Beri judul dan label yang jelas pada setiap ringkasan/groupby.
-
+> Materi Hari 4 Selesai Kerjakan Mini Project 1 dan 2 (wajib)   •   Challenge Project 3 sampai 5   •   Lanjut ke Hari 5
