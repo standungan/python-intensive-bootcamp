@@ -1,0 +1,121 @@
+nim,nama,prodi,kelas,pemrograman,basis_data,jaringan,statistika,matematika_diskrit
+260001,Oki Setiawan,Informatika,B,71.1,55.3,72.0,67.5,63.9
+260002,Dedi Wijaya,Informatika,B,72.5,75.2,70.9,67.5,69.3
+260003,Budi Hidayat,Informatika,A,68.7,71.4,64.3,56.8,64.2
+260004,Nina Kusuma,Informatika,A,78.7,82.8,64.5,76.9,63.4
+260005,Indah Setiawan,Informatika,A,74.8,68.6,67.5,55.3,66.8
+260006,Gita Hidayat,Informatika,B,85.3,78.3,70.3,69.1,84.7
+260007,Sari Hidayat,Informatika,A,94.9,73.9,91.1,94.7,87.5
+260008,Nina Nugroho,Informatika,A,81.3,80.8,76.2,79.7,87.7
+260009,Oki Lestari,Informatika,A,84.5,78.9,75.8,76.0,75.2
+260010,Lina Wijaya,Informatika,B,72.8,61.0,66.3,54.8,63.1
+260011,Hadi Pratama,Informatika,B,78.1,71.1,64.4,61.4,75.1
+260012,Made Saputra,Informatika,B,70.6,70.0,66.5,56.8,62.3
+260013,Joko Wijaya,Informatika,B,73.2,69.7,51.4,52.3,57.5
+260014,Made Setiawan,Informatika,A,74.4,63.6,60.7,55.2,68.8
+260015,Indah Pratama,Informatika,B,81.5,71.3,66.9,70.2,72.1
+260016,Lina Rahayu,Informatika,A,58.4,51.0,51.5,61.7,47.1
+260017,Tono Kusuma,Informatika,B,86.3,87.3,74.8,73.5,85.8
+260018,Oki Kusuma,Informatika,B,87.4,73.0,65.3,59.5,67.1
+260019,Ani Wijaya,Informatika,B,61.6,73.9,63.4,69.0,54.3
+260020,Hadi Kusuma,Informatika,B,65.2,63.0,53.0,68.0,70.0
+260021,Fajar Hidayat,Informatika,A,76.9,66.2,68.3,69.1,66.7
+260022,Eka Kusuma,Informatika,A,58.9,72.4,70.8,70.1,85.9
+260023,Sari Rahayu,Informatika,A,84.4,59.9,67.2,66.9,59.2
+260024,Dedi Nugroho,Informatika,A,76.5,85.4,69.4,63.9,85.1
+260025,Umar Saputra,Informatika,A,87.9,80.2,74.1,76.8,68.0
+260026,Joko Rahayu,Informatika,B,80.8,56.6,79.4,76.7,75.8
+260027,Gita Santoso,Informatika,A,79.3,66.2,63.4,74.3,74.6
+260028,Lina Nugroho,Informatika,A,79.8,74.5,72.3,72.9,78.9
+260029,Kiki Saputra,Informatika,A,86.1,79.9,73.4,78.5,83.5
+260030,Umar Kusuma,Informatika,A,70.9,67.9,60.6,60.8,57.2
+260031,Ani Setiawan,Informatika,B,60.0,57.3,54.5,59.9,58.6
+260032,Umar Santoso,Informatika,A,65.8,62.7,70.7,70.2,71.8
+260033,Ani Lestari,Informatika,A,70.3,67.8,63.1,73.0,77.5
+260034,Tono Santoso,Informatika,B,60.3,68.2,60.6,53.0,62.3
+260035,Budi Setiawan,Informatika,B,82.8,78.9,77.5,78.5,72.5
+260036,Umar Setiawan,Informatika,A,91.5,75.0,81.2,70.1,71.7
+260037,Rangga Nugroho,Informatika,A,72.5,61.1,63.0,71.6,72.8
+260038,Umar Wijaya,Informatika,B,76.1,69.5,64.3,65.8,75.1
+260039,Joko Lestari,Informatika,B,94.0,82.3,80.7,70.7,95.3
+260040,Ani Lestari,Informatika,A,79.2,69.6,72.2,64.9,75.4
+260041,Putri Saputra,Sistem Informasi,B,76.4,84.8,94.9,85.0,75.8
+260042,Budi Wijaya,Sistem Informasi,B,68.2,77.3,62.1,74.7,58.0
+260043,Gita Lestari,Sistem Informasi,B,58.4,69.1,68.5,62.2,61.3
+260044,Nina Lestari,Sistem Informasi,B,63.2,74.0,59.1,61.2,58.9
+260045,Lina Santoso,Sistem Informasi,B,63.7,70.3,59.1,67.6,59.3
+260046,Dedi Santoso,Sistem Informasi,B,75.9,72.9,66.2,74.0,74.6
+260047,Gita Nugroho,Sistem Informasi,B,47.3,68.4,66.6,70.4,64.3
+260048,Putri Rahayu,Sistem Informasi,A,75.8,68.8,82.8,73.2,81.9
+260049,Eka Lestari,Sistem Informasi,B,81.5,93.2,69.5,80.6,74.5
+260050,Eka Hidayat,Sistem Informasi,A,61.0,73.0,71.5,64.7,58.8
+260051,Fajar Saputra,Sistem Informasi,B,54.0,59.6,56.0,60.7,66.7
+260052,Hadi Rahayu,Sistem Informasi,A,73.4,76.8,73.5,79.5,59.2
+260053,Nina Nugroho,Sistem Informasi,B,70.3,77.5,66.2,71.4,70.2
+260054,Budi Lestari,Sistem Informasi,A,42.8,67.4,56.3,60.4,48.0
+260055,Rangga Kusuma,Sistem Informasi,A,66.0,68.4,64.9,75.3,72.4
+260056,Rangga Kusuma,Sistem Informasi,B,83.9,75.1,68.0,73.6,70.2
+260057,Eka Hidayat,Sistem Informasi,A,75.1,70.4,70.2,74.3,67.4
+260058,Oki Nugroho,Sistem Informasi,A,87.5,83.4,84.7,78.2,79.2
+260059,Gita Lestari,Sistem Informasi,A,93.5,90.6,80.1,73.3,75.0
+260060,Citra Rahayu,Sistem Informasi,B,60.9,71.9,59.9,85.5,70.9
+260061,Dedi Lestari,Sistem Informasi,B,59.6,75.4,64.6,65.6,65.7
+260062,Indah Setiawan,Sistem Informasi,B,57.9,69.8,71.1,57.2,56.9
+260063,Rangga Pratama,Sistem Informasi,A,65.2,86.3,71.1,65.8,54.4
+260064,Umar Santoso,Sistem Informasi,B,57.6,69.3,72.3,80.9,69.4
+260065,Gita Wijaya,Sistem Informasi,A,86.1,80.5,81.2,75.8,69.1
+260066,Sari Pratama,Sistem Informasi,A,73.2,82.5,64.5,76.6,67.6
+260067,Nina Saputra,Sistem Informasi,B,57.4,73.1,58.9,59.3,66.5
+260068,Umar Kusuma,Sistem Informasi,B,56.0,72.5,71.5,78.0,63.9
+260069,Made Setiawan,Sistem Informasi,A,55.2,69.9,68.5,52.4,61.6
+260070,Oki Pratama,Sistem Informasi,B,99.1,100.0,99.6,95.6,86.3
+260071,Dedi Saputra,Sistem Informasi,A,77.8,90.8,77.0,92.0,77.5
+260072,Dedi Setiawan,Sistem Informasi,B,58.1,76.2,59.4,70.6,61.5
+260073,Eka Rahayu,Sistem Informasi,B,69.1,83.2,73.2,78.8,72.2
+260074,Hadi Santoso,Sistem Informasi,B,53.1,70.7,69.5,63.6,61.2
+260075,Fajar Saputra,Sistem Informasi,B,47.8,64.8,47.7,60.4,47.2
+260076,Budi Pratama,Sistem Informasi,B,70.3,73.3,74.5,95.0,74.1
+260077,Budi Santoso,Sistem Informasi,B,86.2,77.7,78.4,80.4,74.9
+260078,Dedi Wijaya,Sistem Informasi,B,66.9,75.2,71.1,63.9,63.8
+260079,Hadi Saputra,Sistem Informasi,A,69.0,81.7,70.2,71.6,60.4
+260080,Made Wijaya,Sistem Informasi,A,58.7,82.5,66.7,68.5,74.6
+260081,Hadi Nugroho,Teknik Elektro,A,58.2,54.0,75.2,71.7,66.7
+260082,Fajar Pratama,Teknik Elektro,B,69.3,56.1,73.4,72.5,73.9
+260083,Ani Rahayu,Teknik Elektro,B,70.7,61.5,77.4,69.8,91.6
+260084,Indah Setiawan,Teknik Elektro,B,79.7,68.3,89.6,86.0,83.6
+260085,Eka Santoso,Teknik Elektro,B,58.5,64.5,77.0,69.3,79.1
+260086,Tono Pratama,Teknik Elektro,A,71.2,64.8,75.1,64.4,70.7
+260087,Rangga Setiawan,Teknik Elektro,B,70.8,73.0,83.1,72.3,79.8
+260088,Rangga Lestari,Teknik Elektro,A,53.6,63.8,71.0,59.1,66.1
+260089,Ani Hidayat,Teknik Elektro,B,44.0,45.5,56.8,45.3,43.3
+260090,Made Nugroho,Teknik Elektro,B,66.3,65.3,82.1,83.1,78.4
+260091,Nina Santoso,Teknik Elektro,A,57.5,53.9,60.9,66.3,52.1
+260092,Fajar Wijaya,Teknik Elektro,A,49.0,66.7,73.5,75.7,84.9
+260093,Indah Pratama,Teknik Elektro,B,70.6,71.1,78.2,77.4,84.8
+260094,Sari Hidayat,Teknik Elektro,B,71.9,57.6,80.0,70.2,82.5
+260095,Nina Hidayat,Teknik Elektro,A,74.2,75.8,87.8,68.6,81.6
+260096,Fajar Wijaya,Teknik Elektro,A,66.8,62.2,77.5,81.7,80.7
+260097,Umar Kusuma,Teknik Elektro,A,73.0,71.5,80.1,82.3,93.0
+260098,Dedi Pratama,Teknik Elektro,B,48.7,62.2,61.9,57.7,76.9
+260099,Made Saputra,Teknik Elektro,A,64.3,69.1,71.4,72.0,81.2
+260100,Eka Saputra,Teknik Elektro,A,65.4,68.5,72.9,75.3,63.5
+260101,Kiki Kusuma,Teknik Elektro,B,71.7,51.5,83.0,75.1,88.1
+260102,Oki Wijaya,Teknik Elektro,A,62.0,62.4,65.8,59.2,77.7
+260103,Lina Nugroho,Teknik Elektro,A,62.3,74.8,82.1,65.3,74.0
+260104,Eka Nugroho,Teknik Elektro,A,67.9,68.5,82.8,74.1,87.8
+260105,Dedi Setiawan,Teknik Elektro,A,64.6,54.6,74.6,67.4,57.0
+260106,Fajar Santoso,Teknik Elektro,A,65.1,69.2,72.7,71.9,81.4
+260107,Lina Kusuma,Teknik Elektro,B,58.3,59.9,61.6,71.3,72.1
+260108,Sari Rahayu,Teknik Elektro,A,78.7,80.9,81.9,81.1,79.6
+260109,Ani Pratama,Teknik Elektro,B,74.2,73.9,87.5,83.8,78.3
+260110,Dedi Nugroho,Teknik Elektro,B,69.0,78.4,79.6,64.6,74.4
+260111,Dedi Nugroho,Teknik Elektro,A,78.2,76.9,71.3,72.3,83.3
+260112,Gita Lestari,Teknik Elektro,A,64.3,65.8,69.5,64.9,62.8
+260113,Indah Kusuma,Teknik Elektro,B,67.8,68.6,73.6,76.8,63.5
+260114,Budi Wijaya,Teknik Elektro,A,63.2,61.8,72.9,75.4,79.2
+260115,Rangga Lestari,Teknik Elektro,B,86.4,79.2,77.6,88.0,79.0
+260116,Oki Wijaya,Teknik Elektro,B,55.3,58.7,71.5,75.5,63.4
+260117,Umar Hidayat,Teknik Elektro,B,56.7,50.1,60.6,54.8,64.1
+260118,Hadi Hidayat,Teknik Elektro,A,46.4,44.7,66.1,47.7,75.4
+260119,Fajar Rahayu,Teknik Elektro,B,70.0,78.0,89.5,77.5,83.4
+260120,Lina Wijaya,Teknik Elektro,B,82.5,60.0,82.4,74.3,88.2

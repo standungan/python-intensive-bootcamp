@@ -301,7 +301,7 @@ application/json; charset=utf-8
 https://api.github.com/search/repositories?q=python&sort=stars 403
 ```
 
-_Catatan: dijalankan langsung ke `api.github.com` dari lingkungan pengujian. Respons permintaan kedua (`/search/repositories`) adalah 403 karena pembatasan akses/rate limit tanpa token; di komputer peserta biasanya 200. Isi `list(data.keys())` kosong pada respons yang diterima di lingkungan ini._
+_Catatan: dijalankan langsung ke `api.github.com` dari lingkungan pengujian. Respons permintaan kedua (`/search/repositories`) adalah 403 karena sesi pengujian ini hanya diizinkan mengakses repositori yang terikat pada sesi (bukan rate limit); di komputer peserta biasanya 200. Isi `list(data.keys())` kosong pada respons yang diterima di lingkungan ini._
 
 ## 5.2 API Publik
 

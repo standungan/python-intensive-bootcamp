@@ -1,0 +1,12 @@
+test_bandingkan_prodi (test_analisis_nilai.TestAnalisisNilai.test_bandingkan_prodi) ... ok
+test_file_tidak_ada (test_analisis_nilai.TestAnalisisNilai.test_file_tidak_ada) ... ok
+test_filter_dan_ranking (test_analisis_nilai.TestAnalisisNilai.test_filter_dan_ranking) ... ok
+test_jumlah_dan_rata_rata (test_analisis_nilai.TestAnalisisNilai.test_jumlah_dan_rata_rata) ... ok
+test_state_bolak_balik (test_analisis_nilai.TestAnalisisNilai.test_state_bolak_balik) ... ok
+test_tambah_tidak_valid (test_analisis_nilai.TestAnalisisNilai.test_tambah_tidak_valid) ... ok
+test_tambah_valid_dan_nim_berurutan (test_analisis_nilai.TestAnalisisNilai.test_tambah_valid_dan_nim_berurutan) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.077s
+
+OK

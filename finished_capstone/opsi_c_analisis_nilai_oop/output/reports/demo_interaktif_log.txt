@@ -1,0 +1,84 @@
+
+=== ANALISIS NILAI ===
+1. Statistik
+2. Ranking top 5
+3. Filter by prodi
+4. Tambah mahasiswa
+5. Simpan & keluar
+Pilih (1-5): 1
+                  pemrograman  basis_data  jaringan  statistika  matematika_diskrit  rata_rata
+prodi                                                                                         
+Informatika             76.71       70.90     68.38       68.33               71.85      71.23
+Sistem Informasi        67.58       76.21     69.78       72.45               66.89      70.58
+Teknik Elektro          65.71       64.83     75.29       71.04               75.68      70.51
+
+=== ANALISIS NILAI ===
+1. Statistik
+2. Ranking top 5
+3. Filter by prodi
+4. Tambah mahasiswa
+5. Simpan & keluar
+Pilih (1-5): 3
+Nama prodi: Informatika
+41 mahasiswa ditemukan.
+   nim           nama  rata_rata predikat
+260001   Oki Setiawan      65.96        C
+260002    Dedi Wijaya      71.08        B
+260003   Budi Hidayat      65.08        C
+260004    Nina Kusuma      73.26        B
+260005 Indah Setiawan      66.60        C
+
+=== ANALISIS NILAI ===
+1. Statistik
+2. Ranking top 5
+3. Filter by prodi
+4. Tambah mahasiswa
+5. Simpan & keluar
+Pilih (1-5): 2
+              nim           nama             prodi  rata_rata predikat
+peringkat                                                             
+1          260070    Oki Pratama  Sistem Informasi      96.12        A
+2          260007   Sari Hidayat       Informatika      88.42        A
+3          260121   Rina Kartika       Informatika      87.00        A
+4          260039   Joko Lestari       Informatika      84.60        B
+5          260041  Putri Saputra  Sistem Informasi      83.38        B
+
+=== ANALISIS NILAI ===
+1. Statistik
+2. Ranking top 5
+3. Filter by prodi
+4. Tambah mahasiswa
+5. Simpan & keluar
+Pilih (1-5): 4
+Nama: Budi Contoh
+Prodi: Sistem Informasi
+Kelas (A/B): b
+  nilai pemrograman: 80
+  nilai basis_data: 85
+  nilai jaringan: 90
+  nilai statistika: 75
+  nilai matematika_diskrit: 70
+Ditambahkan dengan NIM 260122
+
+=== ANALISIS NILAI ===
+1. Statistik
+2. Ranking top 5
+3. Filter by prodi
+4. Tambah mahasiswa
+5. Simpan & keluar
+Pilih (1-5): 4
+Nama: Orang Salah
+Prodi: Sistem Informasi
+Kelas (A/B): A
+  nilai pemrograman: 80
+  nilai basis_data: abc
+Gagal: could not convert string to float: 'abc'
+
+=== ANALISIS NILAI ===
+1. Statistik
+2. Ranking top 5
+3. Filter by prodi
+4. Tambah mahasiswa
+5. Simpan & keluar
+Pilih (1-5): 5
+State disimpan. Sampai jumpa!

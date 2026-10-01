@@ -1,0 +1,7 @@
+matkul,rata_Informatika,rata_Teknik Elektro,selisih,t,p_value,signifikan_5%
+pemrograman,76.382,65.708,10.675,4.962,4.0089017627787e-06,True
+basis_data,70.542,64.833,5.71,2.873,0.00523714295774595,True
+jaringan,68.088,75.288,-7.2,-3.911,0.00019488934660842925,True
+statistika,67.84,71.042,-3.202,-1.558,0.12323085352782275,False
+matematika_diskrit,71.345,75.678,-4.332,-1.821,0.07241599977289602,False
+rata_rata,70.84,70.51,0.33,0.195,0.8461411566458685,False

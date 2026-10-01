@@ -1,0 +1,117 @@
+AnalisisNilai(120 mahasiswa, 5 mata kuliah) 
+
+============================================================
+1. STATISTIK
+============================================================
+                    count   mean  median    std    min     max
+pemrograman         120.0  69.89   70.30  11.72  42.80   99.10
+basis_data          120.0  70.53   70.35   9.81  44.70  100.00
+jaringan            120.0  71.05   71.10   9.33  47.70   99.60
+statistika          120.0  70.44   71.00   9.62  45.30   95.60
+matematika_diskrit  120.0  71.30   72.10  10.57  43.30   95.30
+rata_rata           120.0  70.64   70.40   7.83  46.98   96.12
+
+Rata-rata per prodi:
+                  pemrograman  basis_data  jaringan  statistika  matematika_diskrit  rata_rata
+prodi                                                                                         
+Informatika             76.38       70.54     68.09       67.84               71.34      70.84
+Sistem Informasi        67.58       76.21     69.78       72.45               66.89      70.58
+Teknik Elektro          65.71       64.83     75.29       71.04               75.68      70.51
+
+Sebaran predikat:
+predikat
+A     2
+B    63
+C    51
+D     4
+
+============================================================
+2. FILTER
+============================================================
+Teknik Elektro dengan rata-rata >= 80: 3 mahasiswa
+Predikat A di seluruh prodi: 2 mahasiswa
+Kelas B Sistem Informasi: 25 mahasiswa
+
+============================================================
+3. RANKING
+============================================================
+Top 10 keseluruhan:
+              nim            nama             prodi  rata_rata predikat
+peringkat                                                              
+1          260070     Oki Pratama  Sistem Informasi      96.12        A
+2          260007    Sari Hidayat       Informatika      88.42        A
+3          260039    Joko Lestari       Informatika      84.60        B
+4          260041   Putri Saputra  Sistem Informasi      83.38        B
+5          260071    Dedi Saputra  Sistem Informasi      83.02        B
+6          260058     Oki Nugroho  Sistem Informasi      82.60        B
+7          260059    Gita Lestari  Sistem Informasi      82.50        B
+8          260115  Rangga Lestari    Teknik Elektro      82.04        B
+9          260017     Tono Kusuma       Informatika      81.54        B
+10         260084  Indah Setiawan    Teknik Elektro      81.44        B
+
+Top 3 per prodi:
+
+Informatika
+              nim          nama        prodi  rata_rata predikat
+peringkat                                                       
+1          260007  Sari Hidayat  Informatika      88.42        A
+2          260039  Joko Lestari  Informatika      84.60        B
+3          260017   Tono Kusuma  Informatika      81.54        B
+
+Sistem Informasi
+              nim           nama             prodi  rata_rata predikat
+peringkat                                                             
+1          260070    Oki Pratama  Sistem Informasi      96.12        A
+2          260041  Putri Saputra  Sistem Informasi      83.38        B
+3          260071   Dedi Saputra  Sistem Informasi      83.02        B
+
+Teknik Elektro
+              nim            nama           prodi  rata_rata predikat
+peringkat                                                            
+1          260115  Rangga Lestari  Teknik Elektro      82.04        B
+2          260084  Indah Setiawan  Teknik Elektro      81.44        B
+3          260108     Sari Rahayu  Teknik Elektro      80.44        B
+
+============================================================
+4. BANDINGKAN PRODI (Welch t-test)
+============================================================
+                    rata_Informatika  rata_Teknik Elektro  selisih      t   p_value  signifikan_5%
+matkul                                                                                            
+pemrograman                    76.38                65.71    10.68  4.962 4.009e-06           True
+basis_data                     70.54                64.83     5.71  2.873  0.005237           True
+jaringan                       68.09                75.29     -7.2 -3.911 0.0001949           True
+statistika                     67.84                71.04   -3.202 -1.558    0.1232          False
+matematika_diskrit             71.34                75.68   -4.332 -1.821   0.07242          False
+rata_rata                      70.84                70.51     0.33  0.195    0.8461          False
+
+============================================================
+5. VISUALISASI & EXPORT
+============================================================
+Grafik: 00_dashboard.png, 01_distribusi_rata_rata.png, 02_boxplot_per_prodi.png, 03_rata_matkul_per_prodi.png, 04_korelasi_matkul.png, 05_top10.png, 06_predikat_per_prodi.png
+Laporan CSV & Excel (5 sheet) disimpan di output/reports/
+
+============================================================
+6. INSIGHT
+============================================================
+1. **Program studi dengan rata-rata tertinggi: Informatika** (70.84); selisih rata-rata antar prodi hanya 0.33 poin, sehingga perbedaan lebih terlihat pada mata kuliah daripada rata-rata keseluruhan.
+
+2. **Setiap prodi unggul pada mata kuliah berbeda:** Informatika → pemrograman; Sistem Informasi → basis_data; Teknik Elektro → matematika_diskrit.
+
+3. **Perbandingan Informatika vs Teknik Elektro (Welch t-test, alpha 5%):** mata kuliah dengan beda signifikan: pemrograman, basis_data, jaringan. Selisih terbesar pada pemrograman (+10.7 poin).
+
+4. **Semua korelasi antar mata kuliah positif** (r antara 0.26 dan 0.65): terkuat jaringan–matematika_diskrit, terlemah basis_data–matematika_diskrit; mahasiswa yang kuat di satu mata kuliah cenderung kuat di lainnya (kemampuan umum).
+
+5. **Mata kuliah paling bervariasi: pemrograman** (SD 11.7); paling seragam: jaringan (SD 9.3).
+
+6. **Sebaran predikat:** A 1.7%, B 52.5%, C 42.5%, D 3.3%.
+
+============================================================
+7. TAMBAH DATA (dengan validasi)
+============================================================
+Mahasiswa baru ditambahkan dengan NIM 260121
+Input ditolak: Nilai matematika_diskrit=120 harus angka 0-100.
+
+============================================================
+8. SIMPAN & MUAT STATE
+============================================================
+State disimpan ke state_aplikasi.json; dimuat ulang: AnalisisNilai(121 mahasiswa, 5 mata kuliah); data identik: True
