@@ -962,7 +962,11 @@ print(df["grade"].value_counts())
 
 > **Output:** _tidak dijalankan_ — skeleton; berisi placeholder `[...]` dan `...` yang harus diisi peserta, sehingga belum bisa dijalankan
 
-> Tips Pengerjaan Project 1 Gunakan metode nlargest() untuk mengambil baris dengan nilai tertinggi agar kode lebih ringkas. Fungsi penentuan grade dapat juga dibuat dengan np.where yang bersarang, namun if-elif biasanya lebih mudah dibaca.
+> **Tips Pengerjaan Project 1**
+>
+> Gunakan metode nlargest() untuk mengambil baris dengan nilai tertinggi agar kode lebih ringkas.
+>
+> Fungsi penentuan grade dapat juga dibuat dengan np.where yang bersarang, namun if-elif biasanya lebih mudah dibaca.
 
 ## Mini Project 2 — Cleaning Dataset Kotor (Level Menengah)
 
@@ -1309,7 +1313,15 @@ Jumlah duplikat: 1
 
 _Catatan: dijalankan dengan dataset contoh kecil (`nama_dataset.csv`, 4 baris) karena file aslinya milik peserta. Pada pandas 3.x `describe(include="object")` mengeluarkan peringatan; gunakan `include=["object", "str"]` untuk mengikuti perilaku baru._
 
-> Panduan Pengerjaan Mini Project Mini Project 1 dan Mini Project 2 bersifat wajib untuk dikerjakan oleh seluruh peserta. Mini Project 3, 4, dan 5 bersifat challenge. Kerjakan sesuai dengan sisa waktu dan kemampuan masing-masing. Sangat disarankan menggunakan Jupyter Notebook agar seluruh proses analisis terdokumentasi dengan rapi. Dataset publik yang direkomendasikan antara lain: Student Performance (UCI atau Kaggle), Titanic, Iris, dan Gapminder.
+> **Panduan Pengerjaan Mini Project**
+>
+> Mini Project 1 dan Mini Project 2 bersifat wajib untuk dikerjakan oleh seluruh peserta.
+>
+> Mini Project 3, 4, dan 5 bersifat challenge. Kerjakan sesuai dengan sisa waktu dan kemampuan masing-masing.
+>
+> Sangat disarankan menggunakan Jupyter Notebook agar seluruh proses analisis terdokumentasi dengan rapi.
+>
+> Dataset publik yang direkomendasikan antara lain: Student Performance (UCI atau Kaggle), Titanic, Iris, dan Gapminder.
 
 # 7. Troubleshooting dan Best Practice
 
@@ -1343,7 +1355,13 @@ category
 
 _Catatan: snippet dijalankan dengan DataFrame contoh kecil dan `data_besar.csv` buatan; baris komentar menjelaskan kesalahan umum, bukan kode yang dijalankan._
 
-> Best Practice dalam Menggunakan Pandas Gunakan .loc dan .iloc secara eksplisit agar kode lebih jelas dan terhindar dari ambiguitas. Setelah melakukan operasi penting, selalu periksa hasilnya dengan .head() atau .shape. Apabila terdapat rangkaian langkah cleaning yang berulang, bungkus langkah-langkah tersebut ke dalam sebuah function agar mudah digunakan kembali.
+> **Best Practice dalam Menggunakan Pandas**
+>
+> Gunakan .loc dan .iloc secara eksplisit agar kode lebih jelas dan terhindar dari ambiguitas.
+>
+> Setelah melakukan operasi penting, selalu periksa hasilnya dengan .head() atau .shape.
+>
+> Apabila terdapat rangkaian langkah cleaning yang berulang, bungkus langkah-langkah tersebut ke dalam sebuah function agar mudah digunakan kembali.
 
 # 7b. Troubleshooting Lengkap (Contoh Kasus)
 
@@ -1679,10 +1697,10 @@ Untuk latihan Pandas, praktikkan ulang contoh groupby, merge, dan pivot_table. G
 
 - Project 1 & 2 wajib; Project 3–5 challenge sesuai kemampuan.
 - Selalu cek df.head(), df.info(), df.isna().sum() sebelum analisis.
-
 - Gunakan .copy() saat membuat subset yang akan dimodifikasi.
 - Simpan hasil akhir ke CSV/Excel agar mudah dilaporkan.
-
 - Beri judul dan label yang jelas pada setiap ringkasan/groupby.
 
-> Materi Hari 4 Selesai Kerjakan Mini Project 1 dan 2 (wajib)   •   Challenge Project 3 sampai 5   •   Lanjut ke Hari 5
+> **Materi Hari 4 Selesai**
+>
+> Kerjakan Mini Project 1 dan 2 (wajib)   •   Challenge Project 3 sampai 5   •   Lanjut ke Hari 5

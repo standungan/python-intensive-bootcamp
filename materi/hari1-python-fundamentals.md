@@ -316,11 +316,11 @@ for i in range(1, 6):
 
 ## 5.5 Latihan Modul 3
 
-5. Program penentu genap/ganjil.
-6. Tampilkan bilangan genap 1–50.
-7. Kasir: total ≥100.000 dapat diskon 10%.
-8. Game tebak angka dengan petunjuk.
-9. Cetak pola segitiga bintang (nested for).
+1. Program penentu genap/ganjil.
+2. Tampilkan bilangan genap 1–50.
+3. Kasir: total ≥100.000 dapat diskon 10%.
+4. Game tebak angka dengan petunjuk.
+5. Cetak pola segitiga bintang (nested for).
 
 # 6. Modul 4 — Data Structures
 
@@ -408,11 +408,11 @@ unik = list(set([1, 2, 2, 3, 3]))  # hapus duplikat
 
 ## 6.5 Latihan Modul 4
 
-10. List 5 mata kuliah: tampilkan, tambah 1, hapus pertama.
-11. Dictionary data diri (nama, nim, prodi, hobi list). Tampilkan key-value.
-12. nilai = [75,80,90,65,88,70,95] → hitung yang lulus (≥75).
-13. Dua set hobi: tampilkan intersection & union.
-14. List of dict 3 mahasiswa → tampilkan IPK tertinggi.
+1. List 5 mata kuliah: tampilkan, tambah 1, hapus pertama.
+2. Dictionary data diri (nama, nim, prodi, hobi list). Tampilkan key-value.
+3. nilai = [75,80,90,65,88,70,95] → hitung yang lulus (≥75).
+4. Dua set hobi: tampilkan intersection & union.
+5. List of dict 3 mahasiswa → tampilkan IPK tertinggi.
 
 # 7. Best Practice — PEP 8 (Pembahasan Lengkap)
 
@@ -511,7 +511,15 @@ IPK: 3.50
 - Biasakan menulis kode rapi sejak latihan kecil — jangan menunggu project besar
 - Baca ulang kode sendiri sebelum dianggap selesai
 
-> Alat Bantu PEP 8 Black (formatter otomatis yang sangat populer) autopep8, yapf Pylint / Flake8 / Ruff (linter) Di VS Code: aktifkan 'Format On Save'
+> **Alat Bantu PEP 8**
+>
+> Black (formatter otomatis yang sangat populer)
+>
+> autopep8, yapf
+>
+> Pylint / Flake8 / Ruff (linter)
+>
+> Di VS Code: aktifkan 'Format On Save'
 
 # 8. Mini Project 1 — Sistem Data Mahasiswa Sederhana (Level Dasar)
 
@@ -612,7 +620,15 @@ while True:
 
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton (isi function berupa `pass`, loop menu tidak berisi logika) — tidak dijalankan
 
-> Tips Pengerjaan Mini Project 1 Kerjakan satu function pada satu waktu. Uji dulu sebelum lanjut. Untuk IPK tertinggi: max(data, key=lambda m: m['ipk']) Gunakan .strip() pada setiap input agar spasi berlebih tidak mengganggu. Tambahkan pesan konfirmasi setelah berhasil menambah/menghapus data.
+> **Tips Pengerjaan Mini Project 1**
+>
+> Kerjakan satu function pada satu waktu. Uji dulu sebelum lanjut.
+>
+> Untuk IPK tertinggi: max(data, key=lambda m: m['ipk'])
+>
+> Gunakan .strip() pada setiap input agar spasi berlebih tidak mengganggu.
+>
+> Tambahkan pesan konfirmasi setelah berhasil menambah/menghapus data.
 
 ## 8.7 Tantangan Tambahan (Opsional)
 
@@ -693,7 +709,15 @@ def peringkat(data):
 
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton (isi function berupa `pass`) — tidak dijalankan
 
-> Tips Pengerjaan Mini Project 2 Mulai dari fitur tambah mahasiswa dulu, pastikan berjalan. Baru lanjut ke tambah nilai. Untuk peringkat: buat list sementara berisi tuple/list [rata_rata, nama], lalu sorted(reverse=True). Gunakan print() untuk debugging di setiap tahap.
+> **Tips Pengerjaan Mini Project 2**
+>
+> Mulai dari fitur tambah mahasiswa dulu, pastikan berjalan.
+>
+> Baru lanjut ke tambah nilai.
+>
+> Untuk peringkat: buat list sementara berisi tuple/list [rata_rata, nama], lalu sorted(reverse=True).
+>
+> Gunakan print() untuk debugging di setiap tahap.
 
 # 10. Troubleshooting Singkat
 
@@ -1055,4 +1079,6 @@ print(terbaik["nama"], terbaik["ipk"])
 Budi 3.85
 ```
 
-> ✓ Materi Hari 1 (Revisi Final) Selesai Kedua Mini Project sekarang memiliki format penyajian yang konsisten • PEP 8 sudah diperluas
+> **✓ Materi Hari 1 (Revisi Final) Selesai**
+>
+> Kedua Mini Project sekarang memiliki format penyajian yang konsisten • PEP 8 sudah diperluas

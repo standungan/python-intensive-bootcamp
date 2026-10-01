@@ -225,7 +225,11 @@ Luar fungsi: 10
 1
 ```
 
-> Best Practice Scope Hindari penggunaan 'global' sebisa mungkin. Lebih baik menggunakan return value. Function yang baik bersifat pure: menerima input → memproses → mengembalikan output, tanpa side effect tersembunyi.
+> **Best Practice Scope**
+>
+> Hindari penggunaan 'global' sebisa mungkin. Lebih baik menggunakan return value.
+>
+> Function yang baik bersifat pure: menerima input → memproses → mengembalikan output, tanpa side effect tersembunyi.
 
 ## 3.8 Docstring
 
@@ -441,14 +445,20 @@ print(unik)                     # {0, 1, 2}
 {0, 1, 2}
 ```
 
-> Kapan pakai apa? List comprehension → pilihan utama untuk membuat list baru (paling readable). map/filter → berguna jika sudah punya function yang siap pakai. Lambda → cocok untuk operasi sangat sederhana, terutama sebagai key di sorted().
+> **Kapan pakai apa?**
+>
+> List comprehension → pilihan utama untuk membuat list baru (paling readable).
+>
+> map/filter → berguna jika sudah punya function yang siap pakai.
+>
+> Lambda → cocok untuk operasi sangat sederhana, terutama sebagai key di sorted().
 
 ## 4.5 Latihan Modul 2
 
-6. Dengan list comprehension: buat list kuadrat dari 1 sampai 20.
-7. Dari list nilai = [60, 75, 40, 90, 55, 80], ambil hanya yang lulus (≥75) lalu kalikan 1.1 (bonus).
-8. Gunakan filter + lambda untuk mengambil nama yang panjangnya > 4 dari list nama.
-9. Buat dictionary comprehension: {angka: "genap"/"ganjil"} untuk angka 1–10.
+1. Dengan list comprehension: buat list kuadrat dari 1 sampai 20.
+2. Dari list nilai = [60, 75, 40, 90, 55, 80], ambil hanya yang lulus (≥75) lalu kalikan 1.1 (bonus).
+3. Gunakan filter + lambda untuk mengambil nama yang panjangnya > 4 dari list nama.
+4. Buat dictionary comprehension: {angka: "genap"/"ganjil"} untuk angka 1–10.
 
 # 5. Modul 3 — Modules & Packages
 
@@ -581,8 +591,8 @@ _Catatan: materi tidak mendefinisikan `slugify`; untuk pengujian dibuat `mypacka
 
 ## 5.5 Latihan Modul 3
 
-10. Buat module konversi.py berisi function: celsius_ke_fahrenheit, fahrenheit_ke_celsius, meter_ke_km.
-11. Buat module string_utils.py berisi: hitung_vokal, balik_string, apakah_palindrome.
+1. Buat module konversi.py berisi function: celsius_ke_fahrenheit, fahrenheit_ke_celsius, meter_ke_km.
+2. Buat module string_utils.py berisi: hitung_vokal, balik_string, apakah_palindrome.
 
 # 6. Modul 4 — Error Handling (try-except)
 
@@ -695,8 +705,8 @@ Error: Umur tidak masuk akal
 
 ## 6.5 Latihan Modul 4
 
-12. Buat program pembagian yang menangani ValueError dan ZeroDivisionError dengan baik.
-13. Buat function ambil_nilai_dict(data, key) yang mengembalikan value atau pesan error jika key tidak ada (jangan sampai KeyError).
+1. Buat program pembagian yang menangani ValueError dan ZeroDivisionError dengan baik.
+2. Buat function ambil_nilai_dict(data, key) yang mengembalikan value atau pesan error jika key tidak ada (jangan sampai KeyError).
 
 # 7. Modul 5 — File Handling
 
@@ -735,7 +745,11 @@ Ini baris kedua.
 
 _Catatan: dijalankan di folder sementara; `catatan.txt` dibuat otomatis. Baris kosong ekstra setelah "baris kedua" berasal dari `print(isi)` (isi berakhir `\n`)._
 
-> Penting: with statement Selalu gunakan 'with open(...) as f' agar file otomatis ditutup, bahkan jika terjadi error. Ini adalah praktik terbaik (context manager).
+> **Penting: with statement**
+>
+> Selalu gunakan 'with open(...) as f' agar file otomatis ditutup, bahkan jika terjadi error.
+>
+> Ini adalah praktik terbaik (context manager).
 
 ## 7.2 pathlib — Cara Modern Mengelola Path
 
@@ -836,9 +850,9 @@ Citra - IPK: 3.90
 
 ## 7.4 Latihan Modul 5
 
-14. Tulis daftar 5 mata kuliah ke file mk.txt (satu per baris), lalu baca dan tampilkan.
-15. Buat file CSV nilai.csv berisi header + 3 data mahasiswa, lalu baca dengan DictReader.
-16. Gunakan pathlib untuk mengecek apakah file tertentu ada, jika ada baca isinya.
+1. Tulis daftar 5 mata kuliah ke file mk.txt (satu per baris), lalu baca dan tampilkan.
+2. Buat file CSV nilai.csv berisi header + 3 data mahasiswa, lalu baca dengan DictReader.
+3. Gunakan pathlib untuk mengecek apakah file tertentu ada, jika ada baca isinya.
 
 # 8. Mini Project 1 — Pencatat Kegiatan Akademik (Level Dasar)
 
@@ -918,7 +932,13 @@ while True:
 
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton; `while True:` hanya berisi komentar sehingga belum valid dijalankan (IndentationError) — peserta wajib mengisinya
 
-> Tips Mini Project 1 Kerjakan dulu fitur muat_data dan simpan_data — ini fondasinya. Gunakan date.today().isoformat() untuk tanggal otomatis jika ingin. Uji dengan menambah data, tutup program, buka lagi — data harus tetap ada.
+> **Tips Mini Project 1**
+>
+> Kerjakan dulu fitur muat_data dan simpan_data — ini fondasinya.
+>
+> Gunakan date.today().isoformat() untuk tanggal otomatis jika ingin.
+>
+> Uji dengan menambah data, tutup program, buka lagi — data harus tetap ada.
 
 # 9. Mini Project 2 — Sistem Perpustakaan Mini (Level Lebih Tinggi)
 
@@ -978,7 +998,15 @@ def tampilkan_peminjaman_aktif(peminjaman, buku): ...
 
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton (function berisi `...`, tanpa logika menu)
 
-> Tips Mini Project 2 Mulai dari CRUD buku dulu sampai lancar. Baru kerjakan fitur pinjam dan kembalikan. Gunakan ID unik agar relasi antara buku dan peminjaman mudah. Banyak gunakan function agar kode tidak berantakan.
+> **Tips Mini Project 2**
+>
+> Mulai dari CRUD buku dulu sampai lancar.
+>
+> Baru kerjakan fitur pinjam dan kembalikan.
+>
+> Gunakan ID unik agar relasi antara buku dan peminjaman mudah.
+>
+> Banyak gunakan function agar kode tidak berantakan.
 
 # 10. Troubleshooting Hari 2
 
@@ -1330,7 +1358,9 @@ Basis Data
 AI
 ```
 
-> ✓ Materi Hari 2 Selesai Kerjakan kedua Mini Project  •  Siapkan diri untuk Hari 3 (OOP)
+> **✓ Materi Hari 2 Selesai**
+>
+> Kerjakan kedua Mini Project  •  Siapkan diri untuk Hari 3 (OOP)
 
 11.4 Solusi Modul 3 — Modules & Packages
 
@@ -1411,10 +1441,8 @@ _Catatan: urutan: "Operasi selesai" tercetak lebih dulu karena `finally` berjala
 
 Tips Mini Project Hari 2
 
-• Pecah logika menjadi function kecil (satu function = satu tugas).
+- Pecah logika menjadi function kecil (satu function = satu tugas).
+- Gunakan try-except saat membaca/menulis file.
 
-• Gunakan try-except saat membaca/menulis file.
-
-• Simpan data ke CSV agar mudah dibaca ulang.
-
-• Uji setiap menu satu per satu sebelum menggabungkan.
+- Simpan data ke CSV agar mudah dibaca ulang.
+- Uji setiap menu satu per satu sebelum menggabungkan.

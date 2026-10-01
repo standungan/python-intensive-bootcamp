@@ -138,8 +138,8 @@ True
 
 ## 4.2 Latihan Inheritance
 
-4. Buat class Kendaraan (merek, tahun). Turunkan class Mobil dan Motor.
-5. Override method info() di masing-masing subclass. Buat 1 object dari tiap class.
+1. Buat class Kendaraan (merek, tahun). Turunkan class Mobil dan Motor.
+2. Override method info() di masing-masing subclass. Buat 1 object dari tiap class.
 
 # 5. Encapsulation & Special Methods
 
@@ -311,7 +311,11 @@ while True:
 
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton; method berisi `pass` dan loop menu `while True` memerlukan input interaktif — peserta wajib mengisinya
 
-> Tips Project 1 Gunakan enumerate() saat menampilkan daftar agar user bisa memilih index. Validasi index saat menandai selesai agar tidak IndexError.
+> **Tips Project 1**
+>
+> Gunakan enumerate() saat menampilkan daftar agar user bisa memilih index.
+>
+> Validasi index saat menandai selesai agar tidak IndexError.
 
 ## Mini Project 2 — Sistem Perpustakaan dengan Inheritance (Level Lebih Tinggi)
 
@@ -397,7 +401,11 @@ perpustakaan = Perpustakaan()
 
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton; method `pinjam`, `kembalikan`, `cari` masih `pass` dan belum ada loop menu
 
-> Tips Project 2 Manfaatkan polymorphism: tampilkan() cukup memanggil print(item) karena tiap subclass punya __str__ sendiri. Method pinjam/kembalikan bisa memakai loop + break saat item ditemukan.
+> **Tips Project 2**
+>
+> Manfaatkan polymorphism: tampilkan() cukup memanggil print(item) karena tiap subclass punya __str__ sendiri.
+>
+> Method pinjam/kembalikan bisa memakai loop + break saat item ditemukan.
 
 # 7. Troubleshooting
 
@@ -717,4 +725,10 @@ print(n.info())
 [Motor] Honda (2023) — Matic
 ```
 
-> Hari 3 Selesai Kerjakan Mini Project 1 (wajib) dan Project 2 (challenge). Pastikan menggunakan class, inheritance, dan __str__ dengan benar. Lanjut ke Hari 4: NumPy & Pandas.
+> **Hari 3 Selesai**
+>
+> Kerjakan Mini Project 1 (wajib) dan Project 2 (challenge).
+>
+> Pastikan menggunakan class, inheritance, dan __str__ dengan benar.
+>
+> Lanjut ke Hari 4: NumPy & Pandas.

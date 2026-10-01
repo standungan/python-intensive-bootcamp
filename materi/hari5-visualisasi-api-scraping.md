@@ -391,7 +391,11 @@ _Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan 
 
 ## 6.1 Etika
 
-> Etika Scraping Periksa robots.txt. Hormati rate limit. Utamakan API resmi (seperti arXiv). Jangan membebani server — gunakan time.sleep.
+> **Etika Scraping**
+>
+> Periksa robots.txt. Hormati rate limit. Utamakan API resmi (seperti arXiv).
+>
+> Jangan membebani server — gunakan time.sleep.
 
 ## 6.2 BeautifulSoup
 
@@ -454,7 +458,9 @@ df.to_csv("arxiv_hasil.csv", index=False)
 
 _Catatan: host export.arxiv.org tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
 
-> Rate Limit arXiv Maksimal 1 request per 3 detik. Dokumentasi: https://info.arxiv.org/help/api/user-manual.html
+> **Rate Limit arXiv**
+>
+> Maksimal 1 request per 3 detik. Dokumentasi: https://info.arxiv.org/help/api/user-manual.html
 
 ## 6.4 Latihan Scraping & arXiv
 
@@ -513,7 +519,11 @@ plt.show()
 
 > **Output:** _tidak dijalankan_ — skeleton; berisi placeholder `[...]` dan `# ...` yang harus diisi peserta
 
-> Tips Project 1 Gunakan subplot 2x2 agar semua grafik berada dalam satu figure. Pastikan setiap grafik memiliki judul dan label yang jelas.
+> **Tips Project 1**
+>
+> Gunakan subplot 2x2 agar semua grafik berada dalam satu figure.
+>
+> Pastikan setiap grafik memiliki judul dan label yang jelas.
 
 ## Mini Project 2 — Ambil Data API dan Visualisasikan (Level Menengah)
 
@@ -580,7 +590,11 @@ df.to_csv("hasil_api.csv", index=False)
 
 _Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
 
-> Tips Project 2 Gunakan pd.json_normalize() untuk data JSON yang nested. Pilih kolom yang relevan sebelum membuat visualisasi.
+> **Tips Project 2**
+>
+> Gunakan pd.json_normalize() untuk data JSON yang nested.
+>
+> Pilih kolom yang relevan sebelum membuat visualisasi.
 
 ## Mini Project 3 — Pencarian Paper dengan arXiv API (Level Menengah-Tinggi)
 
@@ -672,7 +686,11 @@ _Catatan: input simulasi: `deep learning`._
 
 _Catatan: host export.arxiv.org tidak dapat diakses dari lingkungan pengujian (kebijakan jaringan), sehingga kode dijalankan dengan respons tiruan yang bentuknya sama dengan API asli. **Nilai/teks pada output ini contoh, bukan data nyata.**_
 
-> Tips Project 3 Sangat cocok untuk mahasiswa S2/S3 yang membutuhkan literatur. Jangan lupa time.sleep(3) jika melakukan banyak request.
+> **Tips Project 3**
+>
+> Sangat cocok untuk mahasiswa S2/S3 yang membutuhkan literatur.
+>
+> Jangan lupa time.sleep(3) jika melakukan banyak request.
 
 ## Mini Project 4 — Mini EDA + Visualisasi Lengkap (Level Tinggi)
 
@@ -734,9 +752,21 @@ plt.show()
 
 _Catatan: dijalankan dengan `data_anda.csv` contoh (40 baris, kolom `kolom1`, `kategori`, `nilai`, `kolom_x`, `kolom_y`) karena file aslinya milik peserta._
 
-> Tips Project 4 Pilih visualisasi yang benar-benar menceritakan sesuatu dari data. Insight harus didukung oleh apa yang terlihat di grafik.
+> **Tips Project 4**
+>
+> Pilih visualisasi yang benar-benar menceritakan sesuatu dari data.
+>
+> Insight harus didukung oleh apa yang terlihat di grafik.
 
-> Panduan Pengerjaan Mini Project Project 1 dan 2 bersifat wajib. Project 3 (arXiv) sangat direkomendasikan bagi mahasiswa S2/S3. Project 4 adalah challenge integrasi skill visualisasi. Gunakan Jupyter Notebook agar grafik langsung terlihat.
+> **Panduan Pengerjaan Mini Project**
+>
+> Project 1 dan 2 bersifat wajib.
+>
+> Project 3 (arXiv) sangat direkomendasikan bagi mahasiswa S2/S3.
+>
+> Project 4 adalah challenge integrasi skill visualisasi.
+>
+> Gunakan Jupyter Notebook agar grafik langsung terlihat.
 
 # 8. Solusi Latihan
 
@@ -1222,4 +1252,6 @@ if df.empty:
 Tidak ada hasil — cek query: all:keyword atau ti:keyword
 ```
 
-> Materi Hari 5 Selesai Format Mini Project sudah konsisten  •  Latihan + Solusi lengkap  •  Siap ke Hari 6
+> **Materi Hari 5 Selesai**
+>
+> Format Mini Project sudah konsisten  •  Latihan + Solusi lengkap  •  Siap ke Hari 6
