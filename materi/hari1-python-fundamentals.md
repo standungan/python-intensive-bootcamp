@@ -57,6 +57,12 @@ data = 100
 data = "seratus"               # tipe bisa berubah
 ```
 
+**Output:**
+
+```text
+<class 'str'>
+```
+
 ## 4.2 Tipe Data & Casting — Banyak Contoh
 
 ```python
@@ -72,6 +78,21 @@ prodi = "Teknik Informatika"
 print(prodi.upper())
 print(prodi[0:6])               # Teknik
 print("Info" in prodi)          # True
+```
+
+**Output:**
+
+```text
+50
+6.28
+100 poin
+3
+4
+False True
+False True
+TEKNIK INFORMATIKA
+Teknik
+True
 ```
 
 ## 4.3 Operator — Banyak Contoh
@@ -90,6 +111,16 @@ ipk, sks = 3.6, 20
 print(ipk >= 3.5 and sks >= 18) # True
 ```
 
+**Output:**
+
+```text
+3
+2
+256
+True
+True
+```
+
 ## 4.4 Input & Output — Banyak Contoh
 
 ```python
@@ -104,6 +135,16 @@ if umur_str.isdigit():
     print(f"Halo {nama}, umur {int(umur_str)}")
 else:
     print("Umur harus angka!")
+```
+
+**Output** (input simulasi: Nama = `Rina`, Umur = `21`):
+
+```text
+Mahasiswa Siti mendapat nilai 88.5
+Nilai: 88.5
+Nama: Rina
+Umur: 21
+Halo Rina, umur 21
 ```
 
 ## 4.5 Latihan Modul 2
@@ -144,6 +185,19 @@ else:
     print("IPK belum cukup.")
 ```
 
+**Output** (input simulasi: Nilai = `78`, username = `admin`, password = `python123`, IPK = `3.7`, SKS = `22`):
+
+```text
+Nilai: 78
+Grade: B
+Username: admin
+Password: python123
+Login berhasil!
+IPK: 3.7
+SKS: 22
+Berhak magang.
+```
+
 ## 5.2 for Loop — Banyak Contoh
 
 ```python
@@ -160,6 +214,28 @@ for n in nilai_list:
 
 total = sum(nilai_list)
 print(f"Rata-rata: {total / len(nilai_list):.2f}")
+```
+
+**Output:**
+
+```text
+0
+1
+2
+3
+4
+2
+4
+6
+8
+10
+1. merah
+2. hijau
+3. biru
+80
+90
+70
+Rata-rata: 72.00
 ```
 
 ## 5.3 while Loop — Banyak Contoh
@@ -187,6 +263,26 @@ while True:
         break
 ```
 
+**Output** (input simulasi: angka positif = `abc` lalu `5`; tebakan = `3`, `9`, `7`):
+
+```text
+5
+4
+3
+2
+1
+Angka positif: abc
+Coba lagi.
+Angka positif: 5
+Valid: 5
+Tebak 1-10: 3
+Terlalu kecil
+Tebak 1-10: 9
+Terlalu besar
+Tebak 1-10: 7
+Benar!
+```
+
 ## 5.4 break, continue & Nested Loop
 
 ```python
@@ -204,6 +300,18 @@ for i in range(1, 6):
     for j in range(i):
         print("*", end=" ")
     print()
+```
+
+**Output:**
+
+```text
+1 2 3 4 5 
+1 3 5 7 9 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
 ```
 
 ## 5.5 Latihan Modul 3
@@ -231,6 +339,14 @@ lulus = [n for n in nilai if n >= 75]
 print(lulus)
 ```
 
+**Output:**
+
+```text
+Kalkulus Pemrograman ['Fisika', 'Pemrograman']
+4 70 90 411
+[90, 88, 85, 78]
+```
+
 ## 6.2 Tuple — Banyak Contoh
 
 ```python
@@ -239,6 +355,12 @@ x, y = titik
 data = ("Ani", "210123", 3.8)
 nama, nim, ipk = data
 satu = (42,)                      # single-element tuple
+```
+
+**Output:**
+
+```text
+(tidak ada output — hanya assignment/unpacking tanpa `print`)
 ```
 
 ## 6.3 Dictionary — Banyak Contoh
@@ -258,6 +380,13 @@ terbaik = max(daftar, key=lambda x: x["ipk"])
 print(terbaik["nama"])
 ```
 
+**Output:**
+
+```text
+Belum diisi
+Budi
+```
+
 ## 6.4 Set — Banyak Contoh
 
 ```python
@@ -267,6 +396,14 @@ print(a | b)                      # union
 print(a & b)                      # intersection
 print(a - b)                      # difference
 unik = list(set([1, 2, 2, 3, 3]))  # hapus duplikat
+```
+
+**Output:**
+
+```text
+{1, 2, 3, 4, 5, 6}
+{3, 4}
+{1, 2}
 ```
 
 ## 6.5 Latihan Modul 4
@@ -319,6 +456,9 @@ daftar = [1, 2, 3]
 def fungsi(a, b=10):
 ```
 
+
+> **Output:** _tidak dijalankan/tanpa output_ — ilustrasi gaya penulisan; versi "Buruk" memuat `def` tanpa isi sehingga memang tidak valid dijalankan apa adanya (IndentationError). Tidak ada output.
+
 ## 7.5 Import
 
 ```python
@@ -329,6 +469,12 @@ from math import *
 # ✅ Baik — import di bagian paling atas, spesifik
 import math
 from math import sqrt, pi
+```
+
+**Output:**
+
+```text
+(tidak ada output — hanya import)
 ```
 
 ## 7.6 Contoh Perbandingan Lengkap
@@ -350,6 +496,13 @@ def hitung_ipk(nilai1, nilai2, nilai3):
 
 ipk = hitung_ipk(3.5, 3.8, 3.2)
 print(f"IPK: {ipk:.2f}")
+```
+
+**Output:**
+
+```text
+IPK:3.5
+IPK: 3.50
 ```
 
 ## 7.7 Tips Menerapkan PEP 8
@@ -389,6 +542,9 @@ data_mahasiswa = [
 ]
 ```
 
+
+> **Output:** _tidak dijalankan/tanpa output_ — definisi struktur data saja, tidak mencetak apa pun
+
 ## 8.4 Ketentuan Teknis
 
 - Gunakan List of Dictionary sebagai struktur data utama
@@ -414,6 +570,9 @@ data_mahasiswa = [
 ----------------------------------------
 Pilih menu (1-6):
 ```
+
+
+> **Output:** _tidak dijalankan/tanpa output_ — teks tampilan menu (bukan kode Python)
 
 ## 8.6 Petunjuk Implementasi (Skeleton)
 
@@ -452,6 +611,9 @@ while True:
     pilihan = input("Pilih menu (1-6): ").strip()
     # if-elif-else untuk memanggil function yang sesuai
 ```
+
+
+> **Output:** _tidak dijalankan/tanpa output_ — skeleton (isi function berupa `pass`, loop menu tidak berisi logika) — tidak dijalankan
 
 > Tips Pengerjaan Mini Project 1 Kerjakan satu function pada satu waktu. Uji dulu sebelum lanjut. Untuk IPK tertinggi: max(data, key=lambda m: m['ipk']) Gunakan .strip() pada setiap input agar spasi berlebih tidak mengganggu. Tambahkan pesan konfirmasi setelah berhasil menambah/menghapus data.
 
@@ -494,6 +656,9 @@ data = [
 ]
 ```
 
+
+> **Output:** _tidak dijalankan/tanpa output_ — definisi struktur data saja, tidak mencetak apa pun
+
 ## 9.4 Ketentuan Teknis
 
 - Gunakan function untuk setiap fitur utama
@@ -530,6 +695,9 @@ def peringkat(data):
 # Program utama dengan while True + menu
 ```
 
+
+> **Output:** _tidak dijalankan/tanpa output_ — skeleton (isi function berupa `pass`) — tidak dijalankan
+
 > Tips Pengerjaan Mini Project 2 Mulai dari fitur tambah mahasiswa dulu, pastikan berjalan. Baru lanjut ke tambah nilai. Untuk peringkat: buat list sementara berisi tuple/list [rata_rata, nama], lalu sorted(reverse=True). Gunakan print() untuk debugging di setiap tahap.
 
 # 10. Troubleshooting Singkat
@@ -557,12 +725,26 @@ aktif = True
 print(f"Nama: {nama} | NIM: {nim} | Semester: {semester} | IPK: {ipk} | {'Aktif' if aktif else 'Tidak'}")
 ```
 
+**Output:**
+
+```text
+Nama: Rina Kartika | NIM: 2201010234 | Semester: 3 | IPK: 3.67 | Aktif
+```
+
 ### Soal 2
 
 ```python
 a = float(input("Angka 1: "))
 b = float(input("Angka 2: "))
 print(f"+ : {a+b} | - : {a-b} | * : {a*b} | / : {a/b} | // : {a//b} | % : {a%b}")
+```
+
+**Output** (input simulasi: `10` dan `3`):
+
+```text
+Angka 1: 10
+Angka 2: 3
++ : 13.0 | - : 7.0 | * : 30.0 | / : 3.3333333333333335 | // : 3.0 | % : 1.0
 ```
 
 ### Soal 3
@@ -572,12 +754,26 @@ c = float(input("Celsius: "))
 print(f"{c}°C = {c * 9/5 + 32}°F")
 ```
 
+**Output** (input simulasi: `100`):
+
+```text
+Celsius: 100
+100.0°C = 212.0°F
+```
+
 ### Soal 4
 
 ```python
 PI = 3.14159
 r = float(input("Jari-jari: "))
 print(f"Luas: {PI * r**2:.2f} | Keliling: {2 * PI * r:.2f}")
+```
+
+**Output** (input simulasi: `7`):
+
+```text
+Jari-jari: 7
+Luas: 153.94 | Keliling: 43.98
 ```
 
 ## 11.2 Solusi Modul 3
@@ -589,10 +785,23 @@ n = int(input("Angka: "))
 print("Genap" if n % 2 == 0 else "Ganjil")
 ```
 
+**Output** (input simulasi: `8`):
+
+```text
+Angka: 8
+Genap
+```
+
 ### Genap 1-50
 
 ```python
 print(*range(2, 51, 2))
+```
+
+**Output:**
+
+```text
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50
 ```
 
 ### Kasir Diskon
@@ -601,6 +810,13 @@ print(*range(2, 51, 2))
 total = float(input("Total: "))
 bayar = total * 0.9 if total >= 100000 else total
 print(f"Bayar: Rp {bayar:,.0f}")
+```
+
+**Output** (input simulasi: `150000`):
+
+```text
+Total: 150000
+Bayar: Rp 135,000
 ```
 
 ### Tebak Angka
@@ -614,11 +830,32 @@ while True:
     else: print("Benar!"); break
 ```
 
+**Output** (input simulasi: tebakan = `3`, `9`, `7`):
+
+```text
+Tebak: 3
+Kecil
+Tebak: 9
+Besar
+Tebak: 7
+Benar!
+```
+
 ### Pola Bintang
 
 ```python
 for i in range(1, 6):
     print("* " * i)
+```
+
+**Output:**
+
+```text
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
 ```
 
 ## 11.3 Solusi Modul 4
@@ -633,6 +870,13 @@ del mk[0]
 print(mk)
 ```
 
+**Output:**
+
+```text
+['Kalkulus', 'Fisika', 'Pemrograman', 'Basis Data', 'Jaringan']
+['Fisika', 'Pemrograman', 'Basis Data', 'Jaringan', 'AI']
+```
+
 ### Dictionary Data Diri
 
 ```python
@@ -640,11 +884,26 @@ diri = {"nama": "Rina", "nim": "2201", "prodi": "IF", "hobi": ["baca", "musik"]}
 for k, v in diri.items(): print(f"{k}: {v}")
 ```
 
+**Output:**
+
+```text
+nama: Rina
+nim: 2201
+prodi: IF
+hobi: ['baca', 'musik']
+```
+
 ### Hitung Lulus
 
 ```python
 nilai = [75, 80, 90, 65, 88, 70, 95]
 print(len([n for n in nilai if n >= 75]))
+```
+
+**Output:**
+
+```text
+5
 ```
 
 ### Set Hobi
@@ -656,12 +915,27 @@ print("Irisan:", a & b)
 print("Gabungan:", a | b)
 ```
 
+**Output:**
+
+```text
+Irisan: {'olahraga', 'musik'}
+Gabungan: {'olahraga', 'gaming', 'baca', 'musik'}
+```
+
+_Catatan: Urutan elemen set bisa berbeda di setiap eksekusi (set tidak berurutan)._
+
 ### IPK Tertinggi
 
 ```python
 mhs = [{"nama": "Ani", "ipk": 3.5}, {"nama": "Budi", "ipk": 3.85}, {"nama": "Citra", "ipk": 3.2}]
 terbaik = max(mhs, key=lambda m: m["ipk"])
 print(terbaik["nama"], terbaik["ipk"])
+```
+
+**Output:**
+
+```text
+Budi 3.85
 ```
 
 > ✓ Materi Hari 1 (Revisi Final) Selesai Kedua Mini Project sekarang memiliki format penyajian yang konsisten • PEP 8 sudah diperluas
@@ -693,6 +967,19 @@ print(x)             # NameError
 # Solusi: return x, atau jadikan parameter/global (hindari global)
 ```
 
+**Output:**
+
+```text
+# Kasus 1: variabel belum didefinisikan
+  -> NameError: name 'nama' is not defined
+# Kasus 2: salah ketik nama variabel
+  -> NameError: name 'niali' is not defined. Did you mean: 'nilai'?
+# Kasus 3: memakai variabel di luar scope
+  -> NameError: name 'x' is not defined
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
+
 TypeError
 
 ```python
@@ -712,6 +999,19 @@ def tambah(a, b):
 tambah(1)                # TypeError: missing 1 required argument
 ```
 
+**Output:**
+
+```text
+# Kasus 1: operasi antar tipe tidak kompatibel
+  -> TypeError: can only concatenate str (not "int") to str
+# Kasus 2: memanggil non-callable
+  -> TypeError: 'int' object is not callable
+# Kasus 3: salah jumlah argumen
+  -> TypeError: tambah() missing 1 required positional argument: 'b'
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
+
 IndexError & KeyError
 
 ```python
@@ -729,6 +1029,17 @@ print(mhs["prodi"])      # KeyError: 'prodi'
 # Solusi: mhs.get("prodi", "-")  atau  if "prodi" in mhs
 ```
 
+**Output:**
+
+```text
+# IndexError
+  -> IndexError: list index out of range
+# KeyError
+  -> KeyError: 'prodi'
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
+
 ValueError & ZeroDivisionError
 
 ```python
@@ -743,4 +1054,15 @@ print(10 / 0)            # ZeroDivisionError
 
 # Solusi: cek pembagi != 0 sebelum membagi
 ```
+
+**Output:**
+
+```text
+# ValueError
+  -> ValueError: invalid literal for int() with base 10: 'abc'
+# ZeroDivisionError
+  -> ZeroDivisionError: division by zero
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
 
