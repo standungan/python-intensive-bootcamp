@@ -456,7 +456,6 @@ daftar = [1, 2, 3]
 def fungsi(a, b=10):
 ```
 
-
 > **Output:** _tidak dijalankan/tanpa output_ — ilustrasi gaya penulisan; versi "Buruk" memuat `def` tanpa isi sehingga memang tidak valid dijalankan apa adanya (IndentationError). Tidak ada output.
 
 ## 7.5 Import
@@ -511,6 +510,7 @@ IPK: 3.50
 - Gunakan ekstensi Pylint atau Flake8 untuk memeriksa pelanggaran PEP 8
 - Biasakan menulis kode rapi sejak latihan kecil — jangan menunggu project besar
 - Baca ulang kode sendiri sebelum dianggap selesai
+
 > Alat Bantu PEP 8 Black (formatter otomatis yang sangat populer) autopep8, yapf Pylint / Flake8 / Ruff (linter) Di VS Code: aktifkan 'Format On Save'
 
 # 8. Mini Project 1 — Sistem Data Mahasiswa Sederhana (Level Dasar)
@@ -542,7 +542,6 @@ data_mahasiswa = [
 ]
 ```
 
-
 > **Output:** _tidak dijalankan/tanpa output_ — definisi struktur data saja, tidak mencetak apa pun
 
 ## 8.4 Ketentuan Teknis
@@ -570,7 +569,6 @@ data_mahasiswa = [
 ----------------------------------------
 Pilih menu (1-6):
 ```
-
 
 > **Output:** _tidak dijalankan/tanpa output_ — teks tampilan menu (bukan kode Python)
 
@@ -611,7 +609,6 @@ while True:
     pilihan = input("Pilih menu (1-6): ").strip()
     # if-elif-else untuk memanggil function yang sesuai
 ```
-
 
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton (isi function berupa `pass`, loop menu tidak berisi logika) — tidak dijalankan
 
@@ -656,7 +653,6 @@ data = [
 ]
 ```
 
-
 > **Output:** _tidak dijalankan/tanpa output_ — definisi struktur data saja, tidak mencetak apa pun
 
 ## 9.4 Ketentuan Teknis
@@ -695,7 +691,6 @@ def peringkat(data):
 # Program utama dengan while True + menu
 ```
 
-
 > **Output:** _tidak dijalankan/tanpa output_ — skeleton (isi function berupa `pass`) — tidak dijalankan
 
 > Tips Pengerjaan Mini Project 2 Mulai dari fitur tambah mahasiswa dulu, pastikan berjalan. Baru lanjut ke tambah nilai. Untuk peringkat: buat list sementara berisi tuple/list [rata_rata, nama], lalu sorted(reverse=True). Gunakan print() untuk debugging di setiap tahap.
@@ -709,6 +704,128 @@ Error yang sering muncul dan solusinya:
 - KeyError → Gunakan .get() atau cek ‘in’ sebelum mengakses key.
 - IndexError → Cek len() sebelum mengakses index.
 - Infinite Loop → Pastikan ada update variabel atau break yang bisa dicapai.
+
+# 10b. Troubleshooting Lengkap (Contoh Kasus)
+
+Berikut contoh kasus nyata untuk error yang sering muncul di Hari 1:
+
+## NameError
+
+```python
+# Kasus 1: variabel belum didefinisikan
+print(nama)          # NameError: name 'nama' is not defined
+
+# Solusi: definisikan dulu → nama = "Ani"
+
+# Kasus 2: salah ketik nama variabel
+nilai = 80
+print(niali)         # NameError
+
+# Solusi: periksa ejaan → print(nilai)
+
+# Kasus 3: memakai variabel di luar scope
+def hitung():
+    x = 10
+print(x)             # NameError
+
+# Solusi: return x, atau jadikan parameter/global (hindari global)
+```
+
+**Output:**
+
+```text
+# Kasus 1: variabel belum didefinisikan
+  -> NameError: name 'nama' is not defined
+# Kasus 2: salah ketik nama variabel
+  -> NameError: name 'niali' is not defined. Did you mean: 'nilai'?
+# Kasus 3: memakai variabel di luar scope
+  -> NameError: name 'x' is not defined
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
+
+## TypeError
+
+```python
+# Kasus 1: operasi antar tipe tidak kompatibel
+print("Nilai: " + 80)     # TypeError
+
+# Solusi: print("Nilai: " + str(80))  atau  print(f"Nilai: {80}")
+
+# Kasus 2: memanggil non-callable
+x = 10
+x()                      # TypeError: 'int' object is not callable
+
+# Kasus 3: salah jumlah argumen
+def tambah(a, b):
+    return a + b
+tambah(1)                # TypeError: missing 1 required argument
+```
+
+**Output:**
+
+```text
+# Kasus 1: operasi antar tipe tidak kompatibel
+  -> TypeError: can only concatenate str (not "int") to str
+# Kasus 2: memanggil non-callable
+  -> TypeError: 'int' object is not callable
+# Kasus 3: salah jumlah argumen
+  -> TypeError: tambah() missing 1 required positional argument: 'b'
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
+
+## IndexError & KeyError
+
+```python
+# IndexError
+data = [10, 20, 30]
+print(data[5])           # IndexError: list index out of range
+
+# Solusi: cek len(data) atau gunakan try-except
+
+# KeyError
+mhs = {"nama": "Ani", "nim": "2201"}
+print(mhs["prodi"])      # KeyError: 'prodi'
+
+# Solusi: mhs.get("prodi", "-")  atau  if "prodi" in mhs
+```
+
+**Output:**
+
+```text
+# IndexError
+  -> IndexError: list index out of range
+# KeyError
+  -> KeyError: 'prodi'
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
+
+## ValueError & ZeroDivisionError
+
+```python
+# ValueError
+int("abc")               # ValueError: invalid literal
+
+# Solusi: validasi input sebelum konversi
+
+# ZeroDivisionError
+print(10 / 0)            # ZeroDivisionError
+
+# Solusi: cek pembagi != 0 sebelum membagi
+```
+
+**Output:**
+
+```text
+# ValueError
+  -> ValueError: invalid literal for int() with base 10: 'abc'
+# ZeroDivisionError
+  -> ZeroDivisionError: division by zero
+```
+
+_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
 
 # 11. Solusi Lengkap Latihan
 
@@ -939,130 +1056,3 @@ Budi 3.85
 ```
 
 > ✓ Materi Hari 1 (Revisi Final) Selesai Kedua Mini Project sekarang memiliki format penyajian yang konsisten • PEP 8 sudah diperluas
-
-10b. Troubleshooting Lengkap (Contoh Kasus)
-
-Berikut contoh kasus nyata untuk error yang sering muncul di Hari 1:
-
-NameError
-
-```python
-
-# Kasus 1: variabel belum didefinisikan
-print(nama)          # NameError: name 'nama' is not defined
-
-# Solusi: definisikan dulu → nama = "Ani"
-
-# Kasus 2: salah ketik nama variabel
-nilai = 80
-print(niali)         # NameError
-
-# Solusi: periksa ejaan → print(nilai)
-
-# Kasus 3: memakai variabel di luar scope
-def hitung():
-    x = 10
-print(x)             # NameError
-
-# Solusi: return x, atau jadikan parameter/global (hindari global)
-```
-
-**Output:**
-
-```text
-# Kasus 1: variabel belum didefinisikan
-  -> NameError: name 'nama' is not defined
-# Kasus 2: salah ketik nama variabel
-  -> NameError: name 'niali' is not defined. Did you mean: 'nilai'?
-# Kasus 3: memakai variabel di luar scope
-  -> NameError: name 'x' is not defined
-```
-
-_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
-
-TypeError
-
-```python
-
-# Kasus 1: operasi antar tipe tidak kompatibel
-print("Nilai: " + 80)     # TypeError
-
-# Solusi: print("Nilai: " + str(80))  atau  print(f"Nilai: {80}")
-
-# Kasus 2: memanggil non-callable
-x = 10
-x()                      # TypeError: 'int' object is not callable
-
-# Kasus 3: salah jumlah argumen
-def tambah(a, b):
-    return a + b
-tambah(1)                # TypeError: missing 1 required argument
-```
-
-**Output:**
-
-```text
-# Kasus 1: operasi antar tipe tidak kompatibel
-  -> TypeError: can only concatenate str (not "int") to str
-# Kasus 2: memanggil non-callable
-  -> TypeError: 'int' object is not callable
-# Kasus 3: salah jumlah argumen
-  -> TypeError: tambah() missing 1 required positional argument: 'b'
-```
-
-_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
-
-IndexError & KeyError
-
-```python
-
-# IndexError
-data = [10, 20, 30]
-print(data[5])           # IndexError: list index out of range
-
-# Solusi: cek len(data) atau gunakan try-except
-
-# KeyError
-mhs = {"nama": "Ani", "nim": "2201"}
-print(mhs["prodi"])      # KeyError: 'prodi'
-
-# Solusi: mhs.get("prodi", "-")  atau  if "prodi" in mhs
-```
-
-**Output:**
-
-```text
-# IndexError
-  -> IndexError: list index out of range
-# KeyError
-  -> KeyError: 'prodi'
-```
-
-_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
-
-ValueError & ZeroDivisionError
-
-```python
-
-# ValueError
-int("abc")               # ValueError: invalid literal
-
-# Solusi: validasi input sebelum konversi
-
-# ZeroDivisionError
-print(10 / 0)            # ZeroDivisionError
-
-# Solusi: cek pembagi != 0 sebelum membagi
-```
-
-**Output:**
-
-```text
-# ValueError
-  -> ValueError: invalid literal for int() with base 10: 'abc'
-# ZeroDivisionError
-  -> ZeroDivisionError: division by zero
-```
-
-_Catatan: Setiap kasus dijalankan terpisah agar semua error terlihat._
-
