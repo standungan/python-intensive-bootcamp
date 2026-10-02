@@ -1,0 +1,14 @@
+PERINGATAN: angka di bawah dihitung dari DATA SAMPEL FIKTIF (data/raw/arxiv_sample.xml), bukan hasil pencarian arXiv sebenarnya. Gunakan untuk memahami alur pipeline saja.
+
+1. Korpus: 29 paper, terbit 2022-10-05 s.d. 2026-08-20.
+2. Tahun dengan paper terbanyak: 2025 (9 paper); tahun 2022 hanya 2, sehingga jumlah pada tahun penuh terakhir (2025) = 9 (≈ 4.5× tahun pertama).
+3. Kata judul paling sering: 'learning' (18×) dan 'courses' (12×) — menandakan fokus topik pada kata tersebut.
+4. Rata-rata 2.9 penulis per paper; penulis teratas D. Anggraini muncul di 15 paper.
+5. Tiga penulis teratas menyumbang 41 dari 85 kemunculan nama penulis (48%) — indikasi tingkat konsentrasi penulis pada korpus ini.
+
+Batasan:
+- Hanya metadata (judul, penulis, tanggal) — isi paper tidak dianalisis; kata judul tidak sama dengan topik sebenarnya.
+- Hasil bergantung pada query: query berbeda akan menghasilkan korpus berbeda (bias query).
+- Ukuran korpus kecil (30 paper) sehingga pola per tahun dan penulis tidak stabil secara statistik.
+- Satu nama penulis dapat ditulis berbeda antar paper (tidak ada disambiguasi penulis).
+- Tanggal 'published' adalah tanggal submit versi pertama, bukan tanggal publikasi jurnal.

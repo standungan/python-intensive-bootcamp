@@ -19,3 +19,6 @@ Contoh pengerjaan lengkap Capstone (kode, data, output, dokumentasi) ada di [fin
 - Grafik Modul 5 disimpan di `materi/images/modul05/`.
 - Bagian "Demonstrasi error" pada Troubleshooting menjalankan kasus error nyata.
 - Blok yang memanggil API yang tidak dapat diakses dari lingkungan pengujian dijalankan dengan respons tiruan dan diberi catatan.
+
+## Versi 2
+Materi versi 2 ada di [materi_v2/](materi_v2/) (Modul 6 Capstone yang baru; Modul 1–5 identik dengan versi 1) dan contoh capstone-nya di [finished_capstone_v2/](finished_capstone_v2/). Versi 1 tidak diubah.

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DATA SAMPEL FIKTIF - bukan hasil pencarian arXiv</title>
+  <entry>
+    <id>https://example.org/sampel/040</id>
+    <title>Deep Learning for Student Dropout Prediction in Online Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 40 (data buatan untuk demonstrasi).</summary>
+    <published>2026-08-20T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>H. Saragih</name></author>
+    <link href="https://example.org/sampel/040"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/039</id>
+    <title>Large Language Models for Programming Education in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 39 (data buatan untuk demonstrasi).</summary>
+    <published>2026-06-01T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>C. Wirawan</name></author>
+    <author><name>I. Nasution</name></author>
+    <author><name>K. Lukito</name></author>
+    <link href="https://example.org/sampel/039"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/042</id>
+    <title>Reinforcement Learning for Knowledge Tracing in Higher Education</title>
+    <summary>Ringkasan sampel fiktif nomor 42 (data buatan untuk demonstrasi).</summary>
+    <published>2026-04-25T09:00:00Z</published>
+    <author><name>A. Prakoso</name></author>
+    <author><name>H. Saragih</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/042"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/041</id>
+    <title>Bayesian Methods for Student Dropout Prediction in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 41 (data buatan untuk demonstrasi).</summary>
+    <published>2026-02-02T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/041"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/033</id>
+    <title>Reinforcement Learning for Exam Performance Forecasting in Online Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 33 (data buatan untuk demonstrasi).</summary>
+    <published>2025-12-15T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>F. Kurniawan</name></author>
+    <author><name>B. Santika</name></author>
+    <author><name>G. Pertiwi</name></author>
+    <link href="https://example.org/sampel/033"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/038</id>
+    <title>Self-Supervised Learning for Knowledge Tracing in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 38 (data buatan untuk demonstrasi).</summary>
+    <published>2025-10-24T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>A. Prakoso</name></author>
+    <link href="https://example.org/sampel/038"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/035</id>
+    <title>Deep Learning for Exam Performance Forecasting in Engineering Programs</title>
+    <summary>Ringkasan sampel fiktif nomor 35 (data buatan untuk demonstrasi).</summary>
+    <published>2025-08-18T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/035"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/032</id>
+    <title>Convolutional Networks for Student Dropout Prediction in Primary Schools</title>
+    <summary>Ringkasan sampel fiktif nomor 32 (data buatan untuk demonstrasi).</summary>
+    <published>2025-08-13T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>B. Santika</name></author>
+    <author><name>K. Lukito</name></author>
+    <author><name>L. Rahmani</name></author>
+    <link href="https://example.org/sampel/032"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/034</id>
+    <title>Graph Neural Networks for Learning Analytics in Online Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 34 (data buatan untuk demonstrasi).</summary>
+    <published>2025-07-19T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>C. Wirawan</name></author>
+    <link href="https://example.org/sampel/034"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/030</id>
+    <title>Large Language Models for Knowledge Tracing in Online Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 30 (data buatan untuk demonstrasi).</summary>
+    <published>2025-05-12T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>L. Rahmani</name></author>
+    <author><name>F. Kurniawan</name></author>
+    <link href="https://example.org/sampel/030"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/037</id>
+    <title>Reinforcement Learning for Student Dropout Prediction in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 37 (data buatan untuk demonstrasi).</summary>
+    <published>2025-04-25T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>I. Nasution</name></author>
+    <author><name>D. Anggraini</name></author>
+    <link href="https://example.org/sampel/037"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/036</id>
+    <title>Transformer Models for Student Dropout Prediction in Engineering Programs</title>
+    <summary>Ringkasan sampel fiktif nomor 36 (data buatan untuk demonstrasi).</summary>
+    <published>2025-03-28T09:00:00Z</published>
+    <author><name>A. Prakoso</name></author>
+    <author><name>L. Rahmani</name></author>
+    <author><name>C. Wirawan</name></author>
+    <author><name>G. Pertiwi</name></author>
+    <link href="https://example.org/sampel/036"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/031</id>
+    <title>Reinforcement Learning for Adaptive Tutoring in Online Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 31 (data buatan untuk demonstrasi).</summary>
+    <published>2025-02-07T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>F. Kurniawan</name></author>
+    <link href="https://example.org/sampel/031"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/026</id>
+    <title>Self-Supervised Learning for Knowledge Tracing in Primary Schools</title>
+    <summary>Ringkasan sampel fiktif nomor 26 (data buatan untuk demonstrasi).</summary>
+    <published>2024-12-12T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>A. Prakoso</name></author>
+    <author><name>D. Anggraini</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/026"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/025</id>
+    <title>Large Language Models for Exam Performance Forecasting in Primary Schools</title>
+    <summary>Ringkasan sampel fiktif nomor 25 (data buatan untuk demonstrasi).</summary>
+    <published>2024-08-04T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <link href="https://example.org/sampel/025"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/024</id>
+    <title>Deep Learning for Knowledge Tracing in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 24 (data buatan untuk demonstrasi).</summary>
+    <published>2024-07-28T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>B. Santika</name></author>
+    <author><name>L. Rahmani</name></author>
+    <link href="https://example.org/sampel/024"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/022</id>
+    <title>Large Language Models for Learning Analytics in Higher Education</title>
+    <summary>Ringkasan sampel fiktif nomor 22 (data buatan untuk demonstrasi).</summary>
+    <published>2024-04-19T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>A. Prakoso</name></author>
+    <author><name>B. Santika</name></author>
+    <author><name>L. Rahmani</name></author>
+    <link href="https://example.org/sampel/022"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/029</id>
+    <title>Explainable Machine Learning for Automated Essay Scoring in Online Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 29 (data buatan untuk demonstrasi).</summary>
+    <published>2024-04-01T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>L. Rahmani</name></author>
+    <author><name>A. Prakoso</name></author>
+    <link href="https://example.org/sampel/029"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/028</id>
+    <title>Self-Supervised Learning for Automated Essay Scoring in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 28 (data buatan untuk demonstrasi).</summary>
+    <published>2024-03-26T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>D. Anggraini</name></author>
+    <author><name>J. Hartono</name></author>
+    <author><name>L. Rahmani</name></author>
+    <link href="https://example.org/sampel/028"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/023</id>
+    <title>Bayesian Methods for Adaptive Tutoring in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 23 (data buatan untuk demonstrasi).</summary>
+    <published>2024-03-20T09:00:00Z</published>
+    <author><name>A. Prakoso</name></author>
+    <author><name>D. Anggraini</name></author>
+    <link href="https://example.org/sampel/023"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/027</id>
+    <title>Bayesian Methods for Student Dropout Prediction in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 27 (data buatan untuk demonstrasi).</summary>
+    <published>2024-03-12T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>B. Santika</name></author>
+    <author><name>E. Mahendra</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/027"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/019</id>
+    <title>Deep Learning for Knowledge Tracing in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 19 (data buatan untuk demonstrasi).</summary>
+    <published>2023-10-18T09:00:00Z</published>
+    <author><name>A. Prakoso</name></author>
+    <author><name>G. Pertiwi</name></author>
+    <link href="https://example.org/sampel/019"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/017</id>
+    <title>Federated Learning for Programming Education in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 17 (data buatan untuk demonstrasi).</summary>
+    <published>2023-09-03T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>C. Wirawan</name></author>
+    <link href="https://example.org/sampel/017"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/015</id>
+    <title>Transformer Models for Automated Essay Scoring in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 15 (data buatan untuk demonstrasi).</summary>
+    <published>2023-08-28T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>D. Anggraini</name></author>
+    <author><name>G. Pertiwi</name></author>
+    <author><name>K. Lukito</name></author>
+    <link href="https://example.org/sampel/015"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/016</id>
+    <title>Graph Neural Networks for Learning Analytics in Primary Schools</title>
+    <summary>Ringkasan sampel fiktif nomor 16 (data buatan untuk demonstrasi).</summary>
+    <published>2023-08-28T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>E. Mahendra</name></author>
+    <author><name>C. Wirawan</name></author>
+    <author><name>G. Pertiwi</name></author>
+    <link href="https://example.org/sampel/016"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/021</id>
+    <title>Explainable Machine Learning for Programming Education in Higher Education</title>
+    <summary>Ringkasan sampel fiktif nomor 21 (data buatan untuk demonstrasi).</summary>
+    <published>2023-07-03T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>G. Pertiwi</name></author>
+    <author><name>A. Prakoso</name></author>
+    <link href="https://example.org/sampel/021"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/020</id>
+    <title>Convolutional Networks for Course Recommendation in Online Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 20 (data buatan untuk demonstrasi).</summary>
+    <published>2023-06-13T09:00:00Z</published>
+    <author><name>A. Prakoso</name></author>
+    <author><name>K. Lukito</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/020"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/018</id>
+    <title>Deep Learning for Automated Essay Scoring in Engineering Programs</title>
+    <summary>Ringkasan sampel fiktif nomor 18 (data buatan untuk demonstrasi).</summary>
+    <published>2023-03-27T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>H. Saragih</name></author>
+    <link href="https://example.org/sampel/018"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/014</id>
+    <title>Explainable Machine Learning for Course Recommendation in Higher Education</title>
+    <summary>Ringkasan sampel fiktif nomor 14 (data buatan untuk demonstrasi).</summary>
+    <published>2022-12-04T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>C. Wirawan</name></author>
+    <author><name>J. Hartono</name></author>
+    <link href="https://example.org/sampel/014"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/010</id>
+    <title>Graph Neural Networks for Adaptive Tutoring in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 10 (data buatan untuk demonstrasi).</summary>
+    <published>2022-10-05T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>F. Kurniawan</name></author>
+    <link href="https://example.org/sampel/010"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/011</id>
+    <title>Explainable Machine Learning for Student Dropout Prediction in Engineering Programs</title>
+    <summary>Ringkasan sampel fiktif nomor 11 (data buatan untuk demonstrasi).</summary>
+    <published>2022-08-23T09:00:00Z</published>
+    <author><name>A. Prakoso</name></author>
+    <author><name>J. Hartono</name></author>
+    <author><name>F. Kurniawan</name></author>
+    <author><name>K. Lukito</name></author>
+    <link href="https://example.org/sampel/011"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/013</id>
+    <title>Graph Neural Networks for Student Dropout Prediction in Engineering Programs</title>
+    <summary>Ringkasan sampel fiktif nomor 13 (data buatan untuk demonstrasi).</summary>
+    <published>2022-08-10T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <author><name>J. Hartono</name></author>
+    <author><name>K. Lukito</name></author>
+    <author><name>H. Saragih</name></author>
+    <link href="https://example.org/sampel/013"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/012</id>
+    <title>Convolutional Networks for Exam Performance Forecasting in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 12 (data buatan untuk demonstrasi).</summary>
+    <published>2022-06-09T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>B. Santika</name></author>
+    <link href="https://example.org/sampel/012"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/006</id>
+    <title>Deep Learning for Adaptive Tutoring in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 6 (data buatan untuk demonstrasi).</summary>
+    <published>2021-11-23T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/006"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/008</id>
+    <title>Large Language Models for Exam Performance Forecasting in Low-Resource Settings</title>
+    <summary>Ringkasan sampel fiktif nomor 8 (data buatan untuk demonstrasi).</summary>
+    <published>2021-06-23T09:00:00Z</published>
+    <author><name>C. Wirawan</name></author>
+    <link href="https://example.org/sampel/008"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/009</id>
+    <title>Graph Neural Networks for Knowledge Tracing in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 9 (data buatan untuk demonstrasi).</summary>
+    <published>2021-04-10T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>L. Rahmani</name></author>
+    <author><name>H. Saragih</name></author>
+    <link href="https://example.org/sampel/009"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/007</id>
+    <title>Convolutional Networks for Student Dropout Prediction in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 7 (data buatan untuk demonstrasi).</summary>
+    <published>2021-02-14T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>K. Lukito</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/007"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/005</id>
+    <title>Deep Learning for Knowledge Tracing in Primary Schools</title>
+    <summary>Ringkasan sampel fiktif nomor 5 (data buatan untuk demonstrasi).</summary>
+    <published>2020-09-18T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <author><name>J. Hartono</name></author>
+    <author><name>E. Mahendra</name></author>
+    <link href="https://example.org/sampel/005"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/003</id>
+    <title>Graph Neural Networks for Automated Essay Scoring in Higher Education</title>
+    <summary>Ringkasan sampel fiktif nomor 3 (data buatan untuk demonstrasi).</summary>
+    <published>2020-07-04T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <author><name>J. Hartono</name></author>
+    <link href="https://example.org/sampel/003"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/004</id>
+    <title>Convolutional Networks for Student Dropout Prediction in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 4 (data buatan untuk demonstrasi).</summary>
+    <published>2020-04-02T09:00:00Z</published>
+    <author><name>D. Anggraini</name></author>
+    <link href="https://example.org/sampel/004"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/002</id>
+    <title>Convolutional Networks for Student Dropout Prediction in Massive Open Courses</title>
+    <summary>Ringkasan sampel fiktif nomor 2 (data buatan untuk demonstrasi).</summary>
+    <published>2019-06-14T09:00:00Z</published>
+    <author><name>B. Santika</name></author>
+    <link href="https://example.org/sampel/002"/>
+  </entry>
+  <entry>
+    <id>https://example.org/sampel/001</id>
+    <title>Deep Learning for Programming Education in Engineering Programs</title>
+    <summary>Ringkasan sampel fiktif nomor 1 (data buatan untuk demonstrasi).</summary>
+    <published>2019-06-04T09:00:00Z</published>
+    <author><name>A. Prakoso</name></author>
+    <author><name>I. Nasution</name></author>
+    <link href="https://example.org/sampel/001"/>
+  </entry>
+</feed>

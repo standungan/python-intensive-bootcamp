@@ -1,0 +1,148 @@
+PERTANYAAN ANALISIS
+1. Faktor apa (jenis kelamin, kelas tiket, usia, ukuran keluarga, harga tiket) yang paling berkaitan dengan keselamatan?
+2. Apakah kelas tiket dan jenis kelamin saling memperkuat atau berdiri sendiri?
+3. Apakah anak-anak dan keluarga kecil punya peluang selamat yang berbeda dari penumpang lain?
+
+============================================================
+1. INSPEKSI AWAL
+============================================================
+Shape: (891, 15)
+
+Tipe data:
+survived         int64
+pclass           int64
+sex                str
+age            float64
+sibsp            int64
+parch            int64
+fare           float64
+embarked           str
+class              str
+who                str
+adult_male        bool
+deck               str
+embark_town        str
+alive              str
+alone             bool
+
+Missing values (jumlah, persen):
+  age           177  (19.9%)
+  embarked        2  (0.2%)
+  deck          688  (77.2%)
+  embark_town     2  (0.2%)
+
+Baris duplikat penuh: 107
+
+Statistik numerik:
+       survived  pclass     age   sibsp   parch    fare
+count    891.00  891.00  714.00  891.00  891.00  891.00
+mean       0.38    2.31   29.70    0.52    0.38   32.20
+std        0.49    0.84   14.53    1.10    0.81   49.69
+min        0.00    1.00    0.42    0.00    0.00    0.00
+25%        0.00    2.00   20.12    0.00    0.00    7.91
+50%        0.00    3.00   28.00    0.00    0.00   14.45
+75%        1.00    3.00   38.00    1.00    0.00   31.00
+max        1.00    3.00   80.00    8.00    6.00  512.33
+
+============================================================
+2. CLEANING
+============================================================
+- 107 baris identik terdeteksi tetapi TIDAK dihapus: dataset tidak punya ID penumpang, sehingga baris identik bisa jadi orang berbeda (mis. anggota keluarga dengan tiket sama).
+- 177 nilai age kosong diisi median per (pclass, sex); kolom age_imputed menandai baris tersebut.
+- 2 nilai embarked/embark_town kosong diisi modus (Southampton/S).
+- 688 nilai deck kosong (77%) diberi kategori 'Unknown' (tidak diimputasi karena terlalu banyak).
+- Kolom alive & class dihapus (duplikasi dari survived & pclass).
+- Kolom teks dikonversi ke tipe category.
+- Fitur baru: family_size, age_group, fare_quartile, status.
+Shape setelah cleaning: (891, 18)
+
+============================================================
+3. ANALISIS
+============================================================
+Tingkat keselamatan keseluruhan: 38.4%
+
+[by_sex]
+        count    mean
+sex                  
+female    314  0.7420
+male      577  0.1889
+
+[by_class]
+        count    mean
+pclass               
+1         216  0.6296
+2         184  0.4728
+3         491  0.2424
+
+[pivot_sex_class]
+pclass       1       2       3
+sex                           
+female  0.9681  0.9211  0.5000
+male    0.3689  0.1574  0.1354
+
+[by_age_group]
+                     count    mean
+age_group                         
+Anak (0-12)             69  0.5797
+Remaja (13-18)          70  0.4286
+Dewasa muda (19-35)    514  0.3580
+Dewasa (36-60)         216  0.3843
+Lansia (60+)            22  0.2273
+
+[by_family]
+             count    mean
+family_size               
+1              537  0.3035
+2              161  0.5528
+3              102  0.5784
+4               29  0.7241
+5               15  0.2000
+6               22  0.1364
+7               12  0.3333
+8                6  0.0000
+11               7  0.0000
+
+[by_embark]
+             count    mean
+embark_town               
+Cherbourg      168  0.5536
+Queenstown      77  0.3896
+Southampton    646  0.3390
+
+[fare_by_class]
+         median     mean       max
+pclass                            
+1       60.2875  84.1547  512.3292
+2       14.2500  20.6622   73.5000
+3        8.0500  13.6756   69.5500
+
+[uji]
+                                    uji statistik  p_value
+0             Chi-square sex x survived    260.72 1.20e-58
+1          Chi-square pclass x survived    102.89 4.55e-23
+2  Mann-Whitney fare (selamat vs tidak) 129951.50 4.55e-22
+
+============================================================
+4. INSIGHT
+============================================================
+1. **Jenis kelamin adalah pembeda terkuat.** 74.2% penumpang perempuan selamat, dibanding 18.9% laki-laki (selisih 55 poin persentase; chi-square p = 1.2e-58).
+
+2. **Kelas tiket memengaruhi peluang selamat.** Kelas 1: 63.0%, kelas 2: 47.3%, kelas 3: 24.2% (chi-square p = 4.5e-23). Korelasi pclass dengan survived = -0.34.
+
+3. **Efek kelas dan jenis kelamin saling menguatkan.** Perempuan kelas 1 selamat 96.8%, sedangkan laki-laki kelas 3 hanya 13.5%. Namun perempuan kelas 3 (50.0%) masih lebih baik daripada laki-laki kelas 1 (36.9%).
+
+4. **Anak-anak diprioritaskan.** Kelompok usia 0-12 tahun selamat 58.0% (n=69), lebih tinggi daripada dewasa muda 19-35 tahun (35.8%) dan lansia 60+ (22.7%).
+
+5. **Ukuran keluarga berhubungan non-linier dengan keselamatan.** Penumpang sendirian selamat 30.4%, keluarga 2-4 orang 57.9%, dan keluarga >= 5 orang hanya 16.1% (n=62).
+
+6. **Harga tiket berkorelasi positif dengan keselamatan.** Median fare kelas 1 = 60.3 vs kelas 3 = 8.1; penumpang yang selamat membayar lebih mahal (Mann-Whitney p = 4.6e-22; korelasi fare-survived = 0.26).
+
+Batasan:
+- Data observasional dari satu peristiwa: temuan menunjukkan asosiasi, bukan sebab-akibat.
+- 177 nilai usia (19,9%) diimputasi dengan median per kelas & jenis kelamin sehingga sebaran usia sedikit lebih sempit dari aslinya.
+- Kolom deck 77% kosong sehingga tidak dipakai sebagai faktor analisis.
+- 107 baris identik dipertahankan karena tidak ada ID penumpang; jika sebenarnya duplikat, proporsi bisa bergeser tipis.
+- Kelompok kecil (lansia n=22, keluarga >= 5 orang n=62) membuat persentasenya tidak stabil.
+- Harga tiket (fare) berkorelasi kuat dengan kelas tiket, sehingga efeknya tidak independen.
+
+Selesai. File tersimpan di data/processed/, figures/, dan output/.
