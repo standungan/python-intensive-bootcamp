@@ -1,6 +1,6 @@
 # Buku Kerja (Jupyter Notebook)
 
-Satu buku kerja per hari, pendamping Modul 1–6. Setiap notebook berisi ringkasan konsep, contoh yang bisa dijalankan, **latihan dengan pemeriksa otomatis** (✅/❌), mini project, dan refleksi.
+Satu buku kerja per hari, pendamping Modul 1–6. Setiap notebook berisi ringkasan konsep, contoh yang bisa dijalankan, **latihan dengan pemeriksa otomatis** (✅/❌), mini project, dan recap.
 
 | Hari | Buku kerja (untuk dikerjakan) | Solusi (sudah dieksekusi) | Latihan |
 |---|---|---|---|
