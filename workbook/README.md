@@ -11,6 +11,12 @@ Satu buku kerja per hari, pendamping Modul 1–6. Setiap notebook berisi ringkas
 | 5 | [hari5-visualisasi-api-scraping](hari5-visualisasi-api-scraping.ipynb) | [solusi](solusi/hari5-visualisasi-api-scraping-solusi.ipynb) | 17 (L1–L13, P1–P4) |
 | 6 | [hari6-capstone-project](hari6-capstone-project.ipynb) | [solusi](solusi/hari6-capstone-project-solusi.ipynb) | 9 (L1–L9) + pemeriksa `cek_deliverable` |
 
+## Versi HTML (hanya-baca)
+
+Salinan HTML semua notebook ada di [html/](html/) — mulai dari [html/index.html](html/index.html). Halaman berdiri sendiri (gambar tertanam, tanpa perlu internet) dan bisa dibuka langsung di browser setelah di-download; buku kerja ditampilkan tanpa output, solusi dengan output hasil eksekusi. Untuk **mengerjakan** latihan dan menjalankan pemeriksa jawaban tetap gunakan file `.ipynb` dengan Jupyter. Dibuat ulang dengan `jupyter nbconvert --to html --template lab <notebook>`.
+
+> GitHub menampilkan file `.html` sebagai teks sumber, bukan halaman. Untuk melihat tampilannya, unduh filenya, atau aktifkan GitHub Pages untuk repo ini.
+
 ## Cara memakai
 
 1. Pasang kebutuhan dan jalankan Jupyter di komputer Anda:
