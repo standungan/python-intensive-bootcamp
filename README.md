@@ -25,3 +25,7 @@ Materi versi 2 ada di [materi_v2/](materi_v2/) (Modul 6 Capstone yang baru; Modu
 
 ## Buku kerja (Jupyter Notebook)
 Buku kerja interaktif per hari dengan pemeriksa jawaban otomatis ada di [workbook/](workbook/) (notebook latihan dan notebook solusi yang sudah dieksekusi).
+
+## Slide presentasi (web HTML)
+
+Slide interaktif dengan transisi dan animasi komponen untuk instruktur ada di [slides/](slides/) — mulai dari [`slides/index.html`](slides/index.html). Satu deck per hari, selaras dengan latihan buku kerja. Lihat [slides/README.md](slides/README.md) untuk pintasan dan cara ekspor PDF.

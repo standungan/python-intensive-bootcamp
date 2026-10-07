@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hari 3 — Object-Oriented Programming · Python Intensive Bootcamp</title>
+<link rel="stylesheet" href="assets/deck.css">
+<style>:root{--acc:#a78bfa}html.light{--acc:#6d4fd1}</style></head>
+<body><div id="stage"><div id="deck" data-transition="slide">
+<section class="slide title" data-title="Object-Oriented Programming" data-transition="zoom"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="kicker" data-anim="up">Python Intensive Bootcamp · Hari 3</div><h1 data-anim="up" style="--d:.1s">Object-Oriented Programming</h1><div class="sub" data-anim="up" style="--d:.2s">Class, object, inheritance, encapsulation, dan special methods</div><div class="meta" data-anim="up" style="--d:.35s"><span class="pill">6 jam</span><span class="pill">Modul 3</span><span class="pill">Buku Kerja Hari 3</span></div><div class="glyphs" data-anim="left" style="--d:.5s">class Mahasiswa:<br>&nbsp;&nbsp;def __init__(self):</div><aside class="notes"><b>Pembukaan (±5 menit).</b> Ulas Hari 2: function, error handling, file. Hari ini: membungkus data + perilaku dalam class.</aside></section>
+<section class="slide content" data-title="Agenda"><h2 data-anim="up">Agenda Hari 3</h2><div class="w" data-w="timeline" data-cfg="{&quot;unit&quot;:&quot;mnt&quot;,&quot;items&quot;:[{&quot;t&quot;:&quot;Opening&quot;,&quot;m&quot;:25},{&quot;t&quot;:&quot;Class &amp; object&quot;,&quot;m&quot;:70},{&quot;t&quot;:&quot;Inheritance&quot;,&quot;m&quot;:60},{&quot;t&quot;:&quot;Rehat&quot;,&quot;m&quot;:20,&quot;c&quot;:&quot;#64748b&quot;},{&quot;t&quot;:&quot;Encapsulation &amp; special&quot;,&quot;m&quot;:70},{&quot;t&quot;:&quot;Jebakan&quot;,&quot;m&quot;:20},{&quot;t&quot;:&quot;Mini project&quot;,&quot;m&quot;:80,&quot;c&quot;:&quot;var(--ok)&quot;},{&quot;t&quot;:&quot;Rekap&quot;,&quot;m&quot;:15}]}"></div><p class="mut" data-anim="up" data-step="9">Total ±6 jam. Demo singkat → peserta coba di buku kerja.</p><aside class="notes">Total 360 menit.</aside></section>
+<section class="slide content" data-title="Tujuan"><h2 data-anim="up">Setelah hari ini Anda bisa…</h2><ul class="chk"><li data-step="1"><span>menjelaskan class vs object, attribute vs method</span></li><li data-step="2"><span>menulis <code class="i">__init__</code> dan memakai <code class="i">self</code></span></li><li data-step="3"><span>membedakan class attribute dan instance attribute</span></li><li data-step="4"><span>memakai inheritance, <code class="i">super()</code>, dan override</span></li><li data-step="5"><span>menjaga data lewat encapsulation, <code class="i">@property</code>, dan special methods (<code class="i">__str__</code>, <code class="i">__eq__</code>)</span></li><li data-step="6"><span>membangun mini project berbasis class</span></li></ul><aside class="notes">Tujuan hari ini.</aside></section>
+<section class="slide section" data-title="A. Class &amp; Object" data-transition="rise"><div class="num" data-anim="zoom">A</div><h1 data-anim="up" style="--d:.15s">Class & Object</h1><p class="mut big" data-anim="up" style="--d:.25s">Cetak biru dan benda nyata</p><aside class="notes">Blok 70 menit: konsep (35) + latihan L1–L3 (35).</aside></section>
+<section class="slide content" data-title="Class &amp; object"><h2 data-anim="up"><span class="tag">OOP</span>Class = cetak biru, object = benda</h2><div class="row " style="gap:24px"><pre class="code xs" data-lang="py" data-focus="{&quot;1&quot;:[0],&quot;2&quot;:[1,2,3],&quot;3&quot;:[5,6],&quot;4&quot;:[8],&quot;5&quot;:[9],&quot;6&quot;:[10]}" data-anim="up" style="flex:1;min-width:0"><code>class Mahasiswa:
+    def __init__(self, nama, ipk):
+        self.nama = nama
+        self.ipk = ipk
+
+    def info(self):
+        return f"{self.nama} (IPK {self.ipk})"
+
+m1 = Mahasiswa("Ani", 3.7)
+m2 = Mahasiswa("Budi", 3.2)
+print(m1.info())</code></pre><div class="w" data-w="cards" data-cfg="{&quot;bp&quot;:{&quot;t&quot;:&quot;class Mahasiswa&quot;,&quot;attrs&quot;:[&quot;nama&quot;,&quot;ipk&quot;],&quot;methods&quot;:[&quot;info()&quot;]},&quot;ins&quot;:[{&quot;t&quot;:&quot;m1&quot;,&quot;vals&quot;:[[&quot;nama&quot;,&quot;\&quot;Ani\&quot;&quot;],[&quot;ipk&quot;,&quot;3.7&quot;]],&quot;at&quot;:4},{&quot;t&quot;:&quot;m2&quot;,&quot;vals&quot;:[[&quot;nama&quot;,&quot;\&quot;Budi\&quot;&quot;],[&quot;ipk&quot;,&quot;3.2&quot;]],&quot;at&quot;:5}]}" style="zoom:.62"></div></div><div class="out" style="margin-top:10px"><span data-step="6">Ani (IPK 3.7)</span></div><aside class="notes">Klik: class (cetak biru) → <code>__init__</code> → method → object <b>m1</b> dan <b>m2</b> muncul di kanan, masing-masing punya data sendiri. <b>self</b> = object yang sedang dipakai.</aside></section>
+<section class="slide content" data-title="Class vs instance attribute"><h2 data-anim="up"><span class="tag">OOP</span>Class attribute vs instance attribute</h2><pre class="code xs" data-lang="py" data-focus="{&quot;1&quot;:[1,2],&quot;2&quot;:[5],&quot;3&quot;:[6,7],&quot;4&quot;:[9]}" data-anim="up"><code>class Siswa:
+    sekolah = "SMA 1"        # class attribute
+    jumlah = 0
+
+    def __init__(self, nama):
+        self.nama = nama     # instance attribute
+        Siswa.jumlah += 1
+
+a, b = Siswa("Ani"), Siswa("Budi")
+print(a.nama, b.nama, a.sekolah, Siswa.jumlah)</code></pre><div class="out"><span data-step="4">Ani Budi SMA 1 2</span></div><div class="callout " data-anim="up" data-step="5">Class attribute: <b>dibagi</b> semua object (mis. penghitung). Instance attribute: <b>milik</b> object masing-masing.</div><aside class="notes">Penghitung <code>Siswa.jumlah</code> bertambah setiap object dibuat — contoh umum class attribute.</aside></section>
+<section class="slide work" data-title="Latihan: L1, L2, L3" data-transition="zoom"><div class="badge" data-anim="pop">SEKARANG COBA!</div><h1 data-anim="up" style="--d:.1s">Kerjakan di buku kerja</h1><div class="ids" data-anim="up" style="--d:.2s"><span>L1</span><span>L2</span><span>L3</span></div><div class="how" data-anim="up" style="--d:.3s">Buka <b>workbook/hari3-oop.ipynb</b> → Bagian A</div><p class="mut" data-anim="up" style="--d:.35s">Class dasar, class attribute sebagai penghitung, dan <code>RekeningBank</code>.</p><div class="w" data-w="timer" data-cfg="{&quot;m&quot;:35}" style="margin-top:14px"></div><aside class="notes">35 menit. Kesalahan umum: lupa <b>self</b>.</aside></section>
+<section class="slide section" data-title="B. Inheritance &amp; Polimorfisme" data-transition="rise"><div class="num" data-anim="zoom">B</div><h1 data-anim="up" style="--d:.15s">Inheritance & Polimorfisme</h1><p class="mut big" data-anim="up" style="--d:.25s">Mewarisi dan menimpa perilaku</p><aside class="notes">Blok 60 menit: konsep (25) + latihan L4–L5 (35).</aside></section>
+<section class="slide content" data-title="Inheritance"><h2 data-anim="up"><span class="tag">OOP</span>Inheritance & override</h2><div class="row " style="gap:24px"><pre class="code xs" data-lang="py" data-focus="{&quot;1&quot;:[0,1,2,3,4],&quot;2&quot;:[6,7,8],&quot;3&quot;:[10,11,12,13],&quot;4&quot;:[14,15],&quot;5&quot;:[17,18]}" data-anim="up" style="flex:1.2"><code>class Hewan:
+    def __init__(self, nama):
+        self.nama = nama
+    def suara(self):
+        return "..."
+
+class Kucing(Hewan):
+    def suara(self):
+        return "meong"
+
+class Anjing(Hewan):
+    def __init__(self, nama, ras):
+        super().__init__(nama)
+        self.ras = ras
+    def suara(self):
+        return "guk"
+
+for h in (Kucing("Mimi"), Anjing("Rex", "Husky")):
+    print(h.nama, h.suara())</code></pre><div class="col "><div class="w" data-w="tree" data-cfg="{&quot;nodes&quot;:[{&quot;t&quot;:&quot;Hewan&quot;,&quot;k&quot;:&quot;cls&quot;,&quot;at&quot;:1,&quot;n&quot;:&quot;nama, suara()&quot;},{&quot;t&quot;:&quot;Kucing&quot;,&quot;k&quot;:&quot;cls&quot;,&quot;d&quot;:1,&quot;at&quot;:2,&quot;n&quot;:&quot;override suara()&quot;},{&quot;t&quot;:&quot;Anjing&quot;,&quot;k&quot;:&quot;cls&quot;,&quot;d&quot;:1,&quot;at&quot;:3,&quot;n&quot;:&quot;+ ras, super().__init__&quot;}]}"></div><div class="out"><span data-step="5">Mimi meong</span><span data-step="6">Rex guk</span></div></div></div><aside class="notes"><b>Hewan</b> = induk. <b>Kucing</b> menimpa <code>suara()</code>. <b>Anjing</b> menambah attribute <code>ras</code> dan memanggil <code>super().__init__</code>. Loop akhir = <b>polimorfisme</b>: pemanggilan sama, perilaku berbeda.</aside></section>
+<section class="slide content" data-title="super()"><h2 data-anim="up"><span class="tag">OOP</span>Memakai super()</h2><div class="row " style="gap:26px"><div class="col "><p class="bad big" data-anim="up" data-step="1">Lupa memanggil <code class="i">super().__init__()</code></p><pre class="code sm" data-lang="py" data-anim="up" data-step="1"><code>class Anjing(Hewan):
+    def __init__(self, nama, ras):
+        self.ras = ras     # nama?</code></pre><div class="out err" data-step="2">AttributeError: 'A' object has no attribute 'nama'</div></div><div class="col "><p class="ok big" data-anim="up" data-step="3">Benar</p><pre class="code sm" data-lang="py" data-anim="up" data-step="3"><code>class Anjing(Hewan):
+    def __init__(self, nama, ras):
+        super().__init__(nama)
+        self.ras = ras</code></pre><div class="out" data-step="4">Rex Husky</div></div></div><aside class="notes">Jebakan nomor 1 pada inheritance: attribute induk "kosong" karena <b>super().__init__()</b> tidak dipanggil.</aside></section>
+<section class="slide work" data-title="Latihan: L4, L5" data-transition="zoom"><div class="badge" data-anim="pop">SEKARANG COBA!</div><h1 data-anim="up" style="--d:.1s">Kerjakan di buku kerja</h1><div class="ids" data-anim="up" style="--d:.2s"><span>L4</span><span>L5</span></div><div class="how" data-anim="up" style="--d:.3s">Buka <b>workbook/hari3-oop.ipynb</b> → Bagian B</div><p class="mut" data-anim="up" style="--d:.35s">Inheritance, <code>super()</code>, override, dan polimorfisme.</p><div class="w" data-w="timer" data-cfg="{&quot;m&quot;:35}" style="margin-top:14px"></div><aside class="notes">35 menit.</aside></section>
+<section class="slide content work" data-title="Rehat"><h2 data-anim="up"><span class="tag">Rehat</span>Rehat ☕</h2><div class="w" data-w="timer" data-cfg="{&quot;m&quot;:20}" style="margin-top:40px;align-self:center"></div><p class="mut center" data-anim="up">Berikutnya: <b>encapsulation &amp; special methods</b>.</p><aside class="notes">20 menit.</aside></section>
+<section class="slide section" data-title="C. Encapsulation, Special Methods &amp; Context Manager" data-transition="rise"><div class="num" data-anim="zoom">C</div><h1 data-anim="up" style="--d:.15s">Encapsulation, Special Methods & Context Manager</h1><p class="mut big" data-anim="up" style="--d:.25s">Menjaga data dan membuat object "berperilaku Python"</p><aside class="notes">Blok 70 menit: konsep (35) + latihan L6–L9 (35).</aside></section>
+<section class="slide content" data-title="Encapsulation"><h2 data-anim="up"><span class="tag">OOP</span>Encapsulation — pintu resmi</h2><div class="row " style="gap:24px"><pre class="code xs" data-lang="py" data-focus="{&quot;1&quot;:[2],&quot;2&quot;:[4,5,6],&quot;3&quot;:[8,9,10,11],&quot;4&quot;:[13,14,15]}" data-anim="up" style="flex:1.25;min-width:0"><code>class Rekening:
+    def __init__(self, saldo=0):
+        self._saldo = saldo
+
+    @property
+    def saldo(self):
+        return self._saldo
+
+    def setor(self, jumlah):
+        if jumlah &lt;= 0:
+            raise ValueError("jumlah harus &gt; 0")
+        self._saldo += jumlah
+
+r = Rekening(100)
+r.setor(50)
+print(r.saldo)</code></pre><div class="col "><div class="card " data-anim="left" data-step="3"><h3>Mengapa?</h3><p class="sm" data-anim="up">Data <code class="i">_saldo</code> dilindungi.</p><p class="sm" data-anim="up">Ubah lewat <code class="i">setor()</code> yang <b>memvalidasi</b>.</p></div><div class="out"><span data-step="4">150</span></div><div class="out err" data-step="5" style="font-size:19px">r.setor(-5)  →  ValueError: jumlah harus &gt; 0</div></div></div><aside class="notes">Awalan <code>_</code> = "jangan sentuh langsung". <code>@property</code> membuat <code>r.saldo</code> bisa dibaca seperti attribute tapi tidak diubah sembarangan. Setoran negatif ditolak oleh <b>setor()</b>.</aside></section>
+<section class="slide content" data-title="Special methods"><h2 data-anim="up"><span class="tag">OOP</span>Special methods</h2><div class="row " style="gap:24px"><pre class="code xs" data-lang="py" data-focus="{&quot;1&quot;:[3,4],&quot;2&quot;:[5,6],&quot;3&quot;:[7,8],&quot;4&quot;:[11],&quot;5&quot;:[12],&quot;6&quot;:[13]}" data-anim="up" style="flex:1.2"><code>class Buku:
+    def __init__(self, judul, tahun):
+        self.judul, self.tahun = judul, tahun
+    def __str__(self):
+        return f"{self.judul} ({self.tahun})"
+    def __repr__(self):
+        return f"Buku({self.judul!r}, {self.tahun})"
+    def __eq__(self, other):
+        return self.judul == other.judul
+
+b1, b2 = Buku("Python", 2024), Buku("Python", 2024)
+print(b1)
+print(repr(b1))
+print(b1 == b2, b1 is b2)</code></pre><div class="col "><table class="t" data-anim="up"><tr><th>Method</th><th>Dipanggil saat</th></tr><tr data-step="1"><td><code class="i">__str__</code></td><td><code class="i">print(obj)</code></td></tr><tr data-step="2"><td><code class="i">__repr__</code></td><td>debug / <code class="i">repr()</code></td></tr><tr data-step="3"><td><code class="i">__eq__</code></td><td><code class="i">a == b</code></td></tr></table><div class="out"><span data-step="4">Python (2024)</span><span data-step="5">Buku('Python', 2024)</span><span data-step="6">True False</span></div></div></div><div class="callout warn" data-anim="up" data-step="7"><code class="i">__str__</code> harus <b>return</b> string — bukan <code class="i">print</code>.</div><aside class="notes">Tanpa <code>__str__</code>, <code>print(obj)</code> hanya menampilkan alamat memori.</aside></section>
+<section class="slide content" data-title="Context manager"><h2 data-anim="up"><span class="tag">OOP</span>Context manager — with</h2><div class="row " style="gap:26px"><pre class="code xs" data-lang="py" data-focus="{&quot;1&quot;:[9],&quot;2&quot;:[3,4,5],&quot;3&quot;:[10],&quot;4&quot;:[6,7]}" data-anim="up" style="flex:1.3"><code>class FileCatatan:
+    def __init__(self, nama):
+        self.nama = nama
+    def __enter__(self):
+        print("buka", self.nama)
+        return self
+    def __exit__(self, tipe, nilai, tb):
+        print("tutup", self.nama)
+
+with FileCatatan("log.txt") as f:
+    print("bekerja dengan", f.nama)</code></pre><div class="w" data-w="flow" data-cfg="{&quot;w&quot;:380,&quot;h&quot;:330,&quot;nodes&quot;:[{&quot;id&quot;:&quot;a&quot;,&quot;x&quot;:60,&quot;y&quot;:0,&quot;w&quot;:260,&quot;h&quot;:56,&quot;t&quot;:&quot;__enter__()&quot;,&quot;k&quot;:&quot;c&quot;,&quot;at&quot;:2},{&quot;id&quot;:&quot;b&quot;,&quot;x&quot;:60,&quot;y&quot;:130,&quot;w&quot;:260,&quot;h&quot;:56,&quot;t&quot;:&quot;isi blok with&quot;,&quot;k&quot;:&quot;c&quot;,&quot;at&quot;:3},{&quot;id&quot;:&quot;c&quot;,&quot;x&quot;:60,&quot;y&quot;:260,&quot;w&quot;:260,&quot;h&quot;:56,&quot;t&quot;:&quot;__exit__()&quot;,&quot;k&quot;:&quot;o&quot;,&quot;at&quot;:4}],&quot;edges&quot;:[{&quot;a&quot;:&quot;a&quot;,&quot;b&quot;:&quot;b&quot;,&quot;at&quot;:3},{&quot;a&quot;:&quot;b&quot;,&quot;b&quot;:&quot;c&quot;,&quot;at&quot;:4}]}"></div></div><div class="out" style="margin-top:10px"><span data-step="4">buka log.txt</span><span data-step="5">bekerja dengan log.txt</span><span data-step="6">tutup log.txt</span></div><aside class="notes"><b>__exit__</b> selalu dipanggil — walau terjadi error di dalam blok. Itulah alasan <code>with open(...)</code> aman.</aside></section>
+<section class="slide work" data-title="Latihan: L6, L7, L8, L9" data-transition="zoom"><div class="badge" data-anim="pop">SEKARANG COBA!</div><h1 data-anim="up" style="--d:.1s">Kerjakan di buku kerja</h1><div class="ids" data-anim="up" style="--d:.2s"><span>L6</span><span>L7</span><span>L8</span><span>L9</span></div><div class="how" data-anim="up" style="--d:.3s">Buka <b>workbook/hari3-oop.ipynb</b> → Bagian C</div><p class="mut" data-anim="up" style="--d:.35s">Encapsulation, special methods pada <code>Buku</code>, <code>Titik</code> + jarak, context manager.</p><div class="w" data-w="timer" data-cfg="{&quot;m&quot;:35}" style="margin-top:14px"></div><aside class="notes">35 menit.</aside></section>
+<section class="slide section" data-title="D. Jebakan Umum" data-transition="rise"><div class="num" data-anim="zoom">D</div><h1 data-anim="up" style="--d:.15s">Jebakan Umum</h1><p class="mut big" data-anim="up" style="--d:.25s">Kesalahan klasik OOP</p><aside class="notes">20 menit.</aside></section>
+<section class="slide content" data-title="Mutable default"><h2 data-anim="up"><span class="tag">Jebakan</span>Mutable default argument</h2><div class="row " style="gap:24px"><pre class="code sm" data-lang="py" data-focus="{&quot;1&quot;:[1,2],&quot;2&quot;:[4],&quot;3&quot;:[5],&quot;4&quot;:[6]}" data-anim="up" style="flex:1.1"><code>class Keranjang:
+    def __init__(self, isi=[]):
+        self.isi = isi
+
+a, b = Keranjang(), Keranjang()
+a.isi.append("apel")
+print(b.isi)</code></pre><div class="col "><div class="out"><span data-step="4">['apel']</span></div><p class="bad" data-anim="up" data-step="4">Semua object <b>berbagi list yang sama</b>!</p><pre class="code sm" data-lang="py" data-anim="up" data-step="5"><code>def __init__(self, isi=None):
+    self.isi = isi or []</code></pre><p class="ok sm" data-anim="up" data-step="5">Perbaikan: default <code class="i">None</code></p></div></div><aside class="notes">Default dievaluasi <b>sekali</b> saat function didefinisikan, bukan setiap dipanggil.</aside></section>
+<section class="slide content" data-title="Error umum"><h2 data-anim="up"><span class="tag">Troubleshooting</span>Error yang paling sering</h2><div class="grid3 stagger"><div class="card "><h3>__init__ kurang argumen</h3><pre class="code sm" data-lang="py" data-step="1"><code>A()</code></pre><div class="out err" data-step="2" style="font-size:17px">TypeError: A.__init__() missing 1 required positional argument: 'x'</div></div><div class="card "><h3>Lupa self</h3><pre class="code sm" data-lang="py" data-step="3"><code>def f():</code></pre><div class="out err" data-step="4" style="font-size:17px">TypeError: A.f() takes 0 positional arguments but 1 was given</div></div><div class="card "><h3>AttributeError</h3><pre class="code sm" data-lang="py" data-step="5"><code>A().nama</code></pre><div class="out err" data-step="6" style="font-size:17px">AttributeError: 'A' object has no attribute 'nama'</div></div></div><aside class="notes">Pesan error asli Python.</aside></section>
+<section class="slide section" data-title="E. Mini Project" data-transition="rise"><div class="num" data-anim="zoom">E</div><h1 data-anim="up" style="--d:.15s">Mini Project</h1><p class="mut big" data-anim="up" style="--d:.25s">Sistem perpustakaan / inventaris berbasis class</p><aside class="notes">Blok 80 menit: briefing (10) + coding (60) + diskusi (10).</aside></section>
+<section class="slide content" data-title="Rancang class"><h2 data-anim="up"><span class="tag">Mini Project</span>Rancang class sebelum coding</h2><div class="row " style="gap:26px"><div class="w" data-w="tree" data-cfg="{&quot;nodes&quot;:[{&quot;t&quot;:&quot;Buku&quot;,&quot;k&quot;:&quot;cls&quot;,&quot;at&quot;:1,&quot;n&quot;:&quot;judul, penulis, tersedia&quot;},{&quot;t&quot;:&quot;Perpustakaan&quot;,&quot;k&quot;:&quot;cls&quot;,&quot;at&quot;:2,&quot;n&quot;:&quot;daftar_buku (list of Buku)&quot;},{&quot;t&quot;:&quot;tambah(buku)&quot;,&quot;d&quot;:1,&quot;at&quot;:3},{&quot;t&quot;:&quot;pinjam(judul)&quot;,&quot;d&quot;:1,&quot;at&quot;:4,&quot;n&quot;:&quot;validasi tersedia&quot;},{&quot;t&quot;:&quot;kembalikan(judul)&quot;,&quot;d&quot;:1,&quot;at&quot;:5},{&quot;t&quot;:&quot;cari(kata)&quot;,&quot;d&quot;:1,&quot;at&quot;:6}]}"></div><div class="col "><div class="callout " data-anim="up" data-step="1">Tanya dulu: <b>object apa</b> yang ada? <b>data</b> apa yang dimiliki? <b>aksi</b> apa yang dilakukan?</div><div class="callout ok" data-anim="up" data-step="7">Pakai <code class="i">__str__</code> agar tampilan buku rapi dan <code class="i">raise</code> untuk aksi yang tidak valid.</div></div></div><aside class="notes">Ajak peserta menggambar class di kertas dulu. Workbook memuat dua mini project berbasis class dengan pemeriksa otomatis (P1, P2).</aside></section>
+<section class="slide work" data-title="Latihan: P1, P2" data-transition="zoom"><div class="badge" data-anim="pop">SEKARANG COBA!</div><h1 data-anim="up" style="--d:.1s">Kerjakan di buku kerja</h1><div class="ids" data-anim="up" style="--d:.2s"><span>P1</span><span>P2</span></div><div class="how" data-anim="up" style="--d:.3s">Buka <b>workbook/hari3-oop.ipynb</b> → Bagian E</div><p class="mut" data-anim="up" style="--d:.35s">Bangun mini project berbasis class hingga ✅.</p><div class="w" data-w="timer" data-cfg="{&quot;m&quot;:60}" style="margin-top:14px"></div><aside class="notes">60 menit coding + 10 menit diskusi.</aside></section>
+<section class="slide content" data-title="Rekap"><h2 data-anim="up">Rekap Hari 3</h2><ul class="chk"><li data-step="1"><span>Class, object, <code class="i">__init__</code>, <code class="i">self</code>; class vs instance attribute</span></li><li data-step="2"><span>Inheritance, <code class="i">super()</code>, override, polimorfisme</span></li><li data-step="3"><span>Encapsulation, <code class="i">@property</code>, <code class="i">__str__/__repr__/__eq__</code>, context manager</span></li><li data-step="4"><span>Jebakan: mutable default, lupa <code class="i">self</code>/<code class="i">super()</code></span></li><li data-step="5"><span>Mini project berbasis class</span></li></ul><p class="acc big" data-anim="up" data-step="6"><b>Besok (Hari 4):</b> NumPy &amp; Pandas</p><aside class="notes">Minta peserta menjalankan sel Rekap hasil latihan.</aside></section>
+</div></div>
+<script src="assets/deck.js"></script></body></html>
