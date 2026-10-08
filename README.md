@@ -29,3 +29,5 @@ Buku kerja interaktif per hari dengan pemeriksa jawaban otomatis ada di [workboo
 ## Slide presentasi (web HTML)
 
 Slide interaktif dengan transisi dan animasi komponen untuk instruktur ada di [slides/](slides/) — mulai dari [`slides/index.html`](slides/index.html). Satu deck per hari, selaras dengan latihan buku kerja. Lihat [slides/README.md](slides/README.md) untuk pintasan dan cara ekspor PDF.
+
+Versi online (GitHub Pages): https://standungan.github.io/python-intensive-bootcamp/ — slide di root situs, buku kerja HTML di `/workbook/`.

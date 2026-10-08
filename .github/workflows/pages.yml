@@ -1,0 +1,38 @@
+name: Deploy slides & buku kerja ke GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ['slides/**', 'workbook/html/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Susun situs
+        run: |
+          mkdir _site
+          cp -r slides/assets slides/*.html _site/
+          mkdir _site/workbook
+          cp -r workbook/html/. _site/workbook/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
