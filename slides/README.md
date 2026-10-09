@@ -13,6 +13,10 @@ Slide berbasis web untuk **dibawakan langsung oleh instruktur** sementara pesert
 | 5 | [Visualisasi, API & Scraping](hari5-visualisasi-api-scraping.html) | 28 |
 | 6 | [Capstone Project](hari6-capstone-project.html) | 23 |
 
+## Membuka deck
+
+Unduh/clone repositori lalu buka `slides/index.html` (atau salah satu `hariN-….html`) langsung di browser — tidak perlu internet atau instalasi. Alternatif: `python -m http.server 8000` di folder repositori, lalu buka `http://localhost:8000/slides/`.
+
 ## Cara memakai
 
 | Tombol | Fungsi |

@@ -9,7 +9,6 @@ materi/            6 modul (Markdown) + docx asli + gambar
 contoh-capstone/   4 contoh capstone lengkap (Jalur A/B/C/D) sebagai bahan belajar
 workbook/          buku kerja Jupyter per hari (+ solusi, + versi HTML)
 slides/            slide web HTML untuk instruktur (satu deck per hari)
-.github/workflows/ deploy GitHub Pages (slide + buku kerja HTML)
 ```
 
 ## Jalur belajar
@@ -47,4 +46,4 @@ Buku kerja interaktif per hari dengan pemeriksa jawaban otomatis ada di [workboo
 
 Slide interaktif dengan transisi dan animasi komponen untuk instruktur ada di [slides/](slides/) — mulai dari [`slides/index.html`](slides/index.html). Satu deck per hari (Hari 0 = persiapan Python, venv, dan Jupyter; Hari 1–6 = materi), selaras dengan latihan buku kerja. Lihat [slides/README.md](slides/README.md) untuk pintasan dan cara ekspor PDF. Naskah untuk video tutorial: [slides/naskah/](slides/naskah/README.md).
 
-Versi online (GitHub Pages): https://standungan.github.io/python-intensive-bootcamp/ — slide di root situs, buku kerja HTML di `/workbook/`.
+Cara membuka: unduh/clone repositori lalu buka `slides/index.html` di browser (bekerja offline), atau jalankan server lokal: `python -m http.server 8000` di folder repositori lalu buka `http://localhost:8000/slides/`. (GitHub Pages tidak dipakai: repositori privat pada paket gratis.)

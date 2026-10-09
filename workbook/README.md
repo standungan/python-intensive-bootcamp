@@ -15,7 +15,7 @@ Satu buku kerja per hari, pendamping Modul 1–6. Setiap notebook berisi ringkas
 
 Salinan HTML semua notebook ada di [html/](html/) — mulai dari [html/index.html](html/index.html). Halaman berdiri sendiri (gambar tertanam, tanpa perlu internet) dan bisa dibuka langsung di browser setelah di-download; buku kerja ditampilkan tanpa output, solusi dengan output hasil eksekusi. Untuk **mengerjakan** latihan dan menjalankan pemeriksa jawaban tetap gunakan file `.ipynb` dengan Jupyter. Dibuat ulang dengan `jupyter nbconvert --to html --template lab <notebook>`.
 
-> GitHub menampilkan file `.html` sebagai teks sumber, bukan halaman. Untuk melihat tampilannya, unduh filenya, atau aktifkan GitHub Pages untuk repo ini.
+> GitHub menampilkan file `.html` sebagai teks sumber, bukan halaman. Untuk melihat tampilannya, unduh/clone repositori lalu buka file `.html` di browser (atau jalankan `python -m http.server` di folder repositori).
 
 ## Cara memakai
 
