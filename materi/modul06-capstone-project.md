@@ -2,7 +2,7 @@
 
 _Proyek akhir mandiri  ·  Integrasi Modul 1–5  ·  Dokumentasi portfolio · Estimasi: ± 6–10 jam (tergantung scope)  ·  Prasyarat: Modul 1–5_
 
-> **Catatan pengujian:** blok kode pada modul ini dijalankan (Python 3.11, pandas 3.0.6, matplotlib 3.11.2, seaborn 0.13.2). Modul 6 versi ini berisi kerangka (skeleton), sehingga ditambahkan **contoh lengkap** yang mengisi skeleton untuk Jalur A dan "Demonstrasi error" untuk kasus teknis pada Troubleshooting. Contoh lengkap ketiga jalur ada di `contoh-capstone/`. Folder struktur dan template README pada modul asli berlabel `python`; di sini dilabeli `text`/`markdown` agar terbaca benar.
+> **Catatan pengujian:** blok kode pada modul ini dijalankan (Python 3.11, pandas 3.0.6, matplotlib 3.11.2, seaborn 0.13.2). Modul 6 versi ini berisi kerangka (skeleton), sehingga ditambahkan **contoh lengkap** yang mengisi skeleton untuk Jalur A dan "Demonstrasi error" untuk kasus teknis pada Troubleshooting. Contoh lengkap keempat jalur ada di `contoh-capstone/`. Folder struktur dan template README pada modul asli berlabel `python`; di sini dilabeli `text`/`markdown` agar terbaca benar.
 
 # 1. Apa Itu Capstone di Modul Ini
 
@@ -68,6 +68,66 @@ Topik yang baik punya data yang bisa diakses, pertanyaan yang jelas, dan hasil y
 5. Visualisasi yang menjawab pertanyaan — bukan dekorasi.
 6. Tulis insight + batasan; rapikan struktur folder.
 7. Uji ulang: jalankan dari awal bila memungkinkan.
+
+# 5b. Agenda Sehari & Alokasi Waktu
+
+
+| Waktu | Sesi | Durasi | Fokus |
+|---|---|---|---|
+| 00:00–00:20 | Briefing + Pemilihan Topik | 20 mnt | Orientasi |
+| 00:20–01:00 | Perencanaan (outline + struktur) | 40 mnt | Design |
+| 01:00–04:00 | Pengerjaan Capstone | 180 mnt | Implementasi |
+| 04:00–04:20 | Istirahat | 20 mnt | — |
+| 04:20–05:20 | Finalisasi + Dokumentasi | 60 mnt | Polish |
+| 05:20–06:00 | Showcase / Review | 40 mnt | Presentasi |
+
+## 5b.1 Saran alokasi waktu saat Coding (180 menit)
+
+| Tahap | Waktu | Aktivitas |
+|---|---|---|
+| Load + Inspeksi | 20 mnt | Baca data, cek shape/dtypes/missing/duplikat |
+| Cleaning | 25 mnt | Tangani missing, duplikat, tipe data |
+| Analisis | 40 mnt | Groupby, pivot, korelasi, filter, ranking |
+| Visualisasi | 45 mnt | Minimal 4–5 grafik, judul & label jelas |
+| Insight + Export | 25 mnt | Tulis insight, simpan CSV/Excel |
+| Buffer / Perbaikan | 25 mnt | Cadangan jika ada error |
+
+> **Tips Time Management**
+>
+> Jangan terlalu lama di tahap cleaning. Cleaning yang cukup baik lebih baik daripada sempurna tapi kehabisan waktu.
+>
+> Kerjakan visualisasi paling penting dulu.
+>
+> Simpan file sesering mungkin.
+
+## 5b.2 Ekspektasi kualitas kode
+
+> **Standar Kode yang Diharapkan**
+>
+> Nama variabel dan fungsi bermakna.
+>
+> Minimal ada beberapa function (atau class) — jangan semua kode di top-level.
+>
+> Ada docstring singkat pada function/class utama.
+>
+> Mengikuti PEP 8 secara wajar.
+>
+> Ada error handling pada bagian yang berisiko (baca file, panggil API).
+>
+> Kode dapat dijalankan dari atas ke bawah tanpa error.
+
+## 5b.3 Rekomendasi dataset & sumber data
+
+| Dataset / Sumber | Cocok untuk | Keterangan |
+|---|---|---|
+| Student Performance | Jalur A | Kaggle / UCI — nilai, gender, pendidikan ortu |
+| Titanic | Jalur A | Kaggle — klasik untuk EDA |
+| Iris / Penguins | Jalur A | Seaborn bawaan — kecil dan bersih |
+| Gapminder | Jalur A | Data pembangunan dunia |
+| JSONPlaceholder | Jalur B | API palsu — users, posts |
+| Open-Meteo | Jalur B | API cuaca gratis tanpa key |
+| arXiv API | Jalur B | Metadata paper ilmiah — cocok S2/S3 |
+| Data nilai buatan sendiri | Jalur D | Buat CSV sendiri atau generate |
 
 # 6. Struktur Folder Proyek
 
@@ -335,9 +395,9 @@ Tiga grafik yang dihasilkan di folder `figures/`:
 Selesai.
 ```
 
-_Catatan: ini hanya contoh bentuk pengerjaan. Contoh capstone lengkap untuk ketiga jalur (dengan dokumentasi dan output) ada di `contoh-capstone/`._
+_Catatan: ini hanya contoh bentuk pengerjaan. Contoh capstone lengkap untuk keempat jalur (dengan dokumentasi dan output) ada di `contoh-capstone/`._
 
-# 9. Tiga Jalur Capstone (Pilih Satu)
+# 9. Empat Jalur Capstone (Pilih Satu)
 
 ## Jalur A — EDA Dataset Publik (paling stabil)
 
@@ -369,6 +429,66 @@ Pipeline pencarian paper terkait bidang studi: paginasi, metadata, analisis wakt
 1. Minimal sekitar 20 paper (paginasi + sleep antar request).
 2. Analisis per tahun + frekuensi kata judul (atau penulis top).
 3. 2–3 figure + CSV + pembahasan batasan (bias query, metadata saja).
+
+## Jalur D — Aplikasi Analisis Nilai Berbasis OOP (level tinggi)
+
+Bangun mini sistem analisis data akademik yang memanfaatkan class/OOP, Pandas, dan visualisasi.
+
+### Scope minimum
+
+1. Minimal satu class untuk mengelola data.
+2. Fitur: tambah data, statistik, filter, ranking.
+3. Minimal 4 visualisasi.
+4. Export laporan ke CSV/Excel.
+5. Kode modular dan mudah dibaca.
+
+### Stretch goals (bonus)
+
+1. Method perbandingan dua prodi/kelas.
+2. Mode interaktif sederhana (input terminal).
+3. Simpan dan load state aplikasi.
+
+### Skeleton kode
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+class AnalisisNilai:
+    def __init__(self, data_path=None):
+        self.df = pd.read_csv(data_path) if data_path else pd.DataFrame()
+
+    def tambah_mahasiswa(self, nama, prodi, nilai):
+        pass
+
+    def statistik(self):
+        pass
+
+    def ranking(self, n=10):
+        pass
+
+    def visualisasi(self):
+        pass
+
+    def export(self, path):
+        self.df.to_csv(path, index=False)
+
+app = AnalisisNilai("nilai.csv")
+print(app.statistik())
+app.visualisasi()
+app.export("laporan_akhir.csv")
+```
+
+**Output:**
+
+```text
+None
+```
+
+_Catatan: dijalankan dengan `nilai.csv` contoh (20 baris). Semua method masih `pass`, sehingga `statistik()` mengembalikan `None`, `visualisasi()` belum menggambar apa pun, dan `export()` menulis ulang CSV masukan._
+
+Contoh lengkap (class `AnalisisNilai`, 7 unit test, mode interaktif, simpan/muat state): [`contoh-capstone/jalur_d_analisis_nilai_oop/`](../contoh-capstone/jalur_d_analisis_nilai_oop/).
 
 # 10. Checklist Kualitas (Self-Review)
 

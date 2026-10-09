@@ -3,7 +3,7 @@
 ## 1. Judul dan Identitas
 - Judul: Aplikasi Analisis Nilai Akademik Berbasis OOP
 - Nama: Contoh pengerjaan lengkap (Capstone Python Intensive Bootcamp)
-- Opsi: C (Aplikasi Analisis Nilai) + stretch goals
+- Jalur: D (Aplikasi Analisis Nilai) + stretch goals
 - Tanggal: 2026-10-01
 
 ## 2. Latar Belakang / Masalah
@@ -56,3 +56,8 @@ Kelas `AnalisisNilai` memenuhi seluruh fitur wajib dan stretch goal, diuji denga
 - Mengganti data sintetis dengan data akademik nyata (dengan anonimisasi).
 - Menambah tren per semester dan bobot SKS.
 - Membuat antarmuka web dan otomatisasi pelaporan.
+
+## 9. Batasan
+- Data sintetis (fiktif, seed tetap): temuan menggambarkan cara kerja aplikasi, bukan kondisi akademik nyata.
+- Perbandingan antar prodi bersifat deskriptif; tidak ada uji signifikansi statistik.
+- State aplikasi disimpan sebagai satu berkas JSON — cukup untuk demo, bukan untuk data besar atau akses serentak.

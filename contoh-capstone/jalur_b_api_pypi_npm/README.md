@@ -98,3 +98,14 @@ jalur_b_api_pypi_npm/
     ├── insight.txt
     └── run_log.txt
 ```
+
+## 11. Bahan belajar
+
+**Terkait modul:** Modul 5 (API & JSON), Modul 2 (error handling, file).
+
+**Urutan membaca kode:** `ambil_json` (timeout, retry, cache, fallback) → `kumpulkan_data` → `buat_dataframe` → `cleaning` → `analisis` → `visualisasi` → `tulis_insight`. Perhatikan folder `data/raw/cache/`: program tetap jalan walau API gagal.
+
+**Latihan lanjutan:**
+1. Matikan koneksi (atau ubah URL jadi salah) dan jalankan ulang. Bagian mana yang menyelamatkan program?
+2. Tambahkan satu paket PyPI dan satu paket npm pilihanmu; adakah kolom yang perlu dibersihkan secara khusus?
+3. Buat figure baru: median interval rilis per tahun untuk 3 paket teratas.

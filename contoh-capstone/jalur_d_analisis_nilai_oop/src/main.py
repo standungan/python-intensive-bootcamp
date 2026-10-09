@@ -1,4 +1,4 @@
-"""Capstone Opsi C — aplikasi analisis nilai akademik berbasis OOP.
+"""Capstone Jalur D — aplikasi analisis nilai akademik berbasis OOP.
 
 Mode:
     python src/main.py              # pipeline otomatis (default)

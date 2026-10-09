@@ -3,8 +3,8 @@
 ## Nama
 Capstone Python Intensive Bootcamp — contoh pengerjaan lengkap
 
-## Opsi Project
-Opsi C — Mini Aplikasi Analisis Nilai / Akademik (Level Tinggi), dengan ketiga stretch goal: perbandingan dua prodi, mode interaktif terminal, dan simpan/muat state.
+## Jalur Capstone
+Jalur D — Aplikasi Analisis Nilai Berbasis OOP (level tinggi), dengan ketiga stretch goal: perbandingan dua prodi, mode interaktif terminal, dan simpan/muat state.
 
 ## Deskripsi Singkat
 Aplikasi berbasis kelas `AnalisisNilai` (OOP + Pandas) untuk mengelola data nilai 120 mahasiswa pada 3 program studi dan 5 mata kuliah: tambah data dengan validasi, statistik, filter, ranking, uji perbandingan prodi, 6 visualisasi + dashboard, export CSV/Excel, dan penyimpanan state. Dilengkapi 7 unit test.
@@ -41,7 +41,7 @@ Log eksekusi tersimpan di `output/reports/`: `run_log.txt` (pipeline), `demo_int
 
 ## Struktur Folder
 ```text
-opsi_c_analisis_nilai_oop/
+jalur_d_analisis_nilai_oop/
 ├── data/
 │   ├── raw/nilai_mahasiswa.csv             # data sintetis
 │   ├── processed/                          # data + rata_rata, state_aplikasi.json
@@ -63,3 +63,14 @@ opsi_c_analisis_nilai_oop/
 - Data per semester dan perhitungan IPK berbobot SKS.
 - Antarmuka web sederhana (mis. Streamlit) di atas kelas yang sama.
 - Deteksi mahasiswa berisiko (nilai turun/di bawah ambang).
+
+## 11. Bahan belajar
+
+**Terkait modul:** Modul 3 (OOP) dan Modul 4–5 (Pandas, visualisasi).
+
+**Urutan membaca kode:** `tests/test_analisis_nilai.py` (apa yang dijanjikan class) → `src/analisis_nilai.py` (`AnalisisNilai`: `tambah_mahasiswa`, `statistik`, `filter`, `ranking`, `bandingkan_prodi`, `visualisasi`, `export`, `simpan_state` / `muat_state`) → `src/main.py` (alur memakai class).
+
+**Latihan lanjutan:**
+1. Tambahkan method `histori_mahasiswa(nama)` dan unit test-nya terlebih dahulu (test-first).
+2. Tambahkan validasi baru: nilai di luar 0–100 harus memunculkan `DataTidakValidError`. Tulis test yang gagal, lalu perbaiki.
+3. Pecah `visualisasi()` jadi class terpisah `Visualisator`. Apa yang jadi lebih mudah diuji?

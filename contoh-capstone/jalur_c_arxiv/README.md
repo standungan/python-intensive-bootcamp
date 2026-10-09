@@ -95,3 +95,14 @@ jalur_c_arxiv/
     ├── insight.txt
     └── run_log.txt
 ```
+
+## 11. Bahan belajar
+
+**Terkait modul:** Modul 5 (arXiv API, parsing XML), Modul 4 (groupby, teks).
+
+**Urutan membaca kode:** `ambil_live` (paginasi + jeda) atau `ambil_sampel` → `parse_feed` → `cleaning` → `kata_judul` / `penulis_teratas` → `analisis` → `visualisasi`. Data bawaan adalah sampel fiktif: jalankan mode live untuk hasil nyata.
+
+**Latihan lanjutan:**
+1. Jalankan mode live dengan kata kunci bidang studimu dan bandingkan tren per tahun dengan sampel.
+2. Tambahkan stop-words Indonesia/Inggris tambahan pada `kata_judul`. Bagaimana top-10 kata berubah?
+3. Tambahkan analisis jumlah penulis per paper dan satu figure untuk itu.

@@ -96,3 +96,14 @@ jalur_a_eda_titanic/
     ├── insight.txt
     └── run_log.txt
 ```
+
+## 11. Bahan belajar
+
+**Terkait modul:** Modul 4 (Pandas) dan Modul 5 (Matplotlib/Seaborn).
+
+**Urutan membaca kode:** `main()` → `load_data` → `inspeksi` → `cleaning` → `analisis` → `visualisasi` → `tulis_insight` → `export`. Baca `run_log.txt` lebih dulu untuk melihat hasil tiap tahap, lalu cocokkan dengan fungsi yang menghasilkannya.
+
+**Latihan lanjutan:**
+1. Ganti imputasi `age` (median per kelas & jenis kelamin) dengan median global. Apakah insight berubah? Mengapa?
+2. Tambahkan grafik ke-7 yang menjawab pertanyaan nomor 3 (anak-anak vs keluarga kecil).
+3. Ganti dataset dengan `penguins` atau `tips` dari seaborn-data; fungsi mana yang harus diubah dan mana yang bisa dipakai ulang?
