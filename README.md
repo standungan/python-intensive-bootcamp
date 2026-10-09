@@ -14,7 +14,7 @@ slides/            slide web HTML untuk instruktur (satu deck per hari)
 
 ## Jalur belajar
 
-`materi/` (baca) → `workbook/` (latihan dengan pemeriksa otomatis) → `slides/` (instruktur) → `contoh-capstone/` (studi kasus lengkap, dengan latihan lanjutan) → capstone Anda sendiri.
+Persiapan lingkungan ([slide Hari 0](slides/hari0-setup-lingkungan.html)) → `materi/` (baca) → `workbook/` (latihan dengan pemeriksa otomatis) → `slides/` (instruktur) → `contoh-capstone/` (studi kasus lengkap, dengan latihan lanjutan) → capstone Anda sendiri.
 
 ## Materi
 
@@ -45,6 +45,6 @@ Buku kerja interaktif per hari dengan pemeriksa jawaban otomatis ada di [workboo
 
 ## Slide presentasi (web HTML)
 
-Slide interaktif dengan transisi dan animasi komponen untuk instruktur ada di [slides/](slides/) — mulai dari [`slides/index.html`](slides/index.html). Satu deck per hari, selaras dengan latihan buku kerja. Lihat [slides/README.md](slides/README.md) untuk pintasan dan cara ekspor PDF. Naskah untuk video tutorial: [slides/naskah/](slides/naskah/README.md).
+Slide interaktif dengan transisi dan animasi komponen untuk instruktur ada di [slides/](slides/) — mulai dari [`slides/index.html`](slides/index.html). Satu deck per hari (Hari 0 = persiapan Python, venv, dan Jupyter; Hari 1–6 = materi), selaras dengan latihan buku kerja. Lihat [slides/README.md](slides/README.md) untuk pintasan dan cara ekspor PDF. Naskah untuk video tutorial: [slides/naskah/](slides/naskah/README.md).
 
 Versi online (GitHub Pages): https://standungan.github.io/python-intensive-bootcamp/ — slide di root situs, buku kerja HTML di `/workbook/`.

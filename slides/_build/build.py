@@ -3,6 +3,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from lib import page
 OUT = os.path.join(os.path.dirname(__file__), '..')
 DECKS = [
+    (0, 'd0', 'hari0-setup-lingkungan', 'Persiapan Lingkungan', '#fbbf24', '#b7791f'),
     (1, 'd1', 'hari1-python-fundamentals', 'Python Fundamentals', '#38bdf8', '#0b7bbd'),
     (2, 'd2', 'hari2-functions-modules-file-handling', 'Functions, Modules & File Handling', '#34d399', '#0f8f63'),
     (3, 'd3', 'hari3-oop', 'Object-Oriented Programming', '#a78bfa', '#6d4fd1'),

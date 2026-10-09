@@ -4,6 +4,7 @@ Naskah narasi untuk merekam video tutorial memakai [slide web HTML](../index.htm
 
 | Hari | Naskah | Slide | Klik | Perkiraan narasi |
 |---|---|---|---|---|
+| 0 | [Persiapan Lingkungan](hari0-naskah.md) | 28 | 94 | 13 mnt 37 dtk |
 | 1 | [Python Fundamentals](hari1-naskah.md) | 30 | 114 | 15 mnt 16 dtk |
 | 2 | [Functions, Modules & File Handling](hari2-naskah.md) | 31 | 98 | 13 mnt 35 dtk |
 | 3 | [Object-Oriented Programming](hari3-naskah.md) | 24 | 78 | 10 mnt 13 dtk |

@@ -1,0 +1,11 @@
+# Kebutuhan buku kerja, slide, dan contoh capstone Python Intensive Bootcamp
+notebook
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+openpyxl
+requests
+beautifulsoup4
+feedparser

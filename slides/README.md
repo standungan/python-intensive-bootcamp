@@ -5,6 +5,7 @@ Slide berbasis web untuk **dibawakan langsung oleh instruktur** sementara pesert
 | Hari | Deck | Slide |
 |---|---|---|
 | — | [`index.html`](index.html) (daftar deck) | — |
+| 0 | [Persiapan Lingkungan (Python, venv, Jupyter)](hari0-setup-lingkungan.html) | 28 |
 | 1 | [Python Fundamentals](hari1-python-fundamentals.html) | 30 |
 | 2 | [Functions, Modules & File Handling](hari2-functions-modules-file-handling.html) | 31 |
 | 3 | [Object-Oriented Programming](hari3-oop.html) | 24 |

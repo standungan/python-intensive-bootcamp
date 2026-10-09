@@ -3,7 +3,7 @@ menjadi naskah Markdown per hari. Gagal bila jumlah narasi != jumlah langkah sli
 import json, os, sys, re, importlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 OUT = os.path.join(HERE, '..')
-DECKS = [(1, 'hari1-python-fundamentals', 'Python Fundamentals'), (2, 'hari2-functions-modules-file-handling', 'Functions, Modules & File Handling'),
+DECKS = [(0, 'hari0-setup-lingkungan', 'Persiapan Lingkungan'), (1, 'hari1-python-fundamentals', 'Python Fundamentals'), (2, 'hari2-functions-modules-file-handling', 'Functions, Modules & File Handling'),
          (3, 'hari3-oop', 'Object-Oriented Programming'), (4, 'hari4-numpy-pandas', 'NumPy & Pandas'),
          (5, 'hari5-visualisasi-api-scraping', 'Visualisasi, API & Scraping'), (6, 'hari6-capstone-project', 'Capstone Project')]
 WPS = 2.3  # kata per detik (±140 kata/menit, tempo tutorial)
@@ -60,3 +60,9 @@ for day, fn, title in DECKS:
     open(os.path.join(OUT, f'hari{day}-naskah.md'), 'w', encoding='utf-8').write('\n'.join(lines))
     summary.append((day, title, len(S), sum(s['max'] for s in S), total))
     print(f'Hari {day}: {len(S)} slide, {sum(s["max"] for s in S)} klik, {fmt(total)}')
+
+if not only:
+    rows = [f'| {d} | [{t}](hari{d}-naskah.md) | {n} | {k} | {fmt(tot)} |' for d, t, n, k, tot in summary]
+    readme = open(os.path.join(HERE, 'README.tmpl.md'), encoding='utf-8').read().replace('{{ROWS}}', '\n'.join(rows))
+    open(os.path.join(OUT, 'README.md'), 'w', encoding='utf-8').write(readme)
+    print('README.md ditulis')

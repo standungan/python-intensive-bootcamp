@@ -19,6 +19,8 @@ Salinan HTML semua notebook ada di [html/](html/) — mulai dari [html/index.htm
 
 ## Cara memakai
 
+> Belum punya Python/venv/Jupyter? Ikuti slide [Hari 0 — Persiapan Lingkungan](../slides/hari0-setup-lingkungan.html). Semua paket yang dibutuhkan ada di [requirements.txt](../requirements.txt).
+
 1. Pasang kebutuhan dan jalankan Jupyter di komputer Anda:
    ```bash
    pip install notebook numpy pandas matplotlib seaborn scipy openpyxl requests beautifulsoup4 feedparser

@@ -1,0 +1,1016 @@
+[
+ {
+  "n": 1,
+  "cls": "slide title t-zoom fwd",
+  "title": "Persiapan Lingkungan",
+  "max": 0,
+  "notes": "Pembukaan (±3 menit). Sesi ini menyamakan lingkungan semua peserta. Tanyakan sistem operasi tiap peserta di awal; siapkan jalur Windows, macOS, dan Linux. Target: setiap peserta bisa membuka sebuah notebook dari venv-nya sendiri.",
+  "steps": [],
+  "text": [
+   "Persiapan Lingkungan"
+  ]
+ },
+ {
+  "n": 2,
+  "cls": "slide content t-slide fwd",
+  "title": "Agenda",
+  "max": 7,
+  "notes": "Total 75 menit. Tekankan aturan: jangan lanjut bila langkah sebelumnya belum berhasil — masalah lingkungan menumpuk.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Instal Python"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Terminal"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "venv"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "pip"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Jupyter"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Buku kerja"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Total ±75 menit. Setiap bagian diakhiri cek — jangan lanjut sebelum cek berhasil."
+    ]
+   }
+  ],
+  "text": [
+   "Agenda persiapan",
+   "Total ±75 menit. Setiap bagian diakhiri cek — jangan lanjut sebelum cek berhasil."
+  ]
+ },
+ {
+  "n": 3,
+  "cls": "slide content t-slide fwd",
+  "title": "Tujuan",
+  "max": 5,
+  "notes": "Hasil akhir yang diharapkan. Kembali ke slide ini di akhir sebagai daftar periksa.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Python 3.11 atau lebih baru yang terpasang dan dikenali terminal"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "folder proyek bootcamp/ dengan virtual environment .venv"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "paket yang dibutuhkan (pandas, numpy, matplotlib, …) di dalam venv"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Jupyter Notebook yang berjalan dari venv tersebut"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "buku kerja Hari 1 yang bisa dibuka dan dijalankan"
+    ]
+   }
+  ],
+  "text": [
+   "Setelah sesi ini Anda punya…",
+   "Python 3.11 atau lebih baru yang terpasang dan dikenali terminal",
+   "folder proyek bootcamp/ dengan virtual environment .venv",
+   "paket yang dibutuhkan (pandas, numpy, matplotlib, …) di dalam venv",
+   "Jupyter Notebook yang berjalan dari venv tersebut",
+   "buku kerja Hari 1 yang bisa dibuka dan dijalankan"
+  ]
+ },
+ {
+  "n": 4,
+  "cls": "slide section t-rise fwd",
+  "title": "A. Instal Python",
+  "max": 0,
+  "notes": "15 menit: cek versi (3) + instal per OS (8) + jebakan PATH (4).",
+  "steps": [],
+  "text": [
+   "Instal Python",
+   "Cek dulu, instal bila perlu"
+  ]
+ },
+ {
+  "n": 5,
+  "cls": "slide content t-slide fwd",
+  "title": "Cek versi",
+  "max": 4,
+  "notes": "Minta semua peserta mengetik perintah dan menyebutkan hasilnya. Di macOS/Linux, python bisa tidak ada tetapi python3 ada — itu normal.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "py --version",
+     "python --version"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "python3 --version"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Yang dicari: Python 3.11 atau lebih baru (3.12, 3.13 juga baik)."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Muncul \"not recognized\" / \"command not found\" → Python belum terpasang atau belum masuk PATH. Lanjut ke slide berikutnya."
+    ]
+   }
+  ],
+  "text": [
+   "PythonCek: apakah Python sudah ada?",
+   "# Windowspy --versionpython --version # macOS / Linuxpython3 --versionterminal"
+  ]
+ },
+ {
+  "n": 6,
+  "cls": "slide content t-slide fwd",
+  "title": "Instal Python",
+  "max": 4,
+  "notes": "Kotak “Add python.exe to PATH” di installer Windows adalah sumber masalah nomor satu — tunjukkan layar installer. Di Ubuntu, paket python3-venv diperlukan agar python3 -m venv berfungsi.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Windowsunduh installer dari python.org/downloadsjalankan, centang “Add python.exe to PATH”pilih Install Now"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "macOSunduh installer dari python.org/downloadsatau Homebrew: brew install python"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "LinuxDebian/Ubuntu:sudo apt install python3 python3-venv python3-pipFedora: sudo dnf install python3"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Setelah instal, tutup dan buka lagi terminal, lalu ulangi perintah cek versi."
+    ]
+   }
+  ],
+  "text": [
+   "PythonInstal Python sesuai sistem operasi",
+   "unduh installer dari python.org/downloads",
+   "jalankan, centang “Add python.exe to PATH”",
+   "pilih Install Now",
+   "unduh installer dari python.org/downloads",
+   "atau Homebrew: brew install python",
+   "Debian/Ubuntu:",
+   "sudo apt install python3 python3-venv python3-pip",
+   "Fedora: sudo dnf install python3"
+  ]
+ },
+ {
+  "n": 7,
+  "cls": "slide content t-slide fwd",
+  "title": "Jebakan PATH",
+  "max": 4,
+  "notes": "Jangan membahas semua baris panjang-panjang; fokus ke baris yang sedang dialami peserta. Setelah venv aktif, perintah python dan pip selalu menunjuk ke Python venv di semua sistem operasi.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Windows: python tidak dikenalibelum centang Add to PATHpakai py (Python launcher) atau jalankan ulang installer → Modify → centang PATH"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Windows membuka Microsoft Storealias bawaan Windowsinstal dari python.org; matikan alias di Manage app execution aliases"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "macOS/Linux: python tidak adahanya tersedia python3pakai python3 (di dalam venv, python otomatis ada)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "versi lama (mis. 3.8)ada beberapa Python terpasangpanggil versi baru secara eksplisit: python3.11 atau py -3.11"
+    ]
+   }
+  ],
+  "text": [
+   "PythonJebakan: Python terpasang tapi tidak ketemu",
+   "Gejala",
+   "Penyebab",
+   "Solusi",
+   "Windows: python tidak dikenali",
+   "belum centang Add to PATH",
+   "pakai py (Python launcher) atau jalankan ulang installer → Modify → centang PATH",
+   "Windows membuka Microsoft Store",
+   "alias bawaan Windows",
+   "instal dari python.org; matikan alias di Manage app execution aliases",
+   "macOS/Linux: python tidak ada",
+   "hanya tersedia python3",
+   "pakai python3 (di dalam venv, python otomatis ada)",
+   "versi lama (mis. 3.8)",
+   "ada beberapa Python terpasang",
+   "panggil versi baru secara eksplisit: python3.11 atau py -3.11"
+  ]
+ },
+ {
+  "n": 8,
+  "cls": "slide section t-rise fwd",
+  "title": "B. Terminal Dasar",
+  "max": 0,
+  "notes": "10 menit.",
+  "steps": [],
+  "text": [
+   "Terminal Dasar",
+   "Berpindah folder dan membuat folder"
+  ]
+ },
+ {
+  "n": 9,
+  "cls": "slide content t-slide fwd",
+  "title": "Terminal dasar",
+  "max": 6,
+  "notes": "Peragakan: buka terminal, pwd, mkdir bootcamp, cd bootcamp. Peserta yang belum pernah memakai terminal butuh waktu; jangan terburu-buru.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "di folder mana saya?pwd / cdpwd"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "lihat isi folderdir / lsls"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "buat foldermkdir bootcampmkdir bootcamp"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "masuk foldercd bootcampcd bootcamp"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "naik satu levelcd ..cd .."
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Terminal Windows: PowerShell atau Terminal (Windows 11). Di VS Code: menu Terminal → New Terminal."
+    ]
+   }
+  ],
+  "text": [
+   "TerminalPerintah terminal yang dipakai",
+   "Tujuan",
+   "Windows (PowerShell)",
+   "macOS / Linux",
+   "di folder mana saya?",
+   "pwd / cd",
+   "pwd",
+   "lihat isi folder",
+   "dir / ls",
+   "ls",
+   "buat folder",
+   "mkdir bootcamp",
+   "mkdir bootcamp",
+   "masuk folder",
+   "cd bootcamp",
+   "cd bootcamp",
+   "naik satu level",
+   "cd ..",
+   "cd .."
+  ]
+ },
+ {
+  "n": 10,
+  "cls": "slide content t-slide fwd",
+  "title": "Folder proyek",
+  "max": 4,
+  "notes": "Pastikan semua peserta berada di folder bootcamp sebelum membuat venv.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "mkdir bootcamp",
+     "▾~/",
+     "▾bootcamp/folder kerja kita"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "cd bootcamp"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "pwd # Windows: cd"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Semua langkah berikutnya dijalankan di dalam folder ini."
+    ]
+   }
+  ],
+  "text": [
+   "TerminalBuat folder proyek",
+   "mkdir bootcampcd bootcamppwd # Windows: cdterminal"
+  ]
+ },
+ {
+  "n": 11,
+  "cls": "slide section t-rise fwd",
+  "title": "C. Virtual Environment (venv)",
+  "max": 0,
+  "notes": "15 menit: konsep (4) + buat & aktifkan (8) + jebakan PowerShell (3).",
+  "steps": [],
+  "text": [
+   "Virtual Environment (venv)",
+   "Lingkungan terisolasi untuk tiap proyek"
+  ]
+ },
+ {
+  "n": 12,
+  "cls": "slide content t-slide fwd",
+  "title": "Mengapa venv",
+  "max": 5,
+  "notes": "Analogi: satu kotak peralatan per proyek. Tanpa venv, memperbarui satu paket untuk proyek A bisa merusak proyek B.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": []
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Tiap proyek punya paket sendiri → tidak bentrok, mudah dihapus, mudah diulang di komputer lain."
+    ]
+   }
+  ],
+  "text": [
+   "venvMengapa perlu venv?"
+  ]
+ },
+ {
+  "n": 13,
+  "cls": "slide content t-slide fwd",
+  "title": "Buat & aktifkan venv",
+  "max": 6,
+  "notes": "Demo langsung. Perintah buat hanya sekali per proyek; perintah aktifkan diulang setiap kali membuka terminal baru. Tunjukkan folder .venv yang muncul.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "1 · Buat (sekali saja)",
+     "python -m venv .venv # macOS/Linux: python3 -m venv .venvterminal"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "2 · Aktifkan (setiap membuka terminal baru)"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Windows PowerShell.venv\\Scripts\\Activate.ps1"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Windows CMD.venv\\Scripts\\activate.bat"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "macOS / Linuxsource .venv/bin/activate"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Berhasil bila prompt berawalan (.venv), misalnya (.venv) PS C:\\bootcamp> atau (.venv) user@pc:~/bootcamp$."
+    ]
+   }
+  ],
+  "text": [
+   "venvBuat dan aktifkan venv",
+   "1 · Buat (sekali saja)",
+   "python -m venv .venv # macOS/Linux: python3 -m venv .venvterminal",
+   "2 · Aktifkan (setiap membuka terminal baru)",
+   "Sistem",
+   "Perintah",
+   "Windows PowerShell",
+   ".venv\\Scripts\\Activate.ps1",
+   "Windows CMD",
+   ".venv\\Scripts\\activate.bat",
+   "macOS / Linux",
+   "source .venv/bin/activate"
+  ]
+ },
+ {
+  "n": 14,
+  "cls": "slide content t-slide fwd",
+  "title": "PowerShell policy",
+  "max": 2,
+  "notes": "Ini hanya terjadi di PowerShell Windows. Opsi A cukup dijalankan sekali; jawab Y bila diminta konfirmasi. Opsi B menghindari masalah dengan memakai CMD.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Gejala di PowerShell",
+     "Activate.ps1 cannot be loaded because running scripts is disabled on this system."
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Solusi (pilih satu)"
+    ]
+   }
+  ],
+  "text": [
+   "venvJebakan Windows: skrip dinonaktifkan",
+   "Gejala di PowerShell",
+   "Solusi (pilih satu)",
+   "# A. izinkan skrip lokal untuk akun AndaSet-ExecutionPolicy -Scope CurrentUser RemoteSigned # B. atau pakai CMD.venv\\Scripts\\activate.batterminal"
+  ]
+ },
+ {
+  "n": 15,
+  "cls": "slide content t-slide fwd",
+  "title": "Cek venv",
+  "max": 4,
+  "notes": "Jika path tidak menunjuk ke .venv, venv belum aktif — kembali ke langkah aktivasi. Setelah deactivate, aktifkan lagi sebelum lanjut.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "python -c \"import sys; print(sys.prefix)\""
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "python -m pip --version",
+     "Baris pertama harus menunjuk ke folder .venv di dalam bootcamp."
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "deactivate",
+     "Baris kedua menampilkan lokasi pip di dalam .venv."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "deactivate keluar dari venv; prompt kembali normal."
+    ]
+   }
+  ],
+  "text": [
+   "venvCek venv sudah aktif",
+   "python -c \"import sys; print(sys.prefix)\"python -m pip --versiondeactivateterminal"
+  ]
+ },
+ {
+  "n": 16,
+  "cls": "slide section t-rise fwd",
+  "title": "D. pip & Paket",
+  "max": 0,
+  "notes": "10 menit.",
+  "steps": [],
+  "text": [
+   "pip & Paket",
+   "Memasang library yang dibutuhkan"
+  ]
+ },
+ {
+  "n": 17,
+  "cls": "slide content t-slide fwd",
+  "title": "Pip dasar",
+  "max": 4,
+  "notes": "Jika pip tidak dikenali, pakai python -m pip — selalu berhasil karena memakai Python yang sedang aktif.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "python -m pip install --upgrade pip",
+     "Selalu pastikan (.venv) aktif sebelum pip install."
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "pip install pandas"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "pip list",
+     "pip list menampilkan paket di venv ini saja."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "pip freeze > requirements.txt",
+     "freeze menyimpan daftar paket + versinya."
+    ]
+   }
+  ],
+  "text": [
+   "pipMemasang paket dengan pip",
+   "python -m pip install --upgrade pippip install pandaspip listpip freeze > requirements.txtterminal"
+  ]
+ },
+ {
+  "n": 18,
+  "cls": "slide content t-slide fwd",
+  "title": "requirements.txt",
+  "max": 4,
+  "notes": "File requirements.txt ada di akar repositori. Selama menunggu instalasi, jelaskan fungsi paket: numpy/pandas data, matplotlib/seaborn grafik, requests/beautifulsoup4 web, notebook = Jupyter.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "pip install -r requirements.txtterminal"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Memasang semua paket sekaligus. Butuh internet dan beberapa menit."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Pasang ulang di komputer lain = perintah yang sama."
+    ]
+   }
+  ],
+  "text": [
+   "pipSatu perintah untuk semua kebutuhan bootcamp",
+   "# requirements.txt (ada di akar repositori)notebooknumpypandasmatplotlibseabornscipyopenpyxlrequestsbeautifulsoup4feedparserterminal",
+   "pip install -r requirements.txtterminal"
+  ]
+ },
+ {
+  "n": 19,
+  "cls": "slide section t-rise fwd",
+  "title": "E. Jupyter Notebook",
+  "max": 0,
+  "notes": "15 menit: menjalankan (5) + antarmuka (5) + kernel venv (5).",
+  "steps": [],
+  "text": [
+   "Jupyter Notebook",
+   "Menulis dan menjalankan kode per sel"
+  ]
+ },
+ {
+  "n": 20,
+  "cls": "slide content t-slide fwd",
+  "title": "Menjalankan Jupyter",
+  "max": 5,
+  "notes": "Jupyter berjalan sebagai server di komputer Anda sendiri; browser hanya antarmukanya. Jika port 8888 terpakai, Jupyter otomatis memakai 8889 dan seterusnya.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "jupyter notebookterminal"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Biarkan terminal tetap terbuka selama bekerja. Berhenti dengan Ctrl+C di terminal."
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Browser tidak terbuka sendiri? Salin alamat http://localhost:8888/… (lengkap dengan token) dari terminal."
+    ]
+   }
+  ],
+  "text": [
+   "JupyterMenjalankan Jupyter",
+   "jupyter notebookterminal"
+  ]
+ },
+ {
+  "n": 21,
+  "cls": "slide content t-slide fwd",
+  "title": "Pintasan notebook",
+  "max": 6,
+  "notes": "Ada dua jenis sel: kode dan Markdown. Variabel hidup di kernel, jadi urutan menjalankan sel penting. Tunjukkan satu sel kode print(\"halo\").",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "jalankan sel & pindah ke bawahShift + Enter"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "mode perintah / mode editEsc / Enter"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "sisipkan sel di atas / bawahA / B (mode perintah)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "hapus selD D"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "ubah ke Markdown / kodeM / Y"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Jika kode aneh/error tak masuk akal: menu Kernel → Restart Kernel and Run All Cells."
+    ]
+   }
+  ],
+  "text": [
+   "JupyterAntarmuka & pintasan notebook",
+   "Aksi",
+   "Pintasan",
+   "jalankan sel & pindah ke bawah",
+   "Shift + Enter",
+   "mode perintah / mode edit",
+   "Esc / Enter",
+   "sisipkan sel di atas / bawah",
+   "A / B (mode perintah)",
+   "hapus sel",
+   "D D",
+   "ubah ke Markdown / kode",
+   "M / Y"
+  ]
+ },
+ {
+  "n": 22,
+  "cls": "slide content t-slide fwd",
+  "title": "Kernel venv",
+  "max": 4,
+  "notes": "Penyebab klasik ModuleNotFoundError di notebook: kernel yang dipakai bukan venv (paket terpasang di venv, tetapi notebook jalan di Python lain). Tanpa --display-name, kernel baru akan bernama generik sehingga membingungkan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "pip install ipykernel",
+     "Jupyter yang dijalankan dari venv otomatis memakai venv itu."
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "python -m ipykernel install --user --name bootcamp --display-name \"Python (bootcamp)\""
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Perintah kedua mendaftarkan venv sebagai kernel yang bisa dipilih: Kernel → Change kernel → Python (bootcamp)."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Cek di sel: import sys; sys.executable → harus menunjuk ke folder .venv."
+    ]
+   }
+  ],
+  "text": [
+   "JupyterPastikan kernel memakai venv",
+   "# di terminal, venv aktifpip install ipykernelpython -m ipykernel install --user --name bootcamp --display-name \"Python (bootcamp)\"terminal"
+  ]
+ },
+ {
+  "n": 23,
+  "cls": "slide section t-rise fwd",
+  "title": "F. Ambil Materi & Buku Kerja",
+  "max": 0,
+  "notes": "10 menit.",
+  "steps": [],
+  "text": [
+   "Ambil Materi & Buku Kerja",
+   "Dari repositori ke notebook Hari 1"
+  ]
+ },
+ {
+  "n": 24,
+  "cls": "slide content t-slide fwd",
+  "title": "Buka buku kerja",
+  "max": 6,
+  "notes": "Peserta tanpa Git memakai Download ZIP. Ingatkan: buat venv sebelum pip install -r requirements.txt. Sel pertama notebook (setup) wajib dijalankan sebelum latihan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "git clone https://github.com/standungan/python-intensive-bootcamp"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "cd python-intensive-bootcamp"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "pip install -r requirements.txt"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "jupyter notebook workbook/"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Tanpa Git: tombol hijau Code → Download ZIP di GitHub, ekstrak, lalu buka terminal di folder hasil ekstrak."
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Di Jupyter buka hari1-python-fundamentals.ipynb; jalankan sel pertama (setup) lebih dulu."
+    ]
+   }
+  ],
+  "text": [
+   "Buku kerjaAmbil buku kerja dan buka Hari 1",
+   "git clone https://github.com/standungan/python-intensive-bootcampcd python-intensive-bootcamppip install -r requirements.txtjupyter notebook workbook/terminal"
+  ]
+ },
+ {
+  "n": 25,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: Python, venv, pip, Jupyter",
+  "max": 0,
+  "notes": "10 menit. Keliling dan bantu yang tertinggal. Catat kendala umum untuk slide berikutnya.",
+  "steps": [],
+  "text": [
+   "Cek akhir",
+   "Cek 4 hal: python --version, prompt (.venv), pip list menampilkan pandas, dan sel pertama notebook Hari 1 berjalan tanpa error."
+  ]
+ },
+ {
+  "n": 26,
+  "cls": "slide content t-slide fwd",
+  "title": "Troubleshooting",
+  "max": 6,
+  "notes": "Slide rujukan; tinggalkan di layar saat peserta mengerjakan cek akhir. Untuk kendala lain, mulailah dari: venv aktif? kernel benar? paket terpasang di venv?",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "pip tidak dikenalivenv belum aktif / PATHpython -m pip … setelah mengaktifkan venv"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "ModuleNotFoundError: pandaspaket di venv lain / kernel salahaktifkan venv, pip install, pilih kernel venv"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "jupyter tidak dikenalinotebook belum terpasang di venvpip install notebook"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Port 8888 sibukJupyter lain masih berjalanjupyter notebook --port 8889"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "running scripts is disabledkebijakan PowerShelllihat slide PowerShell policy / pakai CMD"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "instalasi pip sangat lambat/gagalkoneksi / proxyulangi; cek koneksi; minta jaringan lain"
+    ]
+   }
+  ],
+  "text": [
+   "TroubleshootingPemecahan masalah cepat",
+   "Pesan / gejala",
+   "Penyebab",
+   "Solusi",
+   "pip tidak dikenali",
+   "venv belum aktif / PATH",
+   "python -m pip … setelah mengaktifkan venv",
+   "ModuleNotFoundError: pandas",
+   "paket di venv lain / kernel salah",
+   "aktifkan venv, pip install, pilih kernel venv",
+   "jupyter tidak dikenali",
+   "notebook belum terpasang di venv",
+   "pip install notebook",
+   "Port 8888 sibuk",
+   "Jupyter lain masih berjalan",
+   "jupyter notebook --port 8889",
+   "running scripts is disabled",
+   "kebijakan PowerShell",
+   "lihat slide PowerShell policy / pakai CMD",
+   "instalasi pip sangat lambat/gagal",
+   "koneksi / proxy",
+   "ulangi; cek koneksi; minta jaringan lain"
+  ]
+ },
+ {
+  "n": 27,
+  "cls": "slide content t-slide fwd",
+  "title": "Alternatif",
+  "max": 2,
+  "notes": "Colab adalah jalan keluar bagi peserta yang komputernya tidak bisa dipasangi Python. Materi hari 1–5 bisa berjalan di Colab; latihan yang menulis file sebaiknya diunduh hasilnya.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "VS Code + ekstensi Python & Jupytereditor + terminal + notebook dalam satu jendelatetap butuh Python & venv di komputer"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Google Colabtanpa instal, jalan di browserbutuh akun Google & internet; unggah notebook dari workbook/; berkas hilang saat sesi berakhir"
+    ]
+   }
+  ],
+  "text": [
+   "Alternatif jika instalasi lokal bermasalah",
+   "Opsi",
+   "Kelebihan",
+   "Catatan",
+   "VS Code + ekstensi Python & Jupyter",
+   "editor + terminal + notebook dalam satu jendela",
+   "tetap butuh Python & venv di komputer",
+   "Google Colab",
+   "tanpa instal, jalan di browser",
+   "butuh akun Google & internet; unggah notebook dari workbook/; berkas hilang saat sesi berakhir"
+  ]
+ },
+ {
+  "n": 28,
+  "cls": "slide content t-slide fwd",
+  "title": "Rekap",
+  "max": 6,
+  "notes": "Pastikan semua peserta lolos sebelum Hari 1. Peserta yang belum lolos diberi waktu pendampingan sebelum sesi dimulai.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Python 3.11+ terpasang; python --version / python3 --version berhasil"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "folder bootcamp/ dan venv .venv (aktif: prompt (.venv))"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "paket terpasang dengan pip install -r requirements.txt"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Jupyter berjalan dari venv; kernel benar"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "buku kerja Hari 1 terbuka dan sel pertama berjalan"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Selanjutnya (Hari 1): Python Fundamentals"
+    ]
+   }
+  ],
+  "text": [
+   "Rekap persiapan",
+   "Python 3.11+ terpasang; python --version / python3 --version berhasil",
+   "folder bootcamp/ dan venv .venv (aktif: prompt (.venv))",
+   "paket terpasang dengan pip install -r requirements.txt",
+   "Jupyter berjalan dari venv; kernel benar",
+   "buku kerja Hari 1 terbuka dan sel pertama berjalan",
+   "Selanjutnya (Hari 1): Python Fundamentals"
+  ]
+ }
+]
