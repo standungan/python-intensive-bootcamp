@@ -10,7 +10,7 @@ Naskah narasi untuk merekam video tutorial memakai [slide web HTML](../index.htm
 | 3 | [Object-Oriented Programming](hari3-naskah.md) | 24 | 78 | 10 mnt 13 dtk |
 | 4 | [NumPy & Pandas](hari4-naskah.md) | 26 | 104 | 12 mnt 47 dtk |
 | 5 | [Visualisasi, API & Scraping](hari5-naskah.md) | 28 | 90 | 11 mnt 28 dtk |
-| 6 | [Capstone Project](hari6-naskah.md) | 23 | 68 | 8 mnt 40 dtk |
+| 6 | [Capstone Project](hari6-naskah.md) | 23 | 69 | 9 mnt 01 dtk |
 
 Durasi di atas hanya narasi (±140 kata/menit); belum termasuk jeda latihan (slide *Sekarang coba!*) dan istirahat.
 
@@ -36,5 +36,4 @@ python3 gen.py      # gabungkan dengan narasi → ../hariN-naskah.md
 
 ## Catatan
 
-- Slide Hari 6 (slide 5) menyebut **tiga** jalur capstone, sedangkan Modul 6 di repositori kini memuat **empat** jalur. Naskah mengikuti slide dan memberi catatan perekam pada slide tersebut.
 - Beberapa slide menampilkan output baris demi baris pada klik berurutan (mis. tabel DataFrame di Hari 4); narasinya mengikuti urutan munculnya baris, sehingga sorotan kode dan baris output kadang tidak berada pada baris yang sama.

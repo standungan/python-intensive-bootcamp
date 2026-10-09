@@ -30,5 +30,4 @@ python3 gen.py      # gabungkan dengan narasi → ../hariN-naskah.md
 
 ## Catatan
 
-- Slide Hari 6 (slide 5) menyebut **tiga** jalur capstone, sedangkan Modul 6 di repositori kini memuat **empat** jalur. Naskah mengikuti slide dan memberi catatan perekam pada slide tersebut.
 - Beberapa slide menampilkan output baris demi baris pada klik berurutan (mis. tabel DataFrame di Hari 4); narasinya mengikuti urutan munculnya baris, sehingga sorotan kode dan baris output kadang tidak berada pada baris yang sama.

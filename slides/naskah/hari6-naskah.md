@@ -1,10 +1,10 @@
 # Naskah Video — Hari 6: Capstone Project
 
-Deck: [`hari6-capstone-project.html`](../hari6-capstone-project.html) · 23 slide · 68 klik
+Deck: [`hari6-capstone-project.html`](../hari6-capstone-project.html) · 23 slide · 69 klik
 
 > **Cara pakai:** buka deck, tekan `F` (layar penuh). Baca narasi per blok, tekan `→` saat tertulis **Klik**. Tanda ⏱ adalah perkiraan durasi baca (±140 kata/menit). Baris **🎬 Aksi** adalah hal yang dilakukan di layar selain menekan `→`.
 
-**Total perkiraan:** 8 mnt 40 dtk (di luar jeda latihan)
+**Total perkiraan:** 9 mnt 01 dtk (di luar jeda latihan)
 
 | # | Slide | Klik | Durasi |
 |---|---|---|---|
@@ -12,8 +12,8 @@ Deck: [`hari6-capstone-project.html`](../hari6-capstone-project.html) · 23 slid
 | 2 | Agenda | 7 | 31 dtk |
 | 3 | Tujuan | 4 | 23 dtk |
 | 4 | 1. Briefing & Pilih Jalur | 0 | 6 dtk |
-| 5 | Pilih jalur | 4 | 33 dtk |
-| 6 | Skill terintegrasi | 4 | 27 dtk |
+| 5 | Pilih jalur | 5 | 51 dtk |
+| 6 | Skill terintegrasi | 4 | 30 dtk |
 | 7 | 2. Perencanaan | 0 | 5 dtk |
 | 8 | Pertanyaan analisis | 3 | 30 dtk |
 | 9 | Struktur folder | 5 | 39 dtk |
@@ -120,35 +120,37 @@ Deck: [`hari6-capstone-project.html`](../hari6-capstone-project.html) · 23 slid
 
 ### Slide 5 — Pilih jalur
 
-*isi · transisi `slide` · 4 klik · ⏱ 33 dtk*
+*isi · transisi `slide` · 5 klik · ⏱ 51 dtk*
 
 **Saat slide muncul**
 
-> Pertama, pilih satu jalur capstone.
+> Pertama, pilih satu jalur capstone. Ada empat pilihan.
 
-🎬 **Aksi:** Catatan perekam: slide ini menyebut tiga jalur, sedangkan Modul 6 di repositori kini memuat empat jalur (arXiv menjadi Jalur C, aplikasi OOP menjadi Jalur D). Perbarui slide atau ucapkan perbedaannya sebelum merekam.
+**Klik 1 →** — muncul: `Jalur A — EDA dataset publikTitanic, Penguins, Gapminder, atau CSV pub`
 
-**Klik 1 →** — muncul: `Jalur A — EDAAnalisis dataset publik (Student Performance, Titanic, Pe`
+> Jalur A, analisis dataset publik seperti Titanic, Penguins, atau Gapminder: pertanyaan, cleaning, groupby, dan empat sampai enam grafik. Tingkat menengah dan paling stabil karena tidak butuh internet.
 
-> Jalur A, analisis data publik, misalnya Student Performance, Titanic, Penguins, atau Gapminder. Tingkat menengah.
+**Klik 2 →** — muncul: `Jalur B — API → analisisAmbil dari API publik (mis. PyPI/npm, Open-Met`
 
-**Klik 2 →** — muncul: `Jalur B — API / arXivPipeline data dari API / arXiv: ambil, bersihkan,`
+> Jalur B, mengambil data dari API publik, misalnya PyPI dan npm atau Open-Meteo: simpan data mentah, olah, visualisasi, dengan error handling. Tingkat menengah sampai tinggi.
 
-> Jalur B, pipeline data dari API atau arXiv: ambil data, bersihkan, analisis, visualisasi. Tingkat menengah sampai tinggi.
+**Klik 3 →** — muncul: `Jalur C — arXiv / literaturPipeline paper arXiv: paginasi, metadata, t`
 
-**Klik 3 →** — muncul: `Jalur C — AplikasiMini aplikasi analisis nilai / data akademik dengan `
+> Jalur C, pipeline paper arXiv: paginasi, metadata, tren per tahun, dan kata kunci judul. Juga menengah sampai tinggi.
 
-> Jalur C, mini aplikasi analisis nilai atau data akademik dengan class dan CSV. Tingkat tinggi.
+**Klik 4 →** — muncul: `Jalur D — Aplikasi OOPClass AnalisisNilai + Pandas + visualisasi, deng`
 
-**Klik 4 →** — muncul: `Boleh mengusulkan ide sendiri — dengan persetujuan instruktur.`
+> Jalur D, aplikasi berbasis OOP: class AnalisisNilai dengan Pandas, visualisasi, dan unit test. Tingkat tinggi.
 
-> Anda juga boleh mengusulkan ide sendiri, dengan persetujuan instruktur.
+**Klik 5 →** — muncul: `Contoh lengkap tiap jalur ada di contoh-capstone/. Boleh juga mengusul`
+
+> Contoh lengkap tiap jalur ada di folder contoh capstone. Anda juga boleh mengusulkan ide sendiri, dengan persetujuan instruktur.
 
 ---
 
 ### Slide 6 — Skill terintegrasi
 
-*isi · transisi `slide` · 4 klik · ⏱ 27 dtk*
+*isi · transisi `slide` · 4 klik · ⏱ 30 dtk*
 
 **Saat slide muncul**
 
@@ -158,9 +160,9 @@ Deck: [`hari6-capstone-project.html`](../hari6-capstone-project.html) · 23 slid
 
 > Modul satu dan dua: variabel, control flow, function, error handling, dan file I/O.
 
-**Klik 2 →** — muncul: `Modul 3class / OOP (opsional, dianjurkan)`
+**Klik 2 →** — muncul: `Modul 3class / OOP (wajib untuk Jalur D, dianjurkan untuk lainnya)`
 
-> Modul tiga: class dan OOP. Opsional, tapi dianjurkan.
+> Modul tiga: class dan OOP. Wajib untuk Jalur D, dan dianjurkan untuk jalur lain.
 
 **Klik 3 →** — muncul: `Modul 4NumPy & Pandas — wajib: cleaning, filter, groupby, merge/pivot`
 

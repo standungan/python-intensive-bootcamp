@@ -121,41 +121,49 @@
   "n": 5,
   "cls": "slide content t-slide fwd",
   "title": "Pilih jalur",
-  "max": 4,
-  "notes": "Bantu peserta memilih sesuai level & minat. Ingatkan: lebih baik selesai & rapi daripada ambisius tapi tak selesai.",
+  "max": 5,
+  "notes": "Bantu peserta memilih sesuai level & minat. Jalur A paling stabil (tanpa jaringan). Jalur B dan C butuh internet (ada cache/sampel sebagai cadangan). Jalur D cocok bagi yang ingin mempraktikkan OOP. Lebih baik selesai & rapi daripada ambisius tapi tak selesai.",
   "steps": [
    {
     "s": 1,
     "appear": [
-     "Jalur A — EDAAnalisis dataset publik (Student Performance, Titanic, Penguins, Gapminder)Level menengah"
+     "Jalur A — EDA dataset publikTitanic, Penguins, Gapminder, atau CSV publik: pertanyaan, cleaning, groupby, 4–6 grafikMenengah · paling stabil"
     ]
    },
    {
     "s": 2,
     "appear": [
-     "Jalur B — API / arXivPipeline data dari API / arXiv: ambil, bersihkan, analisis, visualisasiMenengah–tinggi"
+     "Jalur B — API → analisisAmbil dari API publik (mis. PyPI/npm, Open-Meteo): simpan mentah, olah, visualisasi, error handlingMenengah–tinggi"
     ]
    },
    {
     "s": 3,
     "appear": [
-     "Jalur C — AplikasiMini aplikasi analisis nilai / data akademik dengan class & CSVTinggi"
+     "Jalur C — arXiv / literaturPipeline paper arXiv: paginasi, metadata, tren per tahun, kata kunci judulMenengah–tinggi"
     ]
    },
    {
     "s": 4,
     "appear": [
-     "Boleh mengusulkan ide sendiri — dengan persetujuan instruktur."
+     "Jalur D — Aplikasi OOPClass AnalisisNilai + Pandas + visualisasi, dengan unit testTinggi"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Contoh lengkap tiap jalur ada di contoh-capstone/. Boleh juga mengusulkan ide sendiri — dengan persetujuan instruktur."
     ]
    }
   ],
   "text": [
    "BriefingPilih satu jalur capstone",
-   "Analisis dataset publik (Student Performance, Titanic, Penguins, Gapminder)",
-   "Level menengah",
-   "Pipeline data dari API / arXiv: ambil, bersihkan, analisis, visualisasi",
+   "Titanic, Penguins, Gapminder, atau CSV publik: pertanyaan, cleaning, groupby, 4–6 grafik",
+   "Menengah · paling stabil",
+   "Ambil dari API publik (mis. PyPI/npm, Open-Meteo): simpan mentah, olah, visualisasi, error handling",
    "Menengah–tinggi",
-   "Mini aplikasi analisis nilai / data akademik dengan class & CSV",
+   "Pipeline paper arXiv: paginasi, metadata, tren per tahun, kata kunci judul",
+   "Menengah–tinggi",
+   "Class AnalisisNilai + Pandas + visualisasi, dengan unit test",
    "Tinggi"
   ]
  },
@@ -175,7 +183,7 @@
    {
     "s": 2,
     "appear": [
-     "Modul 3class / OOP (opsional, dianjurkan)"
+     "Modul 3class / OOP (wajib untuk Jalur D, dianjurkan untuk lainnya)"
     ]
    },
    {
@@ -198,7 +206,7 @@
    "Modul 1–2",
    "variabel, control flow, function, error handling, file I/O",
    "Modul 3",
-   "class / OOP (opsional, dianjurkan)",
+   "class / OOP (wajib untuk Jalur D, dianjurkan untuk lainnya)",
    "Modul 4",
    "NumPy & Pandas — wajib: cleaning, filter, groupby, merge/pivot",
    "Modul 5",

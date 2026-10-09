@@ -17,13 +17,14 @@ def build():
 
     S.append(section('1', 'Briefing & Pilih Jalur', 'Tiga jalur, satu pipeline', notes='20 menit.'))
     S.append(slide(h2('Pilih satu jalur capstone', 'Briefing'),
-        grid(3, card(p('Analisis dataset publik (Student Performance, Titanic, Penguins, Gapminder)', 'sm') + p('Level menengah', 'acc sm'), 'Jalur A — EDA', step=1, anim='up'),
-                card(p('Pipeline data dari API / arXiv: ambil, bersihkan, analisis, visualisasi', 'sm') + p('Menengah–tinggi', 'acc sm'), 'Jalur B — API / arXiv', step=2, anim='up'),
-                card(p('Mini aplikasi analisis nilai / data akademik dengan class &amp; CSV', 'sm') + p('Tinggi', 'acc sm'), 'Jalur C — Aplikasi', step=3, anim='up')),
-        callout('Boleh mengusulkan ide sendiri — dengan persetujuan instruktur.', step=4),
-        notes='Bantu peserta memilih sesuai level & minat. Ingatkan: lebih baik <b>selesai &amp; rapi</b> daripada ambisius tapi tak selesai.', title='Pilih jalur'))
+        grid(2, card(p('Titanic, Penguins, Gapminder, atau CSV publik: pertanyaan, cleaning, groupby, 4–6 grafik', 'sm') + p('Menengah · paling stabil', 'acc sm'), 'Jalur A — EDA dataset publik', step=1, anim='up'),
+                card(p('Ambil dari API publik (mis. PyPI/npm, Open-Meteo): simpan mentah, olah, visualisasi, error handling', 'sm') + p('Menengah–tinggi', 'acc sm'), 'Jalur B — API → analisis', step=2, anim='up'),
+                card(p('Pipeline paper arXiv: paginasi, metadata, tren per tahun, kata kunci judul', 'sm') + p('Menengah–tinggi', 'acc sm'), 'Jalur C — arXiv / literatur', step=3, anim='up'),
+                card(p('Class <code class="i">AnalisisNilai</code> + Pandas + visualisasi, dengan unit test', 'sm') + p('Tinggi', 'acc sm'), 'Jalur D — Aplikasi OOP', step=4, anim='up')),
+        callout('Contoh lengkap tiap jalur ada di <code class="i">contoh-capstone/</code>. Boleh juga mengusulkan ide sendiri — dengan persetujuan instruktur.', step=5),
+        notes='Bantu peserta memilih sesuai level &amp; minat. Jalur A paling stabil (tanpa jaringan). Jalur B dan C butuh internet (ada cache/sampel sebagai cadangan). Jalur D cocok bagi yang ingin mempraktikkan OOP. Lebih baik <b>selesai &amp; rapi</b> daripada ambisius tapi tak selesai.', title='Pilih jalur'))
     S.append(slide(h2('Skill yang harus terintegrasi', 'Briefing'), table(['Modul', 'Skill yang dipakai'], [
-        ['Modul 1–2', 'variabel, control flow, function, error handling, file I/O'], ['Modul 3', 'class / OOP (opsional, dianjurkan)'],
+        ['Modul 1–2', 'variabel, control flow, function, error handling, file I/O'], ['Modul 3', 'class / OOP (<b>wajib</b> untuk Jalur D, dianjurkan untuk lainnya)'],
         ['Modul 4', 'NumPy &amp; Pandas — <b>wajib</b>: cleaning, filter, groupby, merge/pivot'], ['Modul 5', 'Matplotlib/Seaborn + API atau scraping — <b>wajib</b> ada visualisasi']], start=1),
         notes='Peta skill tiap modul ke capstone.', title='Skill terintegrasi'))
 
