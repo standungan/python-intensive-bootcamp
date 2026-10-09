@@ -1,6 +1,6 @@
-# finished_capstone — Contoh Capstone Project Lengkap
+# Contoh Capstone Versi 1 (Opsi A/B/C)
 
-Tiga contoh pengerjaan Capstone (Hari 6) yang lengkap: kode, data, output (grafik, laporan, log eksekusi), insight, README, dan dokumentasi sesuai template pada materi.
+Tiga contoh pengerjaan Capstone ([Modul 6b](../../materi/modul06b-capstone-opsi-versi1.md)) yang lengkap: kode, data, output (grafik, laporan, log eksekusi), insight, README, dan dokumentasi sesuai template pada materi.
 
 | Opsi | Folder | Topik | Data | Highlight |
 |---|---|---|---|---|

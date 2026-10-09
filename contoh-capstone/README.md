@@ -1,6 +1,6 @@
-# finished_capstone_v2 — Contoh Capstone untuk Modul 6 (Versi 2)
+# Contoh Capstone — Modul 6
 
-Tiga contoh pengerjaan lengkap untuk tiga jalur Capstone pada [Modul 6 versi 2](../materi_v2/modul06-capstone-project.md). Struktur folder, deliverable, dan README mengikuti template pada modul: `README.md` (10 bagian), `requirements.txt`, `data/raw`, `data/processed`, `src/`, `figures/`, `output/ringkasan.csv`, dan `output/insight.txt`.
+Tiga contoh pengerjaan lengkap untuk tiga jalur Capstone pada [Modul 6](../materi/modul06-capstone-project.md). Struktur folder, deliverable, dan README mengikuti template pada modul: `README.md` (10 bagian), `requirements.txt`, `data/raw`, `data/processed`, `src/`, `figures/`, `output/ringkasan.csv`, dan `output/insight.txt`.
 
 | Jalur | Folder | Data | Catatan |
 |---|---|---|---|
@@ -21,7 +21,7 @@ Tiga contoh pengerjaan lengkap untuk tiga jalur Capstone pada [Modul 6 versi 2](
 | CSV mentah + olahan | – | ✓ | ✓ |
 | ≥ ~20 paper, paginasi + sleep | – | – | ✓ kode (30 paper; live diblokir di sini) |
 
-Folder `../finished_capstone/` (versi 1: Opsi A Titanic, B PyPI/npm, C aplikasi nilai OOP) tidak diubah.
+Contoh dari **versi 1** (Opsi A Titanic, B PyPI/npm, C aplikasi nilai OOP — rujukan [Modul 6b](../materi/modul06b-capstone-opsi-versi1.md)) ada di [opsi-versi1/](opsi-versi1/); isinya tidak diubah.
 
 ## Menjalankan ulang
 ```bash

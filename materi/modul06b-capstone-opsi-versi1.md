@@ -1,8 +1,8 @@
-# Hari 6 — Capstone Project
+# Modul 6b — Capstone Project (Versi 1: Opsi A/B/C)
 
 Python Intensive Bootcamp  •  Durasi 6 Jam  •  Level Menengah hingga Lanjut
 
-> **Catatan pengujian:** kode diuji dengan Python 3.11, pandas 3.0.6, matplotlib 3.11.2, seaborn 0.13.2. Kerangka (skeleton) Opsi A/B/C sengaja belum lengkap; yang dapat dijalankan diuji dengan data contoh/sintetis dan diberi catatan di bawah outputnya. Grafik hasil eksekusi disimpan di `materi/images/hari6/`.
+> **Catatan pengujian:** kode diuji dengan Python 3.11, pandas 3.0.6, matplotlib 3.11.2, seaborn 0.13.2. Kerangka (skeleton) Opsi A/B/C sengaja belum lengkap; yang dapat dijalankan diuji dengan data contoh/sintetis dan diberi catatan di bawah outputnya. Grafik hasil eksekusi disimpan di `materi/images/modul06b/`.
 
 # 1. Tujuan Pembelajaran
 
@@ -146,7 +146,7 @@ kategori    0
 dtype: int64
 ```
 
-![Grafik hasil blok kode — 0_0.png](images/hari6/0_0.png)
+![Grafik hasil blok kode — 0_0.png](images/modul06b/0_0.png)
 
 _Catatan: dijalankan dengan `dataset.csv` contoh (30 baris: `nilai`, `kategori`). Karena bagian "isi setiap axes" masih kosong, gambar berisi 6 panel kosong — itu memang kerangka yang harus diisi peserta._
 
@@ -659,7 +659,7 @@ some high school      63.703704
 Name: rata_rata, dtype: float64
 ```
 
-![Grafik hasil blok kode — 4_0.png](images/hari6/4_0.png)
+![Grafik hasil blok kode — 4_0.png](images/modul06b/4_0.png)
 
 _Catatan: dijalankan dengan dataset sintetis berstruktur seperti Student Performance (300 baris + 1 duplikat sengaja) di `data/raw/student_performance.csv`, bukan data asli Kaggle/UCI, sehingga angka pada output hanya contoh. Folder `output/figures/` harus sudah ada (lihat kasus `FileNotFoundError` di bagian 8b). Jika memakai file Kaggle asli, nama kolomnya memuat spasi (mis. `math score`) sehingga harus dinormalisasi dulu — lihat bagian 8b._
 

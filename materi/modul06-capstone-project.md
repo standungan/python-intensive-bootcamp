@@ -2,7 +2,7 @@
 
 _Proyek akhir mandiri  ·  Integrasi Modul 1–5  ·  Dokumentasi portfolio · Estimasi: ± 6–10 jam (tergantung scope)  ·  Prasyarat: Modul 1–5_
 
-> **Catatan pengujian:** blok kode pada modul ini dijalankan (Python 3.11, pandas 3.0.6, matplotlib 3.11.2, seaborn 0.13.2). Modul 6 versi ini berisi kerangka (skeleton), sehingga ditambahkan **contoh lengkap** yang mengisi skeleton untuk Jalur A dan "Demonstrasi error" untuk kasus teknis pada Troubleshooting. Contoh lengkap ketiga jalur ada di `finished_capstone_v2/`. Folder struktur dan template README pada modul asli berlabel `python`; di sini dilabeli `text`/`markdown` agar terbaca benar.
+> **Catatan pengujian:** blok kode pada modul ini dijalankan (Python 3.11, pandas 3.0.6, matplotlib 3.11.2, seaborn 0.13.2). Modul 6 versi ini berisi kerangka (skeleton), sehingga ditambahkan **contoh lengkap** yang mengisi skeleton untuk Jalur A dan "Demonstrasi error" untuk kasus teknis pada Troubleshooting. Contoh lengkap ketiga jalur ada di `contoh-capstone/`. Folder struktur dan template README pada modul asli berlabel `python`; di sini dilabeli `text`/`markdown` agar terbaca benar.
 
 # 1. Apa Itu Capstone di Modul Ini
 
@@ -335,7 +335,7 @@ Tiga grafik yang dihasilkan di folder `figures/`:
 Selesai.
 ```
 
-_Catatan: ini hanya contoh bentuk pengerjaan. Contoh capstone lengkap untuk ketiga jalur (dengan dokumentasi dan output) ada di `finished_capstone_v2/`._
+_Catatan: ini hanya contoh bentuk pengerjaan. Contoh capstone lengkap untuk ketiga jalur (dengan dokumentasi dan output) ada di `contoh-capstone/`._
 
 # 9. Tiga Jalur Capstone (Pilih Satu)
 
