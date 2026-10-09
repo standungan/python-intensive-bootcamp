@@ -1,0 +1,843 @@
+[
+ {
+  "n": 1,
+  "cls": "slide title t-zoom fwd",
+  "title": "Object-Oriented Programming",
+  "max": 0,
+  "notes": "Pembukaan (±5 menit). Ulas Hari 2: function, error handling, file. Hari ini: membungkus data + perilaku dalam class.",
+  "steps": [],
+  "text": [
+   "Object-Oriented Programming"
+  ]
+ },
+ {
+  "n": 2,
+  "cls": "slide content t-slide fwd",
+  "title": "Agenda",
+  "max": 9,
+  "notes": "Total 360 menit.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Opening"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Class & object"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Inheritance"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Rehat"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Encapsulation & special"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Jebakan"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Mini project"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "Rekap"
+    ]
+   },
+   {
+    "s": 9,
+    "appear": [
+     "Total ±6 jam. Demo singkat → peserta coba di buku kerja."
+    ]
+   }
+  ],
+  "text": [
+   "Agenda Hari 3",
+   "Total ±6 jam. Demo singkat → peserta coba di buku kerja."
+  ]
+ },
+ {
+  "n": 3,
+  "cls": "slide content t-slide fwd",
+  "title": "Tujuan",
+  "max": 6,
+  "notes": "Tujuan hari ini.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "menjelaskan class vs object, attribute vs method"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "menulis __init__ dan memakai self"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "membedakan class attribute dan instance attribute"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "memakai inheritance, super(), dan override"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "menjaga data lewat encapsulation, @property, dan special methods (__str__, __eq__)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "membangun mini project berbasis class"
+    ]
+   }
+  ],
+  "text": [
+   "Setelah hari ini Anda bisa…",
+   "menjelaskan class vs object, attribute vs method",
+   "menulis __init__ dan memakai self",
+   "membedakan class attribute dan instance attribute",
+   "memakai inheritance, super(), dan override",
+   "menjaga data lewat encapsulation, @property, dan special methods (__str__, __eq__)",
+   "membangun mini project berbasis class"
+  ]
+ },
+ {
+  "n": 4,
+  "cls": "slide section t-rise fwd",
+  "title": "A. Class & Object",
+  "max": 0,
+  "notes": "Blok 70 menit: konsep (35) + latihan L1–L3 (35).",
+  "steps": [],
+  "text": [
+   "Class & Object",
+   "Cetak biru dan benda nyata"
+  ]
+ },
+ {
+  "n": 5,
+  "cls": "slide content t-slide fwd",
+  "title": "Class & object",
+  "max": 6,
+  "notes": "Klik: class (cetak biru) → __init__ → method → object m1 dan m2 muncul di kanan, masing-masing punya data sendiri. self = object yang sedang dipakai.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "class Mahasiswa:"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "def __init__(self, nama, ipk):",
+     "self.nama = nama",
+     "self.ipk = ipk"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "def info(self):",
+     "return f\"{self.nama} (IPK {self.ipk})\""
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "m1 = Mahasiswa(\"Ani\", 3.7)",
+     "m1nama = \"Ani\"ipk = 3.7"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "m2 = Mahasiswa(\"Budi\", 3.2)",
+     "m2nama = \"Budi\"ipk = 3.2"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "print(m1.info())",
+     "Ani (IPK 3.7)"
+    ]
+   }
+  ],
+  "text": [
+   "OOPClass = cetak biru, object = benda",
+   "class Mahasiswa: def __init__(self, nama, ipk): self.nama = nama self.ipk = ipk def info(self): return f\"{self.nama} (IPK {self.ipk})\" m1 = Mahasiswa(\"Ani\", 3.7)m2 = Mahasiswa(\"Budi\", 3.2)print(m1.info())"
+  ]
+ },
+ {
+  "n": 6,
+  "cls": "slide content t-slide fwd",
+  "title": "Class vs instance attribute",
+  "max": 5,
+  "notes": "Penghitung Siswa.jumlah bertambah setiap object dibuat — contoh umum class attribute.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "sekolah = \"SMA 1\" # class attribute",
+     "jumlah = 0"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "self.nama = nama # instance attribute"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Siswa.jumlah += 1"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(a.nama, b.nama, a.sekolah, Siswa.jumlah)",
+     "Ani Budi SMA 1 2"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Class attribute: dibagi semua object (mis. penghitung). Instance attribute: milik object masing-masing."
+    ]
+   }
+  ],
+  "text": [
+   "OOPClass attribute vs instance attribute",
+   "class Siswa: sekolah = \"SMA 1\" # class attribute jumlah = 0 def __init__(self, nama): self.nama = nama # instance attribute Siswa.jumlah += 1 a, b = Siswa(\"Ani\"), Siswa(\"Budi\")print(a.nama, b.nama, a.sekolah, Siswa.jumlah)"
+  ]
+ },
+ {
+  "n": 7,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L1, L2, L3",
+  "max": 0,
+  "notes": "35 menit. Kesalahan umum: lupa self.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Class dasar, class attribute sebagai penghitung, dan RekeningBank."
+  ]
+ },
+ {
+  "n": 8,
+  "cls": "slide section t-rise fwd",
+  "title": "B. Inheritance & Polimorfisme",
+  "max": 0,
+  "notes": "Blok 60 menit: konsep (25) + latihan L4–L5 (35).",
+  "steps": [],
+  "text": [
+   "Inheritance & Polimorfisme",
+   "Mewarisi dan menimpa perilaku"
+  ]
+ },
+ {
+  "n": 9,
+  "cls": "slide content t-slide fwd",
+  "title": "Inheritance",
+  "max": 6,
+  "notes": "Hewan = induk. Kucing menimpa suara(). Anjing menambah attribute ras dan memanggil super().__init__. Loop akhir = polimorfisme: pemanggilan sama, perilaku berbeda.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "class Hewan:",
+     "def __init__(self, nama):",
+     "self.nama = nama",
+     "def suara(self):",
+     "return \"...\"",
+     "◆Hewannama, suara()"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "class Kucing(Hewan):",
+     "return \"meong\"",
+     "◆Kucingoverride suara()"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "class Anjing(Hewan):",
+     "def __init__(self, nama, ras):",
+     "super().__init__(nama)",
+     "self.ras = ras",
+     "◆Anjing+ ras, super().__init__"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "return \"guk\""
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "print(h.nama, h.suara())",
+     "Mimi meong"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Rex guk"
+    ]
+   }
+  ],
+  "text": [
+   "OOPInheritance & override",
+   "class Hewan: def __init__(self, nama): self.nama = nama def suara(self): return \"...\" class Kucing(Hewan): def suara(self): return \"meong\" class Anjing(Hewan): def __init__(self, nama, ras): super().__init__(nama) self.ras = ras def suara(self): return \"guk\" for h in (Kucing(\"Mimi\"), Anjing(\"Rex\", \"Husky\")): print(h.nama, h.suara())"
+  ]
+ },
+ {
+  "n": 10,
+  "cls": "slide content t-slide fwd",
+  "title": "super()",
+  "max": 4,
+  "notes": "Jebakan nomor 1 pada inheritance: attribute induk \"kosong\" karena super().__init__() tidak dipanggil.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Lupa memanggil super().__init__()",
+     "class Anjing(Hewan): def __init__(self, nama, ras): self.ras = ras # nama?"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "AttributeError: 'A' object has no attribute 'nama'"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Benar"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Rex Husky"
+    ]
+   }
+  ],
+  "text": [
+   "OOPMemakai super()",
+   "Lupa memanggil super().__init__()",
+   "class Anjing(Hewan): def __init__(self, nama, ras): self.ras = ras # nama?",
+   "Benar",
+   "class Anjing(Hewan): def __init__(self, nama, ras): super().__init__(nama) self.ras = ras"
+  ]
+ },
+ {
+  "n": 11,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L4, L5",
+  "max": 0,
+  "notes": "35 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Inheritance, super(), override, dan polimorfisme."
+  ]
+ },
+ {
+  "n": 12,
+  "cls": "slide content work t-slide fwd",
+  "title": "Rehat",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "RehatRehat ☕",
+   "Berikutnya: encapsulation & special methods."
+  ]
+ },
+ {
+  "n": 13,
+  "cls": "slide section t-rise fwd",
+  "title": "C. Encapsulation, Special Methods & Context Manager",
+  "max": 0,
+  "notes": "Blok 70 menit: konsep (35) + latihan L6–L9 (35).",
+  "steps": [],
+  "text": [
+   "Encapsulation, Special Methods & Context Manager",
+   "Menjaga data dan membuat object \"berperilaku Python\""
+  ]
+ },
+ {
+  "n": 14,
+  "cls": "slide content t-slide fwd",
+  "title": "Encapsulation",
+  "max": 5,
+  "notes": "Awalan _ = \"jangan sentuh langsung\". @property membuat r.saldo bisa dibaca seperti attribute tapi tidak diubah sembarangan. Setoran negatif ditolak oleh setor().",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "self._saldo = saldo"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "@property",
+     "def saldo(self):",
+     "return self._saldo"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "def setor(self, jumlah):",
+     "if jumlah <= 0:",
+     "raise ValueError(\"jumlah harus > 0\")",
+     "self._saldo += jumlah",
+     "Mengapa?Data _saldo dilindungi.Ubah lewat setor() yang memvalidasi."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "r = Rekening(100)",
+     "r.setor(50)",
+     "print(r.saldo)",
+     "150"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "r.setor(-5) → ValueError: jumlah harus > 0"
+    ]
+   }
+  ],
+  "text": [
+   "OOPEncapsulation — pintu resmi",
+   "class Rekening: def __init__(self, saldo=0): self._saldo = saldo @property def saldo(self): return self._saldo def setor(self, jumlah): if jumlah <= 0: raise ValueError(\"jumlah harus > 0\") self._saldo += jumlah r = Rekening(100)r.setor(50)print(r.saldo)",
+   "Data _saldo dilindungi.",
+   "Ubah lewat setor() yang memvalidasi."
+  ]
+ },
+ {
+  "n": 15,
+  "cls": "slide content t-slide fwd",
+  "title": "Special methods",
+  "max": 7,
+  "notes": "Tanpa __str__, print(obj) hanya menampilkan alamat memori.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "def __str__(self):",
+     "return f\"{self.judul} ({self.tahun})\"",
+     "__str__print(obj)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "def __repr__(self):",
+     "return f\"Buku({self.judul!r}, {self.tahun})\"",
+     "__repr__debug / repr()"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "def __eq__(self, other):",
+     "return self.judul == other.judul",
+     "__eq__a == b"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(b1)",
+     "Python (2024)"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "print(repr(b1))",
+     "Buku('Python', 2024)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "print(b1 == b2, b1 is b2)",
+     "True False"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "__str__ harus return string — bukan print."
+    ]
+   }
+  ],
+  "text": [
+   "OOPSpecial methods",
+   "class Buku: def __init__(self, judul, tahun): self.judul, self.tahun = judul, tahun def __str__(self): return f\"{self.judul} ({self.tahun})\" def __repr__(self): return f\"Buku({self.judul!r}, {self.tahun})\" def __eq__(self, other): return self.judul == other.judul b1, b2 = Buku(\"Python\", 2024), Buku(\"Python\", 2024)print(b1)print(repr(b1))print(b1 == b2, b1 is b2)",
+   "Method",
+   "Dipanggil saat",
+   "__str__",
+   "print(obj)",
+   "__repr__",
+   "debug / repr()",
+   "__eq__",
+   "a == b"
+  ]
+ },
+ {
+  "n": 16,
+  "cls": "slide content t-slide fwd",
+  "title": "Context manager",
+  "max": 6,
+  "notes": "__exit__ selalu dipanggil — walau terjadi error di dalam blok. Itulah alasan with open(...) aman.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "def __enter__(self):",
+     "print(\"buka\", self.nama)",
+     "return self"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(\"bekerja dengan\", f.nama)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "def __exit__(self, tipe, nilai, tb):",
+     "print(\"tutup\", self.nama)",
+     "buka log.txt"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "bekerja dengan log.txt"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "tutup log.txt"
+    ]
+   }
+  ],
+  "text": [
+   "OOPContext manager — with",
+   "class FileCatatan: def __init__(self, nama): self.nama = nama def __enter__(self): print(\"buka\", self.nama) return self def __exit__(self, tipe, nilai, tb): print(\"tutup\", self.nama) with FileCatatan(\"log.txt\") as f: print(\"bekerja dengan\", f.nama)"
+  ]
+ },
+ {
+  "n": 17,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L6, L7, L8, L9",
+  "max": 0,
+  "notes": "35 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Encapsulation, special methods pada Buku, Titik + jarak, context manager."
+  ]
+ },
+ {
+  "n": 18,
+  "cls": "slide section t-rise fwd",
+  "title": "D. Jebakan Umum",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "Jebakan Umum",
+   "Kesalahan klasik OOP"
+  ]
+ },
+ {
+  "n": 19,
+  "cls": "slide content t-slide fwd",
+  "title": "Mutable default",
+  "max": 5,
+  "notes": "Default dievaluasi sekali saat function didefinisikan, bukan setiap dipanggil.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "def __init__(self, isi=[]):",
+     "self.isi = isi"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "a, b = Keranjang(), Keranjang()"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "a.isi.append(\"apel\")"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(b.isi)",
+     "['apel']",
+     "Semua object berbagi list yang sama!"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "def __init__(self, isi=None): self.isi = isi or []",
+     "Perbaikan: default None"
+    ]
+   }
+  ],
+  "text": [
+   "JebakanMutable default argument",
+   "class Keranjang: def __init__(self, isi=[]): self.isi = isi a, b = Keranjang(), Keranjang()a.isi.append(\"apel\")print(b.isi)",
+   "Semua object berbagi list yang sama!",
+   "def __init__(self, isi=None): self.isi = isi or []",
+   "Perbaikan: default None"
+  ]
+ },
+ {
+  "n": 20,
+  "cls": "slide content t-slide fwd",
+  "title": "Error umum",
+  "max": 6,
+  "notes": "Pesan error asli Python.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "A()"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "TypeError: A.__init__() missing 1 required positional argument: 'x'"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "def f():"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "TypeError: A.f() takes 0 positional arguments but 1 was given"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "A().nama"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "AttributeError: 'A' object has no attribute 'nama'"
+    ]
+   }
+  ],
+  "text": [
+   "TroubleshootingError yang paling sering",
+   "A()",
+   "def f():",
+   "A().nama"
+  ]
+ },
+ {
+  "n": 21,
+  "cls": "slide section t-rise fwd",
+  "title": "E. Mini Project",
+  "max": 0,
+  "notes": "Blok 80 menit: briefing (10) + coding (60) + diskusi (10).",
+  "steps": [],
+  "text": [
+   "Mini Project",
+   "Sistem perpustakaan / inventaris berbasis class"
+  ]
+ },
+ {
+  "n": 22,
+  "cls": "slide content t-slide fwd",
+  "title": "Rancang class",
+  "max": 7,
+  "notes": "Ajak peserta menggambar class di kertas dulu. Workbook memuat dua mini project berbasis class dengan pemeriksa otomatis (P1, P2).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "◆Bukujudul, penulis, tersedia",
+     "Tanya dulu: object apa yang ada? data apa yang dimiliki? aksi apa yang dilakukan?"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "◆Perpustakaandaftar_buku (list of Buku)"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "▪tambah(buku)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "▪pinjam(judul)validasi tersedia"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "▪kembalikan(judul)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "▪cari(kata)"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Pakai __str__ agar tampilan buku rapi dan raise untuk aksi yang tidak valid."
+    ]
+   }
+  ],
+  "text": [
+   "Mini ProjectRancang class sebelum coding"
+  ]
+ },
+ {
+  "n": 23,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: P1, P2",
+  "max": 0,
+  "notes": "60 menit coding + 10 menit diskusi.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Bangun mini project berbasis class hingga ✅."
+  ]
+ },
+ {
+  "n": 24,
+  "cls": "slide content t-slide fwd",
+  "title": "Rekap",
+  "max": 6,
+  "notes": "Minta peserta menjalankan sel Rekap hasil latihan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Class, object, __init__, self; class vs instance attribute"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Inheritance, super(), override, polimorfisme"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Encapsulation, @property, __str__/__repr__/__eq__, context manager"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Jebakan: mutable default, lupa self/super()"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Mini project berbasis class"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Besok (Hari 4): NumPy & Pandas"
+    ]
+   }
+  ],
+  "text": [
+   "Rekap Hari 3",
+   "Class, object, __init__, self; class vs instance attribute",
+   "Inheritance, super(), override, polimorfisme",
+   "Encapsulation, @property, __str__/__repr__/__eq__, context manager",
+   "Jebakan: mutable default, lupa self/super()",
+   "Mini project berbasis class",
+   "Besok (Hari 4): NumPy & Pandas"
+  ]
+ }
+]

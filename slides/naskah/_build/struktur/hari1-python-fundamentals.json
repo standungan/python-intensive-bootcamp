@@ -1,0 +1,1156 @@
+[
+ {
+  "n": 1,
+  "cls": "slide title t-zoom fwd",
+  "title": "Python Fundamentals",
+  "max": 0,
+  "notes": "Pembukaan (±5 menit). Sapa peserta, jelaskan format: instruktur demo singkat → peserta langsung coba di buku kerja Jupyter. Tunjukkan pintasan slide: tekan ?.",
+  "steps": [],
+  "text": [
+   "Python Fundamentals"
+  ]
+ },
+ {
+  "n": 2,
+  "cls": "slide content t-slide fwd",
+  "title": "Agenda",
+  "max": 8,
+  "notes": "Klik tiap langkah untuk memunculkan segmen agenda. Total 360 menit. Tekankan: setiap blok teori diikuti latihan buku kerja.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Opening + setup"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Variabel & I/O"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Control flow"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Rehat"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Struktur data"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Mini project"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Rekap"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "Total ±6 jam. Setiap blok: demo singkat → peserta coba sendiri di buku kerja."
+    ]
+   }
+  ],
+  "text": [
+   "Agenda Hari 1",
+   "Total ±6 jam. Setiap blok: demo singkat → peserta coba sendiri di buku kerja."
+  ]
+ },
+ {
+  "n": 3,
+  "cls": "slide content t-slide fwd",
+  "title": "Tujuan",
+  "max": 5,
+  "notes": "Bacakan singkat. Hubungkan ke hasil akhir: mini project menu data mahasiswa.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "menyiapkan environment Python (venv + Jupyter)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "memakai variabel, tipe data, operator, dan f-string"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "membuat logika dengan if, for, while"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "memilih list / tuple / dict / set yang tepat"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "membuat menu interaktif data mahasiswa (Mini Project)"
+    ]
+   }
+  ],
+  "text": [
+   "Setelah hari ini Anda bisa…",
+   "menyiapkan environment Python (venv + Jupyter)",
+   "memakai variabel, tipe data, operator, dan f-string",
+   "membuat logika dengan if, for, while",
+   "memilih list / tuple / dict / set yang tepat",
+   "membuat menu interaktif data mahasiswa (Mini Project)"
+  ]
+ },
+ {
+  "n": 4,
+  "cls": "slide section t-rise fwd",
+  "title": "A. Variabel, Tipe Data & I/O",
+  "max": 0,
+  "notes": "Blok 45 menit: setup (10) + variabel (10) + tipe (10) + operator (5) + I/O (10).",
+  "steps": [],
+  "text": [
+   "Variabel, Tipe Data & I/O",
+   "Menyimpan nilai, memahami tipe, membaca input"
+  ]
+ },
+ {
+  "n": 5,
+  "cls": "slide content t-slide fwd",
+  "title": "Setup environment",
+  "max": 5,
+  "notes": "Demo langsung di terminal instruktur. Pastikan semua peserta lolos python --version dan bisa membuka Jupyter sebelum lanjut (±10 menit). Bantu yang macet.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Cek: prompt berawalan (.venv) berarti environment aktif."
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Tanpa venv, paket antar-proyek bisa bentrok."
+    ]
+   }
+  ],
+  "text": [
+   "SetupMenyiapkan lingkungan",
+   "$ python --versionPython 3.11.x$ python -m venv .venv$ source .venv/bin/activate (.venv) $ pip install notebook pandas(.venv) $ jupyter notebookterminal"
+  ]
+ },
+ {
+  "n": 6,
+  "cls": "slide content t-slide fwd",
+  "title": "Variabel",
+  "max": 5,
+  "notes": "Klik satu per satu. Tekankan: tipe mengikuti nilai, bukan nama. Pada langkah terakhir nilai umur berubah dari 20 ke 21.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "nama\"Siti\"str"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "umur20int"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "ipk3.67float"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "aktifTruebool"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "umur = umur + 1",
+     "umur21int"
+    ]
+   }
+  ],
+  "text": [
+   "KonsepVariabel = nama yang menunjuk ke nilai",
+   "nama = \"Siti\"umur = 20ipk = 3.67aktif = Trueumur = umur + 1"
+  ]
+ },
+ {
+  "n": 7,
+  "cls": "slide content t-slide fwd",
+  "title": "Tipe data & casting",
+  "max": 6,
+  "notes": "Peragakan tiap baris, minta peserta menebak output sebelum klik. Poin: int(3.9) = 3 (truncasi). Nilai \"falsy\": 0, \"\", [], None.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "<class 'str'> <class 'int'> <class 'float'> <class 'bool'>"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "50"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "7.0"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "3"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "False False True"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": []
+   }
+  ],
+  "text": [
+   "KonsepTipe data & casting",
+   "print(type(\"Python\"), type(21), type(3.14), type(True))print(int(\"42\") + 8)print(float(\"3.5\") * 2)print(int(3.9)) # dipotong, bukan dibulatkanprint(bool(0), bool(\"\"), bool(\"teks\"))"
+  ]
+ },
+ {
+  "n": 8,
+  "cls": "slide content t-slide fwd",
+  "title": "Operator",
+  "max": 6,
+  "notes": "Fokus: // vs /, perbandingan berantai 60 <= x <= 90, dan operator penugasan +=.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "//pembagian bulat",
+     "3 2 256 3.5"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "%sisa bagi",
+     "True"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "**pangkat"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "total = 10",
+     "total += 5",
+     "print(total)",
+     "and or notlogika",
+     "15"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": []
+   },
+   {
+    "s": 6,
+    "appear": []
+   }
+  ],
+  "text": [
+   "KonsepOperator",
+   "print(17 // 5, 17 % 5, 2 ** 8, 7 / 2)print(60 <= 78 <= 90)print(78 >= 70 and 3.6 >= 3.5)total = 10total += 5print(total)",
+   "Operator",
+   "Arti",
+   "//",
+   "pembagian bulat",
+   "%",
+   "sisa bagi",
+   "**",
+   "pangkat",
+   "and or not",
+   "logika"
+  ]
+ },
+ {
+  "n": 9,
+  "cls": "slide content t-slide fwd",
+  "title": "f-string & input",
+  "max": 5,
+  "notes": "Demo live di Jupyter: minta peserta mengetik input mereka sendiri.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(f\"{nama} mendapat {nilai:.1f}\")",
+     "Nama: Rina"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Nilai: 88.5",
+     "{nilai:.1f} = 1 angka desimal. Pada contoh ini input yang diketik: Rina dan 88.5."
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Rina mendapat 88.5"
+    ]
+   }
+  ],
+  "text": [
+   "Konsepf-string & input()",
+   "nama = input(\"Nama: \")nilai = float(input(\"Nilai: \"))print(f\"{nama} mendapat {nilai:.1f}\")"
+  ]
+ },
+ {
+  "n": 10,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L1, L2, L3, L4, L5",
+  "max": 0,
+  "notes": "15 menit. Keliling kelas. Kesalahan umum: lupa mengubah tipe (str vs int), memakai = bukan ==.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Jalankan sel Periksa jawaban (✅/❌) setelah menulis kode. Buka 💡 Petunjuk bila buntu."
+  ]
+ },
+ {
+  "n": 11,
+  "cls": "slide section t-rise fwd",
+  "title": "B. Control Flow",
+  "max": 0,
+  "notes": "Blok 60 menit: if (15) + for (15) + while (15) + latihan (15).",
+  "steps": [],
+  "text": [
+   "Control Flow",
+   "Memilih cabang dan mengulang pekerjaan"
+  ]
+ },
+ {
+  "n": 12,
+  "cls": "slide content t-slide fwd",
+  "title": "if / elif / else",
+  "max": 5,
+  "notes": "Klik mengikuti alur untuk nilai = 78: 78 ≥ 85? tidak → 78 ≥ 70? ya → grade = \"B\". Hanya satu cabang yang dijalankan. Urutan cek: dari batas tertinggi.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "nilai = 78"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "if nilai >= 85:"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "elif nilai >= 70:",
+     "tidak"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "grade = \"B\"",
+     "ya"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "print(grade)"
+    ]
+   }
+  ],
+  "text": [
+   "Percabanganif / elif / else — satu jalur dipilih",
+   "nilai = 78if nilai >= 85: grade = \"A\"elif nilai >= 70: grade = \"B\"else: grade = \"C\"print(grade)"
+  ]
+ },
+ {
+  "n": 13,
+  "cls": "slide content t-slide fwd",
+  "title": "for loop",
+  "max": 5,
+  "notes": "Setiap klik = satu putaran. Kotak oranye = nilai i saat ini. Kotak bawah menampilkan hasil i * i. Ingat: range(1, 6) berhenti di 5 (akhir eksklusif).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "print(i * i)",
+     "1"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "4"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "9"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "16"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "25"
+    ]
+   }
+  ],
+  "text": [
+   "Perulanganfor — ulangi untuk setiap elemen",
+   "for i in range(1, 6): print(i * i)",
+   "range(1, 6) menghasilkan",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "i * i pada tiap putaran",
+   "1",
+   "4",
+   "9",
+   "16",
+   "25"
+  ]
+ },
+ {
+  "n": 14,
+  "cls": "slide content t-slide fwd",
+  "title": "while loop",
+  "max": 9,
+  "notes": "Ikuti satu putaran demi satu: cek kondisi → jalankan badan → cek lagi. Pada langkah akhir kondisi False → keluar. Tunjukkan bahaya loop tak-hingga (tekan Ctrl+C / Interrupt kernel).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "sisa = 3",
+     "sisa3int"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "while sisa > 0:"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(sisa)",
+     "sisa -= 1",
+     "sisa2int",
+     "3",
+     "ya"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "2"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "sisa1int",
+     "1"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "selesai"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "sisa0int"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": []
+   },
+   {
+    "s": 9,
+    "appear": [
+     "print(\"selesai\")",
+     "tidak",
+     "Tanpa sisa -= 1 → loop tak berhenti!"
+    ]
+   }
+  ],
+  "text": [
+   "Perulanganwhile — ulangi selama kondisi benar",
+   "sisa = 3while sisa > 0: print(sisa) sisa -= 1print(\"selesai\")"
+  ]
+ },
+ {
+  "n": 15,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L6, L7, L8, L9, L10",
+  "max": 0,
+  "notes": "15 menit. Minta peserta yang cepat membantu teman di sebelah. Jawaban L9 memakai while True + break.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Grade, bilangan genap, diskon kasir, tebak angka, pola bintang."
+  ]
+ },
+ {
+  "n": 16,
+  "cls": "slide content work t-slide fwd",
+  "title": "Rehat",
+  "max": 0,
+  "notes": "25 menit. Tekan C atau klik Mulai untuk menjalankan timer.",
+  "steps": [],
+  "text": [
+   "RehatRehat ☕",
+   "Kembali tepat waktu — berikutnya: struktur data."
+  ]
+ },
+ {
+  "n": 17,
+  "cls": "slide section t-rise fwd",
+  "title": "C. Struktur Data",
+  "max": 0,
+  "notes": "Blok 85 menit: list (15) tuple (10) dict (20) set (10) list of dict (15) latihan (15).",
+  "steps": [],
+  "text": [
+   "Struktur Data",
+   "List, tuple, dictionary, set, dan list of dict"
+  ]
+ },
+ {
+  "n": 18,
+  "cls": "slide content t-slide fwd",
+  "title": "List",
+  "max": 6,
+  "notes": "Kunci: indeks mulai 0, indeks negatif dari belakang, irisan akhir eksklusif. Langkah terakhir: append menambah di ujung.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(nilai[0])",
+     "80"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(nilai[-1])",
+     "88"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(nilai[1:3])",
+     "[90, 75]",
+     "indeks dimulai dari 0; -1 = elemen terakhir; irisan [1:3] = indeks 1 dan 2"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "nilai.append(95)",
+     "95",
+     "[80, 90, 75, 88, 95]"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "print(nilai)"
+    ]
+   }
+  ],
+  "text": [
+   "Struktur dataList — urutan yang bisa diubah",
+   "nilai = [80, 90, 75, 88]print(nilai[0])print(nilai[-1])print(nilai[1:3])nilai.append(95)print(nilai)",
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "80",
+   "90",
+   "75",
+   "88",
+   "95",
+   "indeks dimulai dari 0; -1 = elemen terakhir; irisan [1:3] = indeks 1 dan 2"
+  ]
+ },
+ {
+  "n": 19,
+  "cls": "slide content t-slide fwd",
+  "title": "Tuple",
+  "max": 4,
+  "notes": "Unpacking: setiap elemen tuple masuk ke satu variabel, urut.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "lat, lon = koordinat",
+     "lat-6.2lon106.8",
+     "lat-6.2",
+     "lon106.8"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(lat, lon)",
+     "-6.2 106.8"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Tuple tidak bisa diubah setelah dibuat — cocok untuk data yang tetap."
+    ]
+   }
+  ],
+  "text": [
+   "Struktur dataTuple & unpacking",
+   "koordinat = (-6.2, 106.8)lat, lon = koordinatprint(lat, lon)",
+   "0",
+   "1",
+   "-6.2",
+   "106.8",
+   "↓"
+  ]
+ },
+ {
+  "n": 20,
+  "cls": "slide content t-slide fwd",
+  "title": "Dictionary",
+  "max": 6,
+  "notes": "Pada langkah 3 kunci \"prodi\" tidak ada → .get memberi nilai default (tidak error). Langkah 4: menambah key baru. Langkah 5: mengubah nilai ipk.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "mhs = {",
+     "\"nama\": \"Budi\",",
+     "\"nim\": \"2201\",",
+     "\"ipk\": 3.6,",
+     "}"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(mhs[\"nama\"])",
+     "Budi"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "belum diisi"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "mhs[\"prodi\"] = \"Informatika\""
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "mhs[\"ipk\"] = 3.7",
+     "3.7"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Akses langsung mhs[\"prodi\"] yang belum ada → KeyError; .get(key, default) aman."
+    ]
+   }
+  ],
+  "text": [
+   "Struktur dataDictionary — pasangan key → value",
+   "mhs = { \"nama\": \"Budi\", \"nim\": \"2201\", \"ipk\": 3.6,}print(mhs[\"nama\"])print(mhs.get(\"prodi\", \"belum diisi\"))mhs[\"prodi\"] = \"Informatika\"mhs[\"ipk\"] = 3.7",
+   "key",
+   "value",
+   "\"nama\"",
+   "\"Budi\"",
+   "\"nim\"",
+   "\"2201\"",
+   "\"ipk\"",
+   "3.7",
+   "\"prodi\"",
+   "\"Informatika\""
+  ]
+ },
+ {
+  "n": 21,
+  "cls": "slide content t-slide fwd",
+  "title": "Set",
+  "max": 5,
+  "notes": "Venn: kiri = hanya a, tengah = irisan, kanan = hanya b. Set tidak berurutan & tidak punya duplikat.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(a | b) # gabungan",
+     "baca",
+     "gaming",
+     "musikolahraga"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(a & b) # irisan"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(a - b) # hanya di a"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Hapus duplikat: list(set([1, 2, 2, 3])) → [1, 2, 3]"
+    ]
+   }
+  ],
+  "text": [
+   "Struktur dataSet — unik & operasi himpunan",
+   "a = {\"baca\", \"musik\", \"olahraga\"}b = {\"musik\", \"gaming\", \"olahraga\"}print(a | b) # gabunganprint(a & b) # irisanprint(a - b) # hanya di a"
+  ]
+ },
+ {
+  "n": 22,
+  "cls": "slide content t-slide fwd",
+  "title": "List of dict",
+  "max": 3,
+  "notes": "Ini struktur utama mini project. List = kumpulan baris, setiap dict = satu mahasiswa. Filter dengan list comprehension; max(..., key=lambda ...) untuk nilai tertinggi.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "IF → Ani, Cici"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "terbaik = max(mahasiswa, key=lambda m: m[\"ipk\"])",
+     "ipk tertinggi → Budi"
+    ]
+   }
+  ],
+  "text": [
+   "Struktur dataList of dict — pola data mahasiswa",
+   "mahasiswa = [ {\"nama\": \"Ani\", \"ipk\": 3.5, \"prodi\": \"IF\"}, {\"nama\": \"Budi\", \"ipk\": 3.9, \"prodi\": \"SI\"}, {\"nama\": \"Cici\", \"ipk\": 3.2, \"prodi\": \"IF\"},]if_only = [m for m in mahasiswa if m[\"prodi\"] == \"IF\"]terbaik = max(mahasiswa, key=lambda m: m[\"ipk\"])",
+   "nama",
+   "ipk",
+   "prodi",
+   "Ani",
+   "3.5",
+   "IF",
+   "Budi",
+   "3.9",
+   "SI",
+   "Cici",
+   "3.2",
+   "IF"
+  ]
+ },
+ {
+  "n": 23,
+  "cls": "slide content t-slide fwd",
+  "title": "Memilih struktur",
+  "max": 4,
+  "notes": "Ringkas pilihan struktur. Minta 1–2 peserta memberi contoh dari kehidupan kampus.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "listurutan penting, boleh berubahdaftar nilai, daftar MK"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "tupledata tetap / return beberapa nilaikoordinat, (nim, nama)"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "dictbutuh label / lookup cepatprofil mahasiswa, map MK→nilai"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "setunik & operasi himpunanhobi, deduplikasi"
+    ]
+   }
+  ],
+  "text": [
+   "Memilih struktur yang tepat",
+   "Struktur",
+   "Pakai bila…",
+   "Contoh",
+   "list",
+   "urutan penting, boleh berubah",
+   "daftar nilai, daftar MK",
+   "tuple",
+   "data tetap / return beberapa nilai",
+   "koordinat, (nim, nama)",
+   "dict",
+   "butuh label / lookup cepat",
+   "profil mahasiswa, map MK→nilai",
+   "set",
+   "unik & operasi himpunan",
+   "hobi, deduplikasi"
+  ]
+ },
+ {
+  "n": 24,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L11, L12, L13, L14, L15, L16",
+  "max": 0,
+  "notes": "20 menit. L16 menggabungkan dict + list comprehension — dampingi yang kesulitan.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "List, dictionary, filter nilai lulus, tuple unpacking, set, dan list of dict."
+  ]
+ },
+ {
+  "n": 25,
+  "cls": "slide content t-slide fwd",
+  "title": "PEP 8",
+  "max": 5,
+  "notes": "Singkat saja (5 menit). Aktifkan formatter di editor (Black/autopep8).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Kurang baik",
+     "def H(x,y): return x+yHasil=H(1,2)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Lebih baik"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "indentasi 4 spasi, nama snake_case yang bermakna"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "spasi di sekitar operator & setelah koma"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "konstanta HURUF_BESAR, class PascalCase"
+    ]
+   }
+  ],
+  "text": [
+   "Praktik baikGaya penulisan — PEP 8",
+   "Kurang baik",
+   "def H(x,y): return x+yHasil=H(1,2)",
+   "Lebih baik",
+   "def hitung_jumlah(a, b): return a + b hasil = hitung_jumlah(1, 2)",
+   "indentasi 4 spasi, nama snake_case yang bermakna",
+   "spasi di sekitar operator & setelah koma",
+   "konstanta HURUF_BESAR, class PascalCase"
+  ]
+ },
+ {
+  "n": 26,
+  "cls": "slide section t-rise fwd",
+  "title": "D. Mini Project",
+  "max": 0,
+  "notes": "Blok 75 menit: briefing (10) + coding (55) + diskusi (10).",
+  "steps": [],
+  "text": [
+   "Mini Project",
+   "Sistem data mahasiswa & sistem nilai"
+  ]
+ },
+ {
+  "n": 27,
+  "cls": "slide content t-slide fwd",
+  "title": "Alur menu",
+  "max": 9,
+  "notes": "Jelaskan alur satu putaran menu: tampilkan → pilih → panggil function → kembali ke menu, sampai pilih 6 (break). Workbook memberi function bertanda TODO + pemeriksa otomatis.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": []
+   },
+   {
+    "s": 5,
+    "appear": []
+   },
+   {
+    "s": 6,
+    "appear": []
+   },
+   {
+    "s": 7,
+    "appear": []
+   },
+   {
+    "s": 8,
+    "appear": [
+     "pilih 6"
+    ]
+   },
+   {
+    "s": 9,
+    "appear": [
+     "Function terpisah untuk tiap fitur + while True untuk menu. Validasi: IPK 0–4, NIM tidak boleh ganda."
+    ]
+   }
+  ],
+  "text": [
+   "Mini Project 1Alur menu interaktif"
+  ]
+ },
+ {
+  "n": 28,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: P1, P2",
+  "max": 0,
+  "notes": "35 menit pertama. Setelah itu diskusi 10 menit: apa yang paling sulit? Tampilkan satu solusi peserta.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Lengkapi function sampai ✅. Setelah itu coba menu interaktif di sel terakhir."
+  ]
+ },
+ {
+  "n": 29,
+  "cls": "slide content t-slide fwd",
+  "title": "Jebakan umum",
+  "max": 7,
+  "notes": "Pesan error di atas adalah output asli Python. Biasakan peserta membaca error sebelum bertanya.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "print(nama)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "NameError: name 'nama' is not defined"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(\"Nilai: \" + 80)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "TypeError: can only concatenate str (not \"int\") to str"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "mhs[\"nim\"]"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "KeyError: 'nim'"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Baca pesan error dari baris paling bawah ke atas: jenis error → apa yang salah → di baris mana."
+    ]
+   }
+  ],
+  "text": [
+   "TroubleshootingJebakan yang paling sering",
+   "print(nama)",
+   "print(\"Nilai: \" + 80)",
+   "mhs[\"nim\"]"
+  ]
+ },
+ {
+  "n": 30,
+  "cls": "slide content t-slide fwd",
+  "title": "Rekap",
+  "max": 6,
+  "notes": "Minta peserta menjalankan sel Rekap hasil latihan dan mengisi lembar Rekap di notebook. Info besok: function, module, error handling, file CSV.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Variabel & tipe: int float str bool, casting, f-string"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Percabangan if/elif/else dan perulangan for / while"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Struktur data: list, tuple, dict, set, list of dict"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Mini project: menu data mahasiswa dengan function"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Semua latihan buku kerja ✅ (rekap skor di sel terakhir)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Besok (Hari 2): Functions, Modules & File Handling"
+    ]
+   }
+  ],
+  "text": [
+   "Rekap Hari 1",
+   "Variabel & tipe: int float str bool, casting, f-string",
+   "Percabangan if/elif/else dan perulangan for / while",
+   "Struktur data: list, tuple, dict, set, list of dict",
+   "Mini project: menu data mahasiswa dengan function",
+   "Semua latihan buku kerja ✅ (rekap skor di sel terakhir)",
+   "Besok (Hari 2): Functions, Modules & File Handling"
+  ]
+ }
+]

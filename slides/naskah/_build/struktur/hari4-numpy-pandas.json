@@ -1,0 +1,1081 @@
+[
+ {
+  "n": 1,
+  "cls": "slide title t-zoom fwd",
+  "title": "NumPy & Pandas",
+  "max": 0,
+  "notes": "Pembukaan (±10 menit). Ulas Hari 3. Hari ini kita beralih dari \"program\" ke \"data\": array untuk komputasi cepat, DataFrame untuk tabel.",
+  "steps": [],
+  "text": [
+   "NumPy & Pandas"
+  ]
+ },
+ {
+  "n": 2,
+  "cls": "slide content t-slide fwd",
+  "title": "Agenda",
+  "max": 8,
+  "notes": "Total 360 menit.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Opening"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "NumPy"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Rehat"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Pandas dasar"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Cleaning & operasi"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Mini project"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Rekap"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "Total ±6 jam. Demo singkat → peserta coba di buku kerja."
+    ]
+   }
+  ],
+  "text": [
+   "Agenda Hari 4",
+   "Total ±6 jam. Demo singkat → peserta coba di buku kerja."
+  ]
+ },
+ {
+  "n": 3,
+  "cls": "slide content t-slide fwd",
+  "title": "Tujuan",
+  "max": 6,
+  "notes": "Tujuan hari ini.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "membuat & mengiris array NumPy, boolean masking, broadcasting"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "menghitung statistik (mean, std, korelasi) dengan axis"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "membuat Series & DataFrame; seleksi dengan [], loc, iloc"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "membersihkan data: missing values, duplikat, tipe data"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "meringkas data: groupby, merge, pivot_table"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "membuat laporan akhir dari dataset kotor"
+    ]
+   }
+  ],
+  "text": [
+   "Setelah hari ini Anda bisa…",
+   "membuat & mengiris array NumPy, boolean masking, broadcasting",
+   "menghitung statistik (mean, std, korelasi) dengan axis",
+   "membuat Series & DataFrame; seleksi dengan [], loc, iloc",
+   "membersihkan data: missing values, duplikat, tipe data",
+   "meringkas data: groupby, merge, pivot_table",
+   "membuat laporan akhir dari dataset kotor"
+  ]
+ },
+ {
+  "n": 4,
+  "cls": "slide section t-rise fwd",
+  "title": "A. NumPy",
+  "max": 0,
+  "notes": "Blok 90 menit: konsep (55) + latihan L1–L9 (35).",
+  "steps": [],
+  "text": [
+   "NumPy",
+   "Array, indexing, masking, dan broadcasting"
+  ]
+ },
+ {
+  "n": 5,
+  "cls": "slide content t-slide fwd",
+  "title": "List vs array",
+  "max": 5,
+  "notes": "list * 2 menggandakan list; array * 2 mengalikan tiap elemen.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "list_a = [1, 2, 3]"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(list_a * 2)",
+     "[1, 2, 3, 1, 2, 3]"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(arr * 2)",
+     "[2 4 6]"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(arr.dtype, arr.shape)",
+     "int64 (3,)"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Operasi array berlaku untuk seluruh elemen sekaligus (vectorized) — lebih ringkas dan jauh lebih cepat."
+    ]
+   }
+  ],
+  "text": [
+   "NumPyMengapa array, bukan list?",
+   "import numpy as nplist_a = [1, 2, 3]arr = np.array([1, 2, 3])print(list_a * 2)print(arr * 2)print(arr.dtype, arr.shape)"
+  ]
+ },
+ {
+  "n": 6,
+  "cls": "slide content t-slide fwd",
+  "title": "Slicing",
+  "max": 5,
+  "notes": "Format: arr[baris, kolom]. : = semua. 0:2 = baris 0 dan 1 (akhir eksklusif).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(arr[1, 2])",
+     "6"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(arr[:, 1])",
+     "[1 5 9]"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "[[1 2]"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "[5 6]]"
+    ]
+   }
+  ],
+  "text": [
+   "NumPyIndexing & slicing 2D",
+   "import numpy as nparr = np.arange(12).reshape(3, 4)print(arr[1, 2])print(arr[:, 1])print(arr[0:2, 1:3])",
+   "0",
+   "1",
+   "2",
+   "3",
+   "0",
+   "0",
+   "1",
+   "2",
+   "3",
+   "1",
+   "4",
+   "5",
+   "6",
+   "7",
+   "2",
+   "8",
+   "9",
+   "10",
+   "11"
+  ]
+ },
+ {
+  "n": 7,
+  "cls": "slide content t-slide fwd",
+  "title": "Masking",
+  "max": 5,
+  "notes": "Mask berisi True/False per elemen; nilai[mask] mengambil yang True. np.where = if-else untuk seluruh array.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "lulus = nilai >= 60"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(lulus)",
+     "[False True False True True]",
+     "80"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(nilai[lulus])",
+     "[80 90 70]"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "['remedi' 'lulus' 'remedi' 'lulus' 'lulus']",
+     "90"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "70"
+    ]
+   }
+  ],
+  "text": [
+   "NumPyBoolean masking & np.where",
+   "import numpy as npnilai = np.array([55, 80, 45, 90, 70])lulus = nilai >= 60print(lulus)print(nilai[lulus])print(np.where(nilai >= 60, \"lulus\", \"remedi\"))"
+  ]
+ },
+ {
+  "n": 8,
+  "cls": "slide content t-slide fwd",
+  "title": "Axis & broadcasting",
+  "max": 4,
+  "notes": "Klik 1: axis=0 (biru, per kolom). Klik 2: axis=1 (hijau, per baris). Klik 3: broadcasting menambah vektor ke setiap baris.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "print(m.sum(axis=0))",
+     "[5 7 9]"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(m.mean(axis=1))",
+     "[2. 5.]"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "[[11 22 33]"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "[14 25 36]]",
+     "axis=0 → turun per kolom · axis=1 → menyamping per baris. Broadcasting: vektor 3 elemen \"ditarik\" ke kedua baris."
+    ]
+   }
+  ],
+  "text": [
+   "NumPyAgregasi per axis & broadcasting",
+   "import numpy as npm = np.array([[1, 2, 3], [4, 5, 6]])print(m.sum(axis=0))print(m.mean(axis=1))print(m + np.array([10, 20, 30]))",
+   "kol 0",
+   "kol 1",
+   "kol 2",
+   "b0",
+   "1",
+   "2",
+   "3",
+   "b1",
+   "4",
+   "5",
+   "6"
+  ]
+ },
+ {
+  "n": 9,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L1, L2, L3, L4, L5, L6, L7, L8, L9",
+  "max": 0,
+  "notes": "35 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Array, indexing, masking, np.where, normalisasi min-max, korelasi, diagonal."
+  ]
+ },
+ {
+  "n": 10,
+  "cls": "slide content work t-slide fwd",
+  "title": "Rehat",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "RehatRehat ☕",
+   "Berikutnya: Pandas."
+  ]
+ },
+ {
+  "n": 11,
+  "cls": "slide section t-rise fwd",
+  "title": "B. Pandas — Series & DataFrame",
+  "max": 0,
+  "notes": "Blok 70 menit: konsep (40) + latihan L10–L14 (30).",
+  "steps": [],
+  "text": [
+   "Pandas — Series & DataFrame",
+   "Tabel data dengan label"
+  ]
+ },
+ {
+  "n": 12,
+  "cls": "slide content t-slide fwd",
+  "title": "DataFrame",
+  "max": 11,
+  "notes": "Kolom = Series. shape = (baris, kolom). dtypes menunjukkan tipe tiap kolom (pandas 3: teks bertipe str).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "df = pd.DataFrame({",
+     "})",
+     "print(df)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(df.shape)",
+     "nama prodi ipk"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(df.dtypes)",
+     "0 Ani IF 3.5"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "1 Budi SI 3.9"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "2 Cici IF 3.2"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "3 Dedi SI 3.6"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "(4, 3)"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "nama str"
+    ]
+   },
+   {
+    "s": 9,
+    "appear": [
+     "prodi str"
+    ]
+   },
+   {
+    "s": 10,
+    "appear": [
+     "ipk float64"
+    ]
+   },
+   {
+    "s": 11,
+    "appear": [
+     "dtype: object"
+    ]
+   }
+  ],
+  "text": [
+   "PandasDataFrame — tabel di Python",
+   "import pandas as pddf = pd.DataFrame({ \"nama\": [\"Ani\", \"Budi\", \"Cici\", \"Dedi\"], \"prodi\": [\"IF\", \"SI\", \"IF\", \"SI\"], \"ipk\": [3.5, 3.9, 3.2, 3.6],})print(df)print(df.shape)print(df.dtypes)"
+  ]
+ },
+ {
+  "n": 13,
+  "cls": "slide content t-slide fwd",
+  "title": "Seleksi",
+  "max": 9,
+  "notes": "loc pakai label, iloc pakai posisi. Filter: kondisi boolean di dalam df[...].",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "df[\"ipk\"].mean()",
+     "3.5500000000000003"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "df.loc[1, \"nama\"]",
+     "Budi"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "prodi ipk"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "df[df[\"ipk\"] >= 3.5]",
+     "0 IF 3.5"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "1 SI 3.9"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "nama prodi ipk"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "0 Ani IF 3.5"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "1 Budi SI 3.9"
+    ]
+   },
+   {
+    "s": 9,
+    "appear": [
+     "3 Dedi SI 3.6"
+    ]
+   }
+  ],
+  "text": [
+   "PandasSeleksi: [], loc, iloc, filter",
+   "df[\"ipk\"].mean()df.loc[1, \"nama\"]df.iloc[0:2, 1:3]df[df[\"ipk\"] >= 3.5]",
+   "nama",
+   "prodi",
+   "ipk",
+   "0",
+   "Ani",
+   "IF",
+   "3.5",
+   "1",
+   "Budi",
+   "SI",
+   "3.9",
+   "2",
+   "Cici",
+   "IF",
+   "3.2",
+   "3",
+   "Dedi",
+   "SI",
+   "3.6"
+  ]
+ },
+ {
+  "n": 14,
+  "cls": "slide content t-slide fwd",
+  "title": "Kolom baru",
+  "max": 5,
+  "notes": "Tambah kolom turunan dengan apply / operasi vektor; urutkan dengan sort_values.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "nama ipk status"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "1 Budi 3.9 cumlaude"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "3 Dedi 3.6 cumlaude"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "0 Ani 3.5 cumlaude"
+    ]
+   }
+  ],
+  "text": [
+   "PandasKolom baru, sort, head",
+   "df[\"status\"] = df[\"ipk\"].apply(lambda x: \"cumlaude\" if x >= 3.5 else \"reguler\")df.sort_values(\"ipk\", ascending=False).head(3)"
+  ]
+ },
+ {
+  "n": 15,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L10, L11, L12, L13, L14",
+  "max": 0,
+  "notes": "30 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Series, DataFrame, seleksi, kolom status & grade, sorting."
+  ]
+ },
+ {
+  "n": 16,
+  "cls": "slide section t-rise fwd",
+  "title": "C. Cleaning & Operasi Lanjutan",
+  "max": 0,
+  "notes": "Blok 70 menit: konsep (40) + latihan L15–L19 (30).",
+  "steps": [],
+  "text": [
+   "Cleaning & Operasi Lanjutan",
+   "Missing values, groupby, merge, pivot"
+  ]
+ },
+ {
+  "n": 17,
+  "cls": "slide content t-slide fwd",
+  "title": "Missing & duplikat",
+  "max": 7,
+  "notes": "Klik: temukan NaN → hapus duplikat (baris 2) → isi NaN dengan rata-rata (75.0).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "nama 0"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(df.isna().sum())",
+     "nilai 2"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "df = df.drop_duplicates()",
+     "dtype: int64",
+     "75.0"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(df)",
+     "nama nilai"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "0 Ani 80.0"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "1 Budi 75.0"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "3 Cici 70.0"
+    ]
+   }
+  ],
+  "text": [
+   "CleaningMissing values & duplikat",
+   "import pandas as pd, numpy as npdf = pd.DataFrame({\"nama\": [\"Ani\", \"Budi\", \"Budi\", \"Cici\"], \"nilai\": [80, np.nan, np.nan, 70]})print(df.isna().sum())df = df.drop_duplicates()df[\"nilai\"] = df[\"nilai\"].fillna(df[\"nilai\"].mean())print(df)",
+   "nama",
+   "nilai",
+   "0",
+   "Ani",
+   "80",
+   "1",
+   "Budi",
+   "75.0",
+   "2",
+   "Budi",
+   "NaN",
+   "3",
+   "Cici",
+   "70"
+  ]
+ },
+ {
+  "n": 18,
+  "cls": "slide content t-slide fwd",
+  "title": "groupby",
+  "max": 5,
+  "notes": "IF: (3.5+3.2)/2 = 3.35. SI: (3.9+3.6)/2 = 3.75. Grafik muncul bertahap saat Anda klik.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "df.groupby(\"prodi\")[\"ipk\"] .agg([\"mean\", \"count\"])"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "mean count",
+     "01234IFSI3.353.75Rata-rata IPK per prodiIPK",
+     "3.35",
+     "3.75"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "prodi",
+     "Split → Apply → Combine",
+     "Rata-rata IPK per prodiIPK"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "IF 3.35 2"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "SI 3.75 2"
+    ]
+   }
+  ],
+  "text": [
+   "Pandasgroupby — pisah, hitung, gabung",
+   "df.groupby(\"prodi\")[\"ipk\"] .agg([\"mean\", \"count\"])",
+   "Split → Apply → Combine"
+  ]
+ },
+ {
+  "n": 19,
+  "cls": "slide content t-slide fwd",
+  "title": "merge",
+  "max": 7,
+  "notes": "Klik 1: kolom kunci. Klik 2: baris yang cocok (hijau) vs tidak (redup). Klik 3: hasil gabungan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "nim",
+     "1",
+     "2",
+     "3",
+     "4"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "1Ani",
+     "2Budi",
+     "190",
+     "280"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "⋈",
+     "how=\"left\"nimnamaskor1Ani902Budi803CiciNaN"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "nim nama skor",
+     "how=\"left\" mempertahankan semua baris kiri; yang tak punya pasangan → NaN. Tipe kolom kunci harus sama!"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "0 1 Ani 90.0"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "1 2 Budi 80.0"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "2 3 Cici NaN"
+    ]
+   }
+  ],
+  "text": [
+   "Pandasmerge — gabung tabel lewat kunci",
+   "nim",
+   "nama",
+   "1",
+   "Ani",
+   "2",
+   "Budi",
+   "3",
+   "Cici",
+   "nim",
+   "skor",
+   "1",
+   "90",
+   "2",
+   "80",
+   "4",
+   "70",
+   "nim",
+   "nama",
+   "skor",
+   "1",
+   "Ani",
+   "90",
+   "2",
+   "Budi",
+   "80",
+   "3",
+   "Cici",
+   "NaN"
+  ]
+ },
+ {
+  "n": 20,
+  "cls": "slide content t-slide fwd",
+  "title": "pivot_table",
+  "max": 5,
+  "notes": "Baris = prodi, kolom = angkatan, isi = rata-rata ipk.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "df.pivot_table(index=\"prodi\", columns=\"angkatan\", values=\"ipk\", aggfunc=\"mean\")"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "angkatan 2023 2024"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "prodi"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "IF 3.5 3.2"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "SI 3.9 3.6"
+    ]
+   }
+  ],
+  "text": [
+   "Pandaspivot_table — ringkasan dua dimensi",
+   "df.pivot_table(index=\"prodi\", columns=\"angkatan\", values=\"ipk\", aggfunc=\"mean\")"
+  ]
+ },
+ {
+  "n": 21,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L15, L16, L17, L18, L19",
+  "max": 0,
+  "notes": "30 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Missing & duplikat, konversi tipe, GroupBy, Merge, Pivot + CSV."
+  ]
+ },
+ {
+  "n": 22,
+  "cls": "slide section t-rise fwd",
+  "title": "D. Mini Project",
+  "max": 0,
+  "notes": "Blok 70 menit: briefing (10) + coding (50) + diskusi (10).",
+  "steps": [],
+  "text": [
+   "Mini Project",
+   "Dari data kotor ke laporan"
+  ]
+ },
+ {
+  "n": 23,
+  "cls": "slide content t-slide fwd",
+  "title": "Pipeline",
+  "max": 9,
+  "notes": "Pipeline yang sama dipakai di semua mini project dan capstone. Setiap proyek di workbook punya pemeriksa otomatis.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": []
+   },
+   {
+    "s": 5,
+    "appear": []
+   },
+   {
+    "s": 6,
+    "appear": [
+     "P1 Kalkulator nilai akhir (dasar)"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "P3 Merge multi-tabel"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "P4 Pivot & reporting"
+    ]
+   },
+   {
+    "s": 9,
+    "appear": [
+     "Pola yang sama dipakai lagi di Capstone (Hari 6)."
+    ]
+   }
+  ],
+  "text": [
+   "Mini ProjectPipeline analisis data",
+   "P1 Kalkulator nilai akhir (dasar)",
+   "P3 Merge multi-tabel",
+   "P4 Pivot & reporting"
+  ]
+ },
+ {
+  "n": 24,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: P1, P3, P4",
+  "max": 0,
+  "notes": "50 menit coding + 10 menit diskusi.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Kalkulator nilai akhir, merge multi-tabel, pivot & reporting."
+  ]
+ },
+ {
+  "n": 25,
+  "cls": "slide content t-slide fwd",
+  "title": "Jebakan umum",
+  "max": 7,
+  "notes": "Pesan error asli. Juga bahas chained assignment: gunakan .loc atau .copy() (pandas 3 memakai Copy-on-Write).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "df[\"Nama\"]"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "KeyError: 'Nama'"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "df[a > 1 and a < 9]"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.a…"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "shape (2,3) + (2,)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "ValueError: operands could not be broadcast together with shapes (2,3) (2,)"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Perbaikan: df[\"x\"].str.strip() untuk nama kolom · (a > 1) & (a < 9) · samakan shape dengan reshape."
+    ]
+   }
+  ],
+  "text": [
+   "TroubleshootingJebakan yang paling sering",
+   "df[\"Nama\"]",
+   "df[a > 1 and a < 9]",
+   "shape (2,3) + (2,)"
+  ]
+ },
+ {
+  "n": 26,
+  "cls": "slide content t-slide fwd",
+  "title": "Rekap",
+  "max": 6,
+  "notes": "Minta peserta menjalankan sel Rekap hasil latihan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "NumPy: array, slicing, masking, np.where, axis, broadcasting"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Pandas: Series/DataFrame, loc/iloc, filter, kolom baru, sort"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Cleaning: missing values, duplikat, to_numeric"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Ringkasan: groupby, merge, pivot_table"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Mini project pipeline data end-to-end"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Besok (Hari 5): Visualisasi, API & Scraping"
+    ]
+   }
+  ],
+  "text": [
+   "Rekap Hari 4",
+   "NumPy: array, slicing, masking, np.where, axis, broadcasting",
+   "Pandas: Series/DataFrame, loc/iloc, filter, kolom baru, sort",
+   "Cleaning: missing values, duplikat, to_numeric",
+   "Ringkasan: groupby, merge, pivot_table",
+   "Mini project pipeline data end-to-end",
+   "Besok (Hari 5): Visualisasi, API & Scraping"
+  ]
+ }
+]

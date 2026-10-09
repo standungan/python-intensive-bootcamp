@@ -1,0 +1,1052 @@
+[
+ {
+  "n": 1,
+  "cls": "slide title t-zoom fwd",
+  "title": "Functions, Modules & File Handling",
+  "max": 0,
+  "notes": "Pembukaan (±5 menit). Ulas singkat Hari 1 (tanya 2–3 peserta: apa yang paling diingat?). Format sama: demo singkat → peserta coba di buku kerja Hari 2.",
+  "steps": [],
+  "text": [
+   "Functions, Modules & File Handling"
+  ]
+ },
+ {
+  "n": 2,
+  "cls": "slide content t-slide fwd",
+  "title": "Agenda",
+  "max": 10,
+  "notes": "Klik tiap langkah untuk memunculkan segmen agenda. Jumlah: 360 menit.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Opening"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Functions"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Lambda & comp."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Rehat"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Modules"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Error handling"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "File"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "Mini project"
+    ]
+   },
+   {
+    "s": 9,
+    "appear": [
+     "Rekap"
+    ]
+   },
+   {
+    "s": 10,
+    "appear": [
+     "Total ±6 jam. Setiap blok: demo singkat → peserta coba sendiri."
+    ]
+   }
+  ],
+  "text": [
+   "Agenda Hari 2",
+   "Total ±6 jam. Setiap blok: demo singkat → peserta coba sendiri."
+  ]
+ },
+ {
+  "n": 3,
+  "cls": "slide content t-slide fwd",
+  "title": "Tujuan",
+  "max": 6,
+  "notes": "Tujuan hari ini; hubungkan ke mini project pencatat kegiatan yang persisten.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "menulis function dengan parameter, default, *args/**kwargs, dan return"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "memahami scope local vs global"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "memakai lambda, map/filter, dan comprehension"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "membuat module sendiri dan meng-import-nya"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "menangani error dengan try/except dan raise"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "membaca & menulis file teks dan CSV — lalu membuat pencatat yang menyimpan data"
+    ]
+   }
+  ],
+  "text": [
+   "Setelah hari ini Anda bisa…",
+   "menulis function dengan parameter, default, *args/**kwargs, dan return",
+   "memahami scope local vs global",
+   "memakai lambda, map/filter, dan comprehension",
+   "membuat module sendiri dan meng-import-nya",
+   "menangani error dengan try/except dan raise",
+   "membaca & menulis file teks dan CSV — lalu membuat pencatat yang menyimpan data"
+  ]
+ },
+ {
+  "n": 4,
+  "cls": "slide section t-rise fwd",
+  "title": "A. Functions",
+  "max": 0,
+  "notes": "Blok 80 menit: konsep (35) + latihan L1–L8 (45).",
+  "steps": [],
+  "text": [
+   "Functions",
+   "Bungkus logika agar bisa dipakai berulang"
+  ]
+ },
+ {
+  "n": 5,
+  "cls": "slide content t-slide fwd",
+  "title": "Anatomi function",
+  "max": 5,
+  "notes": "Urutan klik: def (parameter, nilai default) → docstring → return → panggilan → hasil. Bedakan parameter (di def) dan argumen (saat memanggil).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "def sapa(nama, sapaan=\"Halo\"):"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "\"\"\"Mengembalikan kalimat sapaan.\"\"\""
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "return f\"{sapaan}, {nama}!\"",
+     "return"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "pesan = sapa(\"Rina\")",
+     "argumen"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "print(pesan)",
+     "Halo, Rina!"
+    ]
+   }
+  ],
+  "text": [
+   "FunctionAnatomi function",
+   "def sapa(nama, sapaan=\"Halo\"): \"\"\"Mengembalikan kalimat sapaan.\"\"\" return f\"{sapaan}, {nama}!\" pesan = sapa(\"Rina\")print(pesan)"
+  ]
+ },
+ {
+  "n": 6,
+  "cls": "slide content t-slide fwd",
+  "title": "print vs return",
+  "max": 6,
+  "notes": "Jebakan klasik pemula. print hanya menampilkan; return mengirim nilai ke pemanggil. Tanya: kenapa a bernilai None?",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "def kuadrat_print(x):",
+     "print(x * x)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "def kuadrat_return(x):",
+     "return x * x"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "a = kuadrat_print(4)",
+     "16"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "b = kuadrat_return(4)",
+     "None 17"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "print(a, b + 1)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Function tanpa return mengembalikan None — hasilnya tidak bisa dipakai untuk hitungan lanjut."
+    ]
+   }
+  ],
+  "text": [
+   "Functionprint ≠ return",
+   "def kuadrat_print(x): print(x * x) def kuadrat_return(x): return x * x a = kuadrat_print(4)b = kuadrat_return(4)print(a, b + 1)"
+  ]
+ },
+ {
+  "n": 7,
+  "cls": "slide content t-slide fwd",
+  "title": "args & kwargs",
+  "max": 4,
+  "notes": "*args menampung argumen posisi berlebih sebagai tuple; **kwargs menampung keyword sebagai dict.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "def rata_rata(*angka):",
+     "return sum(angka) / len(angka)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Posisi bebas*angka → tuple(80, 90, 70)",
+     "80.0"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "def profil(**data):",
+     "for k, v in data.items():",
+     "print(f\"{k}: {v}\")",
+     "nama: Ani"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "profil(nama=\"Ani\", prodi=\"IF\")",
+     "Keyword bebas**data → dict{\"nama\": \"Ani\", \"prodi\": \"IF\"}",
+     "prodi: IF"
+    ]
+   }
+  ],
+  "text": [
+   "Function*args & **kwargs",
+   "def rata_rata(*angka): return sum(angka) / len(angka) def profil(**data): for k, v in data.items(): print(f\"{k}: {v}\") print(rata_rata(80, 90, 70))profil(nama=\"Ani\", prodi=\"IF\")",
+   "*angka → tuple",
+   "(80, 90, 70)",
+   "**data → dict",
+   "{\"nama\": \"Ani\", \"prodi\": \"IF\"}"
+  ]
+ },
+ {
+  "n": 8,
+  "cls": "slide content t-slide fwd",
+  "title": "Scope",
+  "max": 6,
+  "notes": "x = 99 di dalam function membuat variabel baru yang lokal; x global tetap 10. Pada langkah 5 lihat kotak Global menyala.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "x = 10",
+     "Globalx = 10Lokal: ubah()x = 99"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "def ubah():",
+     "x = 99",
+     "Lokal: ubah()x = 99"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "print(\"dalam:\", x)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "ubah()",
+     "dalam: 99"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "print(\"luar:\", x)",
+     "luar: 10"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Mengubah variabel global dari dalam function? Pakai return (lebih aman) — bukan global."
+    ]
+   }
+  ],
+  "text": [
+   "FunctionScope — local vs global",
+   "x = 10 def ubah(): x = 99 print(\"dalam:\", x) ubah()print(\"luar:\", x)"
+  ]
+ },
+ {
+  "n": 9,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L1, L2, L3, L4, L5, L6, L7, L8",
+  "max": 0,
+  "notes": "25 menit. Kesalahan umum: print di dalam function padahal diminta return; lupa menaruh docstring.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Function dasar, default, *args/**kwargs, multiple return, docstring."
+  ]
+ },
+ {
+  "n": 10,
+  "cls": "slide section t-rise fwd",
+  "title": "B. Lambda, map, filter & Comprehension",
+  "max": 0,
+  "notes": "Blok 40 menit: demo (20) + latihan L9–L13 (20).",
+  "steps": [],
+  "text": [
+   "Lambda, map, filter & Comprehension",
+   "Ringkas tanpa kehilangan kejelasan"
+  ]
+ },
+ {
+  "n": 11,
+  "cls": "slide content t-slide fwd",
+  "title": "map & filter",
+  "max": 4,
+  "notes": "Klik berulang: tiap klik memproses satu elemen. map mengubah setiap elemen; filter menyaring (merah = ditolak).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "kuadrat = list(map(lambda x: x * x, [1, 2, 3, 4]))",
+     "1",
+     "lulus = list(filter(lambda n: n >= 60, [80, 55, 90, 45]))",
+     "80"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "2",
+     "4"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "3",
+     "9",
+     "90"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "16"
+    ]
+   }
+  ],
+  "text": [
+   "Fungsionalmap & filter dengan lambda",
+   "kuadrat = list(map(lambda x: x * x, [1, 2, 3, 4]))",
+   "lulus = list(filter(lambda n: n >= 60, [80, 55, 90, 45]))"
+  ]
+ },
+ {
+  "n": 12,
+  "cls": "slide content t-slide fwd",
+  "title": "Comprehension",
+  "max": 4,
+  "notes": "Empat pola: list comprehension dengan filter, transformasi, dict comprehension dengan ekspresi kondisional, dan sorted dengan key lambda.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "[80, 90, 70]"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "bonus = [n + 5 for n in nilai]",
+     "[85, 60, 95, 50, 75]"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "{80: 'lulus', 55: 'remedi', 90: 'lulus', 45: 'remedi', 70: 'lulus'}"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "urut = sorted(nilai, key=lambda n: -n)",
+     "[90, 80, 70, 55, 45]"
+    ]
+   }
+  ],
+  "text": [
+   "FungsionalComprehension & sorted(key=…)",
+   "nilai = [80, 55, 90, 45, 70]lulus = [n for n in nilai if n >= 60]bonus = [n + 5 for n in nilai]peta = {n: (\"lulus\" if n >= 60 else \"remedi\") for n in nilai}urut = sorted(nilai, key=lambda n: -n)print(lulus)print(bonus)print(peta)print(urut)"
+  ]
+ },
+ {
+  "n": 13,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L9, L10, L11, L12, L13",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Kuadrat 1–20, bonus nilai lulus, filter + lambda, dict comprehension, urutkan dengan lambda."
+  ]
+ },
+ {
+  "n": 14,
+  "cls": "slide content work t-slide fwd",
+  "title": "Rehat",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "RehatRehat ☕",
+   "Berikutnya: module & error handling."
+  ]
+ },
+ {
+  "n": 15,
+  "cls": "slide section t-rise fwd",
+  "title": "C. Modules",
+  "max": 0,
+  "notes": "Blok 35 menit: demo (15) + latihan L14–L15 (20).",
+  "steps": [],
+  "text": [
+   "Modules",
+   "Memecah program ke beberapa file"
+  ]
+ },
+ {
+  "n": 16,
+  "cls": "slide content t-slide fwd",
+  "title": "Module",
+  "max": 5,
+  "notes": "Pastikan kedua file berada di folder yang sama. Jebakan: beri nama file seperti module bawaan (mis. random.py) → menimpa module standar.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "▾proyek/"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "▪konversi.pymodule buatan sendiri",
+     "# konversi.pydef c_ke_f(c): return c * 9 / 5 + 32"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "▪main.pyprogram utama"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "212.0 32.0"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "▾__pycache__/dibuat otomatis"
+    ]
+   }
+  ],
+  "text": [
+   "ModulesModule = file .py yang bisa di-import",
+   "# konversi.pydef c_ke_f(c): return c * 9 / 5 + 32",
+   "# main.pyimport konversifrom konversi import c_ke_f print(konversi.c_ke_f(100), c_ke_f(0))"
+  ]
+ },
+ {
+  "n": 17,
+  "cls": "slide content t-slide fwd",
+  "title": "Gaya import",
+  "max": 6,
+  "notes": "Tunjukkan juga if __name__ == \"__main__\": — kode di dalamnya hanya jalan jika file dieksekusi langsung.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "import mathmath.sqrt(9)namespace jelas — paling aman"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "from math import sqrtsqrt(9)singkat, hindari bentrok nama"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "import numpy as npnp.array([1])alias konvensional"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "from m import *—hindari"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "3.141592653589793 3.0"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "__main__"
+    ]
+   }
+  ],
+  "text": [
+   "ModulesGaya import",
+   "Sintaks",
+   "Dipakai sebagai",
+   "Catatan",
+   "import math",
+   "math.sqrt(9)",
+   "namespace jelas — paling aman",
+   "from math import sqrt",
+   "sqrt(9)",
+   "singkat, hindari bentrok nama",
+   "import numpy as np",
+   "np.array([1])",
+   "alias konvensional",
+   "from m import *",
+   "—",
+   "hindari"
+  ]
+ },
+ {
+  "n": 18,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L14, L15",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Membuat module konversi.py dan string_utils.py, lalu meng-import-nya."
+  ]
+ },
+ {
+  "n": 19,
+  "cls": "slide section t-rise fwd",
+  "title": "D. Error Handling",
+  "max": 0,
+  "notes": "Blok 50 menit: konsep (25) + latihan L16–L18 (25).",
+  "steps": [],
+  "text": [
+   "Error Handling",
+   "Program tidak crash saat sesuatu salah"
+  ]
+ },
+ {
+  "n": 20,
+  "cls": "slide content t-slide fwd",
+  "title": "try/except",
+  "max": 4,
+  "notes": "Klik 2 = jalur error; klik 3 = jalur sukses. finally selalu berjalan di kedua jalur (cocok untuk menutup resource).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "try:",
+     "hasil = a / b"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "except ZeroDivisionError:",
+     "return None",
+     "ya"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "else:",
+     "return round(hasil, 2)",
+     "tidak"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "finally:",
+     "print(\"selesai dihitung\")"
+    ]
+   }
+  ],
+  "text": [
+   "Errortry / except / else / finally",
+   "def bagi_aman(a, b): try: hasil = a / b except ZeroDivisionError: return None else: return round(hasil, 2) finally: print(\"selesai dihitung\")"
+  ]
+ },
+ {
+  "n": 21,
+  "cls": "slide content t-slide fwd",
+  "title": "Hasil bagi_aman",
+  "max": 4,
+  "notes": "Perhatikan \"selesai dihitung\" tercetak pada kedua pemanggilan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "selesai dihitung"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "2.5"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Tangkap error yang spesifik (ZeroDivisionError), jangan except: kosong."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "None"
+    ]
+   }
+  ],
+  "text": [
+   "ErrorHasil nyata bagi_aman",
+   "print(bagi_aman(10, 4))print(bagi_aman(1, 0))"
+  ]
+ },
+ {
+  "n": 22,
+  "cls": "slide content t-slide fwd",
+  "title": "raise",
+  "max": 5,
+  "notes": "raise menghentikan function & melempar error ke pemanggil; except … as e menangkapnya. Cocok untuk validasi input.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "raise TypeError(\"umur harus int\")"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "if umur < 0:",
+     "raise ValueError(\"umur tidak boleh negatif\")"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "try:",
+     "print(validasi_umur(u))",
+     "except (TypeError, ValueError) as e:",
+     "print(type(e).__name__, \"->\", e)",
+     "25"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "ValueError -> umur tidak boleh negatif"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "TypeError -> umur harus int"
+    ]
+   }
+  ],
+  "text": [
+   "Errorraise — membuat error sendiri",
+   "def validasi_umur(umur): if not isinstance(umur, int): raise TypeError(\"umur harus int\") if umur < 0: raise ValueError(\"umur tidak boleh negatif\") return umur for u in (25, -3, \"dua\"): try: print(validasi_umur(u)) except (TypeError, ValueError) as e: print(type(e).__name__, \"->\", e)"
+  ]
+ },
+ {
+  "n": 23,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L16, L17, L18",
+  "max": 0,
+  "notes": "25 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "bagi_aman, input_angka (ulangi sampai valid), validasi dengan raise."
+  ]
+ },
+ {
+  "n": 24,
+  "cls": "slide section t-rise fwd",
+  "title": "E. File Handling",
+  "max": 0,
+  "notes": "Blok 50 menit: demo (25) + latihan (25).",
+  "steps": [],
+  "text": [
+   "File Handling",
+   "Teks dan CSV — data yang bertahan"
+  ]
+ },
+ {
+  "n": 25,
+  "cls": "slide content t-slide fwd",
+  "title": "File teks",
+  "max": 7,
+  "notes": "Mode \"w\" menimpa, \"a\" menambah, \"r\" membaca.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "from pathlib import Path",
+     "p = Path(\"catatan.txt\")"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "p.write_text(\"baris 1\\nbaris 2\\n\", encoding=\"utf-8\")"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "f.write(\"baris 3\\n\")"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "print(no, baris)",
+     "1 baris 1"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "print(p.exists(), p.suffix)",
+     "2 baris 2"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "3 baris 3",
+     "Selalu pakai with (file otomatis tertutup) dan encoding=\"utf-8\"."
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "True .txt"
+    ]
+   }
+  ],
+  "text": [
+   "FileFile teks: with open & pathlib",
+   "from pathlib import Pathp = Path(\"catatan.txt\")p.write_text(\"baris 1\\nbaris 2\\n\", encoding=\"utf-8\")with open(p, \"a\", encoding=\"utf-8\") as f: f.write(\"baris 3\\n\")for no, baris in enumerate(p.read_text(encoding=\"utf-8\").splitlines(), 1): print(no, baris)print(p.exists(), p.suffix)"
+  ]
+ },
+ {
+  "n": 26,
+  "cls": "slide content t-slide fwd",
+  "title": "CSV",
+  "max": 3,
+  "notes": "Tabel kanan = isi file setelah ditulis (klik 1) dan dibaca baris demi baris (klik 2).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "w = csv.DictWriter(f, fieldnames=[\"nama\", \"nilai\"])",
+     "w.writeheader()"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "for baris in csv.DictReader(f):",
+     "Ani 90"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Budi 75",
+     "Nilai dari CSV selalu str → ubah dengan int(); newline=\"\" saat menulis agar tidak ada baris kosong (Windows)."
+    ]
+   }
+  ],
+  "text": [
+   "FileCSV dengan DictWriter / DictReader",
+   "import csvwith open(\"nilai.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as f: w = csv.DictWriter(f, fieldnames=[\"nama\", \"nilai\"]) w.writeheader() w.writerows([{\"nama\": \"Ani\", \"nilai\": 85}, {\"nama\": \"Budi\", \"nilai\": 70}])with open(\"nilai.csv\", newline=\"\", encoding=\"utf-8\") as f: for baris in csv.DictReader(f): print(baris[\"nama\"], int(baris[\"nilai\"]) + 5)",
+   "nama",
+   "nilai",
+   "Ani",
+   "85",
+   "Budi",
+   "70"
+  ]
+ },
+ {
+  "n": 27,
+  "cls": "slide section t-rise fwd",
+  "title": "F. Mini Project",
+  "max": 0,
+  "notes": "Blok 60 menit: briefing (10) + coding (40) + diskusi (10).",
+  "steps": [],
+  "text": [
+   "Mini Project",
+   "Pencatat kegiatan akademik yang menyimpan datanya"
+  ]
+ },
+ {
+  "n": 28,
+  "cls": "slide content t-slide fwd",
+  "title": "Alur mini project",
+  "max": 6,
+  "notes": "Jelaskan: muat di awal, simpan setiap perubahan. Workbook memakai function simpan_csv dan muat_csv (latihan L19–L20) sebagai fondasi.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": []
+   },
+   {
+    "s": 5,
+    "appear": []
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Data tersimpan di kegiatan.csv → tetap ada saat program dijalankan lagi."
+    ]
+   }
+  ],
+  "text": [
+   "Mini ProjectAlur Pencatat Kegiatan"
+  ]
+ },
+ {
+  "n": 29,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L19, L20",
+  "max": 0,
+  "notes": "40 menit coding + 10 menit diskusi.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Lengkapi simpan_csv dan muat_csv, lalu bangun menu pencatat kegiatan."
+  ]
+ },
+ {
+  "n": 30,
+  "cls": "slide content t-slide fwd",
+  "title": "Jebakan umum",
+  "max": 7,
+  "notes": "Output adalah pesan error asli Python. Tunjukkan juga ModuleNotFoundError dan UnicodeDecodeError bila waktu ada.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "f(1)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "TypeError: f() missing 1 required positional argument: 'b'"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "x += 1 # di dalam f()"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "UnboundLocalError: cannot access local variable 'x' where it is not associated with a value"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "open(\"tidak_ada.txt\")"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "FileNotFoundError: [Errno 2] No such file or directory: 'tidak_ada.txt'"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Periksa path dengan Path(...).exists(); path relatif bergantung pada folder tempat program dijalankan."
+    ]
+   }
+  ],
+  "text": [
+   "TroubleshootingJebakan yang paling sering",
+   "f(1)",
+   "x += 1 # di dalam f()",
+   "open(\"tidak_ada.txt\")"
+  ]
+ },
+ {
+  "n": 31,
+  "cls": "slide content t-slide fwd",
+  "title": "Rekap",
+  "max": 6,
+  "notes": "Minta peserta menjalankan sel Rekap hasil latihan di akhir notebook.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Function: parameter, default, *args/**kwargs, return vs print, scope"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Lambda, map/filter, comprehension, sorted(key=)"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Module & import; try/except/else/finally dan raise"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "File teks & CSV dengan with + pathlib"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Mini project pencatat kegiatan yang persisten"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Besok (Hari 3): Object-Oriented Programming"
+    ]
+   }
+  ],
+  "text": [
+   "Rekap Hari 2",
+   "Function: parameter, default, *args/**kwargs, return vs print, scope",
+   "Lambda, map/filter, comprehension, sorted(key=)",
+   "Module & import; try/except/else/finally dan raise",
+   "File teks & CSV dengan with + pathlib",
+   "Mini project pencatat kegiatan yang persisten",
+   "Besok (Hari 3): Object-Oriented Programming"
+  ]
+ }
+]

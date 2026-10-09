@@ -1,0 +1,977 @@
+[
+ {
+  "n": 1,
+  "cls": "slide title t-zoom fwd",
+  "title": "Visualisasi, API & Scraping",
+  "max": 0,
+  "notes": "Pembukaan (±10 menit). Ulas Hari 4 (pipeline data). Hari ini: menyajikan data dengan grafik dan mengambil data dari API/web. Catatan: bila jaringan terbatas, buku kerja memakai data contoh/fallback.",
+  "steps": [],
+  "text": [
+   "Visualisasi, API & Scraping"
+  ]
+ },
+ {
+  "n": 2,
+  "cls": "slide content t-slide fwd",
+  "title": "Agenda",
+  "max": 9,
+  "notes": "Total 360 menit.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Opening"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Matplotlib"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Seaborn"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Rehat"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "API & JSON"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Scraping & arXiv"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Mini project"
+    ]
+   },
+   {
+    "s": 8,
+    "appear": [
+     "Rekap"
+    ]
+   },
+   {
+    "s": 9,
+    "appear": [
+     "Total ±6 jam. Demo singkat → peserta coba di buku kerja."
+    ]
+   }
+  ],
+  "text": [
+   "Agenda Hari 5",
+   "Total ±6 jam. Demo singkat → peserta coba di buku kerja."
+  ]
+ },
+ {
+  "n": 3,
+  "cls": "slide content t-slide fwd",
+  "title": "Tujuan",
+  "max": 6,
+  "notes": "Tujuan hari ini.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "membuat line, bar, scatter, histogram, dan subplot dengan Matplotlib"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "memakai Seaborn untuk distribusi, relasi, dan heatmap"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "memanggil API dengan requests dan mengolah JSON"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "menangani error jaringan (timeout, 404, 429)"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "melakukan scraping secara etis dengan BeautifulSoup & membaca feed arXiv"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "membangun dashboard dan pipeline data mini"
+    ]
+   }
+  ],
+  "text": [
+   "Setelah hari ini Anda bisa…",
+   "membuat line, bar, scatter, histogram, dan subplot dengan Matplotlib",
+   "memakai Seaborn untuk distribusi, relasi, dan heatmap",
+   "memanggil API dengan requests dan mengolah JSON",
+   "menangani error jaringan (timeout, 404, 429)",
+   "melakukan scraping secara etis dengan BeautifulSoup & membaca feed arXiv",
+   "membangun dashboard dan pipeline data mini"
+  ]
+ },
+ {
+  "n": 4,
+  "cls": "slide section t-rise fwd",
+  "title": "A. Matplotlib",
+  "max": 0,
+  "notes": "Blok 60 menit: konsep (30) + latihan L1–L5 (30).",
+  "steps": [],
+  "text": [
+   "Matplotlib",
+   "Grafik dasar yang jelas dan jujur"
+  ]
+ },
+ {
+  "n": 5,
+  "cls": "slide content t-slide fwd",
+  "title": "Anatomi grafik",
+  "max": 4,
+  "notes": "Klik 1: kerangka sumbu. Klik 2: garis digambar. Klik 3: judul & label. Selalu beri judul, label sumbu, satuan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "fig, ax = plt.subplots()"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "ax.plot(hari, suhu, marker=\"o\")"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "ax.set_title(\"Suhu Harian\")",
+     "ax.set_xlabel(\"Hari\")",
+     "ax.set_ylabel(\"°C\")",
+     "Suhu HarianHari°C"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "plt.show()"
+    ]
+   }
+  ],
+  "text": [
+   "MatplotlibAnatomi grafik Matplotlib",
+   "import matplotlib.pyplot as plt hari = [\"Sen\", \"Sel\", \"Rab\", \"Kam\", \"Jum\"]suhu = [30, 32, 31, 29, 33] fig, ax = plt.subplots()ax.plot(hari, suhu, marker=\"o\")ax.set_title(\"Suhu Harian\")ax.set_xlabel(\"Hari\")ax.set_ylabel(\"°C\")plt.show()"
+  ]
+ },
+ {
+  "n": 6,
+  "cls": "slide content t-slide fwd",
+  "title": "Memilih grafik",
+  "max": 5,
+  "notes": "Mulai dari pertanyaan, bukan dari jenis grafik.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Bagaimana perubahan dari waktu ke waktu?Lineax.plot"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Bandingkan antar kategori?Barax.bar"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Apakah dua variabel berhubungan?Scatterax.scatter"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Bagaimana sebaran nilai?Histogramax.hist"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Bagian dari keseluruhan (sedikit kategori)?Pieax.pie"
+    ]
+   }
+  ],
+  "text": [
+   "MatplotlibPilih jenis grafik sesuai pertanyaan",
+   "Pertanyaan",
+   "Grafik",
+   "Fungsi",
+   "Bagaimana perubahan dari waktu ke waktu?",
+   "Line",
+   "ax.plot",
+   "Bandingkan antar kategori?",
+   "Bar",
+   "ax.bar",
+   "Apakah dua variabel berhubungan?",
+   "Scatter",
+   "ax.scatter",
+   "Bagaimana sebaran nilai?",
+   "Histogram",
+   "ax.hist",
+   "Bagian dari keseluruhan (sedikit kategori)?",
+   "Pie",
+   "ax.pie"
+  ]
+ },
+ {
+  "n": 7,
+  "cls": "slide content t-slide fwd",
+  "title": "Bar, scatter, histogram",
+  "max": 4,
+  "notes": "Tiga grafik muncul bergantian. Bar = kategori, scatter = hubungan, histogram = sebaran.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "01234IFSITI3.43.73.1BarIPK"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "3.4",
+     "3.7",
+     "3.1",
+     "0255075100Scatterjam belajar"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "BarIPK",
+     "Scatterjam belajar",
+     "02.557.5105060708090Histogramnilai",
+     "Histogramnilai"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "ax.bar(prodi, ipk) ax.scatter(jam, nilai) ax.hist(nilai, bins=5)"
+    ]
+   }
+  ],
+  "text": [
+   "MatplotlibBar, scatter, histogram",
+   "ax.bar(prodi, ipk) ax.scatter(jam, nilai) ax.hist(nilai, bins=5)"
+  ]
+ },
+ {
+  "n": 8,
+  "cls": "slide content t-slide fwd",
+  "title": "Subplot",
+  "max": 7,
+  "notes": "axes[baris, kolom] — mirip indexing array NumPy.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": [
+     "axes[0, 0].plot(x, y)"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "axes[0, 1].bar(k, v)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "axes[1, 0].hist(data)"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "axes[1, 1].scatter(a, b)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "fig.tight_layout()",
+     "fig.savefig(\"dashboard.png\", dpi=150)"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Di skrip .py / server tanpa layar, plt.show() tidak tampil → gunakan savefig()."
+    ]
+   }
+  ],
+  "text": [
+   "MatplotlibSubplot & simpan grafik",
+   "fig, axes = plt.subplots(2, 2, figsize=(8, 6))axes[0, 0].plot(x, y)axes[0, 1].bar(k, v)axes[1, 0].hist(data)axes[1, 1].scatter(a, b)fig.tight_layout()fig.savefig(\"dashboard.png\", dpi=150)",
+   "plot",
+   "bar",
+   "hist",
+   "scatter"
+  ]
+ },
+ {
+  "n": 9,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L1, L2, L3, L4, L5",
+  "max": 0,
+  "notes": "30 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Line, bar, histogram + garis rata-rata, dashboard 2×2, simpan ke file."
+  ]
+ },
+ {
+  "n": 10,
+  "cls": "slide section t-rise fwd",
+  "title": "B. Seaborn",
+  "max": 0,
+  "notes": "Blok 40 menit: konsep (20) + latihan L6–L8 (20).",
+  "steps": [],
+  "text": [
+   "Seaborn",
+   "Grafik statistik dengan sedikit kode"
+  ]
+ },
+ {
+  "n": 11,
+  "cls": "slide content t-slide fwd",
+  "title": "Seaborn",
+  "max": 5,
+  "notes": "Beri nama kolom persis seperti di DataFrame — salah ketik = ValueError.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "sns.histplot(df, x=\"nilai\", kde=True)",
+     "histplotdistribusi"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "sns.boxplot(data=df, x=\"hari\", y=\"tip\")",
+     "boxplotsebaran + outlier"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "scatterplotrelasi + hue"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "heatmapkorelasi"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Seaborn bekerja di atas Matplotlib: judul/label tetap diatur dengan plt.title() dsb."
+    ]
+   }
+  ],
+  "text": [
+   "SeabornSeaborn — langsung dari DataFrame",
+   "import seaborn as sns sns.histplot(df, x=\"nilai\", kde=True)sns.boxplot(data=df, x=\"hari\", y=\"tip\")sns.scatterplot(data=df, x=\"jam\", y=\"nilai\", hue=\"prodi\")sns.heatmap(df.corr(numeric_only=True), annot=True)",
+   "Grafik",
+   "Untuk",
+   "histplot",
+   "distribusi",
+   "boxplot",
+   "sebaran + outlier",
+   "scatterplot",
+   "relasi + hue",
+   "heatmap",
+   "korelasi"
+  ]
+ },
+ {
+  "n": 12,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L6, L7, L8",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Boxplot per hari, heatmap korelasi, countplot & barplot."
+  ]
+ },
+ {
+  "n": 13,
+  "cls": "slide content work t-slide fwd",
+  "title": "Rehat",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "RehatRehat ☕",
+   "Berikutnya: API & JSON."
+  ]
+ },
+ {
+  "n": 14,
+  "cls": "slide section t-rise fwd",
+  "title": "C. API & JSON",
+  "max": 0,
+  "notes": "Blok 60 menit: konsep (35) + latihan L9–L11 (25).",
+  "steps": [],
+  "text": [
+   "API & JSON",
+   "Meminta data dari server"
+  ]
+ },
+ {
+  "n": 15,
+  "cls": "slide content t-slide fwd",
+  "title": "Request-response",
+  "max": 5,
+  "notes": "Selalu pakai timeout dan raise_for_status(). Kode status: 2xx sukses, 4xx salah di klien, 5xx salah di server, 429 = terlalu sering.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "GET /users?limit=3"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "200 OK + JSON"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "GET /halaman-tidak-ada"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "404 Not Found"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "r = requests.get(url, params={\"limit\": 3}, timeout=10)r.raise_for_status() # error bila 4xx/5xxdata = r.json()"
+    ]
+   }
+  ],
+  "text": [
+   "APIAlur request → response",
+   "r = requests.get(url, params={\"limit\": 3}, timeout=10)r.raise_for_status() # error bila 4xx/5xxdata = r.json()"
+  ]
+ },
+ {
+  "n": 16,
+  "cls": "slide content t-slide fwd",
+  "title": "JSON",
+  "max": 5,
+  "notes": "Pada contoh ini respons_json adalah string JSON (dari r.text) berisi daftar pengguna dengan objek bersarang.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "d = json.loads(raw)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Bandung"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "df = pd.json_normalize(d[\"data\"])",
+     "print(df)",
+     "id nama kota.nama"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "0 1 Ani Bandung",
+     "json_normalize meratakan JSON bersarang jadi kolom: kota.nama."
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "1 2 Budi Medan"
+    ]
+   }
+  ],
+  "text": [
+   "APIJSON → dict → DataFrame",
+   "import json, pandas as pdraw = respons_jsond = json.loads(raw)print(d[\"data\"][0][\"kota\"][\"nama\"])df = pd.json_normalize(d[\"data\"])print(df)"
+  ]
+ },
+ {
+  "n": 17,
+  "cls": "slide content t-slide fwd",
+  "title": "Error jaringan",
+  "max": 7,
+  "notes": "Satu except requests.exceptions.RequestException menangkap Timeout, ConnectionError, HTTPError.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "r = requests.get(url, timeout=5)",
+     "r.raise_for_status()",
+     "return r.json()"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "except requests.exceptions.RequestException as e:",
+     "print(\"Gagal:\", type(e).__name__)",
+     "return None"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "200OK"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "404tidak ditemukan"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "429terlalu sering — tunggu"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "5xxserver bermasalah"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Siapkan fallback: cache lokal / data contoh agar program tetap jalan offline."
+    ]
+   }
+  ],
+  "text": [
+   "APIError handling jaringan",
+   "import requestsdef ambil(url): try: r = requests.get(url, timeout=5) r.raise_for_status() return r.json() except requests.exceptions.RequestException as e: print(\"Gagal:\", type(e).__name__) return None",
+   "Kode",
+   "Arti",
+   "200",
+   "OK",
+   "404",
+   "tidak ditemukan",
+   "429",
+   "terlalu sering — tunggu",
+   "5xx",
+   "server bermasalah"
+  ]
+ },
+ {
+  "n": 18,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L9, L10, L11",
+  "max": 0,
+  "notes": "25 menit. Data contoh tersedia di notebook bila jaringan terblokir.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Struktur JSON, json_normalize + agregasi, mengolah respons cuaca."
+  ]
+ },
+ {
+  "n": 19,
+  "cls": "slide section t-rise fwd",
+  "title": "D. Scraping & arXiv",
+  "max": 0,
+  "notes": "Blok 50 menit: konsep (30) + latihan L12–L13 (20).",
+  "steps": [],
+  "text": [
+   "Scraping & arXiv",
+   "Mengambil data dari halaman web & feed ilmiah"
+  ]
+ },
+ {
+  "n": 20,
+  "cls": "slide content t-slide fwd",
+  "title": "Etika",
+  "max": 5,
+  "notes": "Tekankan etika sebelum teknik.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Baca robots.txt dan Terms of Service situs"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Beri jeda antar request (rate limit), jangan membanjiri server"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Utamakan API resmi bila tersedia"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Jangan ambil data pribadi / yang dilindungi"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Cantumkan sumber data pada laporan"
+    ]
+   }
+  ],
+  "text": [
+   "ScrapingEtika scraping",
+   "Baca robots.txt dan Terms of Service situs",
+   "Beri jeda antar request (rate limit), jangan membanjiri server",
+   "Utamakan API resmi bila tersedia",
+   "Jangan ambil data pribadi / yang dilindungi",
+   "Cantumkan sumber data pada laporan"
+  ]
+ },
+ {
+  "n": 21,
+  "cls": "slide content t-slide fwd",
+  "title": "BeautifulSoup",
+  "max": 3,
+  "notes": "soup.select(\"li.judul\") memilih semua <li> berkelas judul (menyala pada klik 2).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "▸<html>",
+     "▸<body>",
+     "▸<ul>",
+     "▸<li class=\"judul\">Python 3.14 rilis",
+     "▸<li class=\"judul\">AI kampus",
+     "soup = BeautifulSoup(html, \"html.parser\")"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "print(li.get_text())",
+     "Python 3.14 rilis"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "AI kampus"
+    ]
+   }
+  ],
+  "text": [
+   "ScrapingBeautifulSoup — menelusuri HTML",
+   "from bs4 import BeautifulSoupsoup = BeautifulSoup(html, \"html.parser\")for li in soup.select(\"li.judul\"): print(li.get_text())"
+  ]
+ },
+ {
+  "n": 22,
+  "cls": "slide content t-slide fwd",
+  "title": "arXiv",
+  "max": 7,
+  "notes": "Feed arXiv berformat Atom XML dengan namespace — itu sebabnya ns diperlukan. Notebook menyediakan sampel feed bila jaringan terblokir.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": []
+   },
+   {
+    "s": 5,
+    "appear": []
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Paper A 2025-01-10"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Paper B 2025-02-01"
+    ]
+   }
+  ],
+  "text": [
+   "arXivarXiv API — metadata paper",
+   "import xml.etree.ElementTree as ETns = {\"a\": \"http://www.w3.org/2005/Atom\"}root = ET.fromstring(feed_xml)for e in root.findall(\"a:entry\", ns): print(e.find(\"a:title\", ns).text, e.find(\"a:published\", ns).text[:10])"
+  ]
+ },
+ {
+  "n": 23,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L12, L13",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Mengurai HTML dengan BeautifulSoup dan feed arXiv."
+  ]
+ },
+ {
+  "n": 24,
+  "cls": "slide section t-rise fwd",
+  "title": "E. Mini Project",
+  "max": 0,
+  "notes": "Blok 100 menit: briefing (10) + coding (80) + diskusi (10).",
+  "steps": [],
+  "text": [
+   "Mini Project",
+   "Dashboard, API + visualisasi, pipeline arXiv"
+  ]
+ },
+ {
+  "n": 25,
+  "cls": "slide content t-slide fwd",
+  "title": "Pilih proyek",
+  "max": 5,
+  "notes": "Peserta memilih sesuai kemampuan; minimal selesaikan P1. Pemeriksa otomatis tersedia di workbook.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "P1Dashboard visualisasi nilaiDasar"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "P2API + visualisasiMenengah"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "P3Pipeline paper arXivMenengah–Tinggi"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "P4EDA lengkap dataset nyataTinggi"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Semua proyek memakai pola ambil → bersihkan → analisis → visualisasi → simpan."
+    ]
+   }
+  ],
+  "text": [
+   "Mini ProjectPilih tingkat tantangan",
+   "Project",
+   "Tema",
+   "Level",
+   "P1",
+   "Dashboard visualisasi nilai",
+   "Dasar",
+   "P2",
+   "API + visualisasi",
+   "Menengah",
+   "P3",
+   "Pipeline paper arXiv",
+   "Menengah–Tinggi",
+   "P4",
+   "EDA lengkap dataset nyata",
+   "Tinggi"
+  ]
+ },
+ {
+  "n": 26,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: P1, P2, P3, P4",
+  "max": 0,
+  "notes": "80 menit coding + 10 menit diskusi.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Mulai dari yang sesuai levelmu — tiap proyek ada pemeriksa ✅."
+  ]
+ },
+ {
+  "n": 27,
+  "cls": "slide content t-slide fwd",
+  "title": "Jebakan umum",
+  "max": 7,
+  "notes": "Pesan error asli. Tambahan: 429 (terlalu sering) → beri jeda; Timeout → tambah timeout/retry.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "plt.plot(x, y)"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "ValueError: x and y must have same first dimension, but have shapes (3,) and (2,)"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "json.loads(\"<html>…\")"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "d[\"data\"]"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "KeyError: 'data'"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Periksa r.status_code dan key \"error\" sebelum membaca data; pastikan respons memang JSON."
+    ]
+   }
+  ],
+  "text": [
+   "TroubleshootingJebakan yang paling sering",
+   "plt.plot(x, y)",
+   "json.loads(\"<html>…\")",
+   "d[\"data\"]"
+  ]
+ },
+ {
+  "n": 28,
+  "cls": "slide content t-slide fwd",
+  "title": "Rekap",
+  "max": 6,
+  "notes": "Minta peserta menjalankan sel Rekap hasil latihan. Ingatkan memilih jalur capstone malam ini.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Matplotlib: line/bar/scatter/hist, subplot, savefig"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Seaborn: histplot, boxplot, heatmap dari DataFrame"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "API: requests, JSON, json_normalize, error handling"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Scraping etis: BeautifulSoup & feed arXiv"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Mini project: dashboard & pipeline data"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Besok (Hari 6): Capstone Project"
+    ]
+   }
+  ],
+  "text": [
+   "Rekap Hari 5",
+   "Matplotlib: line/bar/scatter/hist, subplot, savefig",
+   "Seaborn: histplot, boxplot, heatmap dari DataFrame",
+   "API: requests, JSON, json_normalize, error handling",
+   "Scraping etis: BeautifulSoup & feed arXiv",
+   "Mini project: dashboard & pipeline data",
+   "Besok (Hari 6): Capstone Project"
+  ]
+ }
+]

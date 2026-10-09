@@ -1,0 +1,732 @@
+[
+ {
+  "n": 1,
+  "cls": "slide title t-zoom fwd",
+  "title": "Capstone Project",
+  "max": 0,
+  "notes": "Pembukaan. Hari ini peserta bekerja mandiri hampir sepanjang hari. Peran instruktur: pembimbing, bukan penceramah. Tunjukkan agenda dan format showcase di awal.",
+  "steps": [],
+  "text": [
+   "Capstone Project"
+  ]
+ },
+ {
+  "n": 2,
+  "cls": "slide content t-slide fwd",
+  "title": "Agenda",
+  "max": 7,
+  "notes": "Sesuai agenda Modul Hari 6.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Briefing + topik"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Perencanaan"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Pengerjaan capstone"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Rehat"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Finalisasi + dokumentasi"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Showcase"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Total 360 menit — setengah hari penuh untuk mengerjakan."
+    ]
+   }
+  ],
+  "text": [
+   "Agenda Hari 6",
+   "Total 360 menit — setengah hari penuh untuk mengerjakan."
+  ]
+ },
+ {
+  "n": 3,
+  "cls": "slide content t-slide fwd",
+  "title": "Tujuan",
+  "max": 4,
+  "notes": "Tujuan pembelajaran dari modul.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "mengintegrasikan skill Modul 1–5 dalam satu proyek utuh"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "merancang alur: data → cleaning → analisis → visualisasi → insight"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "menulis kode terstruktur (function / class) dan mengikuti PEP 8"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "menyajikan hasil dengan visualisasi & dokumentasi yang jelas"
+    ]
+   }
+  ],
+  "text": [
+   "Tujuan hari ini",
+   "mengintegrasikan skill Modul 1–5 dalam satu proyek utuh",
+   "merancang alur: data → cleaning → analisis → visualisasi → insight",
+   "menulis kode terstruktur (function / class) dan mengikuti PEP 8",
+   "menyajikan hasil dengan visualisasi & dokumentasi yang jelas"
+  ]
+ },
+ {
+  "n": 4,
+  "cls": "slide section t-rise fwd",
+  "title": "1. Briefing & Pilih Jalur",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "Briefing & Pilih Jalur",
+   "Tiga jalur, satu pipeline"
+  ]
+ },
+ {
+  "n": 5,
+  "cls": "slide content t-slide fwd",
+  "title": "Pilih jalur",
+  "max": 4,
+  "notes": "Bantu peserta memilih sesuai level & minat. Ingatkan: lebih baik selesai & rapi daripada ambisius tapi tak selesai.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Jalur A — EDAAnalisis dataset publik (Student Performance, Titanic, Penguins, Gapminder)Level menengah"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Jalur B — API / arXivPipeline data dari API / arXiv: ambil, bersihkan, analisis, visualisasiMenengah–tinggi"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Jalur C — AplikasiMini aplikasi analisis nilai / data akademik dengan class & CSVTinggi"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Boleh mengusulkan ide sendiri — dengan persetujuan instruktur."
+    ]
+   }
+  ],
+  "text": [
+   "BriefingPilih satu jalur capstone",
+   "Analisis dataset publik (Student Performance, Titanic, Penguins, Gapminder)",
+   "Level menengah",
+   "Pipeline data dari API / arXiv: ambil, bersihkan, analisis, visualisasi",
+   "Menengah–tinggi",
+   "Mini aplikasi analisis nilai / data akademik dengan class & CSV",
+   "Tinggi"
+  ]
+ },
+ {
+  "n": 6,
+  "cls": "slide content t-slide fwd",
+  "title": "Skill terintegrasi",
+  "max": 4,
+  "notes": "Peta skill tiap modul ke capstone.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Modul 1–2variabel, control flow, function, error handling, file I/O"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Modul 3class / OOP (opsional, dianjurkan)"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Modul 4NumPy & Pandas — wajib: cleaning, filter, groupby, merge/pivot"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Modul 5Matplotlib/Seaborn + API atau scraping — wajib ada visualisasi"
+    ]
+   }
+  ],
+  "text": [
+   "BriefingSkill yang harus terintegrasi",
+   "Modul",
+   "Skill yang dipakai",
+   "Modul 1–2",
+   "variabel, control flow, function, error handling, file I/O",
+   "Modul 3",
+   "class / OOP (opsional, dianjurkan)",
+   "Modul 4",
+   "NumPy & Pandas — wajib: cleaning, filter, groupby, merge/pivot",
+   "Modul 5",
+   "Matplotlib/Seaborn + API atau scraping — wajib ada visualisasi"
+  ]
+ },
+ {
+  "n": 7,
+  "cls": "slide section t-rise fwd",
+  "title": "2. Perencanaan",
+  "max": 0,
+  "notes": "40 menit: pertanyaan analisis (15) + struktur folder (10) + rencana waktu (15).",
+  "steps": [],
+  "text": [
+   "Perencanaan",
+   "Pertanyaan analisis dan struktur proyek"
+  ]
+ },
+ {
+  "n": 8,
+  "cls": "slide content t-slide fwd",
+  "title": "Pertanyaan analisis",
+  "max": 3,
+  "notes": "Peserta menulis pertanyaan di workbook (L1).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Pertanyaan yang baik"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Pertanyaan yang lemah"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Tulis 3–5 pertanyaan sebelum menulis kode — itu menentukan grafik dan insight."
+    ]
+   }
+  ],
+  "text": [
+   "PerencanaanMulai dari pertanyaan analisis",
+   "Pertanyaan yang baik",
+   "spesifik & bisa dijawab dengan data",
+   "\"Apakah jam belajar berpengaruh pada nilai?\"",
+   "\"Prodi mana dengan rata-rata IPK tertinggi?\"",
+   "Pertanyaan yang lemah",
+   "terlalu umum: \"Analisis data ini\"",
+   "tidak bisa diukur: \"Mana yang bagus?\""
+  ]
+ },
+ {
+  "n": 9,
+  "cls": "slide content t-slide fwd",
+  "title": "Struktur folder",
+  "max": 5,
+  "notes": "Struktur folder yang direkomendasikan modul. Peserta membuatnya di workbook (L2).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "▾capstone_nama_anda/"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "▾data/raw/ · processed/",
+     "Pisahkan data mentah dari data hasil olahan — data mentah tidak pernah diubah."
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "▾src/kode .py",
+     "▾notebooks/bila pakai Jupyter"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "▾output/figures/ · reports/",
+     "Path relatif tergantung folder tempat program dijalankan → pakai Path(__file__)."
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "▪requirements.txt",
+     "▪README.md"
+    ]
+   }
+  ],
+  "text": [
+   "PerencanaanStruktur folder proyek"
+  ]
+ },
+ {
+  "n": 10,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L1, L2",
+  "max": 0,
+  "notes": "40 menit perencanaan.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Pilih jalur & topik, tulis pertanyaan analisis, siapkan struktur folder."
+  ]
+ },
+ {
+  "n": 11,
+  "cls": "slide section t-rise fwd",
+  "title": "3. Pengerjaan Capstone",
+  "max": 0,
+  "notes": "180 menit coding mandiri. Keliling, bantu yang buntu, jangan memberi solusi penuh.",
+  "steps": [],
+  "text": [
+   "Pengerjaan Capstone",
+   "Clean → Analyze → Visualize → Insight"
+  ]
+ },
+ {
+  "n": 12,
+  "cls": "slide content t-slide fwd",
+  "title": "Alokasi waktu",
+  "max": 7,
+  "notes": "Tips manajemen waktu dari modul.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Load + inspeksi"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Cleaning"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Analisis"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Visualisasi"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Insight + export"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Buffer"
+    ]
+   },
+   {
+    "s": 7,
+    "appear": [
+     "Jangan terlalu lama di cleaning. Cukup baik > sempurna tapi kehabisan waktu. Kerjakan visualisasi terpenting dulu. Simpan sesering mungkin."
+    ]
+   }
+  ],
+  "text": [
+   "PengerjaanSaran alokasi waktu coding (180 mnt)"
+  ]
+ },
+ {
+  "n": 13,
+  "cls": "slide content t-slide fwd",
+  "title": "Struktur kode",
+  "max": 6,
+  "notes": "Standar kualitas kode: nama bermakna, function/class, docstring, PEP 8, error handling.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "def muat_data(path): ..."
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "def bersihkan(df): ...",
+     "Function kecil lebih mudah diuji & diperbaiki."
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "def analisis(df): ..."
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "def buat_grafik(df, out_dir): ...",
+     "Sertakan docstring singkat + error handling pada baca file / panggil API."
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "def main():",
+     "df = bersihkan(muat_data(PATH))",
+     "hasil = analisis(df)",
+     "buat_grafik(df, OUT)"
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "if __name__ == \"__main__\":",
+     "main()",
+     "Kode harus bisa dijalankan dari atas ke bawah tanpa error."
+    ]
+   }
+  ],
+  "text": [
+   "PengerjaanPipeline yang rapi: satu function, satu tugas",
+   "def muat_data(path): ...def bersihkan(df): ...def analisis(df): ...def buat_grafik(df, out_dir): ...def main(): df = bersihkan(muat_data(PATH)) hasil = analisis(df) buat_grafik(df, OUT) if __name__ == \"__main__\": main()"
+  ]
+ },
+ {
+  "n": 14,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L3, L4, L5, L6",
+  "max": 0,
+  "notes": "180 menit. Checkpoint: menit ke-60 data bersih; menit ke-120 minimal 3 grafik; menit ke-170 insight pertama.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Bangun pipeline pada proyekmu. Workbook menyediakan pola & pemeriksa untuk cleaning, analisis, visualisasi, insight."
+  ]
+ },
+ {
+  "n": 15,
+  "cls": "slide content work t-slide fwd",
+  "title": "Rehat",
+  "max": 0,
+  "notes": "20 menit.",
+  "steps": [],
+  "text": [
+   "RehatRehat ☕",
+   "Berikutnya: finalisasi & dokumentasi."
+  ]
+ },
+ {
+  "n": 16,
+  "cls": "slide section t-rise fwd",
+  "title": "4. Finalisasi & Dokumentasi",
+  "max": 0,
+  "notes": "60 menit: README (20) + cek deliverable (20) + polesan (20).",
+  "steps": [],
+  "text": [
+   "Finalisasi & Dokumentasi",
+   "Membuat proyek siap dipakai orang lain"
+  ]
+ },
+ {
+  "n": 17,
+  "cls": "slide content t-slide fwd",
+  "title": "Deliverables",
+  "max": 5,
+  "notes": "Deliverables dari modul (Bagian 6.2). Sel pemeriksa deliverable ada di workbook (L7).",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "kode sumber (.py / .ipynb) yang dapat dijalankan"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "file data atau instruksi cara mendapatkannya"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "minimal 4–5 visualisasi (PNG/PDF)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "dokumentasi capstone (judul, masalah, data, metode, hasil, insight, kesimpulan)"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "README.md dan requirements.txt"
+    ]
+   }
+  ],
+  "text": [
+   "FinalisasiDeliverables yang dikumpulkan",
+   "kode sumber (.py / .ipynb) yang dapat dijalankan",
+   "file data atau instruksi cara mendapatkannya",
+   "minimal 4–5 visualisasi (PNG/PDF)",
+   "dokumentasi capstone (judul, masalah, data, metode, hasil, insight, kesimpulan)",
+   "README.md dan requirements.txt"
+  ]
+ },
+ {
+  "n": 18,
+  "cls": "slide content t-slide fwd",
+  "title": "README",
+  "max": 8,
+  "notes": "Template README dari modul.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": []
+   },
+   {
+    "s": 2,
+    "appear": []
+   },
+   {
+    "s": 3,
+    "appear": []
+   },
+   {
+    "s": 4,
+    "appear": [
+     "## Sumber Data"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "## Cara Menjalankan",
+     "Cara Menjalankan: orang lain harus bisa menjalankan proyekmu hanya dari README."
+    ]
+   },
+   {
+    "s": 6,
+    "appear": [
+     "Insight: tulis temuan dalam kalimat, bukan hanya angka."
+    ]
+   },
+   {
+    "s": 7,
+    "appear": []
+   },
+   {
+    "s": 8,
+    "appear": []
+   }
+  ],
+  "text": [
+   "FinalisasiKerangka README.md",
+   "# Capstone: [Judul Project] ## Opsi Project## Deskripsi Singkat## Sumber Data## Cara Menjalankan## Hasil Utama / Insight## Struktur Folder## Pengembangan Selanjutnyamd"
+  ]
+ },
+ {
+  "n": 19,
+  "cls": "slide work t-zoom fwd",
+  "title": "Latihan: L7, L8, L9",
+  "max": 0,
+  "notes": "60 menit finalisasi.",
+  "steps": [],
+  "text": [
+   "Kerjakan di buku kerja",
+   "Pemeriksa deliverable, pola khusus Jalur B/C, self-review."
+  ]
+ },
+ {
+  "n": 20,
+  "cls": "slide section t-rise fwd",
+  "title": "5. Showcase",
+  "max": 0,
+  "notes": "40 menit. Sekitar 4–5 menit per peserta bila kelas kecil; untuk kelas besar pilih sukarelawan / lakukan dalam kelompok.",
+  "steps": [],
+  "text": [
+   "Showcase",
+   "Presentasikan hasilmu"
+  ]
+ },
+ {
+  "n": 21,
+  "cls": "slide content t-slide fwd",
+  "title": "Format showcase",
+  "max": 5,
+  "notes": "Beri umpan balik singkat: apa yang sudah baik + satu saran perbaikan.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Masalah"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "Data & metode"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Hasil (grafik)"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Insight"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Siapkan satu grafik terbaik dan satu temuan yang paling mengejutkan."
+    ]
+   }
+  ],
+  "text": [
+   "ShowcaseFormat showcase (±5 menit)"
+  ]
+ },
+ {
+  "n": 22,
+  "cls": "slide content t-slide fwd",
+  "title": "Review sejawat",
+  "max": 5,
+  "notes": "Checklist diambil dari ekspektasi kualitas kode & deliverables modul.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "pertanyaan analisis jelas dan terjawab"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "grafik punya judul, label sumbu, satuan"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "kode berjalan dari atas ke bawah tanpa error"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "ada function/class + docstring & error handling"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "README memungkinkan orang lain menjalankan proyek"
+    ]
+   }
+  ],
+  "text": [
+   "ShowcaseChecklist review sejawat",
+   "pertanyaan analisis jelas dan terjawab",
+   "grafik punya judul, label sumbu, satuan",
+   "kode berjalan dari atas ke bawah tanpa error",
+   "ada function/class + docstring & error handling",
+   "README memungkinkan orang lain menjalankan proyek"
+  ]
+ },
+ {
+  "n": 23,
+  "cls": "slide content t-slide fwd",
+  "title": "Penutup",
+  "max": 5,
+  "notes": "Penutup: apresiasi peserta, bagikan materi lanjutan dan tautan repositori.",
+  "steps": [
+   {
+    "s": 1,
+    "appear": [
+     "Python dasar → function → OOP"
+    ]
+   },
+   {
+    "s": 2,
+    "appear": [
+     "NumPy & Pandas untuk data"
+    ]
+   },
+   {
+    "s": 3,
+    "appear": [
+     "Visualisasi, API, scraping"
+    ]
+   },
+   {
+    "s": 4,
+    "appear": [
+     "Capstone: proyek analisis data end-to-end"
+    ]
+   },
+   {
+    "s": 5,
+    "appear": [
+     "Langkah berikutnya: perluas capstone (stretch goals), simpan di portofolio GitHub, dan terus latihan dengan dataset baru."
+    ]
+   }
+  ],
+  "text": [
+   "Selamat — Anda menyelesaikan bootcamp 🎉",
+   "Python dasar → function → OOP",
+   "NumPy & Pandas untuk data",
+   "Visualisasi, API, scraping",
+   "Capstone: proyek analisis data end-to-end",
+   "Langkah berikutnya: perluas capstone (stretch goals), simpan di portofolio GitHub, dan terus latihan dengan dataset baru."
+  ]
+ }
+]

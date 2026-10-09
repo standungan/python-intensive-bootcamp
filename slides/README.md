@@ -31,6 +31,10 @@ Slide berbasis web untuk **dibawakan langsung oleh instruktur** sementara pesert
 - Semua output kode pada slide berasal dari eksekusi Python sungguhan saat deck dibangun.
 - `prefers-reduced-motion` dihormati (animasi dimatikan).
 
+## Naskah video
+
+Naskah narasi per slide dan per langkah untuk merekam video tutorial ada di [naskah/](naskah/README.md).
+
 ## Membangun ulang
 
 ```bash
