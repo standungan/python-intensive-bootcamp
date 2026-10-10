@@ -7,6 +7,7 @@ Materi Python Intensive Bootcamp (6 hari): modul lengkap dengan seluruh kode sud
 ```text
 materi/            6 modul (Markdown) + docx asli + gambar
 contoh-capstone/   4 contoh capstone lengkap (Jalur A/B/C/D) sebagai bahan belajar
+produk/            produk digital PDF: Buku Materi dan Buku Solusi
 workbook/          buku kerja Jupyter per hari (+ solusi, + versi HTML)
 slides/            slide web HTML untuk instruktur (satu deck per hari)
 ```
@@ -19,6 +20,7 @@ Persiapan lingkungan ([slide Hari 0](slides/hari0-setup-lingkungan.html)) → `m
 
 | Modul | Topik | Markdown | Dokumen asli |
 |---|---|---|---|
+| 0 | Persiapan Lingkungan (Python, venv, Jupyter) | [modul00](materi/modul00-persiapan-lingkungan.md) | — |
 | 1 | Python Fundamentals | [modul01](materi/modul01-python-fundamentals.md) | [docx](materi/docx/Modul_01_Python_Fundamentals.docx) |
 | 2 | Functions, Modules & File Handling | [modul02](materi/modul02-functions-modules-file-handling.md) | [docx](materi/docx/Modul_02_Functions_Modules_FileHandling.docx) |
 | 3 | Object-Oriented Programming | [modul03](materi/modul03-oop.md) | [docx](materi/docx/Modul_03_Object_Oriented_Programming.docx) |
@@ -27,6 +29,10 @@ Persiapan lingkungan ([slide Hari 0](slides/hari0-setup-lingkungan.html)) → `m
 | 6 | Capstone Project (Jalur A/B/C/D) | [modul06](materi/modul06-capstone-project.md) | [docx](materi/docx/Modul_06_Capstone_Project.docx) · [docx versi 1](materi/docx/Modul_06_Capstone_Project_Versi1.docx) |
 
 Materi versi 1 dan 2 sudah digabung. Modul 1–5 identik di kedua versi (docx byte-per-byte sama), sehingga hanya ada satu salinan. Modul 6 memuat empat jalur: A–C dari versi 2 dan Jalur D (aplikasi analisis nilai berbasis OOP) dari modul Hari 6 versi 1, beserta agenda dan alokasi waktu, ekspektasi kualitas kode, dan rekomendasi dataset dari versi 1. Dokumen asli versi 1 tetap disimpan di `materi/docx/`.
+
+## Produk digital (PDF)
+
+Dua PDF siap bagikan di [produk/](produk/README.md): **Buku Materi** (Modul 0–6 dengan contoh output asli, 152 halaman) dan **Buku Solusi** (solusi 102 latihan + contoh capstone utuh, 104 halaman).
 
 ## Contoh capstone
 
