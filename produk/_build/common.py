@@ -7,7 +7,8 @@ from pygments.formatters import HtmlFormatter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FMT = HtmlFormatter(nowrap=True, classprefix='k-')
-TITLE = 'Python Intensive Bootcamp'
+TITLE = 'Belajar Pemrograman Python'
+SUBTITLE = 'Materi dasar, Data Analisis, Visualisasi data, dan Capstone Project'
 
 def esc(s): return html.escape(str(s), quote=False)
 def slug(s): return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')[:60]
@@ -72,7 +73,7 @@ def md_to_html(text, base_dir, shift=1, id_prefix='', collect=None):
 
 CSS = r'''
 @page { size: A4; margin: 22mm 18mm 22mm 18mm;
-  @bottom-left { content: "%(title)s"; font: 8pt "Liberation Sans", sans-serif; color: #64748b; }
+  @bottom-left { content: "__FOOTER__"; font: 8pt "Liberation Sans", sans-serif; color: #64748b; }
   @bottom-right { content: counter(page); font: 8pt "Liberation Sans", sans-serif; color: #64748b; } }
 @page cover { margin: 0; @bottom-left { content: none } @bottom-right { content: none } }
 @page opener { @bottom-left { content: none } @bottom-right { content: none } }
@@ -105,7 +106,7 @@ p.outlabel { font: bold 7.5pt "Liberation Sans"; letter-spacing: .08em; text-tra
 .k-m,.k-mi,.k-mf,.k-mh,.k-mo,.k-il { color: #fdba74; }
 .k-nf,.k-fm { color: #7dd3fc; } .k-nc,.k-nn { color: #a5b4fc; } .k-nb,.k-bp { color: #7dd3fc; } .k-nd { color: #fbbf24; }
 .k-o { color: #f472b6; } .k-err { color: #fecaca; }
-table { border-collapse: collapse; width: 100%%; margin: 6pt 0 10pt; font-size: 9pt; break-inside: avoid; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt; font-size: 9pt; break-inside: avoid; }
 th { background: #e2e8f0; text-align: left; font-weight: 700; }
 th,td { border: 1px solid var(--line); padding: 3.5pt 6pt; vertical-align: top; }
 tr:nth-child(even) td { background: #f8fafc; }
@@ -117,11 +118,11 @@ blockquote p:last-child { margin: 0; }
 .callout.tip { background: #f0fdf4; border-color: #22c55e; } .callout.tip .ct { color: #15803d; }
 .callout.warning,.callout.caution { background: #fffbeb; border-color: #f59e0b; } .callout.warning .ct,.callout.caution .ct { color: #b45309; }
 .callout.important { background: #faf5ff; border-color: #a855f7; } .callout.important .ct { color: #7e22ce; }
-img { max-width: 100%%; max-height: 120mm; display: block; margin: 6pt auto; border: 1px solid var(--line); border-radius: 4pt; break-inside: avoid; }
+img { max-width: 100%; max-height: 120mm; display: block; margin: 6pt auto; border: 1px solid var(--line); border-radius: 4pt; break-inside: avoid; }
 hr { border: none; border-top: 1px solid var(--line); margin: 12pt 0; }
 /* sampul */
 .cover { page: cover; width: 210mm; height: 297mm; padding: 28mm 22mm; color: #fff; display: flex; flex-direction: column; justify-content: space-between;
-  background: radial-gradient(circle at 85%% 12%%, #3b82f6 0, transparent 38%%), radial-gradient(circle at 10%% 95%%, #f59e0b55 0, transparent 40%%), linear-gradient(160deg, #0b1b3f 0%%, #0f172a 100%%); break-after: page; }
+  background: radial-gradient(circle at 85% 12%, #3b82f6 0, transparent 38%), radial-gradient(circle at 10% 95%, #f59e0b55 0, transparent 40%), linear-gradient(160deg, #0b1b3f 0%, #0f172a 100%); break-after: page; }
 .cover .kick { font: bold 10pt "Liberation Sans"; letter-spacing: .25em; text-transform: uppercase; color: #93c5fd; }
 .cover h1 { font-size: 40pt; line-height: 1.08; margin: 10mm 0 6mm; color: #fff; }
 .cover .sub { font-size: 14pt; color: #cbd5e1; max-width: 140mm; line-height: 1.4; }
@@ -161,10 +162,11 @@ pre.chk { background: #f5f3ff; color: #4c1d95; border-left: 3pt solid #8b5cf6; b
 .gallery img { max-height: 70mm; margin: 0; }
 .src-title { font: bold 9pt "DejaVu Sans Mono"; color: var(--mut); margin: 10pt 0 -2pt; }
 pre.code.src { font-size: 6.9pt; line-height: 1.38; }
-''' % {'title': TITLE}
+'''
 
-def page(title, body, extra_css=''):
-    return f'<!doctype html><html lang="id"><head><meta charset="utf-8"><title>{esc(title)}</title><style>{CSS}{extra_css}</style></head><body>{body}</body></html>'
+def page(title, body, footer='', extra_css=''):
+    css = CSS.replace('__FOOTER__', footer or title)
+    return f'<!doctype html><html lang="id"><head><meta charset="utf-8"><title>{esc(title)}</title><style>{css}{extra_css}</style></head><body>{body}</body></html>'
 
 def cover(kicker, title, sub, badge, glyph, foot):
     return (f'<section class="cover"><div><div class="kick">{esc(kicker)}</div><h1>{title}</h1><div class="sub">{sub}</div>'

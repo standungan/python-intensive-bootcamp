@@ -115,7 +115,7 @@ def appendix(toc):
 HOWTO = """
 <section class="legal">
 <h2>Tentang buku ini</h2>
-<p><b>Python Intensive Bootcamp — Buku Solusi</b> memuat solusi lengkap untuk <b>%(n)d latihan dan mini project</b> pada buku kerja Hari 1–6, ditambah contoh capstone utuh sebagai lampiran. Setiap solusi dijalankan sungguhan: output dan hasil pemeriksa adalah hasil eksekusi nyata.</p>
+<p><b>Belajar Pemrograman Python — Buku Solusi</b> memuat solusi lengkap untuk <b>%(n)d latihan dan mini project</b> pada buku kerja Hari 1–6, ditambah contoh capstone utuh sebagai lampiran. Setiap solusi dijalankan sungguhan: output dan hasil pemeriksa adalah hasil eksekusi nyata.</p>
 <h3>Cara membaca setiap latihan</h3>
 <ul>
 <li><b>Soal</b> — instruksi latihan persis seperti di buku kerja.</li>
@@ -145,7 +145,7 @@ def run():
     chapters.append(appendix(toc))
     howto = HOWTO % {'n': total, 'rows': ''.join(rows), 'y': YEAR, 'o': OWNER}
     def make(pages):
-        cov = C.cover('Python Intensive Bootcamp', 'Buku Solusi<br>Semua Latihan, Lengkap', f'Solusi bertahap untuk {total} latihan dan mini project, lengkap dengan output, hasil pemeriksa, dan contoh capstone utuh.',
+        cov = C.cover('Buku Solusi', 'Belajar<br>Pemrograman Python', C.SUBTITLE,
                       f'{total} solusi · Edisi 1', 'def solusi(soal):<br>&nbsp;&nbsp;&nbsp;&nbsp;return jawaban', f'{OWNER} · {YEAR}')
-        return C.page('Python Intensive Bootcamp — Buku Solusi', cov + howto + C.toc_html(toc, pages) + ''.join(chapters))
-    build_book('solusi', make, toc, os.path.join(OUT, 'Python-Intensive-Bootcamp-Buku-Solusi.pdf'))
+        return C.page('Belajar Pemrograman Python — Buku Solusi', cov + howto + C.toc_html(toc, pages) + ''.join(chapters), footer='Belajar Pemrograman Python · Buku Solusi')
+    build_book('solusi', make, toc, os.path.join(OUT, 'Belajar-Pemrograman-Python-Buku-Solusi.pdf'))

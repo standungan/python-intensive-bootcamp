@@ -21,7 +21,7 @@ def load(md):
 HOWTO = f"""
 <section class="legal">
 <h2>Tentang buku ini</h2>
-<p><b>Python Intensive Bootcamp — Buku Materi</b> adalah materi lengkap bootcamp Python enam hari, ditambah bab persiapan lingkungan. Setiap pembahasan disertai kasus beragam, kode yang <b>sudah dijalankan</b>, dan <b>contoh output</b> asli sehingga Anda dapat membandingkan hasil di komputer sendiri.</p>
+<p><b>Belajar Pemrograman Python — Buku Materi</b> adalah materi lengkap pemrograman Python dari dasar hingga analisis data, visualisasi, dan capstone project (disusun untuk bootcamp enam hari), ditambah bab persiapan lingkungan. Setiap pembahasan disertai kasus beragam, kode yang <b>sudah dijalankan</b>, dan <b>contoh output</b> asli sehingga Anda dapat membandingkan hasil di komputer sendiri.</p>
 <h3>Isi buku</h3>
 <ul>
 <li><b>Modul 0</b> — Persiapan lingkungan: Python, terminal, venv, pip, Jupyter.</li>
@@ -63,8 +63,8 @@ def run():
         op = C.opener(str(i), f'Modul {i} — {short}', tag, COLORS[i], oid, [t for _, t, _ in h2s][:16])
         parts.append(op + f'<section class="chapter">{html_body}</section>')
     def make(pages):
-        cov = C.cover('Python Intensive Bootcamp', 'Buku Materi<br>Lengkap dengan Contoh Output', 'Dari nol sampai capstone: Python, OOP, NumPy &amp; Pandas, visualisasi, API, dan scraping — enam hari, satu buku.',
+        cov = C.cover('Buku Materi', 'Belajar<br>Pemrograman Python', C.SUBTITLE,
                       'Edisi 1 · Python 3.11', 'x = 42<br>if x &gt; 0:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("halo")', f'{OWNER} · {YEAR}')
-        return C.page('Python Intensive Bootcamp — Buku Materi', cov + HOWTO + C.toc_html(toc, pages) + ''.join(parts))
+        return C.page('Belajar Pemrograman Python — Buku Materi', cov + HOWTO + C.toc_html(toc, pages) + ''.join(parts), footer='Belajar Pemrograman Python · Buku Materi')
     os.makedirs(OUT, exist_ok=True)
-    build_book('materi', make, toc, os.path.join(OUT, 'Python-Intensive-Bootcamp-Buku-Materi.pdf'))
+    build_book('materi', make, toc, os.path.join(OUT, 'Belajar-Pemrograman-Python-Buku-Materi.pdf'))
