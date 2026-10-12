@@ -7,7 +7,7 @@ import common as C
 ROOT = os.path.abspath(os.path.join(C.HERE, '..', '..'))
 OUT = os.path.join(ROOT, 'produk')
 YEAR = '2026'
-OWNER = 'Python Intensive Bootcamp'   # ubah sesuai nama penerbit/penulis
+OWNER = 'Sofyan Tandungan'   # ubah sesuai nama penerbit/penulis
 COLORS = ['#f59e0b', '#0ea5e9', '#10b981', '#8b5cf6', '#f97316', '#ec4899', '#14b8a6']
 
 def render(html_path, pdf_path):
