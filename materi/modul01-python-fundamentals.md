@@ -1317,4 +1317,4 @@ Budi
 
 > **Modul 1 (lengkap) selesai? Lanjut ke Modul 2.**
 >
-> Python Intensive — Modul Belajar Mandiri
+> Belajar Pemrograman Python — Modul Belajar Mandiri

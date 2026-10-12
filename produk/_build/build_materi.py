@@ -34,15 +34,15 @@ HOWTO = f"""
 <ul>
 <li><b>Ketik ulang</b> contoh kode, lalu ubah angka atau konteksnya — jangan hanya membaca.</li>
 <li>Bandingkan hasil Anda dengan blok <b>Output</b> (berlatar hijau). Blok <b>Pseudocode</b> (kuning) adalah kerangka berpikir sebelum menulis kode.</li>
-<li>Kerjakan latihan di akhir tiap bab sebelum melihat <b>Buku Solusi</b> (produk pendamping).</li>
+<li>Kerjakan latihan di akhir tiap bab dan di <b>Buku Kerja</b> sebelum melihat <b>Buku Solusi</b> (PDF terpisah).</li>
 <li>Bagian <b>Troubleshooting</b> memuat kasus error nyata beserta perbaikannya.</li>
 </ul>
 <h3>Lingkungan pengujian</h3>
 <p>Seluruh kode dijalankan dengan Python 3.11 (pandas 3.0.6, numpy 2.4.6, matplotlib 3.11.2, seaborn 0.13.2). Blok yang memakai <code>input()</code> dijalankan dengan input simulasi; blok yang memanggil API yang tidak dapat diakses saat pengujian memakai respons tiruan dan diberi catatan.</p>
 <h3>Produk pendamping</h3>
 <ul>
-<li><b>Buku Solusi</b> — solusi lengkap setiap latihan dan mini project.</li>
-<li><b>Buku kerja Jupyter</b> (folder <code>3-Buku-Kerja</code> pada paket) dengan pemeriksa jawaban otomatis untuk setiap latihan.</li>
+<li><b>Buku Solusi</b> (PDF terpisah) — solusi lengkap setiap latihan dan mini project.</li>
+<li><b>Buku kerja Jupyter</b> (folder <code>2-Buku-Kerja</code> pada paket) dengan pemeriksa jawaban otomatis untuk setiap latihan.</li>
 </ul>
 <p style="margin-top:14pt;color:#64748b;font-size:8.5pt">© {YEAR} {OWNER}. Seluruh hak dilindungi. Dilarang memperbanyak atau mendistribusikan ulang tanpa izin tertulis.</p>
 </section>

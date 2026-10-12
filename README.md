@@ -32,7 +32,7 @@ Materi versi 1 dan 2 sudah digabung. Modul 1–5 identik di kedua versi (docx by
 
 ## Produk digital (PDF)
 
-*Belajar Pemrograman Python.* Dua PDF siap bagikan di [produk/](produk/README.md): **Buku Materi** (Modul 0–6 dengan contoh output asli, 152 halaman) dan **Buku Solusi** (solusi 102 latihan + contoh capstone utuh, 104 halaman).
+*Belajar Pemrograman Python* dalam dua produk terpisah di [produk/](produk/README.md): **paket ZIP Materi + Buku Kerja** (Buku Materi 152 halaman dengan contoh output asli + notebook latihan Hari 1–6) dan **Buku Solusi** (PDF 104 halaman: solusi 102 latihan + contoh capstone utuh).
 
 ## Contoh capstone
 

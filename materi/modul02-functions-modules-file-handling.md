@@ -1180,4 +1180,4 @@ Angka: 2.5
 
 > **Modul 2 (lengkap) selesai? Lanjut ke Modul 3 — OOP.**
 >
-> Python Intensive — Modul Belajar Mandiri
+> Belajar Pemrograman Python — Modul Belajar Mandiri

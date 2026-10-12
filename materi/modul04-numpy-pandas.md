@@ -964,4 +964,4 @@ SI     3.275         78  4
 
 > **Modul 4 selesai? Lanjut ke Modul 5.**
 >
-> Python Intensive — Modul Belajar Mandiri
+> Belajar Pemrograman Python — Modul Belajar Mandiri

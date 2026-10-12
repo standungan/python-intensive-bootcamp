@@ -660,4 +660,4 @@ Simpan folder capstone dan modul latihan di satu tempat. Proyek yang terdokument
 
 > **Selamat — rangkaian Modul 1–6 selesai.**
 >
-> Python Intensive — Modul Belajar Mandiri
+> Belajar Pemrograman Python — Modul Belajar Mandiri

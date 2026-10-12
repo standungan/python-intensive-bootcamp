@@ -245,14 +245,13 @@ Hasilnya harus menunjuk ke folder `.venv`.
 
 # 7. Menyiapkan Buku Kerja
 
-Paket belajar Anda berupa satu berkas ZIP, `Belajar-Pemrograman-Python.zip`, yang berisi:
+Paket belajar Anda berupa satu berkas ZIP, `Belajar-Pemrograman-Python-Materi-dan-Buku-Kerja.zip`, yang berisi:
 
 ```text
 Belajar-Pemrograman-Python/
 ├── MULAI-DI-SINI.txt
 ├── 1-Buku-Materi.pdf
-├── 2-Buku-Solusi.pdf
-├── 3-Buku-Kerja/          hari1 … hari6 (.ipynb)
+├── 2-Buku-Kerja/          hari1 … hari6 (.ipynb)
 └── requirements.txt
 ```
 
@@ -264,7 +263,7 @@ Belajar-Pemrograman-Python/
 
 ```bash
 pip install -r Belajar-Pemrograman-Python/requirements.txt
-jupyter notebook Belajar-Pemrograman-Python/3-Buku-Kerja
+jupyter notebook Belajar-Pemrograman-Python/2-Buku-Kerja
 ```
 
 4. Di Jupyter, buka `hari1-python-fundamentals.ipynb` dan jalankan **sel pertama (setup)** lebih dulu.
@@ -272,7 +271,7 @@ jupyter notebook Belajar-Pemrograman-Python/3-Buku-Kerja
 > [!TIP]
 > **Cara memakai buku kerja**
 >
-> Tulis jawaban Anda di sel yang ditandai `# TULIS KODE ANDA DI SINI`, lalu jalankan sel **Periksa jawaban** di bawahnya: tanda ✅ berarti benar, ❌ berarti belum tepat. Bandingkan dengan **Buku Solusi** (`2-Buku-Solusi.pdf`) setelah mencoba sendiri.
+> Tulis jawaban Anda di sel yang ditandai `# TULIS KODE ANDA DI SINI`, lalu jalankan sel **Periksa jawaban** di bawahnya: tanda ✅ berarti benar, ❌ berarti belum tepat. Setelah mencoba sendiri, Anda dapat membandingkan dengan **Buku Solusi** (PDF terpisah).
 
 # 8. Pemecahan Masalah Cepat
 
@@ -290,7 +289,7 @@ jupyter notebook Belajar-Pemrograman-Python/3-Buku-Kerja
 | Opsi | Kelebihan | Catatan |
 |---|---|---|
 | **VS Code** + ekstensi Python & Jupyter | editor, terminal, dan notebook dalam satu jendela | tetap butuh Python dan venv di komputer |
-| **Google Colab** | tanpa instal, berjalan di browser | butuh akun Google dan internet; unggah notebook dari folder `3-Buku-Kerja`; berkas hilang saat sesi berakhir |
+| **Google Colab** | tanpa instal, berjalan di browser | butuh akun Google dan internet; unggah notebook dari folder `2-Buku-Kerja`; berkas hilang saat sesi berakhir |
 
 # 10. Checklist Akhir
 

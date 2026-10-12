@@ -1341,4 +1341,4 @@ _Catatan: host jsonplaceholder.typicode.com tidak dapat diakses dari lingkungan 
 
 > **Modul 5 selesai? Lanjut ke Modul 6 — Capstone.**
 >
-> Python Intensive — Modul Belajar Mandiri
+> Belajar Pemrograman Python — Modul Belajar Mandiri

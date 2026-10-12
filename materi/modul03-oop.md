@@ -1032,4 +1032,4 @@ Budi 12000000
 
 > **Modul 3 selesai? Lanjut ke Modul 4 — NumPy & Pandas.**
 >
-> Python Intensive — Modul Belajar Mandiri
+> Belajar Pemrograman Python — Modul Belajar Mandiri
