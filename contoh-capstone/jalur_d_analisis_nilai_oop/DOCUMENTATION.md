@@ -2,7 +2,7 @@
 
 ## 1. Judul dan Identitas
 - Judul: Aplikasi Analisis Nilai Akademik Berbasis OOP
-- Nama: Contoh pengerjaan lengkap (Capstone Python Intensive Bootcamp)
+- Nama: Contoh pengerjaan lengkap (Capstone Project)
 - Jalur: D (Aplikasi Analisis Nilai) + stretch goals
 - Tanggal: 2026-10-01
 

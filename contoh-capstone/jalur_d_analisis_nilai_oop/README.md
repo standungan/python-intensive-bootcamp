@@ -1,7 +1,7 @@
 # Capstone Project: Aplikasi Analisis Nilai Akademik (OOP)
 
 ## Nama
-Capstone Python Intensive Bootcamp — contoh pengerjaan lengkap
+Contoh pengerjaan lengkap Capstone Project
 
 ## Jalur Capstone
 Jalur D — Aplikasi Analisis Nilai Berbasis OOP (level tinggi), dengan ketiga stretch goal: perbandingan dua prodi, mode interaktif terminal, dan simpan/muat state.
