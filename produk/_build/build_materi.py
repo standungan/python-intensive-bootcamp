@@ -42,7 +42,7 @@ HOWTO = f"""
 <h3>Produk pendamping</h3>
 <ul>
 <li><b>Buku Solusi</b> — solusi lengkap setiap latihan dan mini project.</li>
-<li><b>Buku kerja Jupyter</b> dengan pemeriksa jawaban otomatis, dan <b>slide</b> untuk pengajar (tersedia di repositori).</li>
+<li><b>Buku kerja Jupyter</b> (folder <code>3-Buku-Kerja</code> pada paket) dengan pemeriksa jawaban otomatis untuk setiap latihan.</li>
 </ul>
 <p style="margin-top:14pt;color:#64748b;font-size:8.5pt">© {YEAR} {OWNER}. Seluruh hak dilindungi. Dilarang memperbanyak atau mendistribusikan ulang tanpa izin tertulis.</p>
 </section>

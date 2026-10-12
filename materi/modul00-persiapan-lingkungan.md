@@ -180,7 +180,7 @@ pip freeze > requirements.txt
 
 ## 5.2 Satu perintah untuk semua kebutuhan bootcamp
 
-File `requirements.txt` di akar repositori berisi:
+File `requirements.txt` ada di paket belajar yang Anda terima (folder `Belajar-Pemrograman-Python`) dan berisi:
 
 ```text
 notebook
@@ -195,17 +195,17 @@ beautifulsoup4
 feedparser
 ```
 
-Pasang semuanya sekaligus (butuh internet dan beberapa menit):
+Pasang semuanya sekaligus setelah paket diekstrak (lihat bagian 7); perintahnya butuh internet dan beberapa menit:
 
 ```bash
-pip install -r requirements.txt
+pip install -r Belajar-Pemrograman-Python/requirements.txt
 ```
 
 # 6. Jupyter Notebook
 
 ## 6.1 Menjalankan Jupyter
 
-Dengan venv aktif:
+Dengan venv aktif (jika Jupyter belum terpasang: `pip install notebook`):
 
 ```bash
 jupyter notebook
@@ -243,18 +243,36 @@ print(sys.executable)
 
 Hasilnya harus menunjuk ke folder `.venv`.
 
-# 7. Mengambil Buku Kerja
+# 7. Menyiapkan Buku Kerja
 
-```bash
-git clone https://github.com/standungan/python-intensive-bootcamp
-cd python-intensive-bootcamp
-pip install -r requirements.txt
-jupyter notebook workbook/
+Paket belajar Anda berupa satu berkas ZIP, `Belajar-Pemrograman-Python.zip`, yang berisi:
+
+```text
+Belajar-Pemrograman-Python/
+├── MULAI-DI-SINI.txt
+├── 1-Buku-Materi.pdf
+├── 2-Buku-Solusi.pdf
+├── 3-Buku-Kerja/          hari1 … hari6 (.ipynb)
+└── requirements.txt
 ```
 
-Tanpa Git: pada halaman GitHub klik tombol hijau **Code → Download ZIP**, ekstrak, lalu buka terminal di folder hasil ekstrak.
+**Langkah:**
 
-Di Jupyter, buka `hari1-python-fundamentals.ipynb` dan jalankan **sel pertama (setup)** lebih dulu.
+1. **Ekstrak** ZIP ke dalam folder `bootcamp` yang dibuat pada bagian 3.2, sehingga terbentuk `bootcamp/Belajar-Pemrograman-Python/`. (Windows: klik kanan → *Extract All*; macOS: klik dua kali; Linux: `unzip Belajar-Pemrograman-Python.zip`.)
+2. Buka terminal di folder `bootcamp` dan **aktifkan venv** (bagian 4.2) hingga prompt berawalan `(.venv)`.
+3. **Pasang paket**, lalu **jalankan Jupyter** pada folder buku kerja:
+
+```bash
+pip install -r Belajar-Pemrograman-Python/requirements.txt
+jupyter notebook Belajar-Pemrograman-Python/3-Buku-Kerja
+```
+
+4. Di Jupyter, buka `hari1-python-fundamentals.ipynb` dan jalankan **sel pertama (setup)** lebih dulu.
+
+> [!TIP]
+> **Cara memakai buku kerja**
+>
+> Tulis jawaban Anda di sel yang ditandai `# TULIS KODE ANDA DI SINI`, lalu jalankan sel **Periksa jawaban** di bawahnya: tanda ✅ berarti benar, ❌ berarti belum tepat. Bandingkan dengan **Buku Solusi** (`2-Buku-Solusi.pdf`) setelah mencoba sendiri.
 
 # 8. Pemecahan Masalah Cepat
 
@@ -272,7 +290,7 @@ Di Jupyter, buka `hari1-python-fundamentals.ipynb` dan jalankan **sel pertama (s
 | Opsi | Kelebihan | Catatan |
 |---|---|---|
 | **VS Code** + ekstensi Python & Jupyter | editor, terminal, dan notebook dalam satu jendela | tetap butuh Python dan venv di komputer |
-| **Google Colab** | tanpa instal, berjalan di browser | butuh akun Google dan internet; unggah notebook dari `workbook/`; berkas hilang saat sesi berakhir |
+| **Google Colab** | tanpa instal, berjalan di browser | butuh akun Google dan internet; unggah notebook dari folder `3-Buku-Kerja`; berkas hilang saat sesi berakhir |
 
 # 10. Checklist Akhir
 
@@ -282,4 +300,4 @@ Di Jupyter, buka `hari1-python-fundamentals.ipynb` dan jalankan **sel pertama (s
 - [ ] `jupyter notebook` berjalan dari venv; kernel benar.
 - [ ] Notebook Hari 1 terbuka dan sel pertamanya berjalan tanpa error.
 
-Selanjutnya: [Modul 1 — Python Fundamentals](modul01-python-fundamentals.md).
+Selanjutnya: **Modul 1 — Python Fundamentals**.

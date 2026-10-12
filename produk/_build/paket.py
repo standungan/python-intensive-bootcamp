@@ -28,20 +28,19 @@ URUTAN BELAJAR
 
 PERSIAPAN CEPAT (rincian lengkap ada di Buku Materi, Modul 0)
   Butuh: Python 3.11 atau lebih baru dan koneksi internet untuk instalasi paket.
+  Buat folder "bootcamp", ekstrak ZIP ini ke dalamnya, lalu buka terminal di folder "bootcamp".
 
   Windows (PowerShell):
-    cd Belajar-Pemrograman-Python
     python -m venv .venv
     .venv\\Scripts\\Activate.ps1
-    pip install -r requirements.txt
-    jupyter notebook 3-Buku-Kerja
+    pip install -r Belajar-Pemrograman-Python/requirements.txt
+    jupyter notebook Belajar-Pemrograman-Python/3-Buku-Kerja
 
   macOS / Linux:
-    cd Belajar-Pemrograman-Python
     python3 -m venv .venv
     source .venv/bin/activate
-    pip install -r requirements.txt
-    jupyter notebook 3-Buku-Kerja
+    pip install -r Belajar-Pemrograman-Python/requirements.txt
+    jupyter notebook Belajar-Pemrograman-Python/3-Buku-Kerja
 
   Tanpa instalasi: unggah notebook ke Google Colab (colab.research.google.com).
   Catatan: latihan yang menulis file membuat folder latihan_hariN di samping notebook.
